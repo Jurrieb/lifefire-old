@@ -1,0 +1,15 @@
+nav
+  .logo
+    = image_tag 'logo.png', title: 'Lifefire'
+
+  - if current_user
+    .user
+      .avatar
+        = image_tag current_user.avatar.url(:thumb)
+
+      .name = current_user.name
+
+      / Karma points
+      .karma
+        span.coloured = current_user.karmapoints
+        ' Karmapunten

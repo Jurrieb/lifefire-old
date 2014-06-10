@@ -1,0 +1,28 @@
+.notification
+  position: fixed
+  left: 0px
+  bottom: 0px
+  top: 0px
+  width: 200px
+  min-height: 100%
+  z-index: 9999
+  pointer-events: none
+
+  .notice
+    position: absolute
+    margin: 20px 0px
+    width: 200px
+    height: 100px
+    bottom: 0px
+    text-align: center
+    line-height: 100px
+    color: $component_text
+
+    &.success
+      background-color: $notice_succes
+
+    &.warning
+      background-color: $notice_warning
+
+    &.error
+      background-color: $notice_error
