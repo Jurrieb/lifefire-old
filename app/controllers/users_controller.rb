@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
+
     if @user.update(user_params)
       set_flash_and_redirect('success', t('nl.flash.account_edited') , edit_user_path(@user.id))
     else
@@ -17,7 +19,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      set_flash_and_redirect('success', t('nl.flash.account_deleted') , root_path)
+      # Sign out user
+      sign_out @user
+      set_flash_and_redirect('success', t('nl.flash.account_deleted') , unauthenticated_root_path)
     else
       set_flash_and_redirect('error', t('nl.flash.account_not_deleted') , edit_user_path(@user.id))
     end
@@ -30,9 +34,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name,
-                                 :email,
-                                 :password,
-                                 :avatar)
+    params.require(:user).permit(:name, :email, :password, :avatar)
   end
 end
