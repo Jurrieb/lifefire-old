@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
 
   # For all actions, authenticate user
   before_action :authenticate_user!
+
+  # Set flash message and redirect
+  def set_flash_and_redirect(status, message, redirect_url)
+    flash[status] = message
+    redirect_to redirect_url
+  end
 end

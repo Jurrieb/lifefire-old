@@ -268,3 +268,22 @@ nl:
       not_saved:
         one: "Kon de %{resource} niet opslaan:"
         other: "Kon de %{resource} niet opslaan:"
+
+
+  flash:
+    account_deleted: Account is verwijderd
+    account_not_deleted: Account is niet verwijderd
+
+    account_edited: Account is gewijzigd
+    account_not_edited: Account is niet gewijzigd
+
+  form:
+    label:
+      name: Naam
+      email: E-mailadres
+      avatar: Afbeelding
+      password: Wachtwoord
+      new_password: Nieuw wachtwoord
+
+    submit:
+      edit_account: Wijzigen van account

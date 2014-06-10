@@ -1,2 +1,32 @@
-h1 Users#edit
-p Find me in app/views/users/edit.html.slim
+h1 = "Instellingen van #{current_user.name}"
+
+h2 Persoonlijke gegevens
+
+= form_for @user do |f|
+
+  = f.label :name, I18n.t('form.label.name')
+  = f.text_field :name
+
+  = f.label :email, I18n.t('form.label.email')
+  = f.text_field :email
+
+  = f.label :avatar, I18n.t('form.label.avatar')
+  = f.file_field :avatar
+
+  = f.label :password, I18n.t('form.label.password')
+  = f.text_field :password, placeholder: 'Vervang je wachtwoord'
+
+  = f.submit I18n.t('form.submit.edit_account')
+
+h2 Lichaamsgegevens
+p blabalbalbal
+
+h2 Verslaving gegevens
+p blabalbalbal
+
+h2 Notificatie instellingen
+p blabalbalbal
+
+h2 Vrienden
+p blabalbalbal
+
