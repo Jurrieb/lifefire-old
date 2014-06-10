@@ -1,12 +1,17 @@
 nav
   .logo
-    = image_tag 'logo.png', title: 'Lifefire'
+    / Logo's link
+    - if current_user
+      = link_to analysis_index_path do
+        = image_tag 'logo.png', title: 'Terug naar overzicht'
+    - else
+      = link_to root_path do
+        = image_tag 'logo.png', title: 'Lifefire'
 
+  / Show user information
   - if current_user
     .user
-      .avatar
-        = image_tag current_user.avatar.url(:thumb)
-
+      .avatar = image_tag current_user.avatar.url(:thumb)
       .name = link_to current_user.name, edit_user_path(current_user.id)
 
       / Karma points

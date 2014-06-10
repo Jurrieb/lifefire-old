@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  root to: 'analysis#index'
+  root to: 'pages#index'
 
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users, only: [:edit, :update, :destroy]
+  resources :analysis, only: :index
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
