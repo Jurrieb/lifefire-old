@@ -5,7 +5,7 @@ nav
       = link_to analysis_index_path do
         = image_tag 'logo.png', title: 'Terug naar overzicht'
     - else
-      = link_to root_path do
+      = link_to unauthenticated_root_path do
         = image_tag 'logo.png', title: 'Lifefire'
 
   / Show user information
@@ -18,3 +18,5 @@ nav
       .karma
         span.coloured = current_user.karmapoints
         ' Karmapunten
+
+      .signout = link_to 'uitloggen', destroy_user_session_path, method: :delete
