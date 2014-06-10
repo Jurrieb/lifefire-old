@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   attr_reader :avatar_remote_url
 
   devise :database_authenticatable,
-         :registerable,
-         :recoverable,
+         # :registerable,
+         # :recoverable,
          :rememberable,
          :timeoutable,
          :trackable,
@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
                              :default_url => "/images/:style/missing.png"
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
   validates :name, :email, :avatar, presence: true
 
   def self.find_for_facebook_oauth(auth)
@@ -50,6 +49,4 @@ class User < ActiveRecord::Base
     # avatar_content_type == "image/jpg"
     @avatar_remote_url = url_value
   end
-
-
 end
