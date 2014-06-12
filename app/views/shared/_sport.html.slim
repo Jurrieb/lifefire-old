@@ -1,0 +1,12 @@
+= form_for @sport, url: analysis_index_path, method: :post do |f|
+
+  = f.label :populair_sport_id, "Wat heb je gedaan?"
+  = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
+
+  = f.label :distance, 'Hoeveel KM'
+  = f.number_field :distance, value: 0
+
+  = f.label :duration, 'Hoelang?'
+  = f.number_field :duration, value: 0
+
+  = f.submit

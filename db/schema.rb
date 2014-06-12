@@ -11,10 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610093300) do
+ActiveRecord::Schema.define(version: 20140612113413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "populair_sports", force: true do |t|
+    t.string   "name"
+    t.integer  "kcal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "smokes", force: true do |t|
+    t.integer  "user_id"
+    t.date     "date"
+    t.integer  "count",      default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sports", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "populair_sport_id"
+    t.date     "date"
+    t.integer  "duration"
+    t.integer  "distance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_details", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "height",        default: 0
+    t.integer  "weight",        default: 0
+    t.integer  "target_weight", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_preferences", force: true do |t|
+    t.integer  "user_id"
+    t.boolean  "smokes",     default: false
+    t.boolean  "sports",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.datetime "created_at"

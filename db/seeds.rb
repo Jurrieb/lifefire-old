@@ -1,7 +1,45 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#########################################
+#       Populair Sports with Kcal       #
+#########################################
+PopulairSport.create([{ name: 'Aerobics',
+                         kcal: 6 },
+                       { name: 'Badminton',
+                         kcal: 5 },
+                       { name: 'Basketbal',
+                         kcal: 6 },
+                       { name: 'Fietsen',
+                         kcal: 4 },
+                       { name: 'Fitness',
+                         kcal: 6 },
+                       { name: 'Handbal',
+                         kcal: 8 },
+                       { name: 'Hardlopen',
+                         kcal: 12 },
+                       { name: 'Hockey',
+                         kcal: 8 },
+                       { name: 'Joggen',
+                         kcal: 7 },
+                       { name: 'Judo / karate',
+                         kcal: 10 },
+                       { name: 'Racefietsen',
+                         kcal: 12 },
+                       { name: 'Schaatsen',
+                         kcal: 7 },
+                       { name: 'Spinning',
+                         kcal: 9 },
+                       { name: 'Squash',
+                         kcal: 12 },
+                       { name: 'Tafeltennis',
+                         kcal: 4 },
+                       { name: 'Tennis',
+                         kcal: 7 },
+                       { name: 'Touwtje springen',
+                         kcal: 8 },
+                       { name: 'Voetbal',
+                         kcal: 7 },
+                       { name: 'Volleybal',
+                         kcal: 3 },
+                       { name: 'Wandelen',
+                         kcal: 4 },
+                       { name: 'Zwemmen',
+                         kcal: 6 } ])

@@ -269,7 +269,6 @@ nl:
         one: "Kon de %{resource} niet opslaan:"
         other: "Kon de %{resource} niet opslaan:"
 
-
   flash:
     account_deleted: Account is verwijderd
     account_not_deleted: Account is niet verwijderd

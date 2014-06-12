@@ -1,0 +1,5 @@
+= form_for @smoke, url: analysis_index_path, method: :post do |f|
+  = f.label :count, 'Aantal sigaretten gerookt vandaag'
+  = f.number_field :count, value: 0
+
+  = f.submit
