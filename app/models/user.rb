@@ -1,12 +1,8 @@
 class User < ActiveRecord::Base
-
   # Relations
   has_one :userPreference
   has_many :smokes
   has_many :sports
-
-  # CREATE USER DETAILS
-  # CREATE USER PREFERENCES
 
   # Set extra attribute for remote image
   attr_reader :avatar_remote_url
@@ -21,6 +17,7 @@ class User < ActiveRecord::Base
                                           :thumb => "100x100#" },
                              :default_url => "/images/:style/missing.png"
 
+  # Validations
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates :name, :email, :avatar, presence: true
 
@@ -46,6 +43,7 @@ class User < ActiveRecord::Base
       r.base_uri.to_s
     end
 
+    # Set image to the user
     self.avatar = url_picture
     @avatar_remote_url = url_value
   end
