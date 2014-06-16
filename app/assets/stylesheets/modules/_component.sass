@@ -6,14 +6,71 @@
   .component
     @include span-columns(6)
 
-    display: block
-    padding: 30px
-
-    margin: 0.5%
     background-color: $component_background
     color: $component_text
+    border: 1px solid $component_border
+    border-bottom: 2px solid $component_border
 
-    input[type=number]
-      color: $input_text_color
+    .title
+      background-color: $component_title_background
+      padding: 5px 15px
+
+      h2
+        @include inline-block
+        padding-left: 20px
+        color: $component_title_color
+        font-weight: normal
+        font-size: 1.8em
+
+      .image
+        @include inline-block
+
+    .date-select
+      padding: 0px 15px
+      border-top: 1px solid $component_border
+      border-bottom: 1px solid $component_border
+      height: 30px
+      line-height: 30px
+
+      span
+        @include inline-block
+        width: calc(100%/7)
+        text-align: center
+        overflow: hidden
+        text-overflow: ellipsis
+        height: 28px
+        line-height: 28px
+
+        a
+          color: $component_date_link
+
+          &:hover
+            color: $component_date_link * 1.1
+
+        &.active
+          font-weight: bold
+
+    .content
+      padding: 30px
+
+      label
+        font-weight: normal
+
+      input[type=number]
+        color: $input_text_color
+
+      input[type=range]
+        width: 100%
+
+      select
+        width: 100%
+        background-color: $component_background
+        border: 1px solid $component_border
+        padding: 8px 5px
+
+      input[type=submit]
+        background-color: $lifefire_green
+
+
 
 

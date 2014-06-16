@@ -1,5 +1,25 @@
-= form_for @smoke, url: analysis_index_path, method: :post do |f|
-  = f.label :count, 'Aantal sigaretten gerookt vandaag'
-  = f.number_field :count, value: 0
+= @smoked_today
+= @all_time
+= @all_costs
+br
 
-  = f.submit
+.component
+  .title
+    .image = image_tag 'icon_sig.png'
+    h2 Ik stop met roken
+
+  .date-select
+    - (Date.today - 6.days..Date.today).each do |date|
+      - if date == Date.today
+        span.active = link_to I18n.localize(date, format: '%d %B'), '#'
+      - else
+        span = link_to I18n.localize(date, format: '%d %B'), '#'
+
+  .content
+
+    = form_for @smoke, url: analysis_index_path, method: :post do |f|
+      = f.label :count, "Selecteer hoeveel sigaretten u vandaag, #{I18n.localize(Date.today, format: '%d %B')} gerookt heeft."
+      / = f.number_field :count, value: 0
+      = f.range_field :count, in: 0..50, step: '1'
+
+      = f.submit

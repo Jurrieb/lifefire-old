@@ -1,16 +1,5 @@
-h1 = "Overzicht van #{current_user.name}"
-
 / 'Quit smoking' module
-- if current_user.smokes?
-  .component
-    h2 = "Totaal vandaag gerookt: #{@smoked_today}"
-    h2 = "Totaal gerookt: #{@all_time}"
-    p = "totaal gemaakte kosten: #{@all_costs}"
-    = render partial: 'shared/smoking', locals: { smoke: @smoke }
+= render partial: 'shared/smoking', locals: { smoke: @smoke } if current_user.smokes?
 
 / Sports module
-- if current_user.sports?
-  .component
-    h2 = "Totaal tijd gesport vandaag: #{@sport_duration_today}"
-    h2 = "Totaal tijd gesport: #{@sport_duration}"
-    = render partial: 'shared/sport', locals: { sport: @sport }
+= render partial: 'shared/sport', locals: { sport: @sport } if current_user.sports?
