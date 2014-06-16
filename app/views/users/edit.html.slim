@@ -1,5 +1,7 @@
 h1 = "Instellingen van #{current_user.name}"
 
+= link_to 'Uitloggen', destroy_user_session_path, method: :delete
+
 h2 Persoonlijke gegevens
 
 = form_for @user do |f|
