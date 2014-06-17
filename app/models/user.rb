@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Relations
   has_one :userPreference
+  has_one :userDetail
   has_many :smokes
   has_many :sports
 
@@ -14,16 +15,21 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
 
   has_attached_file :avatar, :styles => { :medium => "300x300#",
-                                          :thumb => "100x100#" },
+                                          :thumb => "40x40#" },
                              :default_url => "/images/:style/missing.png"
 
   # Validations
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  validates :name, :email, :avatar, presence: true
+
+  validates :name,
+            :email,
+            :uid,
+            :provider,
+            presence: true
 
   # Find or Create user with Facebook credentials
   def self.find_for_facebook_oauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
+    where(uid: auth.uid, provider: auth.provider).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
@@ -45,13 +51,13 @@ class User < ActiveRecord::Base
 
     # Set image to the user
     self.avatar = url_picture
-    @avatar_remote_url = url_value
+    avatar_remote_url = url_picture
   end
 
-  def create_relations(user_id)
+  def create_relations
     # Create needed relations
-    UserPreference.create(user_id: user_id)
-    UserDetail.create(user_id: user_id)
+    UserPreference.where(user_id: self.id).first_or_create
+    UserDetail.where(user_id: self.id).first_or_create
   end
 
   def smokes?
