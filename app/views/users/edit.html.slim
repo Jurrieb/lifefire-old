@@ -1,34 +1,73 @@
-h1 = "Instellingen van #{current_user.name}"
+.bar_above_component
+  = link_to 'Uitloggen', destroy_user_session_path, method: :delete, class: 'signout'
 
-= link_to 'Uitloggen', destroy_user_session_path, method: :delete
+.component
+  .title
+    .image = image_tag 'icon_sig.png'
+    h2 = "Profiel van #{current_user.name}"
 
-h2 Persoonlijke gegevens
+  .content
+    = form_for @user do |f|
 
-= form_for @user do |f|
+      = f.label :name, I18n.t('form.label.name')
+      = f.text_field :name
 
-  = f.label :name, I18n.t('form.label.name')
-  = f.text_field :name
+      = f.label :email, I18n.t('form.label.email')
+      = f.text_field :email
 
-  = f.label :email, I18n.t('form.label.email')
-  = f.text_field :email
+      = f.label :avatar, I18n.t('form.label.avatar')
+      = f.file_field :avatar
 
-  = f.label :avatar, I18n.t('form.label.avatar')
-  = f.file_field :avatar
+      = f.label :password, I18n.t('form.label.password')
+      = f.text_field :password, placeholder: 'Vervang je wachtwoord'
+      = f.submit I18n.t('form.submit.edit_account')
+.component
+  .title
+    .image
+    h2 Algemene gegevens
 
-  = f.label :password, I18n.t('form.label.password')
-  = f.text_field :password, placeholder: 'Vervang je wachtwoord'
+  .content
+    p fdsafdsafds
 
-  = f.submit I18n.t('form.submit.edit_account')
+.component
+  .title
+    .image
+    h2 Lichaamsgegevens
 
-h2 Lichaamsgegevens
-p blabalbalbal
+  .content
+    p fdsafdsafds
 
-h2 Verslaving gegevens
-p blabalbalbal
+.component
+  .title
+    .image
+    h2 Notificatie instellingen
 
-h2 Notificatie instellingen
-p blabalbalbal
+  .content
+    p fdsafdsafds
 
-h2 Vrienden
-p blabalbalbal
+.component
+  .title
+    .image
+    h2 Verslavingsgegevens
+
+  .content
+    p fdsafdsafds
+
+.component
+  .title
+    .image
+    h2 Notificatie instellingen
+
+  .content
+    p fdsafdsafds
+
+.component
+  .title
+    .image
+    h2 Vrienden
+
+  .content
+    p fdsafdsafds
+
+
 
