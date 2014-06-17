@@ -56,8 +56,8 @@ class User < ActiveRecord::Base
 
   def create_relations
     # Create needed relations
-    UserPreference.where(user_id: self.id).first_or_create
-    UserDetail.where(user_id: self.id).first_or_create
+    UserPreference.create(user_id: self.id)
+    UserDetail.create(user_id: self.id)
   end
 
   def smokes?
