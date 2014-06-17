@@ -1,0 +1,60 @@
+// Input fields
+#{$all-text-inputs}
+  border: 1px solid green
+  color: $input_text_color
+  width: 100%
+  background-color: $component_background
+  border: 1px solid $component_border
+  padding: 8px 5px
+
+#{$all-text-inputs-hover}
+  background-color: $component_background * 1.1
+  outline: none
+
+#{$all-text-inputs-focus}
+  background-color: white
+  outline: none
+  border: 1px solid $component_border * 0.9
+
+// Buttons
+@mixin disable_defined_style_and_overwrite_with_color($color)
+  border-radius: 0px
+  box-shadow: none !important
+  background-image: none !important
+  background-color: $color !important
+  border: 1px solid $input_border_submit !important
+  border-bottom: 2px solid $input_border_submit !important
+  outline: none !important
+
+#{$all-button-inputs}
+  @include disable_defined_style_and_overwrite_with_color($lifefire_green)
+  margin: 20px 0px
+  padding: 10px 30px
+  text-shadow: 0 1px 0 $lifefire_green * 0.6
+
+#{$all-button-inputs-hover}
+  @include disable_defined_style_and_overwrite_with_color($lifefire_green * 1.1)
+
+#{$all-button-inputs-focus}
+  @include disable_defined_style_and_overwrite_with_color($lifefire_green * 1.2)
+
+#{$all-button-inputs-active}
+  @include disable_defined_style_and_overwrite_with_color($lifefire_green * 0.9)
+
+// Labels
+label
+  font-weight: normal
+
+// Custom styling
+select
+  width: 100%
+  background-color: $component_background
+  border: 1px solid $component_border
+  padding: 8px 5px
+
+  &:focus
+    outline: none
+    border: 1px solid $component_border * 0.9
+
+  &:active
+    outline: none
