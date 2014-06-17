@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-
+  # Application routes
   resources :users, only: [:edit, :update]
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
 
-  #################
-  # Devise routes #
-  #################
+  # Devise routes
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   authenticated :user do

@@ -6,6 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # Create relations
     @user.create_relations if !@user.userPreference && !@user.userDetail
 
+    # If there is a user (saved in db), log in!
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
