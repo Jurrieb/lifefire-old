@@ -8,13 +8,23 @@
 
     margin: 2em auto
 
+    h2
+      @include inline-block
+
+      width: 200px
+
   .component
     @include span-columns(6)
+    // @include omega
+
+    &:nth-child(odd)
+      @include omega
 
     background-color: $component_background
     color: $component_text
     border: 1px solid $component_border
     border-bottom: 2px solid $component_border
+    margin-top: 2em
 
     .title
       background-color: $component_title_background
