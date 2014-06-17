@@ -15,16 +15,15 @@
 
   .component
     @include span-columns(6)
-    // @include omega
-
-    &:nth-child(odd)
-      @include omega
-
     background-color: $component_background
     color: $component_text
     border: 1px solid $component_border
     border-bottom: 2px solid $component_border
     margin-top: 2em
+
+    &.side-by-side
+      &:nth-child(odd)
+        @include omega
 
     .title
       background-color: $component_title_background
