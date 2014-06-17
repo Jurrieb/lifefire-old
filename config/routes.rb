@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:edit, :update, :destroy]
+  resources :users, only: [:edit, :update]
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
 
