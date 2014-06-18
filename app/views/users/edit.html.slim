@@ -3,23 +3,20 @@
     = link_to 'Uitloggen', destroy_user_session_path, method: :delete, class: 'signout'
     = f.submit I18n.t('form.submit.edit_account')
 
-  .component.side-by-side
+  .component
     .title
       .image = image_tag 'icon_sig.png'
       h2 = "Profiel van #{current_user.name}"
 
-    .content.side-by-side
+    .content
       = f.label :name, I18n.t('form.label.name')
       = f.text_field :name
-
       = f.label :email, I18n.t('form.label.email')
       = f.text_field :email
-
       = f.label :avatar, I18n.t('form.label.avatar')
       = f.file_field :avatar
-
-      / = f.label :password, I18n.t('form.label.password')
-      / = f.text_field :password, placeholder: 'Vervang je wachtwoord'
+      = f.label :password, I18n.t('form.label.password')
+      = f.text_field :password, placeholder: 'Vervang je wachtwoord'
 
       h2 Verslavingsgegevens
       = f.fields_for :userSmokeAddiction do |usa|
@@ -29,12 +26,29 @@
                          in: 0..50, step: '1',
                          value: @user.userSmokeAddiction.avarage_smokes_day.to_i
 
-  .component.side-by-side
+      h2 Gebruikersgegevens
+      = f.fields_for :userDetail do |ud|
+        = ud.label :height,  I18n.t('form.label.height')
+        = ud.number_field :height
+        = ud.label :weight,  I18n.t('form.label.weight')
+        = ud.number_field :weight
+        = ud.label :target_weight,  I18n.t('form.label.target_weight')
+        = ud.number_field :target_weight
+
+  .component
     .title
       .image
       h2 Algemene gegevens
 
     .content
+      = f.fields_for :userPreference do |up|
+        = up.check_box :smokes
+        = up.label :smokes,  I18n.t('form.label.smokes')
+        = up.check_box :sports
+        = up.label :sports,  I18n.t('form.label.sports')
+        = up.check_box :profile
+        = up.label :profile,  I18n.t('form.label.profile')
+
       = f.fields_for :userNotice do |un|
         = un.check_box :mail
         = un.label :mail,  I18n.t('form.label.notice.mail')
