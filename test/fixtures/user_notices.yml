@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mail: false
+  update: false
+  push_notice: false
+
+two:
+  mail: false
+  update: false
+  push_notice: false

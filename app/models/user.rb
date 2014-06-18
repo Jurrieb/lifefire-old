@@ -2,8 +2,18 @@ class User < ActiveRecord::Base
   # Relations
   has_one :userPreference
   has_one :userDetail
+  has_one :userNotice
+  has_one :userSmokeAddiction
+
   has_many :smokes
   has_many :sports
+
+  # Nested attributes for forms
+  accepts_nested_attributes_for :userPreference,
+                                :userDetail,
+                                :userNotice,
+                                :userSmokeAddiction,
+                                update_only: true
 
   # Set extra attribute for remote image
   attr_reader :avatar_remote_url
@@ -56,8 +66,10 @@ class User < ActiveRecord::Base
 
   def create_relations
     # Create needed relations
-    UserPreference.create(user_id: self.id)
-    UserDetail.create(user_id: self.id)
+    UserPreference.create(user_id: self.id) unless self.userPreference.present?
+    UserDetail.create(user_id: self.id) unless self.userDetail.present?
+    UserNotice.create(user_id: self.id) unless self.userNotice.present?
+    UserSmokeAddiction.create(user_id: self.id) unless self.userSmokeAddiction.present?
   end
 
   def smokes?
