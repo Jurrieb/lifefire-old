@@ -11,6 +11,6 @@ class Smoke < ActiveRecord::Base
 
   # Adds count to counter
   def add_to_smoking_counter(count)
-    self.increment!(:count, count)
+    self.increment!(:count, count - self.count)
   end
 end
