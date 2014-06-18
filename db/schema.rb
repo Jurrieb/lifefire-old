@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612113413) do
+ActiveRecord::Schema.define(version: 20140618112126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,10 +50,26 @@ ActiveRecord::Schema.define(version: 20140612113413) do
     t.datetime "updated_at"
   end
 
+  create_table "user_notices", force: true do |t|
+    t.integer  "user_id"
+    t.boolean  "mail",          default: false
+    t.boolean  "daily_updates", default: false
+    t.boolean  "push_notice",   default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_preferences", force: true do |t|
     t.integer  "user_id"
     t.boolean  "smokes",     default: false
     t.boolean  "sports",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_smoke_addictions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "avarage_smokes_day"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
