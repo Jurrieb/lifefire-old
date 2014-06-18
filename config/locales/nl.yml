@@ -284,11 +284,17 @@ nl:
       password: Wachtwoord
       new_password: Nieuw wachtwoord
       smoke_addiction: Oud rook gedrag
+      height: Hoogte (cm)
+      weight: Gewicht (kilo)
+      target_weight: Streefgewicht (kilo)
+      smokes: Ik wil stoppen met roken
+      sports: Ik wil meer sporten
+      profile: Ik wil een openbaar profiel
 
       notice:
-        mail: E-mail notificaties ontvangen
-        daily_updates: Dagelijkse updates ontvangen
-        push_notice: Push notificaties ontvangen
+        mail: Ik wil e-mailnotificaties ontvangen
+        daily_updates: Ik wil dagelijkse updates ontvangen
+        push_notice: Ik wil push-notificaties ontvangen
 
     submit:
       edit_account: Wijzigen van account
