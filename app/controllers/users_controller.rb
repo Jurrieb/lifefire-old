@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
 
-    if @user.update(user_params)
+    if @user.update!(user_params)
       set_flash_and_redirect('success', t('nl.flash.account_edited') , edit_user_path(@user.id))
     else
       set_flash_and_redirect('error', t('nl.flash.account_not_edited') , edit_user_path(@user.id))
@@ -30,10 +30,30 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(current_user.id)
+    # Find with relations
+    @user = User.includes(:userPreference,
+                          :userDetail,
+                          :userNotice,
+                          :userSmokeAddiction).find(current_user.id)
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :avatar)
+    params.require(:user).permit(:name,
+                                 :email,
+                                 :password,
+                                 :avatar,
+                                 # Preferences
+                                 userPreference_attributes: [:smokes,
+                                                              :sports],
+                                 # User details
+                                 userDetail_attributes:     [:height,
+                                                              :weigth,
+                                                              :target_weight],
+                                 # Notices
+                                 userNotice_attributes:     [:mail,
+                                                              :daily_updates,
+                                                              :push_notice],
+                                 # Smoke addiction settings
+                                 userSmokeAddiction_attributes: [:avarage_smokes_day])
   end
 end
