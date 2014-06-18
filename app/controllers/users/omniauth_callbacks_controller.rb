@@ -4,7 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"])
 
     # Create relations
-    @user.create_relations if !@user.userPreference && !@user.userDetail
+    @user.create_relations
 
     # If there is a user (saved in db), log in!
     if @user.persisted?
