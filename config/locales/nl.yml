@@ -283,6 +283,12 @@ nl:
       avatar: Afbeelding
       password: Wachtwoord
       new_password: Nieuw wachtwoord
+      smoke_addiction: Oud rook gedrag
+
+      notice:
+        mail: E-mail notificaties ontvangen
+        daily_updates: Dagelijkse updates ontvangen
+        push_notice: Push notificaties ontvangen
 
     submit:
       edit_account: Wijzigen van account
