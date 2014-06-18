@@ -1,14 +1,14 @@
-.bar_above_component
-  = link_to 'Uitloggen', destroy_user_session_path, method: :delete, class: 'signout'
+= form_for @user do |f|
+  .bar_above_component
+    = link_to 'Uitloggen', destroy_user_session_path, method: :delete, class: 'signout'
+    = f.submit I18n.t('form.submit.edit_account')
 
-.component.side-by-side
-  .title
-    .image = image_tag 'icon_sig.png'
-    h2 = "Profiel van #{current_user.name}"
+  .component.side-by-side
+    .title
+      .image = image_tag 'icon_sig.png'
+      h2 = "Profiel van #{current_user.name}"
 
-  .content.side-by-side
-    = form_for @user do |f|
-
+    .content.side-by-side
       = f.label :name, I18n.t('form.label.name')
       = f.text_field :name
 
@@ -18,49 +18,27 @@
       = f.label :avatar, I18n.t('form.label.avatar')
       = f.file_field :avatar
 
-      = f.label :password, I18n.t('form.label.password')
-      = f.text_field :password, placeholder: 'Vervang je wachtwoord'
-      = f.submit I18n.t('form.submit.edit_account')
+      / = f.label :password, I18n.t('form.label.password')
+      / = f.text_field :password, placeholder: 'Vervang je wachtwoord'
 
-.component.side-by-side
-  .title
-    .image
-    h2 Algemene gegevens
+      h2 Verslavingsgegevens
+      = f.fields_for :userSmokeAddiction do |usa|
+        / Range for old smoke behaviour
+        = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
+        = usa.range_field :avarage_smokes_day,
+                         in: 0..50, step: '1',
+                         value: @user.userSmokeAddiction.avarage_smokes_day.to_i
 
-  .content
-    p fdsafdsafds
+  .component.side-by-side
+    .title
+      .image
+      h2 Algemene gegevens
 
-.component.side-by-side
-  .title
-    .image
-    h2 Lichaamsgegevens
-
-  .content
-    p fdsafdsafds
-
-.component.side-by-side
-  .title
-    .image
-    h2 Notificatie instellingen
-
-  .content
-    p fdsafdsafds
-
-.component.side-by-side
-  .title
-    .image
-    h2 Verslavingsgegevens
-
-  .content
-    p fdsafdsafds
-
-.component.side-by-side
-  .title
-    .image
-    h2 Vrienden
-
-  .content
-    p fdsafdsafds
-
-
-
+    .content
+      = f.fields_for :userNotice do |un|
+        = un.check_box :mail
+        = un.label :mail,  I18n.t('form.label.notice.mail')
+        = un.check_box :daily_updates
+        = un.label :daily_updates,  I18n.t('form.label.notice.daily_updates')
+        = un.check_box :push_notice
+        = un.label :push_notice,  I18n.t('form.label.notice.push_notice')
