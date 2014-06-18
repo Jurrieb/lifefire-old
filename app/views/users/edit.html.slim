@@ -42,17 +42,37 @@
 
     .content
       = f.fields_for :userPreference do |up|
-        = up.check_box :smokes
+        / Custom styled checkbox
         = up.label :smokes,  I18n.t('form.label.smokes')
-        = up.check_box :sports
+        = up.label :smokes, class: 'switch' do
+          = up.check_box :smokes
+          .checkbox
+        / Custom styled checkbox
         = up.label :sports,  I18n.t('form.label.sports')
-        = up.check_box :profile
+        = up.label :sports, class: 'switch' do
+          = up.check_box :sports
+          .checkbox
+        / Custom styled checkbox
         = up.label :profile,  I18n.t('form.label.profile')
+        = up.label :profile, class: 'switch' do
+          = up.check_box :profile
+          .checkbox
 
       = f.fields_for :userNotice do |un|
-        = un.check_box :mail
+        / Custom styled checkbox
         = un.label :mail,  I18n.t('form.label.notice.mail')
-        = un.check_box :daily_updates
+        = un.label :mail, class: 'switch' do
+          = un.check_box :mail
+          .checkbox
+        / Custom styled checkbox
         = un.label :daily_updates,  I18n.t('form.label.notice.daily_updates')
-        = un.check_box :push_notice
+        = un.label :daily_updates, class: 'switch' do
+          = un.check_box :daily_updates
+          .checkbox
+        / Custom styled checkbox
         = un.label :push_notice,  I18n.t('form.label.notice.push_notice')
+        = un.label :push_notice, class: 'switch' do
+          = un.check_box :push_notice
+          .checkbox
+
+
