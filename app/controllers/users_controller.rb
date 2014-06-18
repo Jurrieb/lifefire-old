@@ -44,15 +44,16 @@ class UsersController < ApplicationController
                                  :avatar,
                                  # Preferences
                                  userPreference_attributes: [:smokes,
-                                                              :sports],
+                                                             :sports,
+                                                             :profile],
                                  # User details
                                  userDetail_attributes:     [:height,
-                                                              :weigth,
-                                                              :target_weight],
+                                                             :weight,
+                                                             :target_weight],
                                  # Notices
                                  userNotice_attributes:     [:mail,
-                                                              :daily_updates,
-                                                              :push_notice],
+                                                             :daily_updates,
+                                                             :push_notice],
                                  # Smoke addiction settings
                                  userSmokeAddiction_attributes: [:avarage_smokes_day])
   end
