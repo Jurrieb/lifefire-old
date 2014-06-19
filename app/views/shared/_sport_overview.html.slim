@@ -1,0 +1,6 @@
+.title
+  .image = image_tag 'icon_sig.png'
+  h2 Voortgang stoppen met roken
+
+.content
+  = line_chart User.group_by_day(:created_at).count

@@ -2,32 +2,28 @@
 / = @sport_duration_today
 / = @sport_duration
 
-.component
-  .title
-    .image = image_tag 'icon_run.png'
-    h2 Ik sport
+.title
+  .image = image_tag 'icon_run.png'
+  h2 Ik sport
 
-  .date-select
-    - (Date.today - 5.days..Date.today).each do |date|
-      - if date == Date.today
-        span.active = link_to I18n.localize(date, format: '%d %B'), '#'
-      - else
-        span = link_to I18n.localize(date, format: '%d %B'), '#'
+.date-select
+  - (Date.today - 5.days..Date.today).each do |date|
+    - if date == Date.today
+      span.active = link_to I18n.localize(date, format: '%d %B'), '#'
+    - else
+      span = link_to I18n.localize(date, format: '%d %B'), '#'
 
-  .content
-    P Vul het de gevraagde gegevens in voor een gezondsheids analyse!
-    = form_for @sport, url: analysis_index_path, method: :post do |f|
+.content
+  P Vul het de gevraagde gegevens in voor een gezondsheids analyse!
+  = form_for @sport, url: analysis_index_path, method: :post do |f|
 
-      = f.label :populair_sport_id, "Welke sport heb je beoefend?"
-      = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
+    = f.label :populair_sport_id, "Welke sport heb je beoefend?"
+    = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
 
-      = f.label :distance, 'Hoeveel kilometer deze sessie?'
-      = f.number_field :distance, value: 0
+    = f.label :distance, 'Hoeveel kilometer deze sessie?'
+    = f.number_field :distance, value: 0
 
-      = f.label :duration, 'Hoelang duurde deze sessie?'
-      = f.number_field :duration, value: 0
+    = f.label :duration, 'Hoelang duurde deze sessie?'
+    = f.number_field :duration, value: 0
 
-      = f.submit I18n.t('form.submit.sports')
-
-
-
+    = f.submit I18n.t('form.submit.sports')

@@ -1,0 +1,23 @@
+.title
+  .image = image_tag 'icon_sig.png'
+  h2 Voortgang stoppen met roken
+
+.content
+  = line_chart User.group_by_day(:created_at).count
+
+  ul
+    li Besparing
+    li = "Vandaag: #{current_user.smokes.smoked_all_time}"
+    li = "Deze week: #{}"
+    li = "Deze maand: #{}"
+
+  / ul
+  /   li Minder binnengekregen
+  /   li Sigaretten:
+  /   li = "Teer: #{@reduced_tar}kg"
+
+  / ul
+  /   li Totalen
+  /   li = "Vandaag gerookt: #{@smoked_today}"
+  /   li = "Sinds aanmelden bij programma #{@all_time}"
+  /   li = "Dit heeft #{@all_costs} gekost"
