@@ -21,4 +21,6 @@ nav
       .user_icons
         .icon = link_to '', edit_user_path(current_user.id), class: 'icon-cog'
         .icon = link_to '', messages_path(current_user.id), class: 'icon-mail'
+        .icon = link_to '', destroy_user_session_path, method: :delete, class: 'icon-power-off'
+
 
