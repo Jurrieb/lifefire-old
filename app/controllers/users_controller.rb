@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     params[:user].delete(:password) if params[:user][:password].blank?
 
     if @user.update!(user_params)
-      set_flash_and_redirect('success', t('nl.flash.account_edited') , edit_user_path(@user.id))
+      set_flash_and_redirect('success', t('flash.account_edited') , edit_user_path(@user.id))
     else
-      set_flash_and_redirect('error', t('nl.flash.account_not_edited') , edit_user_path(@user.id))
+      set_flash_and_redirect('error', t('flash.account_not_edited') , edit_user_path(@user.id))
     end
   end
 
@@ -21,9 +21,9 @@ class UsersController < ApplicationController
     if @user.destroy
       # Sign out user
       sign_out @user
-      set_flash_and_redirect('success', t('nl.flash.account_deleted') , unauthenticated_root_path)
+      set_flash_and_redirect('success', t('flash.account_deleted') , unauthenticated_root_path)
     else
-      set_flash_and_redirect('error', t('nl.flash.account_not_deleted') , edit_user_path(@user.id))
+      set_flash_and_redirect('error', t('flash.account_not_deleted') , edit_user_path(@user.id))
     end
   end
 
