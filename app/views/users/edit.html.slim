@@ -1,7 +1,4 @@
 = form_for @user do |f|
-  .bar_above_component
-    = f.submit I18n.t('form.submit.edit_account')
-
   .component
     .title
       .icon.icon-cog
@@ -57,3 +54,6 @@
         = render partial: 'shared/switch', locals: { subject: 'mail', form: un }
         = render partial: 'shared/switch', locals: { subject: 'daily_updates', form: un }
         = render partial: 'shared/switch', locals: { subject: 'push_notice', form: un }
+
+  .bar_component
+    = f.submit I18n.t('form.submit.edit_account')
