@@ -18,7 +18,7 @@ class AnalysisController < ApplicationController
     # Check for spots or smoking params
     add_to_smoking_counter(params[:smoke][:count].to_i) if params[:smoke]
     add_to_sports_counter(params[:sport]) if params[:sport]
-
+    # Redirect
     redirect_to :back
   end
 
