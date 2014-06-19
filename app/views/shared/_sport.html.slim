@@ -8,7 +8,7 @@
     h2 Ik sport
 
   .date-select
-    - (Date.today - 6.days..Date.today).each do |date|
+    - (Date.today - 5.days..Date.today).each do |date|
       - if date == Date.today
         span.active = link_to I18n.localize(date, format: '%d %B'), '#'
       - else
@@ -27,7 +27,7 @@
       = f.label :duration, 'Hoelang duurde deze sessie?'
       = f.number_field :duration, value: 0
 
-      = f.submit
+      = f.submit I18n.t('form.submit.sports')
 
 
 
