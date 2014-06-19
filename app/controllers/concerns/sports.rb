@@ -12,7 +12,11 @@ module Sports
                                      date: Date.today,
                                      populair_sport_id: sports_input[:populair_sport_id])
 
-    @sport.update(sport_params)
+    if @sport.update!(sport_params)
+      flash[:success] = t('flash.sports_added')
+    else
+      flash[:error] = t('flash.sports_not_added')
+    end
   end
 
   private
@@ -26,7 +30,7 @@ module Sports
   end
 
   def sport_params
-    params.require(:sport).permit(:distance, :duration)
+    params.require(:sport).permit(:distance, :duration, :populair_sport_id)
   end
 
   def set_sport

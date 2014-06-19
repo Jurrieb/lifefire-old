@@ -11,7 +11,11 @@ module StopSmoking
   end
 
   def add_to_smoking_counter(count)
-    @smoke.add_to_smoking_counter(count)
+    if @smoke.add_to_smoking_counter(count)
+      flash[:success] = t('flash.smokes_added', count: count)
+    else
+      flash[:error] = t('flash.smokes_not_added')
+    end
   end
 
   private
