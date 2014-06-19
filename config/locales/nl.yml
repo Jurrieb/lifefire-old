@@ -276,6 +276,12 @@ nl:
     account_edited: Account is gewijzigd
     account_not_edited: Account is niet gewijzigd
 
+    sports_added: Sportactiviteit is toegevoegd
+    sports_not_added: Sportactiviteit is niet toegevoegd
+
+    smokes_added: "%{count} sigaretten opgeslagen"
+    smokes_not_added: "Sigaretten zijn niet toegevoegd"
+
   form:
     label:
       name: Naam
@@ -296,3 +302,5 @@ nl:
 
     submit:
       edit_account: Wijzigen van account
+      smoke: Gerookte sigaretten opslaan
+      sports: Sportactiviteiten opslaan
