@@ -9,10 +9,6 @@
       = f.text_field :name, disabled: true
       = f.label :email, I18n.t('form.label.email')
       = f.text_field :email, disabled: true
-      / = f.label :avatar, I18n.t('form.label.avatar')
-      / = f.file_field :avatar
-      / = f.label :password, I18n.t('form.label.password')
-      / = f.text_field :password, placeholder: 'Vervang je wachtwoord'
       hr
 
       = f.fields_for :userSmokeAddiction do |usa|
