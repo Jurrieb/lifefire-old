@@ -36,6 +36,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-power-off:before {
+  content: "\f011";
+}
 .icon-mail:before {
   content: "\e600";
 }
@@ -44,7 +47,4 @@
 }
 .icon-trophy:before {
   content: "\e602";
-}
-.icon-plus:before {
-  content: "\e603";
 }

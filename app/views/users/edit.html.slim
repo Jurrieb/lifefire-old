@@ -1,11 +1,10 @@
 = form_for @user do |f|
   .bar_above_component
-    = link_to 'Uitloggen', destroy_user_session_path, method: :delete, class: 'signout'
     = f.submit I18n.t('form.submit.edit_account')
 
   .component
     .title
-      .image = image_tag 'icon_sig.png'
+      .icon.icon-cog
       h2 = "Mijn gegevens"
 
     .content
@@ -17,7 +16,6 @@
       / = f.file_field :avatar
       / = f.label :password, I18n.t('form.label.password')
       / = f.text_field :password, placeholder: 'Vervang je wachtwoord'
-
       hr
 
       = f.fields_for :userSmokeAddiction do |usa|
@@ -42,7 +40,7 @@
 
   .component
     .title
-      .image = image_tag 'icon_sig.png'
+      .icon.icon-cog
       h2 Mijn programma
 
     .content
