@@ -6,17 +6,18 @@
   .component
     .title
       .image = image_tag 'icon_sig.png'
-      h2 = "Profiel van #{current_user.name}"
+      h2 = "Mijn gegevens"
 
     .content
+      h2 Facebook account gegevens
       = f.label :name, I18n.t('form.label.name')
-      = f.text_field :name
+      = f.text_field :name, disabled: true
       = f.label :email, I18n.t('form.label.email')
-      = f.text_field :email
-      = f.label :avatar, I18n.t('form.label.avatar')
-      = f.file_field :avatar
-      = f.label :password, I18n.t('form.label.password')
-      = f.text_field :password, placeholder: 'Vervang je wachtwoord'
+      = f.text_field :email, disabled: true
+      / = f.label :avatar, I18n.t('form.label.avatar')
+      / = f.file_field :avatar
+      / = f.label :password, I18n.t('form.label.password')
+      / = f.text_field :password, placeholder: 'Vervang je wachtwoord'
 
       h2 Verslavingsgegevens
       = f.fields_for :userSmokeAddiction do |usa|
@@ -37,42 +38,20 @@
 
   .component
     .title
-      .image
-      h2 Algemene gegevens
+      .image = image_tag 'icon_sig.png'
+      h2 Mijn programma
 
     .content
       = f.fields_for :userPreference do |up|
-        / Custom styled checkbox
-        = up.label :smokes,  I18n.t('form.label.smokes')
-        = up.label :smokes, class: 'switch' do
-          = up.check_box :smokes
-          .checkbox
-        / Custom styled checkbox
-        = up.label :sports,  I18n.t('form.label.sports')
-        = up.label :sports, class: 'switch' do
-          = up.check_box :sports
-          .checkbox
-        / Custom styled checkbox
-        = up.label :profile,  I18n.t('form.label.profile')
-        = up.label :profile, class: 'switch' do
-          = up.check_box :profile
-          .checkbox
+        / Render switches
+        = render partial: 'shared/switch', locals: { subject: 'smokes', form: up }
+        = render partial: 'shared/switch', locals: { subject: 'sports', form: up }
+        hr
+        = render partial: 'shared/switch', locals: { subject: 'profile', form: up }
 
+      hr
       = f.fields_for :userNotice do |un|
-        / Custom styled checkbox
-        = un.label :mail,  I18n.t('form.label.notice.mail')
-        = un.label :mail, class: 'switch' do
-          = un.check_box :mail
-          .checkbox
-        / Custom styled checkbox
-        = un.label :daily_updates,  I18n.t('form.label.notice.daily_updates')
-        = un.label :daily_updates, class: 'switch' do
-          = un.check_box :daily_updates
-          .checkbox
-        / Custom styled checkbox
-        = un.label :push_notice,  I18n.t('form.label.notice.push_notice')
-        = un.label :push_notice, class: 'switch' do
-          = un.check_box :push_notice
-          .checkbox
-
-
+        / Render switches
+        = render partial: 'shared/switch', locals: { subject: 'mail', form: un }
+        = render partial: 'shared/switch', locals: { subject: 'daily_updates', form: un }
+        = render partial: 'shared/switch', locals: { subject: 'push_notice', form: un }

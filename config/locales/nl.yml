@@ -290,11 +290,9 @@ nl:
       smokes: Ik wil stoppen met roken
       sports: Ik wil meer sporten
       profile: Ik wil een openbaar profiel
-
-      notice:
-        mail: Ik wil e-mailnotificaties ontvangen
-        daily_updates: Ik wil dagelijkse updates ontvangen
-        push_notice: Ik wil push-notificaties ontvangen
+      mail: Ik wil e-mailnotificaties ontvangen
+      daily_updates: Ik wil dagelijkse updates ontvangen
+      push_notice: Ik wil push-notificaties ontvangen
 
     submit:
       edit_account: Wijzigen van account

@@ -1,0 +1,6 @@
+/ Custom styled checkbox
+.checkbox_field
+  = form.label subject.to_sym,  I18n.t("form.label.#{subject}")
+  = form.label subject.to_sym, class: 'switch' do
+    = form.check_box subject.to_sym
+    .checkbox

@@ -38,20 +38,23 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name,
-                                 :email,
-                                 :password,
-                                 :avatar,
+    params.require(:user).permit(#:name,
+                                 #:email,
+                                 #:password,
+                                 #:avatar,
                                  # Preferences
-                                 userPreference_attributes: [:smokes,
+                                 userPreference_attributes: [:id,
+                                                             :smokes,
                                                              :sports,
                                                              :profile],
                                  # User details
-                                 userDetail_attributes:     [:height,
+                                 userDetail_attributes:     [:id,
+                                                             :height,
                                                              :weight,
                                                              :target_weight],
                                  # Notices
-                                 userNotice_attributes:     [:mail,
+                                 userNotice_attributes:     [:id,
+                                                             :mail,
                                                              :daily_updates,
                                                              :push_notice],
                                  # Smoke addiction settings
