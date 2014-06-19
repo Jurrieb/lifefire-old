@@ -9,7 +9,6 @@
       h2 = "Mijn gegevens"
 
     .content
-      h2 Facebook account gegevens
       = f.label :name, I18n.t('form.label.name')
       = f.text_field :name, disabled: true
       = f.label :email, I18n.t('form.label.email')
@@ -19,22 +18,27 @@
       / = f.label :password, I18n.t('form.label.password')
       / = f.text_field :password, placeholder: 'Vervang je wachtwoord'
 
-      h2 Verslavingsgegevens
+      hr
+
       = f.fields_for :userSmokeAddiction do |usa|
         / Range for old smoke behaviour
-        = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
-        = usa.range_field :avarage_smokes_day,
-                         in: 0..50, step: '1',
-                         value: @user.userSmokeAddiction.avarage_smokes_day.to_i
+        .range
+          = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
+          = usa.range_field :avarage_smokes_day,
+                            in: 0..50, step: '1',
+                            value: @user.userSmokeAddiction.avarage_smokes_day.to_i
 
-      h2 Gebruikersgegevens
+      hr
       = f.fields_for :userDetail do |ud|
-        = ud.label :height,  I18n.t('form.label.height')
-        = ud.number_field :height
-        = ud.label :weight,  I18n.t('form.label.weight')
-        = ud.number_field :weight
-        = ud.label :target_weight,  I18n.t('form.label.target_weight')
-        = ud.number_field :target_weight
+        .number
+          = ud.label :height,  I18n.t('form.label.height')
+          = ud.number_field :height
+        .number
+          = ud.label :weight,  I18n.t('form.label.weight')
+          = ud.number_field :weight
+        .number
+          = ud.label :target_weight,  I18n.t('form.label.target_weight')
+          = ud.number_field :target_weight
 
   .component
     .title

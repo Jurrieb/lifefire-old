@@ -63,6 +63,8 @@ select
   &:active
     outline: none
 
+
+// Checkbox switch style
 .checkbox_field
   display: block
   margin: 1em auto
@@ -70,6 +72,7 @@ select
   label
     +inline-block
     width: calc(100% - 70px)
+
   .switch
     $switch-width: 68px
     $switch-padding: 2px
@@ -134,7 +137,25 @@ select
           &:after
             left: $switch-width - $knob-width - $switch-padding
 
+// Inline numberfield
+.number
+  label
+    +inline-block
+    width: calc(100% - 80px)
 
+  input[type=number]
+    +inline-block
+    width: 80px
+
+// Inline rangefield
+.range
+  label
+    +inline-block
+    width: calc(100% - 300px)
+
+  input[type=range]
+    +inline-block
+    width: 300px
 
 // Custom button styling
 a.signout
