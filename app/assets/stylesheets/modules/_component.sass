@@ -21,34 +21,33 @@
     color: $component_text
     border: 1px solid $component_border
     border-bottom: 2px solid $component_border
+    margin-top: 1em
 
     .title
       background-color: $component_title_background
-      padding: 10px
+      padding: 5px 15px
       border-bottom: 1px solid $component_border
 
       h2
         +inline-block
-        padding-left: 10px
+        padding-left: 20px
         color: $component_title_color
         font-weight: normal
-        font-size: 21px
+        font-size: 1.8em
 
       .icon
         +inline-block
-        font-size: 21px
-        height: 21px
+        font-size: 1.4em
 
       .image
         +inline-block
-        height: 21px
-        vertical-align: middle
 
     .date-select
-      padding: 5px 15px
+      padding: 0px 15px
+      border-top: 1px solid $component_border
       border-bottom: 1px solid $component_border
-      height: 40px
-      line-height: 40px
+      height: 30px
+      line-height: 30px
 
       span
         @include inline-block
@@ -56,8 +55,8 @@
         text-align: center
         overflow: hidden
         text-overflow: ellipsis
-        height: 20px
-        line-height: 20px
+        height: 28px
+        line-height: 28px
 
         a
           color: $component_date_link
