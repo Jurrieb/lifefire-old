@@ -42,15 +42,19 @@ module Smoking
   # Calculate smokes reduced from avarage
   def reduced_cigarettes
     smokes = Smoke.by_user(self.id)
-    # Avarage smoke and date range (count days)
-    avarage_smokes = self.userSmokeAddiction.avarage_smokes_day
-    date_range_count = (smokes.first.date..smokes.last.date).count
-    # Totaal smoked without our program
-    smoked_total_without_program = avarage_smokes * date_range_count
-    # Smoked with program
-    smoked_smokes = smokes.sum(:count)
-    # Return avarage reduced smokes
-    smoked_total_without_program - smoked_smokes
+    if smokes.any?
+      # Avarage smoke and date range (count days)
+      avarage_smokes = self.userSmokeAddiction.avarage_smokes_day
+      date_range_count = (smokes.first.date..smokes.last.date).count
+      # Totaal smoked without our program
+      smoked_total_without_program = avarage_smokes * date_range_count
+      # Smoked with program
+      smoked_smokes = smokes.sum(:count)
+      # Return avarage reduced smokes
+      return smoked_total_without_program - smoked_smokes
+    else
+      0
+    end
   end
 
   # User Smoked today
