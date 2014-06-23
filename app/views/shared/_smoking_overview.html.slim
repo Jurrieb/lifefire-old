@@ -3,7 +3,7 @@
   h2 Voortgang stoppen met roken
 
 .content
-  = line_chart User.group_by_day(:created_at).count
+  = area_chart current_user.smokes.group_by_day(:date).sum(:count)
 
   .overview
     ul
