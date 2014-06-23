@@ -20,10 +20,12 @@
     = f.label :populair_sport_id, "Welke sport heb je beoefend?"
     = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
 
-    = f.label :distance, 'Hoeveel kilometer deze sessie?'
+    = f.label :distance, 'Hoeveel kilometer was deze sessie?'
     = f.number_field :distance, value: 0
 
-    = f.label :duration, 'Hoelang duurde deze sessie?'
+    = f.label :duration, 'Hoelang duurde deze sessie in minuten?'
     = f.number_field :duration, value: 0
+
+    = f.hidden_field :date, value: Date.today
 
     = f.submit I18n.t('form.submit.sports')
