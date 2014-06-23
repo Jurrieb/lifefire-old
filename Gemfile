@@ -19,6 +19,9 @@ gem 'neat'
 gem 'chartkick'
 gem 'groupdate'
 
+# Facebook gem
+gem 'fb_graph'
+
 # Authentication
 gem 'devise'
 gem 'omniauth-facebook'
