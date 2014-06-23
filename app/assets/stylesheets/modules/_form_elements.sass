@@ -3,22 +3,33 @@
   border: 1px solid green
   color: $input_text_color
   width: 100%
-  background-color: $component_background
-  border: 1px solid $component_border
+  background-color: $input_background_color
+  border: 1px solid $input_border_color
   padding: 8px 5px
 
+  &:disabled
+    background-color: $input_disabled_background_color
+    color: $input_disabled_font_color
+
 #{$all-text-inputs-hover}
-  background-color: $component_background * 1.1
+  background-color: $input_background_color * 1.1
   outline: none
+
+  &:disabled
+    background-color: $input_disabled_background_color
+    color: $input_disabled_font_color
 
 #{$all-text-inputs-focus}
   background-color: white
   outline: none
-  border: 1px solid $component_border * 0.9
+  border: 1px solid $input_border_color * 0.9
+
+  &:disabled
+    background-color: $input_disabled_background-color
 
 // Button mixins
 @mixin disable_defined_style_and_overwrite_with_color($color)
-  @include set_custom_border_with_color($input_border_submit)
+  @include set_custom_border_with_color($submit_border_color)
   border-radius: 0px
   box-shadow: none !important
   background-image: none !important
@@ -31,34 +42,40 @@
 
 // Button styling
 #{$all-button-inputs}
-  @include disable_defined_style_and_overwrite_with_color($lifefire_green)
+  @include disable_defined_style_and_overwrite_with_color($submit_background_color)
   margin: 20px 0px
   padding: 10px 30px
-  text-shadow: 0 1px 0 $lifefire_green * 0.6
 
 #{$all-button-inputs-hover}
-  @include disable_defined_style_and_overwrite_with_color($lifefire_green * 1.1)
+  @include disable_defined_style_and_overwrite_with_color($submit_background_color * 1.1)
 
 #{$all-button-inputs-focus}
-  @include disable_defined_style_and_overwrite_with_color($lifefire_green * 1.2)
+  @include disable_defined_style_and_overwrite_with_color($submit_background_color * 1.2)
 
 #{$all-button-inputs-active}
-  @include disable_defined_style_and_overwrite_with_color($lifefire_green * 0.9)
+  @include disable_defined_style_and_overwrite_with_color($submit_background_color * 0.9)
+
+
 
 // Labels
 label
   font-weight: normal
+  cursor: pointer
 
 // Custom styling
 select
   width: 100%
-  background-color: $component_background
-  border: 1px solid $component_border
+  background-color: $input_background_color
+  border: 1px solid $input_border_color
   padding: 8px 5px
 
   &:focus
     outline: none
-    border: 1px solid $component_border * 0.9
+    border: 1px solid $input_border_color * 0.9
+
+  &:hover
+    background-color: $input_background_color * 1.1
+    outline: none
 
   &:active
     outline: none
@@ -96,7 +113,7 @@ select
       display: none
 
       + .checkbox
-        background: $component_border
+        background: $input_border_color
         border: none
         border-radius: $switch-radius
         cursor: pointer
@@ -109,7 +126,7 @@ select
         +box-sizing(border-box)
         +transition(all 0.3s ease)
         &:before
-          background: $component_border * .98
+          background: $input_border_color * .98
           border-radius: $switch-radius
           content: ' '
           height: $knob-radius
@@ -120,7 +137,7 @@ select
           +transition(all 0.3s ease)
           +transform(scale(1))
         &:after
-          @include linear-gradient(to bottom, white, $component_border, $fallback: $component_border)
+          @include linear-gradient(to bottom, white, $input_border_color, $fallback: $input_border_color)
           border-radius: $knob-radius
           content: ' '
           height: $knob-height
@@ -148,32 +165,3 @@ select
     width: 80px
 
 // Inline rangefield
-.range
-  label
-    +inline-block
-    width: calc(100% - 300px)
-
-  input[type=range]
-    +inline-block
-    width: 300px
-
-// Custom button styling
-a.signout
-  @include set_custom_border_with_color($sign_out_border)
-
-  display: block
-  float: right
-  width: 10em
-  background-color: $sign_out_color
-  padding: 10px 30px
-  text-shadow: 0 1px 0 $sign_out_color * 0.6
-  text-align: center
-  color: white
-
-  &:hover
-    background-color: $sign_out_color * 1.1
-
-  &:active
-    background-color: $sign_out_color * 0.9
-
-
