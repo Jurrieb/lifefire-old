@@ -10,13 +10,14 @@ nav
 
   / Show user information
   - if current_user
-    .user
-      .user_information
+    .menu
+      .user
         .avatar = image_tag current_user.avatar.url(:thumb)
-        .name = current_user.name
-        .karma
-          span.coloured = current_user.karmapoints
-          span Karmapunten
+        .user_information
+          .name = current_user.name
+          .karma
+            span.coloured = current_user.karmapoints
+            span Karmapunten
 
       .user_icons
         .icon = link_to '', edit_user_path(current_user.id), class: 'icon-cog'

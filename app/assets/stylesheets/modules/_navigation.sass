@@ -4,12 +4,13 @@ $navigation_bar_height: 60px
 // Includes
 %navigation_icon
   a
+    display: block
     height: $navigation_bar_height
-    width: 30px
-    font-size: 1.4em
+    width: 60px
+    font-size: 32px
     height: 60px
+    text-align: center
     line-height: 60px
-    margin: auto 14px
     color: $navigation_icon_color
 
     &:hover
@@ -26,72 +27,51 @@ nav
   .logo
     @include inline-block
     height: $navigation_bar_height
-    margin: 0px 0.4em
+    line-height: $navigation_bar_height
+    padding: 0 0 0 25px
 
     img
       height: 20px
       width: 89px
-      margin: 18px
 
-  .user
+  .menu
     @include inline-block
-    position: relative
-    width: 360px
     height: $navigation_bar_height
     float: right
     color: $user_navigation_text
 
-    .user_information
-      position: absolute
-      width: 200px
-      height: $navigation_bar_height
+    .user
+      @include inline-block
+      margin-right: 20px
 
       .avatar
-        @include inline-block
+        float: left
         height: $navigation_bar_height
         width: 40px
+        padding: 10px 0
+        margin-right: 10px
 
         img
           height: 40px
           width: 40px
-          margin: 10px 0px
-          -webkit-border-radius: 50%
-          -moz-border-radius: 50%
-          border-radius: 50%
+          -webkit-border-radius: 10%
+          -moz-border-radius: 10%
+          border-radius: 10%
 
-      .name
-        position: absolute
-        top: 5px
-        left: 60px
-        height: 25px
-        width: 140px
+      .user_information
+        float: left
+        height: $navigation_bar_height
+        padding: 6px 0
+        .name
+          height: 24px
 
-      .karma
-        position: absolute
-        top: 28px
-        left: 60px
-        height: 20px
-        width: 140px
-        font-size: 0.8em
-
-        .coloured
-          padding: 2px 10px
-          margin: 0px 6px 0 0
-          background-color: $user_navigation_karma_background
-          color: $user_navigation_karma_text
-          -webkit-border-radius: 5px
-          -moz-border-radius: 5px
-          border-radius: 5px
-
-          &:hover
-            color: $user_navigation_karma_text * 0.9
+        .karma
+          height: 20px
 
     .user_icons
-      position: absolute
-      width: 160px
+      float: right
       height: $navigation_bar_height
-      top: 0px
-      left: 200px
+      margin-right: 20px
 
       .icon
         @include inline-block
