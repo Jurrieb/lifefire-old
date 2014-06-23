@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
   has_one :userDetail
   has_one :userNotice
   has_one :userSmokeAddiction
-
   has_many :smokes
   has_many :sports
 
+  # Concerns
   include Smoking
-
+  include Sporting
 
   # Nested attributes for forms
   accepts_nested_attributes_for :userPreference,
