@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_many :smokes
   has_many :sports
 
+  include Smoking
+
+
   # Nested attributes for forms
   accepts_nested_attributes_for :userPreference,
                                 :userDetail,
@@ -64,18 +67,20 @@ class User < ActiveRecord::Base
     avatar_remote_url = url_picture
   end
 
+  # Create needed relations in sign_in
   def create_relations
-    # Create needed relations
     UserPreference.create(user_id: self.id) unless self.userPreference.present?
     UserDetail.create(user_id: self.id) unless self.userDetail.present?
     UserNotice.create(user_id: self.id) unless self.userNotice.present?
     UserSmokeAddiction.create(user_id: self.id) unless self.userSmokeAddiction.present?
   end
 
+  # User is following quit-smoking program?
   def smokes?
     self.userPreference.smokes?
   end
 
+  # User is following sports program
   def sports?
     self.userPreference.sports?
   end

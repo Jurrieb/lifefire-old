@@ -16,7 +16,6 @@ module StopSmoking
 
   private
 
-
   def params_component
     params.require(:component).permit(:value, :user_id)
   end

@@ -1,6 +1,6 @@
 .title
   .image = image_tag 'icon_sig.png'
-  h2 Voortgang stoppen met roken
+  h2 Voortgang met meer sporten
 
 .content
-  = line_chart User.group_by_day(:created_at).count
+  / = line_chart User.group_by_day(:created_at).count

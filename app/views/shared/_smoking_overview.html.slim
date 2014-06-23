@@ -5,19 +5,21 @@
 .content
   = line_chart User.group_by_day(:created_at).count
 
-  ul
-    li Besparing
-    li = "Vandaag: #{current_user.smokes.smoked_all_time}"
-    li = "Deze week: #{}"
-    li = "Deze maand: #{}"
+  .overview
+    ul
+      li Besparing
+      li = "Vandaag: #{current_user.smoked_today}"
+      li = "Deze week: #{current_user.smoked_this_week}"
+      li = "Deze maand: #{current_user.smoked_this_month}"
 
-  / ul
-  /   li Minder binnengekregen
-  /   li Sigaretten:
-  /   li = "Teer: #{@reduced_tar}kg"
+    ul
+      li Minder binnengekregen
+      li = "geminderd in totaal: #{reduced_cigarettes_helper(@current_user.reduced_cigarettes)}"
+      li = "Gemiddeld aantal sigaretten per dag #{@current_user.avarage_smokes}"
+      li = "Teer: #{@current_user.calculate_tar} mg gerookt"
 
-  / ul
-  /   li Totalen
-  /   li = "Vandaag gerookt: #{@smoked_today}"
-  /   li = "Sinds aanmelden bij programma #{@all_time}"
-  /   li = "Dit heeft #{@all_costs} gekost"
+    ul
+      li Totalen
+      li = "Vandaag gerookt: #{current_user.smoked_today}"
+      li = "Sinds aanmelden bij programma #{current_user.smoked_all_time}"
+      li = "Dit heeft #{number_to_currency(current_user.all_costs, locale: :nl)} gekost"
