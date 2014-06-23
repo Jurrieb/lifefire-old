@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140623105848) do
+=======
+ActiveRecord::Schema.define(version: 20140623111027) do
+>>>>>>> 75122ddf2fba04e564034142df0a496294bdd936
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140623105848) do
     t.integer  "distance"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "burned_calories",   default: 0
   end
 
   create_table "user_details", force: true do |t|

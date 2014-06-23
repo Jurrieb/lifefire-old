@@ -1,22 +1,16 @@
-/ Variable available
-/ = @smoked_today
-/ = @all_time
-/ = @all_costs
+.title
+  .image = image_tag 'icon_sig.png'
+  h2 Ik stop met roken
 
-.component
-  .title
-    .image = image_tag 'icon_sig.png'
-    h2 Ik stop met roken
+.date-select
+  - (Date.today - 5.days..Date.today).each do |date|
+    - if date == Date.today
+      span.active = link_to I18n.localize(date, format: '%d %B'), '#'
+    - else
+      span = link_to I18n.localize(date, format: '%d %B'), '#'
 
-  .date-select
-    - (Date.today - 5.days..Date.today).each do |date|
-      - if date == Date.today
-        span.active = link_to I18n.localize(date, format: '%d %B'), '#'
-      - else
-        span = link_to I18n.localize(date, format: '%d %B'), '#'
-
-  .content
-    = form_for @smoke, url: analysis_index_path, method: :post do |f|
-      = f.label :count, "Hoeveel sigaretten heb je vandaag, op #{I18n.localize(Date.today, format: '%d %B')} gerookt."
-      = f.range_field :count, in: 0..50, step: '1'
-      = f.submit I18n.t('form.submit.smoke')
+.content
+  = form_for @smoke, url: analysis_index_path, method: :post do |f|
+    = f.label :count, "Hoeveel sigaretten heb je vandaag, op #{I18n.localize(Date.today, format: '%d %B')} gerookt."
+    = f.range_field :count, in: 0..50, step: '1'
+    = f.submit I18n.t('form.submit.smoke')

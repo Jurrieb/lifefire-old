@@ -24,6 +24,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'open_uri_redirections'
 
+# Calculations
+gem 'unitwise'
+
 # Paperclip
 gem 'paperclip', '~> 4.1'
 

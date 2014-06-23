@@ -3,16 +3,15 @@ module Sports
   extend ActiveSupport::Concern
 
   included do
-    before_action :all_populair_sports
+    before_action :all_populair_sports, only: :index
     before_action :set_sport
   end
 
   def add_to_sports_counter(sports_input)
-    @sport = Sport.find_or_create_by(user_id: current_user.id,
-                                     date: Date.today,
-                                     populair_sport_id: sports_input[:populair_sport_id])
+    @sport = Sport.new(sport_params)
+    @sport.user_id = current_user.id
 
-    if @sport.update!(sport_params)
+    if @sport.save!
       flash[:success] = t('flash.sports_added')
     else
       flash[:error] = t('flash.sports_not_added')
@@ -21,31 +20,27 @@ module Sports
 
   private
 
-  def calculate_calories(sports_id, duration)
-    # Find sports
-    sport = PopulairSport.find(sports_id)
-
-    # User's weigth in grams
-    user_weight = current_user.userDetails.weight
-  end
-
   def sport_params
-    params.require(:sport).permit(:distance, :duration, :populair_sport_id)
+    params.require(:sport).permit(:distance, :date, :duration, :populair_sport_id)
   end
 
+  # Add new sports entry
   def set_sport
     @sport = Sport.new
   end
 
+  # List of populair spots in the Netherlands
   def all_populair_sports
     @populair_sports = PopulairSport.all
   end
 
+  # Total time sported today
   def get_total_duration_today
     @sport_duration_today = Sport.where(user_id: current_user.id,
                                         date: Date.today).sum(:duration)
   end
 
+  # All Total time sported
   def get_total_duration
     @sport_duration = Sport.where(user_id: current_user.id).sum(:duration)
   end
