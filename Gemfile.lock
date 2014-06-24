@@ -27,8 +27,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
-    attr_required (1.0.0)
     bcrypt (3.1.7)
     blankslate (2.1.2.4)
     bourbon (3.2.3)
@@ -57,16 +57,10 @@ GEM
     execjs (2.2.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    fb_graph (2.7.15)
-      httpclient (>= 2.2.0.2)
-      multi_json (>= 1.3)
-      rack-oauth2 (>= 0.14.4)
-      tzinfo
     groupdate (2.2.0)
       activesupport (>= 3)
     hashie (2.1.2)
     hike (1.2.3)
-    httpclient (2.4.0)
     i18n (0.6.9)
     jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
@@ -79,6 +73,10 @@ GEM
       turbolinks
     json (1.8.1)
     jwt (1.0.0)
+    koala (1.10.0rc2)
+      addressable
+      faraday
+      multi_json
     liner (0.2.4)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -124,12 +122,6 @@ GEM
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
-    rack-oauth2 (1.0.8)
-      activesupport (>= 2.3)
-      attr_required (>= 0.0.5)
-      httpclient (>= 2.2.0.2)
-      multi_json (>= 1.3.6)
-      rack (>= 1.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.1)
@@ -213,11 +205,11 @@ DEPENDENCIES
   chartkick
   coffee-rails (~> 4.0.0)
   devise
-  fb_graph
   groupdate
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  koala (~> 1.10.0rc)
   neat
   normalize-rails
   omniauth-facebook

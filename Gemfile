@@ -20,7 +20,7 @@ gem 'chartkick'
 gem 'groupdate'
 
 # Facebook gem
-gem 'fb_graph'
+gem 'koala', '~> 1.10.0rc'
 
 # Authentication
 gem 'devise'
