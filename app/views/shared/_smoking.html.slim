@@ -12,8 +12,7 @@
 .content
   = form_for @smoke, url: analysis_index_path, method: :post,
                                                remote: true,
-                                               html: { class: 'remote',
-                                                       oninput: "output.value=parseInt(smoke_count.value)" } do |f|
+                                               html: { class: 'remote' } do |f|
     = f.label :count, "Hoeveel sigaretten heb je vandaag, op #{I18n.localize(Date.today, format: '%d %B')} gerookt."
 
     .range
