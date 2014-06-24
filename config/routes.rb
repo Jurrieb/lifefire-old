@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :messages, only: :index
   resources :friends, only: [:index]
 
-  get '/invite', to: 'friends#invite'
+  get '/write_on_wall', to: 'friends#write_on_wall'
 
   # Devise routes
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }
