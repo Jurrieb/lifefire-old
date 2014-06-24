@@ -10,7 +10,15 @@
       span = link_to I18n.localize(date, format: '%d %B'), '#'
 
 .content
-  = form_for @smoke, url: analysis_index_path, method: :post, remote: true, html: { class: 'remote' } do |f|
+  = form_for @smoke, url: analysis_index_path, method: :post,
+                                               remote: true,
+                                               html: { class: 'remote',
+                                                       oninput: "output.value=parseInt(smoke_count.value)" } do |f|
     = f.label :count, "Hoeveel sigaretten heb je vandaag, op #{I18n.localize(Date.today, format: '%d %B')} gerookt."
-    = f.range_field :count, in: 0..50, step: '1'
-    = f.submit I18n.t('form.submit.smoke')
+
+    .range
+      output = @smoke.count
+
+      = f.hidden_field :date, value: Date.today
+      = f.range_field :count, in: 0..50, step: '1'
+      = f.submit I18n.t('form.submit.smoke')
