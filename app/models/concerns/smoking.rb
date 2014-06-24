@@ -14,11 +14,6 @@ module Smoking
     Unitwise(0.00001, 'kilogram')
   end
 
-  # Calculate price and convert to localed price
-  # def calculate_price
-  #   Smoke.find_self.sum(:count) * cigaret_price
-  # end
-
   # User has paid for all cigarrets
   def all_costs
     smoked_all_time * cigaret_price

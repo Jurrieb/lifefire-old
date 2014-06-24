@@ -46,11 +46,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(#:name,
-                                 #:email,
-                                 #:password,
-                                 #:avatar,
-                                 # Preferences
+    params.require(:user).permit(# Preferences
                                  userPreference_attributes: [:id,
                                                              :smokes,
                                                              :sports,
