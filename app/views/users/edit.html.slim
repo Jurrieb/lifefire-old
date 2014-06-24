@@ -39,7 +39,7 @@
     .content
       = f.fields_for :userPreference do |up|
         / Render switches
-        = render partial: 'shared/switch', locals: { subject: 'smokes', form: up }
+        = render partial: 'shared/switch', locals: { subject: 'smokes', form: up}
         = render partial: 'shared/switch', locals: { subject: 'sports', form: up }
         hr
         = render partial: 'shared/switch', locals: { subject: 'profile', form: up }

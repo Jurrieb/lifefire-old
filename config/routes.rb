@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   # Application routes
   resources :users, only: [:edit, :update]
+  get '/setup', to: 'users#setup'
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
   resources :friends, only: [:index]
