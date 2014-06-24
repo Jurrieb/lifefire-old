@@ -1,24 +1,9 @@
 class AnalysisController < ApplicationController
 
-  # Include modules TODO: Based upon settings user
-  # include Sports
-
   include StopSmoking
   include Sports
 
   def index
-    # # Current user follows quit smoking program
-    # if current_user.smokes?
-    #   # @all_time = smoked_all_time
-    #   # @all_costs = calculate_price(@all_time)
-    #   # @reduced_cigaret = 25435
-    #   # @reduced_tar = calculate_tar(@reduced_cigaret)
-    # end
-    # # Current users follows sports program
-    # if current_user.sports?
-    #   @sports_duration_today = get_total_duration_today
-    #   @sport_duration = get_total_duration
-    # end
   end
 
   def create
