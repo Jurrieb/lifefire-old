@@ -15,6 +15,8 @@ $(document).ready ->
               messageCenter.prepend('<li data-id="' + value.id + ' "><span class="coloured">' + value.karma + ' karma</span>' + value.name + '</li>')
             else
               messageCenter.prepend('<li data-id="' + value.id + ' ">' + value.name + '</li>')
+          if results.length == 0
+            messageCenter.prepend('<li>Er zijn geen nieuwe berrichten</li>')
       messageCenter.slideDown("fast")
     else
       messageCenter = $(".messageCenter")
@@ -33,4 +35,17 @@ $(document).ready ->
               messageCenter.prepend('<li data-id="' + value.id + ' "><span class="coloured">' + value.karma + ' karma</span>' + value.name + '</li>')
             else
               messageCenter.prepend('<li data-id="' + value.id + ' ">' + value.name + '</li>')
+
+          if results.length == 0
+            messageCenter.prepend('<li>Er zijn geen nieuwe berrichten</li>')
         messageCenter.slideDown("fast")
+
+  callback = -> 
+    $.ajax '/messages/count.json',
+      type: 'GET'
+      dataType: 'html'
+      success: (data, textStatus, jqXHR) ->
+        alert(data)
+    setTimeout callback, 10000
+
+  callback()

@@ -1,14 +1,16 @@
 body
   background: $background
   font-family: 'open_sansregular'
-
 .container
-  .components-holder
-    @include outer-container
-
-    margin-top: 2em
-    margin-bottom: 3em
-
+  +outer-container
+.content
+  +span-columns(9 of 12)
+  padding: $gutter 0 $gutter $gutter
+.component_holder
+  +span-columns(4.5 of 9)
+.sidebar
+  +span-columns(3)
+  padding: $gutter $gutter 0 0
 .karma
   font-size: 10px
 .coloured

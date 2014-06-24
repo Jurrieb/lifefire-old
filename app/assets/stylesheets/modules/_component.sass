@@ -1,81 +1,69 @@
-.components-holder
-  position: relative
-  width: 100%
-  min-height: 100%
+.component
+  +span-columns(12)
+  background-color: $component_background
+  color: $component_text
+  border: 1px solid $component_border
+  border-bottom: 2px solid $component_border
+  margin-bottom: 10px
 
-  .bar_component
-    +span-columns(12)
-    margin: 2em auto
+  .title
+    background-color: $component_title_background
+    padding: 5px 15px
+    height: 44px
+    border-bottom: 1px solid $component_border
 
-    input[type=submit]
-      float: right
+    h2
+      +inline-block
+      padding-left: 10px
+      color: $component_title_color
+      font-weight: normal
+      font-size: 1.4em
+      line-height: 34px
 
-  // form
-  //   .component
-  //     &:nth-child(odd)
-  //       +omega
+    .icon
+      +inline-block
+      font-size: 1.4em
 
-  .component
-    +span-columns(6 of 12)
-    background-color: $component_background
-    color: $component_text
-    border: 1px solid $component_border
-    border-bottom: 2px solid $component_border
-    margin-top: 1em
+    .image
+      +inline-block
+      vertical-align: middle
 
-    .title
-      background-color: $component_title_background
-      padding: 5px 15px
-      border-bottom: 1px solid $component_border
+  .date-select
+    padding: 0px 15px
+    border-top: 1px solid $component_border
+    border-bottom: 1px solid $component_border
+    height: 30px
+    line-height: 30px
 
-      h2
-        +inline-block
-        padding-left: 20px
-        color: $component_title_color
-        font-weight: normal
-        font-size: 1.8em
+    span
+      +inline-block
+      width: calc(100%/6)
+      text-align: center
+      overflow: hidden
+      text-overflow: ellipsis
+      height: 28px
+      line-height: 28px
+      font-size: 0.8em
 
-      .icon
-        +inline-block
-        font-size: 1.4em
+      a
+        color: $component_date_link
 
-      .image
-        +inline-block
+        &:hover
+          color: $component_date_link * 1.1
 
-    .date-select
-      padding: 0px 15px
-      border-top: 1px solid $component_border
-      border-bottom: 1px solid $component_border
-      height: 30px
-      line-height: 30px
+      &.active
+        font-weight: bold
 
-      span
-        @include inline-block
-        width: calc(100%/6)
-        text-align: center
-        overflow: hidden
-        text-overflow: ellipsis
-        height: 28px
-        line-height: 28px
+  .content
+    padding: 30px
+    width: 100%
 
-        a
-          color: $component_date_link
+  .overview
+    ul
+      +inline-block
+      width: 33.333%
+      text-align: top
 
-          &:hover
-            color: $component_date_link * 1.1
-
-        &.active
+      li
+        &:first-child
           font-weight: bold
-
-    .content
-      padding: 30px
-
-    .overview
-      ul
-        +inline-block
-        width: 33.333%
-        text-align: top
-
-        li
-          &:first-child
-            font-weight: bold

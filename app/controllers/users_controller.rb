@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   def update
     # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
-
     if @user.update!(user_params)
       set_flash_and_redirect('success', t('flash.account_edited') , analysis_index_path)
     else

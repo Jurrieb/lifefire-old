@@ -25,6 +25,7 @@ html
     .container
       = render partial: 'shared/navigation'
       = render partial: 'shared/notification'
-
-      .components-holder
+      .content
         = yield
+      .sidebar
+        = render partial: 'shared/friends'
