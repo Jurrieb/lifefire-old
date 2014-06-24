@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy, :setup]
 
   def edit
 
@@ -9,9 +9,8 @@ class UsersController < ApplicationController
   def update
     # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
-
     if @user.update!(user_params)
-      set_flash_and_redirect('success', t('flash.account_edited') , edit_user_path(@user.id))
+      set_flash_and_redirect('success', t('flash.account_edited') , analysis_index_path)
     else
       set_flash_and_redirect('error', t('flash.account_not_edited') , edit_user_path(@user.id))
     end
@@ -27,6 +26,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def setup
+    render layout: "basic" 
+    @user.userPreference.smokes = true
+    @user.userPreference.sports = true
+    puts @user.userPreference.smokes.inspect
+  end
+
   private
 
   def set_user
@@ -35,6 +41,7 @@ class UsersController < ApplicationController
                           :userDetail,
                           :userNotice,
                           :userSmokeAddiction).find(current_user.id)
+
   end
 
   def user_params
