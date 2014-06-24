@@ -1,18 +1,19 @@
-.title
-  .image = image_tag 'icon_sig.png'
-  h2 Hoeveel calorieën heb ik verbrand?
+.component
+  .title
+    .image = image_tag 'icon_sig.png'
+    h2 Hoeveel calorieën heb ik verbrand?
 
-.content
-  = area_chart current_user.sports.group_by_day(:created_at).sum(:burned_calories), library: {backgroundColor: "#fcfcfc"}
+  .content
+    = area_chart current_user.sports.group_by_day(:created_at).sum(:burned_calories), library: {backgroundColor: "#fcfcfc"}
 
-  .overview
-    ul
-      li Calorieën verbrand
-      li = "Laatste: #{current_user.last_workout_calories}"
-      li = "Gemiddeld: #{current_user.avarage_calories_burned}"
-      li = "Totaal: #{current_user.total_workout_calories}"
+    .overview
+      ul
+        li Calorieën verbrand
+        li = "Laatste: #{current_user.last_workout_calories}"
+        li = "Gemiddeld: #{current_user.avarage_calories_burned}"
+        li = "Totaal: #{current_user.total_workout_calories}"
 
-    ul
-      li Gemiddelde snelheid
-      li = "Laatste: #{current_user.last_workout_with_km_calories}"
-      li = "Totaal: #{@current_user.total_workout_with_km_calories}"
+      ul
+        li Gemiddelde snelheid
+        li = "Laatste: #{current_user.last_workout_with_km_calories}"
+        li = "Totaal: #{@current_user.total_workout_with_km_calories}"
