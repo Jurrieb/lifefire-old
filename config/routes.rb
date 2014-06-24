@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+
   # Application routes
   resources :users, only: [:edit, :update]
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
+  resources :friends, only: [:index]
+
+  get '/invite', to: 'friends#invite'
 
   # Devise routes
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }
