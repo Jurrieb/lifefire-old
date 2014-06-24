@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :json => @messages}
+  	end
   end
+
+  def new_message_count
+
   end
 end

@@ -1,16 +1,14 @@
-= link_to 'vrienden', friends_path
-.component
-  / 'Quit smoking' module
-  = render partial: 'shared/smoking', locals: { smoke: @smoke } if current_user.smokes?
-
-.component
-  / Sports module
-  = render partial: 'shared/sport', locals: { sport: @sport } if current_user.sports?
-
-.component
-  / Graphical representation for smoking
-  = render partial: 'shared/smoking_overview', locals: { sport: @sport } if current_user.smokes?
-
-.component
-  / Graphical representation for sports
-  = render partial: 'shared/sport_overview', locals: { sport: @sport } if current_user.sports?
+.component_holder
+  .component
+    / Sports module
+    = render partial: 'shared/sport', locals: { sport: @sport } if current_user.sports?
+  .component
+    / Graphical representation for sports
+    = render partial: 'shared/sport_overview', locals: { sport: @sport } if current_user.sports?
+.component_holder
+  .component
+    / 'Quit smoking' module
+    = render partial: 'shared/smoking', locals: { smoke: @smoke } if current_user.smokes?
+  .component
+    / Graphical representation for smoking
+    = render partial: 'shared/smoking_overview', locals: { sport: @sport } if current_user.smokes?
