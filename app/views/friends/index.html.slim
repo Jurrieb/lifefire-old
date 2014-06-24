@@ -1,0 +1,18 @@
+h1 Friends#index
+p Find me in app/views/friends/index.html.slim
+
+= @graph.inspect
+
+hr
+
+= @friends.inspect
+
+hr
+= "INVALID @ #{current_user.oauth_expires_at}"
+hr
+
+= link_to 'invite', invite_path
+
+hr
+
+= link_to 'terug', analysis_index_path
