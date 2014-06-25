@@ -15,5 +15,10 @@
                                                  remote: true,
                                                  html: { class: 'remote' } do |f|
       = f.label :count, "Hoeveel sigaretten heb je vandaag, op #{I18n.localize(Date.today, format: '%d %B')} gerookt."
-      = f.range_field :count, in: 0..50, step: '1'
-      = f.submit I18n.t('form.submit.smoke')
+
+      .range
+        output = @smoke.count
+
+        = f.hidden_field :date, value: Date.today
+        = f.range_field :count, in: 0..50, step: '1'
+        = f.submit I18n.t('form.submit.smoke')
