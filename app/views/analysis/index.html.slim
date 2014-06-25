@@ -1,12 +1,13 @@
-.component_holder
+- if current_user.sports?
+  .component_holder
     / Sports module
-    = render partial: 'shared/sport', locals: { sport: @sport } if current_user.sports?
-
+    = render partial: 'shared/sport', locals: { sport: @sport }
     / Graphical representation for sports
-    = render partial: 'shared/sport_overview', locals: { sport: @sport } if current_user.sports?
-.component_holder
-    / 'Quit smoking' module
-    = render partial: 'shared/smoking', locals: { smoke: @smoke } if current_user.smokes?
+    = render partial: 'shared/sport_overview', locals: { sport: @sport }
 
+- if current_user.smokes?
+  .component_holder
+    / 'Quit smoking' module
+    = render partial: 'shared/smoking', locals: { smoke: @smoke }
     / Graphical representation for smoking
-    = render partial: 'shared/smoking_overview', locals: { sport: @sport } if current_user.smokes?
+    = render partial: 'shared/smoking_overview', locals: { sport: @sport }

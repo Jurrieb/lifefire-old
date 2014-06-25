@@ -40,7 +40,7 @@ $(document).ready ->
             messageCenter.prepend('<li>Er zijn geen nieuwe berrichten</li>')
         messageCenter.slideDown("fast")
 
-  callback = -> 
+  callback = ->
     $.ajax '/messages/count.json',
       type: 'GET'
       dataType: 'html'

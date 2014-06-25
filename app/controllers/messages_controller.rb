@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   	end
   end
 
-  def new_message_count
+  def count
 
   end
 end

@@ -4,7 +4,7 @@
     h2 Hoeveel calorieën heb ik verbrand?
 
   .content
-    = area_chart current_user.sports.group_by_day(:created_at).sum(:burned_calories), library: {backgroundColor: "#fcfcfc"}
+    = area_chart sports_overview_path, library: {backgroundColor: "#fcfcfc"}
 
     .overview
       ul
