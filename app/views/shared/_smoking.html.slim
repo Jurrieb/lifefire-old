@@ -3,7 +3,7 @@
     .image = image_tag 'icon_sig.png'
     h2 Ik stop met roken
 
-  .date-select
+  .date-select.smoke
     - (Date.today - 5.days..Date.today).each do |date|
       - if date == Date.today
         = link_to I18n.localize(date, format: '%d %B'), '#', class: 'active'

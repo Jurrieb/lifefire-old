@@ -1,2 +1,4 @@
-.graph id="#{name}" data-url="#{link}"
-  = area_chart link, library: {backgroundColor: "#fcfcfc"}
+.graph id="chart-#{name}" data-url="#{link}"
+  javascript:
+    new Chartkick.AreaChart("chart-#{name}", "#{link}");
+
