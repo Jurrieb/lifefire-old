@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get '/write_on_wall', to: 'friends#write_on_wall'
 
+  # Search for smokes
+  get '/find-smokes', to: 'analysis#find_smoke_for_date'
+
   # Graphical routes
   get '/sports-overview', to: 'analysis#current_user_sports_graphic'
   get '/smokes-overview', to: 'analysis#current_user_smokes_graphic'
