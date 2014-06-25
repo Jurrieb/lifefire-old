@@ -14,7 +14,7 @@
     = form_for @smoke, url: analysis_index_path, method: :post,
                                                  remote: true,
                                                  html: { class: 'remote smokes' } do |f|
-      = f.label :counted, "Hoeveel sigaretten heb je vandaag, op #{ content_tag(:span, I18n.localize(Date.today, format: '%d %B'), class: 'date_in_text')} gerookt.".html_safe
+      = f.label :counted, "Hoeveel sigaretten heb je vandaag, op #{ content_tag(:span, I18n.localize(Date.today, format: '%d %B'), class: 'date_in_text_smoke')} gerookt.".html_safe
 
       .range
         output = @smoke.counted
