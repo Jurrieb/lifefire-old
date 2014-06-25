@@ -3,6 +3,8 @@ class AnalysisController < ApplicationController
   include StopSmoking
   include Sports
 
+  # include ActionController::Live
+
   def index
   end
 
@@ -19,10 +21,16 @@ class AnalysisController < ApplicationController
   end
 
   def current_user_sports_graphic
+    # response.stream.write render json: current_user.sports.group_by_day(:created_at).sum(:burned_calories)
     render json: current_user.sports.group_by_day(:created_at).sum(:burned_calories)
+  # ensure
+  #   response.stream.close
   end
 
   def current_user_smokes_graphic
+    #response.stream.write render json: current_user.smokes.group_by_day(:date).sum(:count)
     render json: current_user.smokes.group_by_day(:date).sum(:count)
+  # ensure
+  #   response.stream.close
   end
 end

@@ -4,7 +4,7 @@
     h2 Voortgang stoppen met roken
 
   .content
-    = area_chart smokes_overview_path, library: {backgroundColor: "#fcfcfc"}
+    = render partial: 'shared/graph', locals: {name: 'smokes', link: smokes_overview_path}
 
     .overview
       ul
