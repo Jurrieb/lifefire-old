@@ -16,7 +16,7 @@ class refreshGraph
         else
           id = 'chart-sports'
         # Create new chart
-        Chartkick.AreaChart(id, graph_url)
+        new Chartkick.AreaChart(id, graph_url)
 
 $ ->
   refresh_graph = new refreshGraph if ($ '.graph').length > 0
