@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   # For all actions, authenticate user
   before_action :authenticate_user!
-  before_action :check_settings
+  before_action :check_settings, only: :facebook
 
   # Set flash message and redirect
   def set_flash_and_redirect(status, message, redirect_url)
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_settings
-    if current_user 
+    if current_user
       unless current_user.userPreference.smokes || current_user.userPreference.sports
         redirect_to setup_path unless controller_name == 'users'
       end
