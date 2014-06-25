@@ -14,11 +14,11 @@
     = form_for @smoke, url: analysis_index_path, method: :post,
                                                  remote: true,
                                                  html: { class: 'remote smokes' } do |f|
-      = f.label :count, "Hoeveel sigaretten heb je vandaag, op #{I18n.localize(Date.today, format: '%d %B')} gerookt."
+      = f.label :counted, "Hoeveel sigaretten heb je vandaag, op #{ content_tag(:span, I18n.localize(Date.today, format: '%d %B'), class: 'date_in_text')} gerookt.".html_safe
 
       .range
-        output = @smoke.count
-        = f.range_field :count, in: 0..50, step: '1'
+        output = @smoke.counted
+        = f.range_field :counted, in: 0..50, step: '1'
         = f.submit I18n.t('form.submit.smoke')
 
         .hidden_date = f.hidden_field :date, value: Date.today
