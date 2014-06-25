@@ -45,7 +45,7 @@ $(document).ready ->
       type: 'GET'
       dataType: 'html'
       success: (data, textStatus, jqXHR) ->
-        alert(data)
+        console.log data
     setTimeout callback, 10000
 
   callback()
