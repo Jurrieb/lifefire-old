@@ -14,7 +14,9 @@ class SubmitForm
       if form.hasClass('smokes') || form.hasClass('sports')
         year = (new Date).getFullYear()
         date = ($ e.target).closest('.component').find('.date-select .active').text()
-        date_parsed = new Date(date + year)
+        date_parsed = new Date(date + year).strftime('%Y-%m-%d')
+
+        console.log  date_parsed
         # Set date hidden input field
         date_input = ($ '.hidden_date input[type=hidden]').val(date_parsed)
 
