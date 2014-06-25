@@ -18,6 +18,10 @@ module Sports
     end
   end
 
+  def find_sport_for_date
+    render json: Sport.find_or_create_by(user_id: current_user.id, date: Date.parse(params[:date]))
+  end
+
   private
 
   def sport_params
