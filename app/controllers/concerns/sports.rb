@@ -7,7 +7,7 @@ module Sports
     before_action :set_sport
   end
 
-  def add_to_sports_counter(sports_input)
+  def add_to_sports_counter
     @sport = Sport.new(sport_params)
     @sport.user_id = current_user.id
 

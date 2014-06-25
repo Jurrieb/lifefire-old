@@ -8,8 +8,8 @@ class AnalysisController < ApplicationController
 
   def create
     # Check for spots or smoking params
-    add_to_smoking_counter(params[:smoke][:count].to_i) if params[:smoke]
-    add_to_sports_counter(params[:sport]) if params[:sport]
+    add_to_smoking_counter if params[:smoke]
+    add_to_sports_counter if params[:sport]
     # Redirect
     redirect_to :back
   end
@@ -23,6 +23,6 @@ class AnalysisController < ApplicationController
   end
 
   def current_user_smokes_graphic
-    render json: current_user.smokes.group_by_day(:date).sum(:count)
+    render json: current_user.smokes.group_by_day(:date).sum(:counted)
   end
 end
