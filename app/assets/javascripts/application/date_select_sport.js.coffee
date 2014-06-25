@@ -1,11 +1,9 @@
-class DateSelectSmoke
+class DateSelectSport
   constructor: ->
     # Date form
-    @select = ($ '.date-select.smoke')
-    @dates = ($ '.date-select.smoke a')
-    @date_in_text = ($ 'span.date_in_text_smoke')
-    @smoked_value = ($ '.range output')
-    @counted_value = ($ '#smoke_counted')
+    @select = ($ '.date-select.sport')
+    @dates = ($ '.date-select.sport a')
+    @date_in_text = ($ 'span.date_in_text_sport')
 
     # Add Localed dates
     Date.ext.locales['nl'] = {
@@ -32,27 +30,17 @@ class DateSelectSmoke
       # Add active state to selected
       ($ e.target).addClass('active')
       # Get values via AJAX request
-      $.ajax '/find-smokes?date=' + date_selected,
+      $.ajax '/find-sport?date=' + date_selected,
           type: 'GET'
           dataType: 'json'
           success: (data, textStatus, jqXHR) =>
+            console.log data
             # Replace text and numbers
             date_in_view = new Date(data['date'])
             # Set date localisation
             date_in_view.locale = "nl"
             # Set in view
             @date_in_text.text(date_in_view.strftime('%d %B'))
-            @smoked_value.text(data['counted'])
-            @counted_value.val(data['counted'])
-            # Edit css for slider thumb
-            @range = ($ '.range input[type=range]')
-            rangeValue = @range.val()
-            # Percentage of slider
-            rangeValuePercentage = @range.val() * 2
-            # Corrected width for slider
-            rangeWidth = ((@range.width() - 30) / 100) * rangeValuePercentage
-            # Set text and add left css px's
-            @smoked_value.css('left', rangeWidth + 'px')
 
 $ ->
-  date_select = new DateSelectSmoke if ($ '.date-select').length > 0
+  date_select2 = new DateSelectSport if ($ '.date-select').length > 0
