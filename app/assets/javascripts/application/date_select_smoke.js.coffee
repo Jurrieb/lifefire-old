@@ -1,9 +1,8 @@
-class DateSelect
+class DateSelectSmoke
   constructor: ->
     # Date form
-    @select = ($ '.date-select')
-    @dates = ($ '.date-select a')
-
+    @select = ($ '.date-select.smoke')
+    @dates = ($ '.date-select.smoke a')
     @date_in_text = ($ 'span.date_in_text')
     @smoked_value = ($ '.range output')
     @counted_value = ($ '#smoke_counted')
@@ -21,6 +20,7 @@ class DateSelect
         #X: '%T'
     }
 
+    # When clicking on a date link
     @dates.on 'click', (e) =>
       # Nothing happens
       e.preventDefault()
@@ -56,4 +56,4 @@ class DateSelect
             @smoked_value.css('left', rangeWidth + 'px')
 
 $ ->
-  date_select = new DateSelect if ($ '.date-select').length > 0
+  date_select = new DateSelectSmoke if ($ '.date-select').length > 0
