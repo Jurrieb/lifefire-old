@@ -19,10 +19,10 @@ class AnalysisController < ApplicationController
   end
 
   def current_user_sports_graphic
-    render json: current_user.sports.group_by_day(:created_at).sum(:burned_calories)
+    render json: current_user.sports.group_by_day(:created_at).limit(7).sum(:burned_calories)
   end
 
   def current_user_smokes_graphic
-    render json: current_user.smokes.group_by_day(:date).sum(:counted)
+    render json: current_user.smokes.group_by_day(:date).limit(7).sum(:counted)
   end
 end
