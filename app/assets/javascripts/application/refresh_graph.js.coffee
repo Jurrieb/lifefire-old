@@ -5,8 +5,6 @@ class refreshGraph
 
     # On form change, reload graphs
     @form.on 'change', (e) =>
-      alert 'Change'
-      console.log e
       for graph in @graphs
         # Set graph element
         graphic = ($ graph)
