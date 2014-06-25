@@ -6,15 +6,15 @@
   .date-select
     - (Date.today - 5.days..Date.today).each do |date|
       - if date == Date.today
-        span.active = link_to I18n.localize(date, format: '%d %B'), '#'
+        = link_to I18n.localize(date, format: '%d %B'), '#', class: 'active'
       - else
-        span = link_to I18n.localize(date, format: '%d %B'), '#'
+        = link_to I18n.localize(date, format: '%d %B'), '#'
 
   .content
     P Vul het de gevraagde gegevens in voor een gezondsheids analyse!
     = form_for @sport, url: analysis_index_path, method: :post,
                                                  remote: true,
-                                                 html: { class: 'remote' } do |f|
+                                                 html: { class: 'remote sports' } do |f|
 
       = f.label :populair_sport_id, "Welke sport heb je beoefend?"
       = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
@@ -25,6 +25,6 @@
       = f.label :duration, 'Hoelang duurde deze sessie in minuten?'
       = f.number_field :duration, value: 0
 
-      = f.hidden_field :date, value: Date.today
+      .hidden_date = f.hidden_field :date, value: Date.today
 
       = f.submit I18n.t('form.submit.sports')
