@@ -43,7 +43,6 @@
 // Button styling
 #{$all-button-inputs}
   @include disable_defined_style_and_overwrite_with_color($submit_background_color)
-  margin: 20px 0px
   padding: 10px 30px
 
 #{$all-button-inputs-hover}
@@ -84,7 +83,7 @@ select
 // Checkbox switch style
 .checkbox_field
   display: block
-  margin: 1em auto
+  margin: 0 auto 1em
 
   label
     +inline-block
@@ -167,6 +166,7 @@ select
 // Inline rangefield
 .range
   position: relative
+  margin-bottom: 1em
 
   output
     position: absolute

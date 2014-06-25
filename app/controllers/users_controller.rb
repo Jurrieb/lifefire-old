@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def setup
-    render layout: "basic" 
+    render layout: "backdrop" 
     @user.userPreference.smokes = true
     @user.userPreference.sports = true
     puts @user.userPreference.smokes.inspect
