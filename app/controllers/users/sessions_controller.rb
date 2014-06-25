@@ -1,5 +1,8 @@
 class Users::SessionsController < Devise::SessionsController
+
+  render layout: "backdrop"
+
   def create
-    render layout: "backdrop" 
+
   end
 end
