@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
   end
 
   def count
-
+    # Render JSON of messages where last is first
+    render json: Message.where(user_id: current_user.id).order('id DESC')
   end
 end
