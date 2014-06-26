@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_one :userDetail
   has_one :userNotice
   has_one :userSmokeAddiction
+  has_one :userProfile
+
   has_many :smokes
   has_many :sports
   has_many :messages
@@ -73,6 +75,7 @@ class User < ActiveRecord::Base
   # Create needed relations in sign_in
   def create_relations
     UserPreference.create(user_id: self.id) unless self.userPreference.present?
+    UserProfile.create(user_id: self.id) unless self.userProfile.present?
     UserDetail.create(user_id: self.id) unless self.userDetail.present?
     UserNotice.create(user_id: self.id) unless self.userNotice.present?
     UserSmokeAddiction.create(user_id: self.id) unless self.userSmokeAddiction.present?
