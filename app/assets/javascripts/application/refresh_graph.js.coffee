@@ -1,5 +1,6 @@
 class refreshGraph
   constructor: ->
+    
     @graphs = ($ '.graph')
     @form = ($ 'form')
 
@@ -20,3 +21,4 @@ class refreshGraph
 
 $ ->
   refresh_graph = new refreshGraph if ($ '.graph').length > 0
+

@@ -7,20 +7,18 @@
     = render partial: 'shared/graph', locals: {name: 'smokes', link: smokes_overview_path}
 
     .overview
-      ul
-        li Besparing
-        li = "Vandaag: #{current_user.smoked_today}"
-        li = "Deze week: #{current_user.smoked_this_week}"
-        li = "Deze maand: #{current_user.smoked_this_month}"
+      .column
+        h4 Besparing
+        ul
+          li = "Vandaag: #{current_user.smoked_today}"
+          li = "Deze week: #{current_user.smoked_this_week}"
+          li = "Deze maand: #{current_user.smoked_this_month}"
+          li = "Dit heeft #{number_to_currency(current_user.all_costs, locale: :nl)} gekost"
 
-      ul
-        li Minder binnengekregen
-        li = "geminderd in totaal: #{reduced_cigarettes_helper(@current_user.reduced_cigarettes)}"
-        li = "Gemiddeld aantal sigaretten per dag #{@current_user.avarage_smokes}"
-        li = "Teer: #{@current_user.calculate_tar} mg gerookt"
-
-      ul
-        li Totalen
-        li = "Vandaag gerookt: #{current_user.smoked_today}"
-        li = "Sinds aanmelden bij programma #{current_user.smoked_all_time}"
-        li = "Dit heeft #{number_to_currency(current_user.all_costs, locale: :nl)} gekost"
+      .column
+        h4 Minder binnengekregen
+        ul
+          li = "Geminderd in totaal: #{reduced_cigarettes_helper(@current_user.reduced_cigarettes)}"
+          li = "Gemiddeld aantal sigaretten per dag #{@current_user.avarage_smokes}"
+          li = "Teer: #{@current_user.calculate_tar} mg gerookt"
+          li = "Gerookt sinds aanmelden bij programma #{current_user.smoked_all_time}"

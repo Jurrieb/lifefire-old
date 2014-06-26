@@ -3,6 +3,8 @@ class AnalysisController < ApplicationController
   include StopSmoking
   include Sports
 
+  # include ActionController::Live
+
   def index
   end
 

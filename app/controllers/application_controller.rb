@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     redirect_to redirect_url
   end
 
+  # Check settings and redirect to user setup
   def check_settings
     if current_user
       unless current_user.userPreference.smokes || current_user.userPreference.sports
