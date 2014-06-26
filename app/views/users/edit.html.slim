@@ -13,10 +13,13 @@
 
       = f.fields_for :userSmokeAddiction do |usa|
         / Range for old smoke behaviour
+        = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
+
         .range
-          = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
+          output = @user.userSmokeAddiction.avarage_smokes_day
           = usa.range_field :avarage_smokes_day,
-                            in: 0..50, step: '1',
+                            in: 0..50,
+                            step: '1',
                             value: @user.userSmokeAddiction.avarage_smokes_day.to_i
 
       hr
