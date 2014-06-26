@@ -4,6 +4,7 @@ class Sport < ActiveRecord::Base
 
   # Relations
   belongs_to :populairSport
+  belongs_to :user
 
   # Custom scopes
   scope :by_user, -> (user_id) { where(user_id: user_id) }
@@ -23,12 +24,17 @@ class Sport < ActiveRecord::Base
   # Calculate burned calories from the to save sport activity
   def calculate_burned_calories
     # Find practised sport
-    practised_sport = PopulairSport.find(self.populair_sport_id)
-    # Integer to hour (kcal are based upon hours)
-    duration = self.duration / 60
-    # User weigth
-    weight = User.find(self.user_id).userDetail.weight
-    # define burned Kcalories
-    self.burned_calories = (practised_sport.kcal * duration) * weight
+    if practised_sport = PopulairSport.find(self.populair_sport_id)
+      # Integer to hour (kcal are based upon hours)
+      duration = self.duration / 60
+      # User weigth
+      weight = User.find(self.user_id).userDetail.weight
+      # define burned Kcalories
+      self.burned_calories = (practised_sport.kcal * duration) * weight
+    else
+      # Return with 0 calories burned
+      # or own users input
+      self.burned_calories = 0
+    end
   end
 end
