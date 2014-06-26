@@ -17,7 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: lifefire_prototype1
+  database: lifefire
   host: localhost
   username: postgres
   password:
