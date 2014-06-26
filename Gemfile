@@ -51,3 +51,21 @@ gem 'thin'
 
 # Heroku
 gem 'rails_12factor', group: :production
+
+# Testing purpose
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'simplecov', :require => false, :group => :test
+  gem 'rubocop', require: false
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'guard-rubocop'
+  gem 'guard-bundler', require: false
+  gem 'guard-livereload', require: false
+  gem 'guard-brakeman'
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
+end

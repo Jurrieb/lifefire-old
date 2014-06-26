@@ -29,10 +29,14 @@ module Smoking
   # Calculate avarage smokes a day
   def avarage_smokes
     smokes = Smoke.by_user(self.id)
-    # Count between date ranges
-    date_range_count = (smokes.first.date..smokes.last.date).count
-
-    Smoke.by_user(self.id).sum(:counted) / date_range_count unless date_range_count == 0
+    if smokes.any?
+      # Count between date ranges
+      date_range_count = (smokes.first.date..smokes.last.date).count
+      # Return smoked avarage
+      return Smoke.by_user(self.id).sum(:counted) / date_range_count unless date_range_count == 0
+    else
+      0
+    end
   end
 
   # Calculate smokes reduced from avarage
@@ -56,20 +60,28 @@ module Smoking
   # User Smoked today
   def smoked_today
     Smoke.by_user(self.id).by_date(Date.today).sum(:counted)
+  rescue
+    0
   end
 
   # User Smoked this week
   def smoked_this_week
     Smoke.by_user(self.id).this_week(Date.today).sum(:counted)
+  rescue
+    0
   end
 
   # User Smoked this month
   def smoked_this_month
     Smoke.by_user(self.id).this_month(Date.today).sum(:counted)
+  rescue
+    0
   end
 
   # User Smoked in all time
   def smoked_all_time
     Smoke.by_user(self.id).sum(:counted)
+  rescue
+    0
   end
 end

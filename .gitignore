@@ -17,3 +17,6 @@
 
 # Paperclip files
 /public/system
+
+# Simplecov
+/coverage

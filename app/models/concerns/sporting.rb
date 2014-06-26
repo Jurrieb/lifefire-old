@@ -4,12 +4,15 @@ module Sporting
   # Calories burned in latest workout
   def last_workout_calories
     set_sport_by_user.last.try(:burned_calories)
+  rescue
+    0
   end
 
   # Calories burned in total
   def total_workout_calories
-    calories = set_sport_by_user
-    return calories.sum(:burned_calories) if calories.any?
+    set_sport_by_user.sum(:burned_calories)
+  rescue
+    0
   end
 
   # Avarage calories burned
