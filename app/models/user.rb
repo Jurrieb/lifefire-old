@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_one :userSmokeAddiction
   has_many :smokes
   has_many :sports
+  has_many :messages
 
   # Concerns
   include Smoking
