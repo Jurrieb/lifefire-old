@@ -4,7 +4,7 @@ ruby '2.1.2'
 # Basic rails gems
 gem 'rails', '4.1.1'
 gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '4.0.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'slim-rails'
@@ -52,6 +52,9 @@ gem 'thin'
 # Heroku
 gem 'rails_12factor', group: :production
 
+# Better errors for sprockets
+gem 'sprockets_better_errors'
+
 # Testing purpose
 group :development, :test do
   gem 'database_cleaner'
@@ -67,5 +70,4 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
   gem 'guard-rspec'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
