@@ -4,7 +4,7 @@
     h2 Hoeveel calorieën heb ik verbrand?
 
   .content
-    = area_chart sports_overview_path, library: {backgroundColor: "#fcfcfc"}
+    = render partial: 'shared/graph', locals: {name: 'sports', link: sports_overview_path}
 
     .overview
       ul

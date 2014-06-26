@@ -21,9 +21,9 @@ module Smoking
 
   # Calculate tar in smoked cigarrets
   def calculate_tar
-    (Smoke.by_user(self.id).sum(:count) * cigaret_tar).convert_to('milligram')
-                                                      .to_i
-                                                      .round(2)
+    (Smoke.by_user(self.id).sum(:counted) * cigaret_tar).convert_to('milligram')
+                                                        .to_i
+                                                        .round(2)
   end
 
   # Calculate avarage smokes a day
@@ -31,7 +31,8 @@ module Smoking
     smokes = Smoke.by_user(self.id)
     # Count between date ranges
     date_range_count = (smokes.first.date..smokes.last.date).count
-    Smoke.by_user(self.id).sum(:count) / date_range_count
+
+    Smoke.by_user(self.id).sum(:counted) / date_range_count unless date_range_count == 0
   end
 
   # Calculate smokes reduced from avarage
@@ -44,7 +45,7 @@ module Smoking
       # Totaal smoked without our program
       smoked_total_without_program = avarage_smokes * date_range_count
       # Smoked with program
-      smoked_smokes = smokes.sum(:count)
+      smoked_smokes = smokes.sum(:counted)
       # Return avarage reduced smokes
       return smoked_total_without_program - smoked_smokes
     else
@@ -54,21 +55,21 @@ module Smoking
 
   # User Smoked today
   def smoked_today
-    Smoke.by_user(self.id).by_date(Date.today).sum(:count)
+    Smoke.by_user(self.id).by_date(Date.today).sum(:counted)
   end
 
   # User Smoked this week
   def smoked_this_week
-    Smoke.by_user(self.id).this_week(Date.today).sum(:count)
+    Smoke.by_user(self.id).this_week(Date.today).sum(:counted)
   end
 
   # User Smoked this month
   def smoked_this_month
-    Smoke.by_user(self.id).this_month(Date.today).sum(:count)
+    Smoke.by_user(self.id).this_month(Date.today).sum(:counted)
   end
 
   # User Smoked in all time
   def smoked_all_time
-    Smoke.by_user(self.id).sum(:count)
+    Smoke.by_user(self.id).sum(:counted)
   end
 end

@@ -35,7 +35,7 @@
     height: 30px
     line-height: 30px
 
-    span
+    a
       +inline-block
       width: calc(100%/6)
       text-align: center
@@ -44,12 +44,10 @@
       height: 28px
       line-height: 28px
       font-size: 0.8em
+      color: $component_date_link
 
-      a
-        color: $component_date_link
-
-        &:hover
-          color: $component_date_link * 1.1
+      &:hover
+        color: $component_date_link * 1.1
 
       &.active
         font-weight: bold
