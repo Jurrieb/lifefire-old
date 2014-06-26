@@ -44,7 +44,7 @@ guard :rspec, cmd:"spring rspec" do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
-guard :rubocop do
-  watch(%r{.+\.rb$})
-  watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
-end
+#guard :rubocop do
+#  watch(%r{.+\.rb$})
+#  watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
+#end
