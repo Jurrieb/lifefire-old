@@ -265,6 +265,8 @@ GEM
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
     sexp_processor (4.4.3)
+    shoulda-matchers (2.6.1)
+      activesupport (>= 3.0.0)
     signed_multiset (0.2.0)
     simplecov (0.8.2)
       docile (~> 1.1.0)
@@ -353,6 +355,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  shoulda-matchers
   simplecov
   slim-rails
   spring
