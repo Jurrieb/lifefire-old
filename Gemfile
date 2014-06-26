@@ -54,6 +54,7 @@ gem 'rails_12factor', group: :production
 
 # Testing purpose
 group :development, :test do
+  gem 'simplecov', :require => false, :group => :test
   gem 'rubocop', require: false
   gem 'faker'
   gem 'factory_girl_rails'
