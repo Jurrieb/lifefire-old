@@ -14,9 +14,10 @@ class SliderValue
     # Counted
     rangeValue = @range.val()
     # Percentage
-    rangeValuePercentage = @range.val() * 2
+    rangeValuePercentage = rangeValue * 2
     # Corrected width for slider
-    rangeWidth = ((@range.width() - 30) / 100) * rangeValuePercentage
+    rangeWidth = (((@range.width() - 25)  / 100 ) * rangeValuePercentage) - 7
+    
     # Set text and add left css px's
     @output.text(rangeValue).css('left', rangeWidth + 'px')
 
