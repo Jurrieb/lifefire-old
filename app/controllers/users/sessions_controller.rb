@@ -1,6 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
 
-  def create
-    render layout: "backdrop" 
+  def new
+    render layout: "backdrop"
+    puts "yolo switch"
   end
 end

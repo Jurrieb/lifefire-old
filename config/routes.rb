@@ -19,13 +19,16 @@ Rails.application.routes.draw do
 
   # Devise routes
 
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
-                                    sessions: "users/sessions" }
+  devise_for :users, controllers: { 
+      omniauth_callbacks: "users/omniauth_callbacks",
+      sessions: "users/sessions" 
+  }
+
   authenticated :user do
     root to: "analysis#index", as: :authenticated_root
   end
 
   unauthenticated do
-    root to: "pages#index", as: :unauthenticated_root
+    root to: "analysis#index", as: :unauthenticated_root
   end
 end
