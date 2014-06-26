@@ -54,7 +54,10 @@ gem 'rails_12factor', group: :production
 
 # Testing purpose
 group :development, :test do
+  gem 'rubocop', require: false
+  gem 'faker'
   gem 'factory_girl_rails'
+  gem 'guard-rubocop'
   gem 'guard-bundler', require: false
   gem 'guard-livereload', require: false
   gem 'guard-brakeman'
