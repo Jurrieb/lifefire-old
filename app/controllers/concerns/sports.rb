@@ -7,7 +7,7 @@ module Sports
     before_action :set_sport
   end
 
-  def add_to_sports_counter(sports_input)
+  def add_to_sports_counter
     @sport = Sport.new(sport_params)
     @sport.user_id = current_user.id
 
@@ -16,6 +16,10 @@ module Sports
     else
       flash[:error] = t('flash.sports_not_added')
     end
+  end
+
+  def find_sport_for_date
+    render json: Sport.find_or_create_by(user_id: current_user.id, date: Date.parse(params[:date]))
   end
 
   private

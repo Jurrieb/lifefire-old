@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   get '/write_on_wall', to: 'friends#write_on_wall'
 
+  # Search for smokes / sports
+  get '/find-smokes', to: 'analysis#find_smoke_for_date'
+  get '/find-sport' , to: 'analysis#find_sport_for_date'
+
   # Graphical routes
   get '/sports-overview', to: 'analysis#current_user_sports_graphic'
   get '/smokes-overview', to: 'analysis#current_user_smokes_graphic'
@@ -18,7 +22,6 @@ Rails.application.routes.draw do
   get '/messages/count', to: 'messages#count'
 
   # Devise routes
-
   devise_for :users, controllers: { 
       omniauth_callbacks: "users/omniauth_callbacks",
       sessions: "users/sessions" 

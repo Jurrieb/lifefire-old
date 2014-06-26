@@ -3,7 +3,7 @@ class Smoke < ActiveRecord::Base
   belongs_to :user
 
   # Validations
-  validates :user_id, :count, :date, presence: true
+  validates :user_id, :counted, :date, presence: true
 
   # Scopes
   scope :by_user,     -> (user_id) { where(user_id: user_id) }
@@ -13,6 +13,6 @@ class Smoke < ActiveRecord::Base
 
   # Adds count to counter
   def add_to_smoking_counter(count)
-    self.increment!(:count, count - self.count)
+    self.increment!(:counted, count - self.counted)
   end
 end
