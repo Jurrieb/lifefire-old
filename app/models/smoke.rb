@@ -5,7 +5,7 @@ class Smoke < ActiveRecord::Base
   # Validations
   validates :user_id, :counted, :date, presence: true
 
-  # Scopes
+  # Custom scopes
   scope :by_user,     -> (user_id) { where(user_id: user_id) }
   scope :by_date,     -> (date)    { where(date: date) }
   scope :this_week,   -> (date)    { where('date >= ?', date.beginning_of_week) }
