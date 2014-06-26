@@ -54,6 +54,7 @@ gem 'rails_12factor', group: :production
 
 # Testing purpose
 group :development, :test do
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'simplecov', :require => false, :group => :test
   gem 'rubocop', require: false
