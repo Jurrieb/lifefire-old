@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Smoke, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Smoke do
+
+  # Relations
+  it { should belong_to(:user) }
+
 end

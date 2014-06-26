@@ -6,11 +6,11 @@ describe User do
 
   # Relations
   it { should have_one(:userNotice) }
-  it { should have_many(:userDetail) }
-  it { should have_many(:userDetail) }
-  it { should have_many(:userPreference) }
-  it { should have_many(:userProfile) }
-  it { should have_many(:userSmokeAddiction) }
+  it { should have_one(:userDetail) }
+  it { should have_one(:userDetail) }
+  it { should have_one(:userPreference) }
+  it { should have_one(:userProfile) }
+  it { should have_one(:userSmokeAddiction) }
 
 
   # Custom functions
