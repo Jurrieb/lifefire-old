@@ -31,7 +31,7 @@ module Smoking
     smokes = Smoke.by_user(self.id)
     # Count between date ranges
     date_range_count = (smokes.first.date..smokes.last.date).count
-
+    # Return smoked avarage
     Smoke.by_user(self.id).sum(:counted) / date_range_count unless date_range_count == 0
   end
 
