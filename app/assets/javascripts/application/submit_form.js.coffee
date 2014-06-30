@@ -24,5 +24,8 @@ class SubmitForm
       # Submit this form only
       submit_form.submit()
 
+      # Refresh graph
+      new refreshGraph
+
 $ ->
   submit = new SubmitForm if ($ '.remote').length > 0
