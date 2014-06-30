@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Application routes
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update, :destroy]
 
   get '/setup', to: 'users#setup'
   resources :analysis, only: [:index, :create]
@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   get '/messages/count', to: 'messages#count'
 
   # Devise routes
-  devise_for :users, controllers: { 
+  devise_for :users, controllers: {
       omniauth_callbacks: "users/omniauth_callbacks",
-      sessions: "users/sessions" 
+      sessions: "users/sessions"
   }
 
   authenticated :user do
@@ -32,6 +32,6 @@ Rails.application.routes.draw do
   end
 
   unauthenticated do
-    root to: "analysis#index", as: :unauthenticated_root
+    root to: "sessions#new", as: :unauthenticated_root
   end
 end
