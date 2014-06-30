@@ -27,6 +27,7 @@ html
       = render partial: 'shared/navigation'
       = render partial: 'shared/notification'
       .content
+        = breadcrumbs  pretext: "Je bent hier: ", separator: " &rsaquo; "
         = yield
       .sidebar
         = render partial: 'shared/friends'

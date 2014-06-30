@@ -19,6 +19,9 @@ gem 'normalize-rails'
 gem 'bourbon'
 gem 'neat'
 
+#breadcrumbs
+gem 'gretel'
+
 # Charts
 gem 'chartkick', '1.2.5'
 gem 'groupdate'

@@ -40,12 +40,14 @@ $(document).ready ->
             messageCenter.prepend('<li>Er zijn geen nieuwe berichten</li>')
         messageCenter.slideDown("fast")
 
+
   callback = ->
     $.ajax '/messages/count.json',
       type: 'GET'
       dataType: 'html'
+      error: (data, textStatus, jqXHR) ->
+        unless jqXHR == "Unauthorized"
+          setTimeout callback, 10000
       success: (data, textStatus, jqXHR) ->
-        console.log data
-    setTimeout callback, 10000
-
+        setTimeout callback, 10000
   callback()

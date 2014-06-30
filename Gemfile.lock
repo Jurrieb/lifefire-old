@@ -93,6 +93,8 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.3)
     formatador (0.2.5)
+    gretel (3.0.7)
+      rails (>= 3.2.0)
     groupdate (2.2.1)
       activesupport (>= 3)
     guard (2.6.1)
@@ -343,6 +345,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  gretel
   groupdate
   guard-brakeman
   guard-bundler
