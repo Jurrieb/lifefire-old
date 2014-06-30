@@ -56,8 +56,21 @@
     padding: 30px
     width: 100%
 
+
   .overview
     .column
+
       +inline-block
       width: 50%
+
+    @include media($medium-screen)
+      .column
+        margin: 4% auto
+        display: block
+        width: 100%
+
+        ul
+          display: block
+          width: 100%
+
 
