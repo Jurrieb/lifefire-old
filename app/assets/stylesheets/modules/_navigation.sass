@@ -95,10 +95,26 @@ nav
 
   // Define for other devices
   @include media($medium-screen)
-    height: 300px
-    background-color: red
-    .menu
-      display: block
+    height: $navigation_bar_height
 
-  @include media($large-screen)
-    height: auto
+    .logo
+      display: none
+
+    .menu
+      width: 100%
+      padding: 0 $gutter
+
+      .user
+        @include inline-block
+        margin-right: 1%
+
+      .user_icons
+        @include inline-block
+        margin-right: 1%
+
+        .icon
+          width: 50px
+          font-size: 26px
+          height: 50px
+          text-align: center
+          line-height: 50px
