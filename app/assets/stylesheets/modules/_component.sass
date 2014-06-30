@@ -56,6 +56,22 @@
     padding: 30px
     width: 100%
 
+    a.pill
+      +inline-block
+      -webkit-border-radius: 8px
+      -moz-border-radius: 8px
+      border-radius: 8px
+      padding: 8px 14px
+      color: #fff
+      width: 200px
+      text-align: center
+      margin: 10px 0px 10px calc(100% - 200px)
+
+      &.add_extra_sport
+        background-color: $lifefire_green
+
+      &.close_extra_sport
+        background-color: $lifefire_orange
 
   .overview
     .column

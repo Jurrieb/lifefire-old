@@ -11,6 +11,7 @@
         = link_to I18n.localize(date, format: '%d %B'), '#'
 
   .content.sport
+    / First new sport
     = form_for @sport, url: analysis_index_path, method: :post,
                                                  remote: true,
                                                  html: { class: 'remote sports' } do |f|
@@ -28,9 +29,10 @@
 
       = f.submit I18n.t('form.submit.sports')
 
-    = link_to 'Voeg extra sport toe', '#', class: 'add_extra_sport'
-    = link_to 'Sluiten', '#', class: 'close_extra_sport'
+    = link_to 'Voeg extra sport toe', '#', class: 'add_extra_sport pill'
+    = link_to 'Sluiten', '#', class: 'close_extra_sport pill'
 
+    / Extra new sport
     = form_for @extra_sport, url: analysis_index_path, method: :post,
                                                        remote: true,
                                                        html: { class: 'remote sports',
