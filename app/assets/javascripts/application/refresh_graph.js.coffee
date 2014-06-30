@@ -1,11 +1,11 @@
 class refreshGraph
   constructor: ->
-    
+    # Objects
     @graphs = ($ '.graph')
     @form = ($ 'form')
 
-    # On form change, reload graphs
-    @form.on 'change', (e) =>
+    # On form submit, reload graphs
+    @form.on 'submit', (e) =>
       for graph in @graphs
         # Set graph element
         graphic = ($ graph)
