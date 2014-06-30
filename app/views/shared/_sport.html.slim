@@ -11,7 +11,6 @@
         = link_to I18n.localize(date, format: '%d %B'), '#'
 
   .content.sport
-
     = form_for @sport, url: analysis_index_path, method: :post,
                                                  remote: true,
                                                  html: { class: 'remote sports' } do |f|
