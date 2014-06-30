@@ -27,4 +27,4 @@ class AddAdditinalSport
     @add_button.toggle()
 
 $ ->
-  add_sport = new AddAdditinalSport if ($ '.range input[type=range]').length > 0
+  add_sport = new AddAdditinalSport if ($ '.content.sport').length > 0
