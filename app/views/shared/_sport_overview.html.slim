@@ -1,7 +1,7 @@
 .component
   .title
-    .image = image_tag 'icon_sig.png'
-    h2 Hoeveel calorieën heb ik verbrand?
+    .image = image_tag 'icon_run.png'
+    h2 Verloop van meer sporten
 
   .content
     = render partial: 'shared/graph', locals: {name: 'sports', link: sports_overview_path}
@@ -14,7 +14,7 @@
           li = "Gemiddeld: #{current_user.avarage_calories_burned}"
           li = "Totaal: #{current_user.total_workout_calories}"
       .column
-        h4 Gemiddelde snelheid    
+        h4 Gemiddelde snelheid
         ul
           li = "Laatste: #{current_user.last_workout_with_km_calories}"
           li = "Totaal: #{@current_user.total_workout_with_km_calories}"
