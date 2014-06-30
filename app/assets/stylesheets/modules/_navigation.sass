@@ -92,3 +92,13 @@ nav
       .icon
         @include inline-block
         @extend %navigation_icon
+
+  // Define for other devices
+  @include media($medium-screen)
+    height: 300px
+    background-color: red
+    .menu
+      display: block
+
+  @include media($large-screen)
+    height: auto
