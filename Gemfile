@@ -20,7 +20,7 @@ gem 'bourbon'
 gem 'neat'
 
 # Charts
-gem 'chartkick'
+gem 'chartkick', '1.2.5'
 gem 'groupdate'
 
 # Facebook gem
