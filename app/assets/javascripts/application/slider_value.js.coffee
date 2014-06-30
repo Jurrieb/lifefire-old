@@ -16,10 +16,10 @@ class SliderValue
     # Percentage
     rangeValuePercentage = rangeValue * 2
     # Corrected width for slider
-    rangeWidth = (((@range.width() - 25)  / 100 ) * rangeValuePercentage) - 7
-    
+    rangeWidth = (((@range.width() - 26)  / 100 ) * rangeValuePercentage)
+
     # Set text and add left css px's
-    @output.text(rangeValue).css('left', rangeWidth + 'px')
+    @output.text(rangeValue).css('left', rangeWidth + '%')
 
 $ ->
   slider_value = new SliderValue if ($ '.range input[type=range]').length > 0
