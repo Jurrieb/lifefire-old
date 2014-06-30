@@ -31,6 +31,7 @@ module Sports
   # Add new sports entry
   def set_sport
     @sport = Sport.new
+    @extra_sport = Sport.new
   end
 
   # List of populair spots in the Netherlands
