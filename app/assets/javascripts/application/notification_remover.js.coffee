@@ -1,5 +1,6 @@
 class NotificationRemover
   constructor: ->
+    # Notices settings
     @notifications = ($ '.notification .notice')
     @delay_time = 6000
 

@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "300x300#",
                                        thumb: "40x40#" },
                              default_url: "/images/:style/missing.png",
-                             bucket: ENV['S3_BUCKET_NAME'],
+                             # bucket: ENV['S3_BUCKET_NAME'],
                              convert_options: {
                                 medium: '-quality 80 -interlace Plane',
                                 thumb: '-quality 80 -interlace Plane' },
