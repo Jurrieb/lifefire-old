@@ -20,3 +20,4 @@
 
 # Simplecov
 /coverage
+/config/initializers/aws_credentials.rb
