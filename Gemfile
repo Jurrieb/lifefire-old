@@ -22,6 +22,9 @@ gem 'neat'
 # Breadcrumbs
 gem 'gretel'
 
+# Group and sum by date + postgres time support
+gem 'groupdate'
+
 # Delayed backgroundjob
 gem 'sidekiq'
 

@@ -34,6 +34,7 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
+    bigdecimal (1.2.5)
     blankslate (2.1.2.4)
     bourbon (3.2.3)
       sass (~> 3.2)
@@ -94,6 +95,8 @@ GEM
     formatador (0.2.5)
     gretel (3.0.7)
       rails (>= 3.2.0)
+    groupdate (2.2.1)
+      activesupport (>= 3)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -330,7 +333,8 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unitwise (0.6.2)
+    unitwise (0.7.1)
+      bigdecimal (~> 1.2)
       liner (~> 0.2)
       memoizable (~> 0.4)
       parslet (~> 1.5)
@@ -350,6 +354,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   gretel
+  groupdate
   guard-brakeman
   guard-bundler
   guard-livereload
