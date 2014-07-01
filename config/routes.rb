@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Application routes
-  resources :users, only: [:edit, :update, :destroy]
+  resources :users, only: [:edit, :update]
 
   get '/setup', to: 'users#setup'
   resources :analysis, only: [:index, :create]
@@ -24,21 +24,15 @@ Rails.application.routes.draw do
   # Privacy policy
   get '/privacy_policy', to: 'pages#privacy_policy'
 
-  # Devise routes
-  devise_for :users, controllers: {
-      omniauth_callbacks: "users/omniauth_callbacks",
-      sessions: "users/sessions"
-  }
+  # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
+  #                                   sessions: "users/sessions" }
 
-  authenticated :user do
-    root to: "analysis#index", as: :authenticated_root
-  end
+  # Devise for users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
+                                      sessions: "users/sessions" }
 
-  unauthenticated do
-    devise_scope :user do
-      root to: "users/sessions#new", as: :unauthenticated_root
-    end
-  end
+  # Root for program
+  root to: 'analysis#index'
 
   # Pages
   resources :pages, only: :index
