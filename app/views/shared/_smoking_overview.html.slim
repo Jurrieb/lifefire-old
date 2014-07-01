@@ -5,35 +5,34 @@
 
   .content
     = render partial: 'shared/graph', locals: {name: 'smokes', link: smokes_overview_path}
-
-    .overview
-      .column
-        table
-          tr
-            th colspan="2" = "Besparing"
-          tr
-            td = "Vandaag:"
-            td = "#{@current_user.smoked_today}"
-          tr
-            td = "Deze week:"
-            td = "#{@current_user.smoked_this_week}"
-          tr
-            td = "De maand:"
-            td = "#{current_user.smoked_this_month}"
-          tr
-            td = "Totaal:"
-            td = "#{number_to_currency(current_user.all_costs, locale: :nl)}"
-      .column
-        table
-          tr
-            th colspan="2" = "Geminderd"
-          tr
-            td = "Per dag:"
-            td = "#{@current_user.avarage_smokes}"
-          tr
-            td = "Teer:"
-            td = "#{@current_user.calculate_tar} mg"
-          tr
-            td = "Totaal:"
-            td = "#{@current_user.reduced_cigarettes}"
-     
+  .overview
+    .column
+      table
+        tr
+          th colspan="2" = "Besparing"
+        tr
+          td = "Vandaag:"
+          td = "#{@current_user.smoked_today}"
+        tr
+          td = "Deze week:"
+          td = "#{@current_user.smoked_this_week}"
+        tr
+          td = "De maand:"
+          td = "#{current_user.smoked_this_month}"
+        tr
+          td = "Totaal:"
+          td = "#{number_to_currency(current_user.all_costs, locale: :nl)}"
+    .column
+      table
+        tr
+          th colspan="2" = "Geminderd"
+        tr
+          td = "Per dag:"
+          td = "#{@current_user.avarage_smokes}"
+        tr
+          td = "Teer:"
+          td = "#{@current_user.calculate_tar} mg"
+        tr
+          td = "Totaal:"
+          td = "#{@current_user.reduced_cigarettes}"
+   
