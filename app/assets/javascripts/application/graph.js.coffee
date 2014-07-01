@@ -51,11 +51,22 @@ class Graph
         # Create new (responsive) chart
         respChart(($ "##{id}"), data);
 
+  # Refresh graph without AJAX call
+  refreshGraph: (graph) =>
+    # Set graph and find form
+    graph_changed = ($ graph)
+    form = graph_changed.closest('.component').find('form')
+
+    console.log form
+
+    # Read values and dates, change this in data form (see: update chart.js)
+
+
 
   # Refresh Graphs
   bindListeners: =>
     @form.on 'change', (e) =>
-      @initializeGraphs(graph) for graph in @graphs
+      @refreshGraph(graph) for graph in @graphs
 
 $ ->
   remover = new Graph if ($ 'canvas').length > 0
