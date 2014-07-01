@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'pages/index'
-
-  get 'pages/privacy_policy'
-
   # Application routes
   resources :users, only: [:edit, :update, :destroy]
 
