@@ -11,4 +11,9 @@ class MessagesController < ApplicationController
     # Render JSON of messages where last is first
     render json: Message.where(user_id: current_user.id).order('id DESC')
   end
+
+  # Create a new message for user
+  def create_message(status, mention)
+
+  end
 end
