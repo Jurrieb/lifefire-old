@@ -15,17 +15,21 @@ class AnalysisController < ApplicationController
     redirect_to :back
   end
 
+  # Check if current user smokes
   def current_user_smokes?
     current_user.smokes?
   end
 
+  # Fetch one week and sum the burned calories, render JSON
   def current_user_sports_graphic
-    # Fetch one week and burned calories
-    render json: current_user.sports.where(date: (1.weeks.ago.midnight..Time.now)).sum(:burned_calories)
+    render json: current_user.sports.group_by_day(:date, range: 1.weeks.ago.midnight..Time.now).sum(:burned_calories)
+
   end
 
+  # Fetch smoked cigarettes and sum counted, render JSON
   def current_user_smokes_graphic
-    # Fetch smoke data, limit 7 => 7 days
-    render json: current_user.smokes.last(7).sum(:counted)
+    render json: current_user.smokes
+                             .group_by_day(:date, range: (1.weeks.ago.midnight..Time.now))
+                             .sum(:counted)
   end
 end
