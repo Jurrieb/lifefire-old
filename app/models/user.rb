@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   has_one :userNotice
   has_one :userSmokeAddiction
   has_one :userProfile
-
   has_many :smokes
   has_many :sports
   has_many :messages
@@ -13,6 +12,7 @@ class User < ActiveRecord::Base
   # Concerns
   include Smoking
   include Sporting
+  include Messaging
 
   # Nested attributes for forms
   accepts_nested_attributes_for :userPreference,
@@ -30,10 +30,10 @@ class User < ActiveRecord::Base
          :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  # Attached profile picture
   has_attached_file :avatar, styles: { medium: "300x300#",
                                        thumb: "40x40#" },
                              default_url: "/images/:style/missing.png",
-                             # bucket: ENV['S3_BUCKET_NAME'],
                              convert_options: {
                                 medium: '-quality 80 -interlace Plane',
                                 thumb: '-quality 80 -interlace Plane' },
@@ -41,7 +41,6 @@ class User < ActiveRecord::Base
 
   # Validations
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
   validates :name,
             :email,
             :uid,

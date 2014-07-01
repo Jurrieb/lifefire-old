@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.where(user_id: current_user.id).order('id DESC').limit(5)
+    puts "Current user id: #{current_user.id}"
+    @messages = Message.where(user_id: current_user.id).order('id ASC').limit(5)
+    puts @messages.inspect
     respond_to do |format|
       format.html
       format.json { render :json => @messages}

@@ -19,12 +19,15 @@ gem 'normalize-rails'
 gem 'bourbon'
 gem 'neat'
 
-#breadcrumbs
+# Breadcrumbs
 gem 'gretel'
 
 # Charts
 gem 'chartkick', '1.2.5'
 gem 'groupdate'
+
+# Delayed backgroundjob
+gem 'sidekiq'
 
 # Facebook gem
 gem 'koala', '~> 1.10.0rc'
