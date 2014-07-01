@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   end
 
   unauthenticated do
-    root to: "sessions#new", as: :unauthenticated_root
+    devise_scope :user do
+      root to: "users/sessions#new", as: :unauthenticated_root
+    end
   end
 end
