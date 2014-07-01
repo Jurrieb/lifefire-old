@@ -1,12 +1,22 @@
 class MessagesController < ApplicationController
+
+  include ActionController::Live
+
   def index
-    puts "Current user id: #{current_user.id}"
-    @messages = Message.where(user_id: current_user.id).order('id ASC').limit(5)
-    puts @messages.inspect
-    respond_to do |format|
-      format.html
-      format.json { render :json => @messages}
-  	end
+    response.headers['Content-Type'] = 'text/event-stream'
+    begin
+      loop do
+        if (Time.current.sec % 5).zero?
+          response.stream.write("event: counter\n")
+          response.stream.write("data: 5 seconds passed\n\n")
+        end
+        sleep 1
+      end
+    rescue IOError
+      # Catch when the client disconnects
+    ensure
+      response.stream.close
+    end
   end
 
   def count
