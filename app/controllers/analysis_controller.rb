@@ -1,9 +1,8 @@
 class AnalysisController < ApplicationController
 
+  # Include all programs
   include StopSmoking
   include Sports
-
-  # include ActionController::Live
 
   def index
   end
