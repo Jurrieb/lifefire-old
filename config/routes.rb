@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
+  # Root for program
+  root to: 'analysis#index'
 
-  # Application routes
-  resources :users, only: [:edit, :update]
-
+  # First time user setup
   get '/setup', to: 'users#setup'
-  resources :analysis, only: [:index, :create]
-  resources :messages, only: :index
-  resources :friends, only: [:index]
 
+  # Facebook routes
   get '/write_on_wall', to: 'friends#write_on_wall'
 
   # Search for smokes / sports
@@ -24,16 +22,16 @@ Rails.application.routes.draw do
   # Privacy policy
   get '/privacy_policy', to: 'pages#privacy_policy'
 
-  # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
-  #                                   sessions: "users/sessions" }
-
   # Devise for users
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
-                                      sessions: "users/sessions" }
+                                    sessions: "users/sessions" }
 
-  # Root for program
-  root to: 'analysis#index'
+  # Application routes
+  resources :analysis, only: [:index, :create]
+  resources :messages, only: :index
+  resources :friends, only: [:index]
+  resources :users, only: [:edit, :update, :destroy]
 
-  # Pages
+  # Pages (public)
   resources :pages, only: :index
 end
