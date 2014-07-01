@@ -3,14 +3,11 @@ class Message < ActiveRecord::Base
   belongs_to :user
 
   # Validations
-  validates :name,
+  validates :message,
             :karma,
-            :seen,
             :user_id,
             presence: true
 
-  # Validate if karma and user_id are greater than 0
-  validates_numericality_of :karma
-
-
+  # Validate if karma is nummeric
+  validates_numericality_of :karma, :user_id
 end
