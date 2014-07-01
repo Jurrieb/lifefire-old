@@ -65,6 +65,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    connection_pool (2.0.0)
     daemons (1.1.9)
     database_cleaner (1.3.0)
     devise (3.2.4)
@@ -232,6 +233,9 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redis (3.1.0)
+    redis-namespace (1.5.0)
+      redis (~> 3.0, >= 3.0.4)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -276,6 +280,12 @@ GEM
     sexp_processor (4.4.3)
     shoulda-matchers (2.6.1)
       activesupport (>= 3.0.0)
+    sidekiq (3.1.4)
+      celluloid (>= 0.15.2)
+      connection_pool (>= 2.0.0)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
     signed_multiset (0.2.0)
     simplecov (0.8.2)
       docile (~> 1.1.0)
@@ -370,6 +380,7 @@ DEPENDENCIES
   sass-rails (= 4.0.2)
   sdoc (~> 0.4.0)
   shoulda-matchers
+  sidekiq
   simplecov
   slim-rails
   spring
