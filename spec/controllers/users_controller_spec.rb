@@ -21,7 +21,7 @@ describe UsersController do
 
     it "and deletes the user and redirect" do
       delete :destroy, id: subject
-      expect(response).to redirect_to unauthenticated_root_path
+      expect(response).to redirect_to new_user_session_path
     end
 
     it 'sets user up' do

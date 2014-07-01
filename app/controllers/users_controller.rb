@@ -20,14 +20,14 @@ class UsersController < ApplicationController
     if @user.destroy
       # Sign out user
       sign_out @user
-      set_flash_and_redirect('success', t('flash.account_deleted') , unauthenticated_root_path)
+      set_flash_and_redirect('success', t('flash.account_deleted') , new_user_session_path)
     else
       set_flash_and_redirect('error', t('flash.account_not_deleted') , edit_user_path(@user.id))
     end
   end
 
   def setup
-    render layout: "backdrop" 
+    render layout: "backdrop"
     @user.userPreference.smokes = true
     @user.userPreference.sports = true
     puts @user.userPreference.smokes.inspect
