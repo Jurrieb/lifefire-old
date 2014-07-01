@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:edit, :update, :destroy, :setup]
 
+  def profile
+  end
+
   def edit
 
   end

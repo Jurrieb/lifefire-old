@@ -94,4 +94,5 @@ class User < ActiveRecord::Base
   def sports?
     self.userPreference.sports?
   end
+
 end

@@ -29,6 +29,12 @@ module Sporting
     0
   end
 
+  def avarage_workout_with_km_calories
+    set_sport_by_user.sum(:distance) / set_sport_by_user.count
+  rescue
+    0
+  end
+
   # Show total amount of KM's
   def total_workout_with_km_calories
     set_sport_by_user.sum(:distance)

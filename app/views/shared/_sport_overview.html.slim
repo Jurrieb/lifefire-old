@@ -5,16 +5,27 @@
 
   .content
     = render partial: 'shared/graph', locals: {name: 'sports', link: sports_overview_path}
-
-    .overview
-      .column
-        h4 Calorieën verbrand
-        ul
-          li = "Laatste: #{current_user.last_workout_calories}"
-          li = "Gemiddeld: #{current_user.avarage_calories_burned}"
-          li = "Totaal: #{current_user.total_workout_calories}"
-      .column
-        h4 Gemiddelde snelheid
-        ul
-          li = "Laatste: #{current_user.last_workout_with_km_calories}"
-          li = "Totaal: #{@current_user.total_workout_with_km_calories}"
+  .overview
+    .column
+      table
+        tr
+          th colspan="2" = "Calorieën verbrand"
+        tr
+          td = "Laatste:"
+          td = "#{current_user.last_workout_calories}"
+        tr
+          td = "Gemiddeld:"
+          td = "#{current_user.avarage_calories_burned}"
+        tr
+          td = "Totaal:"
+          td = "#{current_user.total_workout_calories}"
+    .column
+      table
+        tr
+          th colspan="2" = "Gemiddelde snelheid"
+        tr
+          td = "Laatste:"
+          td = "#{current_user.last_workout_with_km_calories} km/u"
+        tr
+          td = "Totaal:"
+          td = "#{current_user.avarage_workout_with_km_calories} km/u"

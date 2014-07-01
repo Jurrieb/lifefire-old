@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # Facebook routes
   get '/write_on_wall', to: 'friends#write_on_wall'
+  get '/profile', to: 'users#profile'
 
   # Search for smokes / sports
   get '/find-smokes', to: 'analysis#find_smoke_for_date'
