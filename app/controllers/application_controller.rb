@@ -22,4 +22,14 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  # Redirect to analysis#index
+  def after_sign_in_path_for(resource)
+    analysis_index_path
+  end
+
+  # Redirect to sign in page
+  def after_sign_out_path_for(resource_or_scope)
+    new_user_session_path
+  end
 end
