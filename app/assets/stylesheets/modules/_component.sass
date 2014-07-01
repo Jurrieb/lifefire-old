@@ -74,19 +74,22 @@
         background-color: $lifefire_orange
 
   .overview
+    font-size: 0.9em
     .column
-
-      +inline-block
-      width: 50%
-
+      +span-columns(6)
+      table
+        margin: 0
+        th
+          border-bottom: none
+          padding: 0
+        td
+          padding: 2px 0
+          border-bottom: none
     @include media($medium-screen)
       .column
         margin: 4% auto
         display: block
         width: 100%
 
-        ul
-          display: block
-          width: 100%
 
 

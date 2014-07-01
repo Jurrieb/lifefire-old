@@ -8,17 +8,32 @@
 
     .overview
       .column
-        h4 Besparing
-        ul
-          li = "Vandaag: #{current_user.smoked_today}"
-          li = "Deze week: #{current_user.smoked_this_week}"
-          li = "Deze maand: #{current_user.smoked_this_month}"
-          li = "Dit heeft #{number_to_currency(current_user.all_costs, locale: :nl)} gekost"
-
+        table
+          tr
+            th colspan="2" = "Besparing"
+          tr
+            td = "Vandaag:"
+            td = "#{@current_user.smoked_today}"
+          tr
+            td = "Deze week:"
+            td = "#{@current_user.smoked_this_week}"
+          tr
+            td = "De maand:"
+            td = "#{current_user.smoked_this_month}"
+          tr
+            td = "Totaal:"
+            td = "#{number_to_currency(current_user.all_costs, locale: :nl)}"
       .column
-        h4 Minder binnengekregen
-        ul
-          li = "Geminderd in totaal: #{reduced_cigarettes_helper(@current_user.reduced_cigarettes)}"
-          li = "Gemiddeld aantal sigaretten per dag #{@current_user.avarage_smokes}"
-          li = "Teer: #{@current_user.calculate_tar} mg gerookt"
-          li = "Gerookt sinds aanmelden bij programma #{current_user.smoked_all_time}"
+        table
+          tr
+            th colspan="2" = "Geminderd"
+          tr
+            td = "Per dag:"
+            td = "#{@current_user.avarage_smokes}"
+          tr
+            td = "Teer:"
+            td = "#{@current_user.calculate_tar} mg"
+          tr
+            td = "Totaal:"
+            td = "#{@current_user.reduced_cigarettes}"
+     
