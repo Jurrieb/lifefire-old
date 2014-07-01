@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   # Messages routes
   get '/messages/count', to: 'messages#count'
 
+  # Privacy policy
+  get '/privacy_policy', to: 'pages#privacy_policy'
+
   # Devise routes
   devise_for :users, controllers: {
       omniauth_callbacks: "users/omniauth_callbacks",
@@ -32,6 +35,11 @@ Rails.application.routes.draw do
   end
 
   unauthenticated do
-    root to: "sessions#new", as: :unauthenticated_root
+    devise_scope :user do
+      root to: "users/sessions#new", as: :unauthenticated_root
+    end
   end
+
+  # Pages
+  resources :pages, only: :index
 end
