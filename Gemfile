@@ -22,10 +22,6 @@ gem 'neat'
 # Breadcrumbs
 gem 'gretel'
 
-# Charts
-# gem 'chartkick', '1.2.5'
-# gem 'groupdate'
-
 # Delayed backgroundjob
 gem 'sidekiq'
 
