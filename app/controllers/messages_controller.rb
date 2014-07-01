@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   def index
+    puts "Current user id: #{current_user.id}"
     @messages = Message.where(user_id: current_user.id).order('id DESC').limit(5)
+    puts @messages.inspect
     respond_to do |format|
       format.html
       format.json { render :json => @messages}
@@ -10,10 +12,5 @@ class MessagesController < ApplicationController
   def count
     # Render JSON of messages where last is first
     render json: Message.where(user_id: current_user.id).order('id DESC')
-  end
-
-  # Create a new message for user
-  def create_message(status, mention)
-
   end
 end
