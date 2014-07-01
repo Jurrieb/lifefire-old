@@ -23,8 +23,8 @@ gem 'neat'
 gem 'gretel'
 
 # Charts
-gem 'chartkick', '1.2.5'
-gem 'groupdate'
+# gem 'chartkick', '1.2.5'
+# gem 'groupdate'
 
 # Delayed backgroundjob
 gem 'sidekiq'
@@ -53,8 +53,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',       group: :development
 gem 'quiet_assets', group: :development
 
-# Use Thin as the app server (better performance Heroku)
-gem 'thin'
+# Use Puma as the app server
+gem 'puma'
 
 # Heroku
 gem 'rails_12factor', group: :production
@@ -77,4 +77,5 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
   gem 'guard-rspec'
+  gem 'rails-perftest'
 end
