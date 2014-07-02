@@ -1,5 +1,7 @@
-h2 Uw instellingen
-p LifeFire wil graag een aantal dingen over je weten voordat wij je adviezen kunnen geven over je levenstijl.
+h2 Wie ben je?
+
+p LifeFire wil graag meer van je weten om je van een passend advies te voorzien, vul daarom het onderstaande formulieer in.
+
 = form_for @user, url: user_path(current_user.id), method: :patch do |f|
   = f.fields_for :userPreference do |up|
     / Render switches
@@ -15,12 +17,13 @@ p LifeFire wil graag een aantal dingen over je weten voordat wij je adviezen kun
 
   = f.fields_for :userDetail do |ud|
     .number
-    = ud.label :height,  I18n.t('form.label.height')
-    = ud.number_field :height
+      = ud.label :height,  I18n.t('form.label.height')
+      = ud.number_field :height
     .number
-    = ud.label :weight,  I18n.t('form.label.weight')
-    = ud.number_field :weight
+      = ud.label :weight,  I18n.t('form.label.weight')
+      = ud.number_field :weight
     .number
-    = ud.label :target_weight,  I18n.t('form.label.target_weight')
-          = ud.number_field :target_weight
+      = ud.label :target_weight,  I18n.t('form.label.target_weight')
+      = ud.number_field :target_weight
+
   = f.submit I18n.t('form.submit')

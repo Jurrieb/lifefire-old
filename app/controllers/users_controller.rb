@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-
+  # Set current user
   before_action :set_user, only: [:edit, :update, :destroy, :setup]
 
   def profile
   end
 
   def edit
-
   end
 
   def update
@@ -29,11 +28,13 @@ class UsersController < ApplicationController
     end
   end
 
+  # First time user needs to update profile
   def setup
-    render layout: "backdrop"
+    # Set layout without partails
+    render layout: 'application_without_partials'
+    # Set programs and save
     @user.userPreference.smokes = true
     @user.userPreference.sports = true
-    puts @user.userPreference.smokes.inspect
   end
 
   private
@@ -44,7 +45,6 @@ class UsersController < ApplicationController
                           :userDetail,
                           :userNotice,
                           :userSmokeAddiction).find(current_user.id)
-
   end
 
   def user_params
