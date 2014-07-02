@@ -1,72 +1,69 @@
 class Graph
   constructor: ->
     # Set elements
-    @graphs = ($ 'canvas')
+    @graphs = ($ '.graph')
     @form = ($ 'form')
     # Loop and setup the graphs
-    @initializeGraphs(graph) for graph in @graphs
+    @retrieveData(graph) for graph in @graphs
     # Listen to changes
     @bindListeners()
 
   # Build JSON from data, returns hash
-  initializeData: (data) ->
-    # Build empty hash
-    json_data = {"labels": [], "datasets": []}
-    dataset = {"data": []}
+  initializeData: (data) =>
+    # Set data array
+    new_data = []
+    # Loop through data en create correct array
+    for row in data
+      # Append into array
+      new_data.push {'m': new Date(row['m']).strftime('%Y-%m-%d'), "a": row["a"] }
+    # Return array
+    return new_data
 
-    # Loop through data en create correct hash
-    for date, value of data
-      # Append to label array date, and parse
-      json_data['labels'].push new Date(date).strftime('%Y-%m-%d')
-      # Create array values
-      dataset['data'].push value
-
-    # Join dataset with datasets
-    json_data['datasets'].push dataset
-
-    # Return object
-    return json_data
-
-  # Build the graph
-  initializeGraphs: (graph) =>
-    # Create object and get ID and url
-    graphic   = ($ graph)
-    id        = graphic.attr('id')
-    graph_url = graphic.attr('data-url')
-
+  # Retrieve data
+  retrieveData: (graph) =>
+    url = ($ graph).attr('data-url')
     # Get values via graph url as AJAX request
-    $.ajax graph_url,
+    $.ajax url,
       type: 'GET'
       dataType: 'json'
       success: (data, textStatus, jqXHR) =>
-        data = @initializeData(data)
+        # Parse data and build graph
+        @buildGraph(graph, @initializeData(data))
 
-        # # Replace text and numbers
-        # date_in_view = new Date(data['date'])
-        # # Set date localisation
-        # date_in_view.locale = "nl"
-        # # Set in view
-        # @date_in_text.text(date_in_view.strftime('%d %B'))
-
-        # Create new (responsive) chart
-        respChart(($ "##{id}"), data);
-
-  # Refresh graph without AJAX call
-  refreshGraph: (graph) =>
-    # Set graph and find form
-    graph_changed = ($ graph)
-    form = graph_changed.closest('.component').find('form')
-
-    console.log form
-
-    # Read values and dates, change this in data form (see: update chart.js)
-
-
-
-  # Refresh Graphs
   bindListeners: =>
-    @form.on 'change', (e) =>
-      @refreshGraph(graph) for graph in @graphs
+    @form.on 'submit', (e) =>
+      # Check which changed and set graph ID
+      if ($ e.target).hasClass('smokes')
+        renew_graph = ($ '#graph-smokes')
+      else
+        renew_graph = ($ '#graph-sports')
+      # Refresh after a time
+      setTimeout =>
+        @retrieveData(renew_graph)
+      , 200
+
+  buildGraph: (graph, data) =>
+    # Set correct label
+    if ($ graph).hasClass('smokes')
+      lable_title = "Sigaretten"
+      color       = ["#ee4d21"]
+    else
+      lable_title = "Calorieën"
+      color       = ["#a2d04c"]
+    # Remove graph
+    ($ graph).empty()
+    # Build graph
+    Morris.Area({
+      "fillOpacity": "0.6",
+      "lineColors": color,
+      "resize": true,
+      "xLabels": "day",
+      "element": ($ graph).attr('id'),
+      "data": data,
+      "xkey": "m",
+      "ykeys": "a",
+      "labels": lable_title
+    })
 
 $ ->
-  remover = new Graph if ($ 'canvas').length > 0
+  remover = new Graph if ('.graph').length > 0
