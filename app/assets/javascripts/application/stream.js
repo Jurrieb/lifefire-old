@@ -1,8 +1,10 @@
 $(function() {
-  var source = new EventSource('/messages');
+  var source = new EventSource('/stream/messages');
   var count = 0;
+
   source.addEventListener('messages', function(e) {
     data = JSON.parse(e.data);
+    console.log(e.data);
     if(data.length > 0){
       $.each(data, function(key, value) {
         if(value.seen == false) {

@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   # Messages routes
   get '/messages/seen', to: 'messages#update_seen'
 
+  # Stream routes
+  get '/stream/messages', to: 'stream#messages'
+
   # Privacy policy
   get '/privacy_policy', to: 'pages#privacy_policy'
 
