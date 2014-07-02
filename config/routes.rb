@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/smokes-overview', to: 'analysis#current_user_smokes_graphic'
 
   # Messages routes
-  get '/messages/count', to: 'messages#count'
+  get '/messages/seen', to: 'messages#update_seen'
 
   # Privacy policy
   get '/privacy_policy', to: 'pages#privacy_policy'
