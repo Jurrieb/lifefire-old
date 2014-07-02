@@ -76,6 +76,20 @@ class User < ActiveRecord::Base
     avatar_remote_url = url_picture
   end
 
+  # Check if user has settings and details
+  def first_time_user?
+    if self.userDetail.height                      == 0 &&
+       self.userDetail.weight                      == 0 &&
+       self.userDetail.target_weight               == 0 &&
+       self.userPreference.smokes                  == false &&
+       self.userPreference.sports                  == false &&
+       self.userSmokeAddiction.avarage_smokes_day  == 0
+      return true
+     else
+      return false
+    end
+  end
+
   # Create needed relations in sign_in
   def create_relations
     UserPreference.create(user_id: self.id) unless self.userPreference.present?

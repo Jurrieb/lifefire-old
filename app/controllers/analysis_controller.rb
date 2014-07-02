@@ -1,4 +1,6 @@
 class AnalysisController < ApplicationController
+  # Before actions
+  before_action :first_time_user, only: :index
 
   # Include all programs
   include StopSmoking
@@ -56,5 +58,10 @@ class AnalysisController < ApplicationController
   # Render JSON with an object
   def render_json(object)
     render json: object
+  end
+
+  # When user is first time user, redirect to setup path
+  def first_time_user
+    redirect_to_setup_path if current_user.first_time_user?
   end
 end

@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Lifefire - Stoppen met roken programma
+    / Metatags
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes"
+    meta name="description" content= "Lifefire"
+    meta name="keywords" content="Lifefire"
+    meta name="robots" content="index, follow"
+    meta name="googlebot" content="index, follow"
+    meta name="author" content="test"
+    meta name="revisit-after" content="30 days"
+    meta name="google-site-verification" content="test"
+
+    / Import stylesheets and javascript
+    == stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    == javascript_include_tag "application/application", "data-turbolinks-track" => true
+    == csrf_meta_tags
+
+    / Favicons
+    = render partial: 'shared/favicon'
+
+  body
+    .container
+      = render partial: 'shared/navigation'
+
+      .content
+        = yield
