@@ -22,8 +22,12 @@ gem 'neat'
 # Breadcrumbs
 gem 'gretel'
 
-# Group and sum by date + postgres time support
+# Group and sum by date
 gem 'groupdate'
+
+# Charts JS in assets
+gem 'morrisjs-rails'
+gem 'raphael-rails'
 
 # Delayed backgroundjob
 gem 'sidekiq'
