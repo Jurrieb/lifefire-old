@@ -17,15 +17,8 @@ class SubmitForm
         date_parsed = new Date(date + year).strftime('%Y-%m-%d')
         # Set date hidden input field
         date_input = ($ '.hidden_date input[type=hidden]').val(date_parsed)
-
-      # TODO:validation Validates if fields are not empty, than submit
-      # if ($ 'input:empty').length == 0
-
       # Submit this form only
       submit_form.submit()
-
-      # Refresh graph
-      refresh_graph = new refreshGraph if ($ '.graph').length > 0
 
 $ ->
   submit = new SubmitForm if ($ '.remote').length > 0

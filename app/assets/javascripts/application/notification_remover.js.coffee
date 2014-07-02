@@ -3,7 +3,6 @@ class NotificationRemover
     # Notices settings
     @notifications = ($ '.notification .notice')
     @delay_time = 6000
-
     # Loop through notices and remove
     for notice in @notifications
       @removeNotice(notice)
