@@ -16,7 +16,8 @@ $navigation_bar_height: 60px
     &:hover
       color: $navigation_icon_color * 0.9
 
-.messageCenter
+.message_center
+  display: none
   position: absolute
   width: 400px
   padding: 20px 0 4px
@@ -96,6 +97,21 @@ nav
       .icon
         @include inline-block
         @extend %navigation_icon
+        position: relative
+        .count
+          background: $lifefire_orange
+          width: 16px
+          height: 16px
+          position: absolute
+          top: 10px
+          left: 10px
+          color: #fff
+          font-size: 11px
+          line-height: 16px
+          border-radius: 16px
+          text-align: center
+          display: none
+          cursor: pointer
 
   // Define for other devices
   @include media($medium-screen)
