@@ -1,1 +1,1 @@
-spring rails s
+bundle exec puma -C config/puma.rb
