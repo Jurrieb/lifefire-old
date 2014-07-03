@@ -19,6 +19,9 @@ gem 'normalize-rails'
 gem 'bourbon'
 gem 'neat'
 
+# Friendly IDs
+gem 'friendly_id', '~> 5.0.0'
+
 # Breadcrumbs
 gem 'gretel'
 

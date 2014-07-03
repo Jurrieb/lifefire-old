@@ -1,0 +1,16 @@
+/ Is user set, then show profile?
+- if @user
+  h1 = @user.name
+
+  .avatar
+    = image_tag @user.avatar.url(:medium)
+
+  h2 Prestaties
+
+  p = @user.inspect
+- else
+  h1 Dit profiel bestaat niet,
+
+  p Meld je nu ook aan!
+
+  = link_to 'Aanmelden', new_user_session_path

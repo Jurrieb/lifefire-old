@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # Friendly ID
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   # Relations
   has_one :userPreference
   has_one :userDetail
