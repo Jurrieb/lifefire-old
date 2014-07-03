@@ -21,4 +21,5 @@ class StreamController < ApplicationController
       response.stream.close
     end
   end
+
 end
