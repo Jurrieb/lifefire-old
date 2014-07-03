@@ -34,4 +34,5 @@ Rails.application.routes.draw do
 
   # Pages (public)
   resources :pages, only: :index
+  get '/users/:id', to: 'pages#users'
 end
