@@ -20,10 +20,10 @@
       = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
 
       = f.label :distance, 'Hoeveel kilometer was deze sessie?'
-      = f.number_field :distance, value: 0
+      = f.number_field :distance, value: 0, min: 0, max: 300
 
       = f.label :duration, 'Hoelang duurde deze sessie in minuten?'
-      = f.number_field :duration, value: 0
+      = f.number_field :duration, value: 0, min: 0, max: 300
 
       .hidden_date = f.hidden_field :date, value: Date.today
 

@@ -50,3 +50,8 @@
 
 Met lifefire kunnen mensen de gezondheid verbeteren door een overzicht te krijgen van dagelijkse (on)gezonde activiteiten. Op basis van deze activiteiten worden er ook adviezen en karma gegeven.
 
+
+== Setup Heroku
+set ENV vars for S3 and config
+
+set max threads: heroku config:set MIN_THREADS=1 MAX_THREADS=1

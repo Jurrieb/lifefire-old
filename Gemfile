@@ -19,12 +19,18 @@ gem 'normalize-rails'
 gem 'bourbon'
 gem 'neat'
 
+# Friendly IDs
+gem 'friendly_id', '~> 5.0.0'
+
 # Breadcrumbs
 gem 'gretel'
 
-# Charts
-# gem 'chartkick', '1.2.5'
-# gem 'groupdate'
+# Group and sum by date
+gem 'groupdate'
+
+# Charts JS in assets
+gem 'morrisjs-rails'
+gem 'raphael-rails'
 
 # Delayed backgroundjob
 gem 'sidekiq'

@@ -30,15 +30,16 @@ GEM
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     ast (2.0.0)
-    aws-sdk (1.45.0)
+    aws-sdk (1.46.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
+    bigdecimal (1.2.5)
     blankslate (2.1.2.4)
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
-    brakeman (2.6.0)
+    brakeman (2.6.1)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
       haml (>= 3.0, < 5.0)
@@ -92,8 +93,12 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.3)
     formatador (0.2.5)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     gretel (3.0.7)
       rails (>= 3.2.0)
+    groupdate (2.2.1)
+      activesupport (>= 3)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -153,6 +158,8 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.5)
+    morrisjs-rails (0.5.0)
+      railties (> 3.1, < 5)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -185,7 +192,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    parser (2.2.0.pre.2)
+    parser (2.2.0.pre.3)
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     parslet (1.6.1)
@@ -227,6 +234,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.3.2)
+    raphael-rails (2.1.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -330,7 +338,8 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unitwise (0.6.2)
+    unitwise (0.8.0)
+      bigdecimal (~> 1.2)
       liner (~> 0.2)
       memoizable (~> 0.4)
       parslet (~> 1.5)
@@ -349,7 +358,9 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  friendly_id (~> 5.0.0)
   gretel
+  groupdate
   guard-brakeman
   guard-bundler
   guard-livereload
@@ -359,6 +370,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   koala (~> 1.10.0rc)
+  morrisjs-rails
   neat
   normalize-rails
   omniauth-facebook
@@ -370,6 +382,7 @@ DEPENDENCIES
   rails (= 4.1.2)
   rails-perftest
   rails_12factor
+  raphael-rails
   rspec-rails
   rubocop
   sass-rails (= 4.0.2)
