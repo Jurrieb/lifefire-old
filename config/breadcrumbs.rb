@@ -1,10 +1,11 @@
 crumb :root do
-  link "Home", authenticated_root_path
+  link "Overzicht", analysis_index_path
 end
 
-crumb :analysis do
-   link "Analysis", analysis_index_path
+crumb :user do
+  link "Instellingen", user_path
 end
+
 
 # crumb :project do |project|
 #   link project.name, project_path(project)
