@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # Publish a message
+    Redis.new.publish('message-published', { message: "Dit is een test bericht +100 karma" }.to_json)
   end
 
   def update

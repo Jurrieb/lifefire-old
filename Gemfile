@@ -46,6 +46,9 @@ gem 'open_uri_redirections'
 # Calculations
 gem 'unitwise'
 
+# Redis: Key/value based DB
+gem 'redis-rails'
+
 # Paperclip
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
@@ -59,7 +62,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',       group: :development
 gem 'quiet_assets', group: :development
 
-# Use Puma as the app server
+# Use Thin as the app server
 gem 'puma'
 
 # Heroku

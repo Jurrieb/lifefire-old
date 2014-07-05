@@ -3,23 +3,26 @@ class StreamController < ApplicationController
   include ActionController::Live
 
   def messages
+    # Set content type
     response.headers['Content-Type'] = 'text/event-stream'
-    last_find = Time.zone.parse('2014-6-2 14:12:12');
-    begin
-      loop do
-        messages = Message.where("created_at > ? AND user_id = ?", last_find, current_user.id).order('id DESC').limit(10).to_json
-        if !messages.empty?
-          response.stream.write("event: messages\n")
-          response.stream.write("data: #{messages}\n\n")
-          last_find = Time.zone.now
-        end
-        sleep 1
+    # Create new Server Side Event
+    sse = SSE.new(response.stream)
+    # New Redis instance, with no timeout (connection reused)
+    redis = Redis.new(host: 'localhost',
+                      port: 6379,
+                      timeout: 0)
+    # Listen to a stream
+    redis.subscribe('message-published') do |on|
+      # If there is a message?
+      on.message do |event, notice|
+        # Write to SSE, with notice and event
+        sse.write(notice, event: event)
       end
-    rescue IOError
-      # Catch when the client disconnects
-    ensure
-      response.stream.close
     end
+  rescue IOError
+  ensure
+    # Close and quit connections
+    sse.close
+    redis.quit
   end
-
 end
