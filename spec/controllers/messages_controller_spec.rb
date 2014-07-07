@@ -1,23 +1,21 @@
 describe MessagesController do
 
-  subject(:user) { FactoryGirl.create(:user) }
+  # subject(:user) { FactoryGirl.create(:user) }
 
-  before(:each) do
-    # # Set devise routing
-    # @request.env["devise.mapping"] = Devise.mappings[:user]
-    # # Sign in user
-    # sign_in :user, subject
-  end
+  # before(:each) do
+  #   # Set devise routing
+  #   @request.env["devise.mapping"] = Devise.mappings[:user]
+  #   # Sign in user
+  #   sign_in :user, subject
 
-  describe 'renders view' do
-    it '#index as json' do
-      get :index, format: :json
-      expect(response.header['Content-Type']).to match /json/
-    end
+  #   let(:message) { FactoryGirl.create(:message) }
 
-    it '#count' do
-      get 'count', format: :json
-      expect(response.header['Content-Type']).to match /json/
-    end
-  end
+  # end
+
+  # describe 'renders view' do
+  #   it '#update_seen' do
+  #     get '/messages/seen', format: :json
+  #     expect(response.header['Content-Type']).to match /json/
+  #   end
+  # end
 end
