@@ -76,7 +76,7 @@ describe User do
 
   context 'Sporting Concern' do
     it 'Last workout calories' do
-      expect(subject.last_workout_calories).to be( subject.sports.last.try(:burned_calories) || nil)
+      expect(subject.last_workout_calories).to be(subject.sports.last.try(:burned_calories) || nil)
     end
 
     it '#total_workout_calories' do
@@ -89,7 +89,6 @@ describe User do
       expect(subject.avarage_calories_burned).to be >= 0
     end
 
-
     it '#last_workout_with_km_calories' do
       # Could return nul if there is no workout
       expect(subject.last_workout_with_km_calories).to be >= 0
@@ -100,4 +99,20 @@ describe User do
       expect(subject.total_workout_with_km_calories).to be >= 0
     end
   end
+
+  context 'Karma Calculation Concern' do
+    it 'calculates users profile karma?' do
+      expect(subject.profile_karma).to be > 0
+    end
+
+    it 'calculates users quit smoking karma' do
+      expect(subject.smoking_karma).to be > 0
+    end
+
+    it 'calculates users sporting karma' do
+      expect(subject.sporting_karma).to be > 0
+    end
+
+  end
 end
+
