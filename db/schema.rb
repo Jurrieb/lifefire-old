@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703072832) do
+ActiveRecord::Schema.define(version: 20140707075011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,11 +84,12 @@ ActiveRecord::Schema.define(version: 20140703072832) do
 
   create_table "user_preferences", force: true do |t|
     t.integer  "user_id"
-    t.boolean  "smokes",     default: false
-    t.boolean  "sports",     default: false
+    t.boolean  "smokes",          default: false
+    t.boolean  "sports",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "profile",    default: false
+    t.boolean  "public_profile",  default: false
+    t.boolean  "private_profile", default: false
   end
 
   create_table "user_profiles", force: true do |t|
