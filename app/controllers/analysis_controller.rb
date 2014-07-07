@@ -1,3 +1,6 @@
+# This class is the frontend for the lifefire application. It shows all
+# important data right on the dashboard page. Handles incoming input and
+# redirects them to corresponding Model. (also all programm are included)
 class AnalysisController < ApplicationController
   # Before actions
   before_action :first_time_user, only: :index
@@ -6,9 +9,11 @@ class AnalysisController < ApplicationController
   include StopSmoking
   include Sports
 
+  # Shows index for analysis
   def index
   end
 
+  # safe input to correct database and redirect
   def create
     # Check for spots or smoking params
     add_to_smoking_counter if params[:smoke]
