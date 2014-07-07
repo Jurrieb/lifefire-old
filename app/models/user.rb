@@ -1,8 +1,4 @@
 class User < ActiveRecord::Base
-  # Friendly ID
-  extend FriendlyId
-  friendly_id :name, use: :slugged
-
   # Relations
   has_one :userPreference
   has_one :userDetail
@@ -17,6 +13,11 @@ class User < ActiveRecord::Base
   include Smoking
   include Sporting
   include Messaging
+  include KarmaCalculation
+
+  # Friendly ID
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   # Nested attributes for forms
   accepts_nested_attributes_for :userPreference,
@@ -35,16 +36,15 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
 
   # Attached profile picture
-  has_attached_file :avatar, styles: { medium: "300x300#",
-                                       thumb: "40x40#" },
-                             default_url: "/images/:style/missing.png",
-                             convert_options: {
-                                medium: '-quality 80 -interlace Plane',
-                                thumb: '-quality 80 -interlace Plane' },
+  has_attached_file :avatar, styles: { medium: '300x300#',
+                                       thumb: '40x40#' },
+                             default_url: '/images/:style/missing.png',
+                             convert_options: { medium: '-quality 80 -interlace Plane',
+                                                thumb: '-quality 80 -interlace Plane' },
                              default_url: 'missing/lifefire_user.jpg'
 
   # Validations
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates :name,
             :email,
             :uid,
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name
       user.avatar_remote_url = auth.info.image
       user.oauth_token = auth.credentials.token
@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
     require 'open_uri_redirections'
 
     # Open url with safe redirections
-    url_picture = open(url_value, :allow_redirections => :safe) do |r|
+    url_picture = open(url_value, allow_redirections: :safe) do |r|
       r.base_uri.to_s
     end
 
@@ -82,35 +82,24 @@ class User < ActiveRecord::Base
 
   # Check if user has settings and details
   def first_time_user?
-    if self.userDetail.height                      == 0 &&
-       self.userDetail.weight                      == 0 &&
-       self.userDetail.target_weight               == 0 &&
-       self.userPreference.smokes                  == false &&
-       self.userPreference.sports                  == false &&
-       self.userSmokeAddiction.avarage_smokes_day  == 0
+    if userDetail.height                      == 0 &&
+       userDetail.weight                      == 0 &&
+       userDetail.target_weight               == 0 &&
+       userPreference.smokes                  == false &&
+       userPreference.sports                  == false &&
+       userSmokeAddiction.avarage_smokes_day  == 0
       return true
-     else
+    else
       return false
     end
   end
 
   # Create needed relations in sign_in
   def create_relations
-    UserPreference.create(user_id: self.id) unless self.userPreference.present?
-    UserProfile.create(user_id: self.id) unless self.userProfile.present?
-    UserDetail.create(user_id: self.id) unless self.userDetail.present?
-    UserNotice.create(user_id: self.id) unless self.userNotice.present?
-    UserSmokeAddiction.create(user_id: self.id) unless self.userSmokeAddiction.present?
+    UserPreference.create(user_id: id)     unless userPreference.present?
+    UserProfile.create(user_id: id)        unless userProfile.present?
+    UserDetail.create(user_id: id)         unless userDetail.present?
+    UserNotice.create(user_id: id)         unless userNotice.present?
+    UserSmokeAddiction.create(user_id: id) unless userSmokeAddiction.present?
   end
-
-  # User is following quit-smoking program?
-  def smokes?
-    self.userPreference.smokes?
-  end
-
-  # User is following sports program
-  def sports?
-    self.userPreference.sports?
-  end
-
 end
