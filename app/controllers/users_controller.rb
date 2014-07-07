@@ -2,7 +2,16 @@ class UsersController < ApplicationController
   # Set current user
   before_action :set_user, only: [:edit, :update, :destroy, :setup]
 
+  include Friends
+
   def profile
+    if @user = User.friendly.find(params[:id])
+      unless @user.userPreference.profile 
+        redirect_to analysis_index_path
+      end
+    else 
+        redirect_to analysis_index_path
+    end
   end
 
   def edit

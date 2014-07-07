@@ -58,6 +58,14 @@
   content: "\e602";
 }
 
+a{
+  color: $lifefire_orange;
+}
+
+a:hover {
+  color: $lifefire_green;
+}
+
 p {
   margin-bottom: 1.4em;
   line-height: 1.4;
