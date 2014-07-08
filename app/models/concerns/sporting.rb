@@ -13,7 +13,9 @@ module Sporting
 
   # Avarage calories burned, or 0
   def avarage_calories_burned
-    total_workout_calories / set_sport_by_user.count  || 0
+    total_workout_calories / set_sport_by_user.count
+  rescue
+    0
   end
 
   # Show latest workout with KM, or 0
