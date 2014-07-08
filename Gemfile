@@ -6,7 +6,7 @@ gem 'rails', '4.1.3'
 gem 'pg'
 
 # Profiler
-gem 'rack-mini-profiler'
+#gem 'rack-mini-profiler'
 
 # Style
 gem 'sass-rails', '4.0.2'

@@ -1,9 +1,0 @@
-.component
-  .title
-    .image = image_tag 'icon_trophy.png'
-    h2 vrienden
-  ul.friends
-    - @friends.each do | friend |
-      li 
-        = link_to friend.name, profile_path(friend.id)
-        .karma.coloured = friend.karma
