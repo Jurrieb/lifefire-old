@@ -51,6 +51,9 @@ gem 'open_uri_redirections'
 # Calculations
 gem 'unitwise'
 
+# Realtime messaging
+gem 'faye-rails', '~> 2.0.0'
+
 # Redis: Key/value based DB
 gem 'redis-rails'
 
