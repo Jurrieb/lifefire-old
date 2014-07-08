@@ -14,7 +14,9 @@ module KarmaCalculation
     @user.update(karma: score) unless score == 0
   end
 
+
   # - Multipliers calculations ------------------------------------------------#
+
   # Calculate profile score based upon filled in fields
   def profile_karma
     score_for_profile = []
@@ -29,32 +31,34 @@ module KarmaCalculation
 
   # Calculate smoking karma score based upon predefined settings
   def smoking_karma
-    if @user.smokes?
+    if User.find(self.id).userPreference.smokes
       score_for_smoking = []
       # Check for variables
       score_for_smoking.push(less_smoked?)
       score_for_smoking.push(quit_smoking?)
       score_for_smoking.push(money_spend_by_smoking)
       score_for_smoking.push(tar_smoked)
-      # Return count of all values in score_for_profile
-      (score_for_smoking.sum * karma_points) * multiplier('smoke')
-    else
-      0
+      # Return count of all values in score_for_smoking
+      return score_for_smoking.sum * karma_points if multiplier('smoke') == 0
+      return (score_for_smoking.sum * karma_points) * multiplier('smoke')
     end
+    0
   end
 
   # Calculate sporting karma score based upon predefined settings
   def sporting_karma
-    if @user.sports?
-    score_for_sporting = []
-
-    puts multiplier
-
-    # Return count of all values in score_for_profile
-    (score_for_sporting.sum * karma_points) * multiplier('sport')
-    else
-      0
+    if User.find(self.id).userPreference.sports
+      score_for_sporting = []
+      # Check for variables
+      score_for_sporting.push(1)
+      score_for_sporting.push(0)
+      score_for_sporting.push(0)
+      score_for_sporting.push(10)
+      # Return count of all values in score_for_sporting
+      return score_for_sporting.sum * karma_points if multiplier('sport') == 0
+      return (score_for_sporting.sum * karma_points) * multiplier('sport')
     end
+    0
   end
 
   # Standard karmapoints for inviting a friend
@@ -62,8 +66,8 @@ module KarmaCalculation
     50
   end
 
-  private
 
+  private
   # - Shared partials for calculation of karma --------------------------------#
 
   # Standard Karmapoints
@@ -172,14 +176,10 @@ module KarmaCalculation
   # Multiplier for money being spend on smoking
   def money_spend_by_smoking
     # Money spend
-    counted_smokes_price = smokes_counted * cigaret_price
+    counted_smokes_price = smokes_counted_today * cigaret_price
 
-    case
-    when counted_smokes_price <= 10                 then return 2
-    when counted_smokes_price > 10 && number <= 50  then return 1
-    else
-      return 0
-    end
+    return 1 if counted_smokes_price <= 1
+    return 0
   end
 
   # Total of smokes counted today
@@ -189,8 +189,8 @@ module KarmaCalculation
 
   # Return sum of multipliers for days
   def multiplier(name)
-    return days_active('smoke') if name = 'smoke'
-    return days_active('sports')
+    return days_active('smoke') if name == 'smoke'
+    return days_active('sport') if name == 'sport'
   end
 
   # - Sporting karma points # -------------------------------------------------#
