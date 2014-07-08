@@ -5,7 +5,7 @@ FactoryGirl.define do
     provider 'Facebook'
     uid 9999
     name { Faker::Name.name }
-    karmapoints 0
+    karma 0
     oauth_token 'test'
     oauth_expires_at DateTime.now + 1.week
 
