@@ -5,7 +5,11 @@ module Friends
     before_action :find_friends
   end
 
-  def find_friends 
-    @friends = current_user.friends.select(:id, :name, :karma)
+  # Find healthiest friends
+  def find_friends
+    @friends = current_user.friends
+                           .limit(5)
+                           .order('karma DESC')
+                           .select(:id, :name, :karma)
   end
 end
