@@ -7,15 +7,16 @@ class UsersController < ApplicationController
   # Find other user with friendly ID
   def profile
     @user = User.friendly.find(params[:id])
-    return @user unless @user.userPreference.public_profile || @user.userPreference.private_profile
-    # Redirect back
-    redirect_to analysis_index_path
+    unless @user.userPreference.public_profile || @user.userPreference.private_profile
+      # Redirect back
+      redirect_to analysis_index_path
+    end
   end
 
   # Edit a user
   def edit
     # Publish a message
-    Redis.new.publish('message-published', { message: "Dit is een test bericht +100 karma" }.to_json)
+    Redis.new.publish('message-published', { message: "Test bericht +100 karma" }.to_json)
   end
 
   # Update user
@@ -23,9 +24,13 @@ class UsersController < ApplicationController
     # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
     if @user.update!(user_params)
-      set_flash_and_redirect('success', t('flash.account_edited') , analysis_index_path)
+      set_flash_and_redirect('success',
+                             t('flash.account_edited'),
+                             analysis_index_path)
     else
-      set_flash_and_redirect('error', t('flash.account_not_edited') , edit_user_path(@user.id))
+      set_flash_and_redirect('error',
+                             t('flash.account_not_edited'),
+                             edit_user_path(@user.id))
     end
   end
 
@@ -34,9 +39,13 @@ class UsersController < ApplicationController
     if @user.destroy
       # Sign out user
       sign_out @user
-      set_flash_and_redirect('success', t('flash.account_deleted') , new_user_session_path)
+      set_flash_and_redirect('success',
+                             t('flash.account_deleted'),
+                             new_user_session_path)
     else
-      set_flash_and_redirect('error', t('flash.account_not_deleted') , edit_user_path(@user.id))
+      set_flash_and_redirect('error',
+                             t('flash.account_not_deleted'),
+                             edit_user_path(@user.id))
     end
   end
 

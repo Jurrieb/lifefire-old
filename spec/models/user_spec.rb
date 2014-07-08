@@ -76,7 +76,7 @@ describe User do
 
   context 'Sporting Concern' do
     it 'Last workout calories' do
-      expect(subject.last_workout_calories).to be(subject.sports.last.try(:burned_calories) || nil)
+      expect(subject.last_workout_calories).to be(subject.sports.last.try(:burned_calories) || 0)
     end
 
     it '#total_workout_calories' do
