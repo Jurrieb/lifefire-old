@@ -9,7 +9,7 @@
 
 
 class MessagesController < FayeRails::Controller
-  observe User, :after_save do |message|
-    MessagesController.publish('/message', new_widget.attributes)
-  end
+  # observe User, :after_save do |message|
+  #   MessagesController.publish("/message/#{current_user.user_hash}", message.attributes)
+  # end
 end
