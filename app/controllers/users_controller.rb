@@ -7,9 +7,12 @@ class UsersController < ApplicationController
   # Find other user with friendly ID
   def profile
     @user = User.friendly.find(params[:id])
-    return @user unless @user.userPreference.public_profile || @user.userPreference.private_profile
-    # Redirect back
-    redirect_to analysis_index_path
+    # Check if user is a friend of the current user
+    @friends =  current_user.friends.exists?(id: @user.id)
+    unless @user.userPreference.public_profile || @user.userPreference.private_profile
+      # Redirect back
+      redirect_to analysis_index_path
+    end
   end
 
   # Edit a user

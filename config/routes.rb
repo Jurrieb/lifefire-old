@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   # First time user setup
   get '/setup', to: 'users#setup'
 
-  # User private profile
-  get '/profile/:id', to: 'users#profile'
 
   # Facebook routes
   get '/write_on_wall', to: 'friends#write_on_wall'
@@ -35,11 +33,12 @@ Rails.application.routes.draw do
   # Application routes
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
-  resources :friends, only: [:index]
-  resources :users, only: [:edit, :update, :destroy]
+  resources :friends, only: [:index, :create]
 
+
+  resources :users, only: [:edit, :update, :destroy]
+  get '/users/:id', to: 'users#profile', as: 'profile'
   # Pages (public)
   resources :pages, only: :index
 
-  get '/users/:id', to: 'pages#users', as: 'profile'
 end

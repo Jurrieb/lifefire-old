@@ -9,15 +9,6 @@ class PagesController < ApplicationController
   def index
   end
 
-  # Return user if it has public profile
-  def users
-    @user =  if user_signed_in?
-      @found_user if @found_user.userPreference.private_profile || @found_user.userPreference.public_profile
-    else
-      @found_user if @found_user.userPreference.public_profile
-    end
-  end
-
   # Show privacy policy page
   def privacy_policy
   end

@@ -6,6 +6,12 @@ class FriendsController < ApplicationController
     end
   end
 
+  def create
+    # add friend to user and redirec
+    current_user.friends << User.find(params[:id])
+    redirect_to :back
+  end
+
   def write_on_wall
     if token = current_user.oauth_token
       @graph = Koala::Facebook::GraphAPI.new(token)

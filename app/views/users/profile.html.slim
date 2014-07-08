@@ -1,1 +1,48 @@
-
+.top_block
+  .profile
+    .avatar.big = image_tag @user.avatar.url(:medium)
+    .name = @user.name
+    .karma
+      span.coloured = @user.karma
+      = " karma"
+    - if @friends
+      'v Vrienden'
+    - else
+      = link_to 'Toevoegen als vriend', friends_path(id: @user.id), method: :post, class: 'button green'
+- if @friends 
+  .block
+    .messages
+      h3 = "Recente gebeurtenissen"
+      ul
+        li
+          .avatar
+            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+           
+          span.name = "Loed Idzinga"
+          = " Heeft 10km gelopen."
+        li
+          .avatar
+            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+           
+          span.name = "Loed Idzinga"
+          = " Heeft 10km gelopen."
+        li
+          .avatar
+            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+           
+          span.name = "Loed Idzinga"
+          = " Heeft 10km gelopen."
+        li
+          .avatar
+            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+           
+          span.name = "Loed Idzinga"
+          = " Heeft 10km gelopen."
+        li
+          .avatar
+            = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+           
+          span.name = "Loed Idzinga"
+          = " Heeft 10km gelopen."
+- else
+  h1 = "Dit is een prive profiel voeg " + @user.name + " toe als vriend om zijn prestaties te controlleren."
