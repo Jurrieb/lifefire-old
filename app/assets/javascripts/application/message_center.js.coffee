@@ -40,3 +40,16 @@
 #             messageCenter.prepend('<li>Er zijn geen nieuwe berichten</li>')
 #         messageCenter.slideDown("fast")
 
+
+$ ->
+  console.log "Laden van Faye"
+  client = new Faye.Client('/faye')
+
+  user_hash = ($ '.userhash').text()
+
+  console.log user_hash
+
+  client.subscribe '/message/' + user_hash, (payload)->
+    console.log "PING!"
+    # You probably want to think seriously about XSS here:
+    console.log payload
