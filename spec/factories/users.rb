@@ -12,6 +12,9 @@ FactoryGirl.define do
                        "http://static4.businessinsider.com/image/5275a3faeab8ea6d23d16dcc-480/barack-obama.jpg",
                        "http://cdn.lovell.co.uk/wp-content/uploads/2012/11/our-people1.jpg",
                        "http://static1.businessinsider.com/image/2e7a6c7983ab514833a9fa00-480/gisellebundchen.jpg"].sample
+
+    user_hash { Digest::SHA1.hexdigest("#{Faker::Name.name}-#{Faker::Internet.email}") }
+
     # Needed relations
     userDetail
     userNotice
