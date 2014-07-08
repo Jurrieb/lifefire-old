@@ -1,6 +1,19 @@
 module KarmaCalculation
   extend ActiveSupport::Concern
 
+  def calculated_karma
+    # Set user
+    @user = User.find(self.id)
+    # Calculate karma based on events
+    score = if @user.changed?
+      profile_karma + smoking_karma + sporting_karma
+    else
+      smoking_karma + sporting_karma
+    end
+    # Update karma user with total score
+    @user.update(karma: score) unless score == 0
+  end
+
   # - Multipliers calculations ------------------------------------------------#
   # Calculate profile score based upon filled in fields
   def profile_karma
@@ -16,23 +29,32 @@ module KarmaCalculation
 
   # Calculate smoking karma score based upon predefined settings
   def smoking_karma
-    score_for_smoking = []
-    # Check
-
-
-    # Return count of all values in score_for_profile
-    (score_for_smoking.sum * karma_points) * multiplier('smoke')
+    if @user.smokes?
+      score_for_smoking = []
+      # Check for variables
+      score_for_smoking.push(less_smoked?)
+      score_for_smoking.push(quit_smoking?)
+      score_for_smoking.push(money_spend_by_smoking)
+      score_for_smoking.push(tar_smoked)
+      # Return count of all values in score_for_profile
+      (score_for_smoking.sum * karma_points) * multiplier('smoke')
+    else
+      0
+    end
   end
 
   # Calculate sporting karma score based upon predefined settings
   def sporting_karma
+    if @user.sports?
     score_for_sporting = []
-    multiplier = days_active('sport') # gives multiplier
 
     puts multiplier
 
     # Return count of all values in score_for_profile
     (score_for_sporting.sum * karma_points) * multiplier('sport')
+    else
+      0
+    end
   end
 
   # Standard karmapoints for inviting a friend
@@ -43,6 +65,7 @@ module KarmaCalculation
   private
 
   # - Shared partials for calculation of karma --------------------------------#
+
   # Standard Karmapoints
   def karma_points
     1
@@ -119,8 +142,8 @@ module KarmaCalculation
   # Multiplier if user has smoked less then normal
   def less_smoked?
     avarage_smokes = UserSmokeAddiction.find(id).avarage_smokes_day
-    # Return 2 or 1 if
-    smokes_counted.by_date(Date.today) < avarage_smokes ? 1 : 0
+    # Return 1 or 0 if smoked is below avarage
+    smokes_counted_today < avarage_smokes ? 1 : 0
   end
 
   # Multiplier for days user has stopt smoking, all time
@@ -133,17 +156,16 @@ module KarmaCalculation
     Smoke.by_user(id).where(counted: 0).count > 120 ? 10 : 0
   end
 
-  # Multiplier for tar inhaled
+  # Multiplier for tar inhaled today
   def tar_smoked
     # Calculate tar (in mg)
-    tar_smoked = smokes_counted * cigaret_price
+    tar_smoked = smokes_counted_today * cigaret_tar
 
     case
-    when counted_smokes_price <= 10                 then return 3
-    when counted_smokes_price > 10 && number <= 50  then return 2
+    when tar_smoked == Unitwise(0, 'kilogram') then return 2
+    when tar_smoked <= Unitwise(0.0001, 'kilogram') then return 1
     else
-      # Return always 1, now it can be multiplied
-      return 1
+      return 0
     end
   end
 
@@ -153,31 +175,22 @@ module KarmaCalculation
     counted_smokes_price = smokes_counted * cigaret_price
 
     case
-    when counted_smokes_price <= 10                 then return 3
-    when counted_smokes_price > 10 && number <= 50  then return 2
+    when counted_smokes_price <= 10                 then return 2
+    when counted_smokes_price > 10 && number <= 50  then return 1
     else
-      # Return always 1, now it can be multiplied
-      return 1
+      return 0
     end
   end
 
-  # Total of smokes counted
-  def smokes_counted
-    Smoke.by_user(id).sum(:counted)
+  # Total of smokes counted today
+  def smokes_counted_today
+    Smoke.by_user(self.id).by_date(Date.today).sum(:counted)
   end
 
-  # Sum of multipliers
+  # Return sum of multipliers for days
   def multiplier(name)
-    if name = 'smoke'
-      # Return multiplier
-      return days_active('smoke') + less_smoked?
-                                  + quit_smoking?
-                                  + money_spend_by_smoking
-                                  + tar_smoked
-    else
-      # Return multiplier
-      return days_active('sports')
-    end
+    return days_active('smoke') if name = 'smoke'
+    return days_active('sports')
   end
 
   # - Sporting karma points # -------------------------------------------------#
