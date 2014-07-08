@@ -3,76 +3,97 @@
 //= depend_on_asset "opensans/OpenSans-Regular-webfont.ttf"
 //= depend_on_asset "opensans/OpenSans-Regular-webfont.woff"
 
+html
+  height: 100%
+
 body
   background: $background
   font-family: 'open_sansregular'
-  color: $font_color_light
+  color: $font_color_dark
+  height: 100%
 
-.container
-  +outer-container
+.avatar
+  width: 40px
+  height: 40px
 
-  // Till large-screen
-  @include media($large-screen)
-    .content
-      +span-columns(6 of 8)
-      padding: $gutter
+  &.big
+    width: 100px
+    height: 100px
 
-    .component_holder
-      +span-columns(3 of 6)
-
-    .sidebar
-      +span-columns(2)
-      padding: $gutter
-
-  // Till medium-screen
-  @include media($medium-screen)
-    .content
-      +span-columns(4 of 4)
-      padding: $gutter
-
-    .component_holder
-      +span-columns(4 of 4)
-
-    .sidebar
-      +span-columns(4)
-      padding: $gutter
-
-  // From big screen
-  @include media($big-screen)
-    .content
-      +span-columns(9 of 12)
-      padding: $gutter 0 $gutter $gutter
-
-    .component_holder
-      +span-columns(4.5 of 9)
-
-    .sidebar
-      +span-columns(3)
-      padding: $gutter $gutter 0 0
-
-.karma
-  font-size: 10px
+  img
+    -webkit-border-radius: 100%
+    -moz-border-radius: 100%
+    border-radius: 100%
 
 .coloured
-  padding: 2px 4px
-  margin: 0px 6px 0 0
-  background-color: $karma_background
-  color: $karma_text
-  -webkit-border-radius: 5px
-  -moz-border-radius: 5px
-  border-radius: 5px
+  background: $lifefire_orange
+  color: #fff
+  padding: 0 5px
+  border-radius: 4px
 
-.breadcrumbs
-  margin-bottom: 10px
-  font-size: 0.9em
-  line-height: 1
-// Define for other devices
+.container
 
-// @include media($large-screen)
-//   +span-columns(4 of 8)
+  overflow: hidden
 
-// @include media($medium-screen)
-//   +span-columns(4 of 4)
+  .content
+    float: right
+    width: calc(100% - 200px)
 
-// @include media($big-screen)
-//   +span-columns(6 of 12)
+    .top_block
+      background: #fff
+      padding: 40px
+      border-bottom: 5px solid #efefef
+
+    .block
+      padding: 40px
+
+    .friends
+      +outer-container
+      .friend
+        +span-columns(3)
+
+        .avatar
+          margin-bottom: 10px
+
+        .name
+          margin-bottom: 5px
+          a
+            color: $font_color_dark
+            font-size: 1.1em
+
+    .progress
+      +outer-container
+      border-bottom: 1px solid  $navigation_border 
+      margin-bottom: 20px
+      h3
+        border-bottom: 1px solid  $navigation_border 
+      .item
+        +span-columns(3)  
+        padding: 30px 0
+        text-align: center
+        .value
+          font-size: 2.4em
+          padding-bottom: 20px
+          small
+            font-size: 0.3em
+        .label 
+          color: $lifefire_orange   
+    .messages
+      ul
+        border: 1px solid $navigation_border 
+        border-bottom: 0px
+        li 
+          border-bottom: 1px solid $navigation_border 
+          padding: 10px
+          height: 60px
+          line-height: 40px
+          background: #fff
+          font-size: 1.2em
+          color: $font_color_light
+
+          .avatar
+            float: left
+            margin-right: 10px
+          
+          .name
+            color: $header_color_dark

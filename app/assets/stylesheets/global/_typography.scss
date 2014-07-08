@@ -73,21 +73,26 @@ p {
 
 h1 {
   margin-bottom: 10px;
-  color: $lifefire_green;
+  font-weight: normal;
+  color: $header_color_dark;
 }
 
 h2 {
-  margin-bottom: 10px;
-  color: $lifefire_green;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: $header_color_dark;
 }
 
 h3{
   margin-bottom: 10px;
-  color: $lifefire_green;
+  font-size: 1em;
+  font-weight: normal;
+  color: $header_color_light;
 }
 h4 {
   margin-bottom: 10px;
-  color: $font_color_dark;
+  color: $header_color_light;
   font-weight: normal;
-  font-size: 1.1em;
+  font-size: 0.6em;
 }
