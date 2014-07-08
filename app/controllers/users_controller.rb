@@ -4,21 +4,21 @@ class UsersController < ApplicationController
 
   include Friends
 
+  # Find other user with friendly ID
   def profile
-    if @user = User.friendly.find(params[:id])
-      unless @user.userPreference.profile 
-        redirect_to analysis_index_path
-      end
-    else 
-        redirect_to analysis_index_path
-    end
+    @user = User.friendly.find(params[:id])
+    return @user unless @user.userPreference.public_profile || @user.userPreference.private_profile
+    # Redirect back
+    redirect_to analysis_index_path
   end
 
+  # Edit a user
   def edit
     # Publish a message
     Redis.new.publish('message-published', { message: "Dit is een test bericht +100 karma" }.to_json)
   end
 
+  # Update user
   def update
     # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # Signout user
   def destroy
     if @user.destroy
       # Sign out user
@@ -63,7 +64,8 @@ class UsersController < ApplicationController
                                  userPreference_attributes: [:id,
                                                              :smokes,
                                                              :sports,
-                                                             :profile],
+                                                             :public_profile,
+                                                             :private_profile],
                                  # User details
                                  userDetail_attributes:     [:id,
                                                              :height,
