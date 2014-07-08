@@ -114,7 +114,7 @@ describe User do
     end
 
     it 'returns karma for invited user' do
-      expect(subject.invited_fried).to eq(50)
+      expect(subject.invited_friend).to eq(50)
     end
 
   end
