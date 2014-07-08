@@ -113,6 +113,10 @@ describe User do
       expect(subject.sporting_karma).to be > 0
     end
 
+    it 'returns karma for invited user' do
+      expect(subject.invited_fried).to eq(50)
+    end
+
   end
 end
 
