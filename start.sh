@@ -2,4 +2,4 @@
 
 #bundle exec thin start --threaded --debug
 
-bundle exec puma -C config/puma.rb -p 9292
+bundle exec thin -p 3000 start

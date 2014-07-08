@@ -71,7 +71,7 @@ gem 'spring',       group: :development
 gem 'quiet_assets', group: :development
 
 # Use Thin as the app server
-gem 'puma'
+gem 'thin'
 
 # Heroku
 gem 'rails_12factor', group: :production
