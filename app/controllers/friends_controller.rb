@@ -8,7 +8,9 @@ class FriendsController < ApplicationController
 
   def create
     # add friend to user and redirec
-    current_user.friends << User.find(params[:id])
+    if current_user.friends << User.find(params[:id])
+      current_user.create_activity action: :add_friend, owner: current_user, recipient: User.find(params[:id])
+    end
     redirect_to :back
   end
 
