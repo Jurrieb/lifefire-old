@@ -3,12 +3,7 @@
     .image = image_tag 'icon_trophy.png'
     h2 vrienden
   ul.friends
-    li 
-      = "John doe"
-      .karma.coloured = "200"
-    li 
-      = "Loed Idzinga"
-      .karma.coloured = "150"
-    li 
-      = "Jurgen Bosma"
-      .karma.coloured = "100"
+    - @friends.each do | friend |
+      li 
+        = link_to friend.name, profile_path(friend.id)
+        .karma.coloured = friend.karma

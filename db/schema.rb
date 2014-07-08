@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 20140707075011) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "friends_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+  end
+
   create_table "messages", force: true do |t|
     t.string   "message"
     t.integer  "karma"
@@ -106,6 +111,7 @@ ActiveRecord::Schema.define(version: 20140707075011) do
   end
 
   create_table "users", force: true do |t|
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
@@ -125,7 +131,7 @@ ActiveRecord::Schema.define(version: 20140707075011) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "karmapoints",            default: 0
+    t.integer  "karma",                  default: 0
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "slug"

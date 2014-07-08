@@ -1,5 +1,3 @@
-[ ![Codeship Status for loed-idzinga/lifefire](https://www.codeship.io/projects/6b6c7370-df27-0131-fef2-5eb9e167db38/status)](https://www.codeship.io/projects/24927)]
-
 == Lifefire - Afstudeertraject
 
     ................................................................................

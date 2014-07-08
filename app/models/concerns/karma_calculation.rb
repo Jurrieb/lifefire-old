@@ -1,10 +1,6 @@
 module KarmaCalculation
   extend ActiveSupport::Concern
 
-  # included do
-  #   # after_create :create_default_gallery, :send_welcome_email
-  # end
-
   # - Multipliers calculations ------------------------------------------------#
   def profile_karma
     score_for_profile ||= []
@@ -13,14 +9,14 @@ module KarmaCalculation
     score_for_profile.push(public_profile)
     score_for_profile.push(private_profile)
     # Return count of all values in score_for_profile
-    score_for_profile.sum * karma_points + gamble
+    score_for_profile.sum * karma_points
   end
 
   def smoking_karma
     score_for_smoking ||= []
-    days = days_active('smoke') # gives multiplier
+    multiplier = days_active('smoke') # gives multiplier
     # Return count of all values in score_for_profile
-    score_for_smoking.sum * karma_points + gamble
+    (score_for_smoking.sum * karma_points) * multiplier
   end
 
   def sporting_karma
@@ -30,34 +26,20 @@ module KarmaCalculation
     days_active('sport')
 
     # Return count of all values in score_for_profile
-    score_for_sporting.sum * karma_points + gamble
+    score_for_sporting.sum * karma_points
   end
 
-
-# Multipliers for day / week / month / year
-
-# Multipliers for kcal
-
-# Multipliers for days stopped smoking
-
-# Multipliers for MG tar reduced
-
-# Multiplier for saved euros
-
-# Multipliers for days
-
-# Multiplier for day / week / month / year sportive
-
-# Invited friends?
-
-
-# User may become predefined badges!
-
-# Standard karma score for action
+  # TODO:
+  # Invited friends?
 
   private
 
   # - Shared partials for calculation of karma --------------------------------#
+  # Standard Karmapoints
+  def karma_points
+    1
+  end
+
   # Active days for user for a program
   def days_active(model)
     active_days = model.camelize
@@ -81,21 +63,18 @@ module KarmaCalculation
     # After a week
     when 7..30      then return 2
     # After a month
-    when 30..178    then return 4
+    when 30..178    then return 3
     # After a half year
-    when 178..365   then return 8
+    when 178..365   then return 4
     # After a year (till 3 years)
-    when 366..1095  then return 16
+    when 366..1095  then return 5
     else
-      return 0
+      # Return always 1, now it can be multiplied
+      return 1
     end
   end
 
   # - Profile karma points # --------------------------------------------------#
-  def karma_points
-    1
-  end
-
   # Returns value if user filled in profile
   def filled_in_profile
     userProfile.created_at < userProfile.updated_at ? 6 : 0
@@ -128,4 +107,13 @@ module KarmaCalculation
 
   # - Quit Smoking karma points # ---------------------------------------------#
 
+  # Multipliers for days stopped smoking
+  # Multipliers for MG tar reduced
+  # Multiplier for saved euros
+
+  # - Sporting karma points # -------------------------------------------------#
+  # Multipliers for kcal
+  # Multipliers with score for sported
+  # Multipliers distance
+  # Multipliers duration
 end

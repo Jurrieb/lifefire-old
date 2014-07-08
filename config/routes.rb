@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   # First time user setup
   get '/setup', to: 'users#setup'
 
+  # User private profile
+  get '/profile/:id', to: 'users#profile'
+
   # Facebook routes
   get '/write_on_wall', to: 'friends#write_on_wall'
-  get '/profile', to: 'users#profile'
 
   # Search for smokes / sports
   get '/find-smokes', to: 'analysis#find_smoke_for_date'
@@ -38,5 +40,6 @@ Rails.application.routes.draw do
 
   # Pages (public)
   resources :pages, only: :index
-  get '/users/:id', to: 'pages#users'
+
+  get '/users/:id', to: 'pages#users', as: 'profile'
 end
