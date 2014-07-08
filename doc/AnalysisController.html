@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: AnalysisController
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!AnalysisController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (A)</a> &raquo;
+    
+    
+    <span class="title">AnalysisController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: AnalysisController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">AnalysisController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Sports.html" title="Sports (module)">Sports</a></span>, <span class='object_link'><a href="StopSmoking.html" title="StopSmoking (module)">StopSmoking</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/controllers/analysis_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>This class is the frontend for the lifefire application. It shows all
+important data right on the dashboard page. Handles incoming input and
+redirects them to corresponding Model. (also all programm are included)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_and_return_array-instance_method" title="#add_and_return_array (instance method)">- (Object) <strong>add_and_return_array</strong>(data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return array with parsed date and results.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>safe input to correct database and redirect.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_user_smokes%3F-instance_method" title="#current_user_smokes? (instance method)">- (Boolean) <strong>current_user_smokes?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Check if current user smokes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_user_smokes_graphic-instance_method" title="#current_user_smokes_graphic (instance method)">- (Object) <strong>current_user_smokes_graphic</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Fetch smoked cigarettes and sum counted, render JSON.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_user_sports_graphic-instance_method" title="#current_user_sports_graphic (instance method)">- (Object) <strong>current_user_sports_graphic</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Fetch one week and sum the burned calories, render JSON.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#first_time_user-instance_method" title="#first_time_user (instance method)">- (Object) <strong>first_time_user</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>When user is first time user, redirect to setup path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Shows index for analysis.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_json-instance_method" title="#render_json (instance method)">- (Object) <strong>render_json</strong>(object) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Render JSON with an object.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Sports.html" title="Sports (module)">Sports</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Sports.html#add_to_sports_counter-instance_method" title="Sports#add_to_sports_counter (method)">#add_to_sports_counter</a></span>, <span class='object_link'><a href="Sports.html#find_sport_for_date-instance_method" title="Sports#find_sport_for_date (method)">#find_sport_for_date</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="StopSmoking.html" title="StopSmoking (module)">StopSmoking</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="StopSmoking.html#add_to_smoking_counter-instance_method" title="StopSmoking#add_to_smoking_counter (method)">#add_to_smoking_counter</a></span>, <span class='object_link'><a href="StopSmoking.html#find_smoke_for_date-instance_method" title="StopSmoking#find_smoke_for_date (method)">#find_smoke_for_date</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#after_sign_in_path_for-instance_method" title="ApplicationController#after_sign_in_path_for (method)">#after_sign_in_path_for</a></span>, <span class='object_link'><a href="ApplicationController.html#after_sign_out_path_for-instance_method" title="ApplicationController#after_sign_out_path_for (method)">#after_sign_out_path_for</a></span>, <span class='object_link'><a href="ApplicationController.html#redirect_to_setup_path-instance_method" title="ApplicationController#redirect_to_setup_path (method)">#redirect_to_setup_path</a></span>, <span class='object_link'><a href="ApplicationController.html#set_flash_and_redirect-instance_method" title="ApplicationController#set_flash_and_redirect (method)">#set_flash_and_redirect</a></span></p>
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_and_return_array-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_and_return_array</strong>(data) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return array with parsed date and results</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_and_return_array'>add_and_return_array</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+  <span class='comment'># Create new array
+</span>  <span class='id identifier rubyid_days'>days</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='comment'># Loop through dates
+</span>  <span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_week'>week</span><span class='period'>.</span><span class='id identifier rubyid_ago'>ago</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span><span class='op'>..</span><span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_date'>date</span><span class='op'>|</span>
+    <span class='comment'># Set datetime to beginning of day
+</span>    <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_midnight'>midnight</span>
+    <span class='comment'># Push to hash into array
+</span>    <span class='id identifier rubyid_days'>days</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span> <span class='label'>m:</span> <span class='id identifier rubyid_date'>date</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='id identifier rubyid_date'>date</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+  <span class='comment'># return days as array
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_days'>days</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>safe input to correct database and redirect</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
+  <span class='comment'># Check for spots or smoking params
+</span>  <span class='id identifier rubyid_add_to_smoking_counter'>add_to_smoking_counter</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:smoke</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_add_to_sports_counter'>add_to_sports_counter</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:sport</span><span class='rbracket'>]</span>
+  <span class='comment'># Redirect
+</span>  <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='symbol'>:back</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="current_user_smokes?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>current_user_smokes?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Check if current user smokes</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_current_user_smokes?'>current_user_smokes?</span>
+  <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_smokes?'>smokes?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="current_user_smokes_graphic-instance_method">
+  
+    - (<tt>Object</tt>) <strong>current_user_smokes_graphic</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Fetch smoked cigarettes and sum counted, render JSON</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_current_user_smokes_graphic'>current_user_smokes_graphic</span>
+  <span class='id identifier rubyid_smokes'>smokes</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_smokes'>smokes</span><span class='period'>
+</span><span class='id identifier rubyid_                       .group_by_day'>                       .group_by_day</span><span class='lparen'>(</span><span class='symbol'>:date</span><span class='comma'>,</span> <span class='label'>range:</span> <span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_weeks'>weeks</span><span class='period'>.</span><span class='id identifier rubyid_ago'>ago</span><span class='op'>..</span><span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_                       .sum'>                       .sum</span><span class='lparen'>(</span><span class='symbol'>:counted</span><span class='rparen'>)</span>
+  <span class='comment'># Return JSON from array
+</span>  <span class='id identifier rubyid_render_json'>render_json</span><span class='lparen'>(</span><span class='id identifier rubyid_add_and_return_array'>add_and_return_array</span><span class='lparen'>(</span><span class='id identifier rubyid_smokes'>smokes</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="current_user_sports_graphic-instance_method">
+  
+    - (<tt>Object</tt>) <strong>current_user_sports_graphic</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Fetch one week and sum the burned calories, render JSON</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_current_user_sports_graphic'>current_user_sports_graphic</span>
+  <span class='id identifier rubyid_sports'>sports</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_sports'>sports</span><span class='period'>
+</span><span class='id identifier rubyid_                       .group_by_day'>                       .group_by_day</span><span class='lparen'>(</span><span class='symbol'>:date</span><span class='comma'>,</span> <span class='label'>range:</span> <span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_weeks'>weeks</span><span class='period'>.</span><span class='id identifier rubyid_ago'>ago</span><span class='op'>..</span><span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_                       .sum'>                       .sum</span><span class='lparen'>(</span><span class='symbol'>:burned_calories</span><span class='rparen'>)</span>
+  <span class='comment'># Return JSON from array
+</span>  <span class='id identifier rubyid_render_json'>render_json</span><span class='lparen'>(</span><span class='id identifier rubyid_add_and_return_array'>add_and_return_array</span><span class='lparen'>(</span><span class='id identifier rubyid_sports'>sports</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="first_time_user-instance_method">
+  
+    - (<tt>Object</tt>) <strong>first_time_user</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>When user is first time user, redirect to setup path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_first_time_user'>first_time_user</span>
+  <span class='id identifier rubyid_redirect_to_setup_path'>redirect_to_setup_path</span> <span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_first_time_user?'>first_time_user?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Shows index for analysis</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_json-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_json</strong>(object) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Render JSON with an object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/analysis_controller.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_json'>render_json</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='label'>json:</span> <span class='id identifier rubyid_object'>object</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Jul  7 18:00:39 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>

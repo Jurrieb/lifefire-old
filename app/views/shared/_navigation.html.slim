@@ -1,4 +1,4 @@
-nav
+nav.top_bar
   .logo
     / Logo's link
     - if current_user
@@ -7,7 +7,6 @@ nav
     - else
       = link_to new_user_session_path do
         = image_tag 'logo.png', title: 'Lifefire'
-
   / Show user information
   - if current_user
     .menu
@@ -17,15 +16,11 @@ nav
           .name = link_to current_user.name, profile_path(current_user.id)
           .karma
             span.coloured = current_user.karma
-            span Karmapunten
-
+            = " karma"
       .user_icons
-        .icon = link_to '', edit_user_path(current_user.id), class: 'icon-cog'
-        #message.icon 
-          = link_to '', messages_path(current_user.id), class: 'icon-mail'
+        .icon = link_to '', edit_user_path(current_user.id), class: 'icon-gear'
+        #message.icon
+          = link_to '', messages_path(current_user.id), class: 'icon-envelope'
           span.count = "0"
         .icon = link_to '', destroy_user_session_path, method: :delete, class: 'icon-power-off'
-
       ul.message_center
-
-

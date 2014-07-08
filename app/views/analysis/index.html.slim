@@ -1,15 +1,71 @@
-- breadcrumb :root
-
-- if current_user.sports?
-  .component_holder
-    / Sports module
-    = render partial: 'shared/sport', locals: { sport: @sport }
-    / Graphical representation for sports
-    = render partial: 'shared/sport_overview', locals: { sport: @sport }
-
-- if current_user.smokes?
-  .component_holder
-    / 'Quit smoking' module
-    = render partial: 'shared/smoking', locals: { smoke: @smoke }
-    / Graphical representation for smoking
-    = render partial: 'shared/smoking_overview', locals: { sport: @sport }
+.top_block
+  .friends
+    h2 = "Vrienden met de meeste karma"
+    ul
+    - if @friends.blank?
+      = "Voeg vrienden toe om cool te zijn."
+    - @friends.each do | friend |
+      li.friend 
+        .avatar.big
+          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+        .name = link_to friend.name, profile_path(friend.id)
+        .karma
+          span.coloured = friend.karma
+          = " karma"
+.block
+  .progress
+    h3 = "Mijn voortgang"
+    ul
+      li.item
+        .value 
+          = "300"
+          small = "stuks"
+        .label = "Cigaretten geminderd"
+      li.item
+        .value 
+          = "3000"
+          small = "kcal"
+        .label = "Callorien verbrand"
+      li.item
+        .value 
+          = "40"
+          small = "km"
+        .label = "Kilometers gemaakt"
+      li.item
+        .value 
+          = "8"
+          small = "km/u"
+        .label = "Gemiddelde snelheid"
+  .messages
+    h3 = "Recente gebeurtenissen"
+    ul
+      li
+        .avatar
+          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+         
+        span.name = "Loed Idzinga"
+        = " Heeft 10km gelopen."
+      li
+        .avatar
+          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+         
+        span.name = "Loed Idzinga"
+        = " Heeft 10km gelopen."
+      li
+        .avatar
+          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+         
+        span.name = "Loed Idzinga"
+        = " Heeft 10km gelopen."
+      li
+        .avatar
+          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+         
+        span.name = "Loed Idzinga"
+        = " Heeft 10km gelopen."
+      li
+        .avatar
+          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
+         
+        span.name = "Loed Idzinga"
+        = " Heeft 10km gelopen."

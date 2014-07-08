@@ -1,2 +1,0 @@
-class KarmaController < ApplicationController
-end

@@ -4,14 +4,19 @@ ruby '2.1.2'
 # Basic rails gems
 gem 'rails', '4.1.3'
 gem 'pg'
+
+# Profiler
+#gem 'rack-mini-profiler'
+
+# Style
 gem 'sass-rails', '4.0.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'slim-rails'
+
+# Jquery + Jquery Turbolinks fix
 gem 'jquery-rails'
 gem 'turbolinks'
-
-# Jquery ready fix
 gem 'jquery-turbolinks'
 
 # Styling
@@ -46,6 +51,9 @@ gem 'open_uri_redirections'
 # Calculations
 gem 'unitwise'
 
+# Redis: Key/value based DB
+gem 'redis-rails'
+
 # Paperclip
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
@@ -59,7 +67,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',       group: :development
 gem 'quiet_assets', group: :development
 
-# Use Puma as the app server
+# Use Thin as the app server
 gem 'puma'
 
 # Heroku
@@ -72,8 +80,8 @@ gem 'sprockets_better_errors'
 group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-  gem 'simplecov', :require => false, :group => :test
   gem 'rubocop', require: false
+  gem 'simplecov', require: false
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'guard-rubocop'
@@ -84,4 +92,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'rails-perftest'
+  gem 'yard' # RDOC comments written
+  gem 'rails_best_practices', '~> 1.15.4'
 end

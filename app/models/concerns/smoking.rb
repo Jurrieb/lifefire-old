@@ -57,31 +57,64 @@ module Smoking
     end
   end
 
-  # User Smoked today
+  # User Smoked today, or return 0
   def smoked_today
-    Smoke.by_user(self.id).by_date(Date.today).sum(:counted)
-  rescue
-    0
+    Smoke.by_user(id).by_date(Date.today).sum(:counted) || 0
   end
 
-  # User Smoked this week
+  # User Smoked this week, or return 0
   def smoked_this_week
-    Smoke.by_user(self.id).this_week(Date.today).sum(:counted)
-  rescue
-    0
+    Smoke.by_user(id).this_week(Date.today).sum(:counted) || 0
   end
 
-  # User Smoked this month
+  # User Smoked this month, or return 0
   def smoked_this_month
-    Smoke.by_user(self.id).this_month(Date.today).sum(:counted)
-  rescue
-    0
+    Smoke.by_user(id).this_month(Date.today).sum(:counted) || 0
   end
 
-  # User Smoked in all time
+  # User Smoked in all time, or return 0
   def smoked_all_time
-    Smoke.by_user(self.id).sum(:counted)
-  rescue
-    0
+    Smoke.by_user(id).sum(:counted) || 0
   end
+
+  # User is following quit-smoking program?
+  def smokes?
+    userPreference.smokes?
+  end
+
+  #############################
+  # #   Benchmark purpose   # #
+  #############################
+
+  # def test_methods
+  #   require "benchmark"
+
+  #   test1 = Benchmark.measure do
+  #     begin
+  #       Smoke.by_user(id).this_month(Date.today).sum(:counted)
+  #     rescue
+  #       0
+  #     end
+  #   end
+  #   puts "Rescue with user: #{test1}"
+
+  #   test2 = Benchmark.measure do
+  #     begin
+  #       Smoke.by_user(999).this_month(Date.today).sum(:counted)
+  #     rescue
+  #       0
+  #     end
+  #   end
+  #   puts "Rescue without user: #{test2}"
+
+  #   test3 = Benchmark.measure do
+  #     Smoke.by_user(id).this_month(Date.today).sum(:counted) || 0
+  #   end
+  #   puts "Without rescue with user: #{test3}"
+
+  #   test4 = Benchmark.measure do
+  #     Smoke.by_user(999).this_month(Date.today).sum(:counted) || 0
+  #   end
+  #   puts "Without rescue without user: #{test4}"
+  # end
 end

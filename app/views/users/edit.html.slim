@@ -47,7 +47,8 @@
         = render partial: 'shared/switch', locals: { subject: 'smokes', form: up}
         = render partial: 'shared/switch', locals: { subject: 'sports', form: up }
         hr
-        = render partial: 'shared/switch', locals: { subject: 'profile', form: up }
+        = render partial: 'shared/switch', locals: { subject: 'public_profile', form: up }
+        = render partial: 'shared/switch', locals: { subject: 'private_profile', form: up }
 
       hr
       = f.fields_for :userNotice do |un|
