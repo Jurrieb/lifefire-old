@@ -17,8 +17,9 @@ class UsersController < ApplicationController
 
   # Edit a user
   def edit
+
     # Publish a message
-    Redis.new.publish('message-published', { message: "Test bericht +100 karma" }.to_json)
+    MessagesController.publish("/message/#{current_user.user_hash}", 'Dit is een test')
   end
 
   # Update user
