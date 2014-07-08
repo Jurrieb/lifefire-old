@@ -97,4 +97,5 @@ group :development, :test do
   gem 'rails-perftest'
   gem 'yard' # RDOC comments written
   gem 'rails_best_practices', '~> 1.15.4'
+  gem 'bullet'
 end
