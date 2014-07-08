@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  include PublicActivity::Common
+
   # Relations
   has_one :userPreference
   has_one :userDetail
