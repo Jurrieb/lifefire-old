@@ -1,17 +1,25 @@
 module KarmaCalculation
   extend ActiveSupport::Concern
 
-  def calculated_karma
+  def calculated_karma program
     # Set user
     @user = User.find(self.id)
-    # Calculate karma based on events
-    score = if @user.changed?
-      profile_karma + smoking_karma + sporting_karma
-    else
-      smoking_karma + sporting_karma
-    end
+
+    # Define program to give karma to
+    score = case program
+            when 'all'
+              profile_karma + smoking_karma + sporting_karma
+            when 'smoke'
+              smoking_karma
+            when 'sport'
+              sporting_karma
+            when 'profile'
+              profile_karma
+            else
+              smoking_karma + sporting_karma
+            end
     # Update karma user with total score
-    @user.update(karma: score) unless score == 0
+    @user.increment!(karma: score) unless score == 0
   end
 
 
@@ -23,10 +31,9 @@ module KarmaCalculation
     # Check for variables
     score_for_profile.push(filled_in_profile)
     score_for_profile.push(filled_in_user_details)
-    score_for_profile.push(public_profile)
-    score_for_profile.push(private_profile)
+    score_for_profile.push(access_to_profile)
     # Return count of all values in score_for_profile
-    score_for_profile.sum * karma_points
+    return score_for_profile.sum * karma_points
   end
 
   # Calculate smoking karma score based upon predefined settings
@@ -41,8 +48,9 @@ module KarmaCalculation
       # Return count of all values in score_for_smoking
       return score_for_smoking.sum * karma_points if multiplier('smoke') == 0
       return (score_for_smoking.sum * karma_points) * multiplier('smoke')
+    else
+      0
     end
-    0
   end
 
   # Calculate sporting karma score based upon predefined settings
@@ -64,7 +72,6 @@ module KarmaCalculation
   def invited_friend
     50
   end
-
 
   private
   # - Shared partials for calculation of karma --------------------------------#
@@ -112,7 +119,8 @@ module KarmaCalculation
 
   # Returns value if user filled in profile
   def filled_in_profile
-    userProfile.created_at < userProfile.updated_at ? 6 : 0
+    user = UserProfile.where(user_id: self.id).first
+    user.created_at < user.updated_at ? 6 : 0
   end
 
   def filled_in_user_details
@@ -131,13 +139,17 @@ module KarmaCalculation
   end
 
   # Return value for public profile
-  def public_profile
-    userPreference.public_profile ? 4 : 0
-  end
+  def access_to_profile
+    user = UserPreference.where(user_id: self.id).first
 
-  # Return value for private profile
-  def private_profile
-    userPreference.private_profile ? 2 : 0
+    case
+    when user.public_profile &&
+         user.private_profile then return 5
+    when user.public_profile  then return 2
+    when user.private_profile then return 1
+    else
+      0
+    end
   end
 
   # - Quit Smoking karma points # ---------------------------------------------#
