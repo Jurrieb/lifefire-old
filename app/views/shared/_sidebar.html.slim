@@ -3,15 +3,9 @@
     .icon-bars
   nav
     ul
-      li
-      	= active_link_to "Overzicht", analysis_index_path
-      li
-      	= active_link_to "Roken invullen", new_smoke_path
-      li
-      	= active_link_to "Sporten invullen", new_sport_path
-      li
-      	= active_link_to "Mijn voortgang", progress_index_path
-      li
-      	= active_link_to "Vrienden", friends_path
-      li
-      	= active_link_to "Berichten", messages_path
+      li = active_link_to content_tag(:span, 'Overzicht'),  analysis_index_path, class: 'icon-home'
+      li = active_link_to content_tag(:span, 'Roken invullen'), new_smoke_path, class: 'icon-fire'
+      li = active_link_to content_tag(:span, 'Sporten invullen'), new_sport_path, class: 'icon-lightning'
+      li = active_link_to content_tag(:span, 'Mijn voortgang'), progress_index_path, class: 'icon-meter'
+      li = active_link_to content_tag(:span, 'Vrienden'), friends_path, class: 'icon-users'
+      li = active_link_to content_tag(:span, 'Berichten'), messages_path, class: 'icon-envelope'

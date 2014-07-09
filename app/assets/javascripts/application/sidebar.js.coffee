@@ -1,5 +1,6 @@
 $ ->
    $(".sidebar .bars").click (e)-> 
+      $(".sidebar span").hide()
       if $(".sidebar").width() > 44
         $(".sidebar").animate {
           width: '44px'
@@ -14,4 +15,5 @@ $ ->
           $(".sidebar").animate {
             width: '200px'
           }, 100, ->
+            $(".sidebar span").show()
 
