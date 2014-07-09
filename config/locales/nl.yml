@@ -295,7 +295,8 @@ nl:
       target_weight: Streefgewicht (kilo)
       smokes: Ik wil stoppen met roken
       sports: Ik wil meer sporten
-      profile: Ik wil een openbaar profiel
+      public_profile: Iedereen mag mijn profiel zien
+      private_profile: Alleen lifefire gebruikers mogen mijn profiel zien
       mail: Ik wil e-mailnotificaties ontvangen
       daily_updates: Ik wil dagelijkse updates ontvangen
       push_notice: Ik wil push-notificaties ontvangen
