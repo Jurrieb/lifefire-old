@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :friends, only: [:index, :create, :destroy]
   resources :smokes, only: [:new, :create]
   resources :sports
-  resources :analysis
+  resources :progress, only: :index
 
   get '/friends/search', to: 'friends#search', as: 'search'
 

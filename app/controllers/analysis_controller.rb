@@ -13,20 +13,6 @@ class AnalysisController < ApplicationController
     @activities = PublicActivity::Activity.where(owner_id: current_user.friends.map(&:id) << current_user.id).limit(10).order('id desc')
   end
 
-  # safe input to correct database and redirect
-  def create
-    # Check for spots or smoking params
-    add_to_smoking_counter if params[:smoke]
-    add_to_sports_counter if params[:sport]
-    # Redirect
-    redirect_to :back
-  end
-
-  # Check if current user smokes
-  def current_user_smokes?
-    current_user.smokes?
-  end
-
   # Fetch one week and sum the burned calories, render JSON
   def current_user_sports_graphic
     sports = current_user.sports
