@@ -21,7 +21,9 @@ module Lifefire
     config.i18n.default_locale = :nl
 
     # Faye messaging
-    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
+    config.middleware.use FayeRails::Middleware, mount: '/faye', timeout: 25
+    # Removes middleware lock, production: config.threadsafe! should be used.
     config.middleware.delete Rack::Lock
   end
 end
+
