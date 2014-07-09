@@ -1,18 +1,18 @@
 class SmokesController < ApplicationController
 
+  # Create new smoke for date and user
   def new
     @smoke = Smoke.find_or_create_by(user_id: current_user.id, date: Date.today)
   end
 
+  # Create new smoke for date and user
   def create
     # Find or create smoke (if date is other than today)
     @smoke = Smoke.find_or_create_by(user_id: current_user.id, date: Date.parse(params[:smoke][:date]))
     # Add counted cigarettes
-    if @smoke.add_to_smoking_counter(params[:smoke][:counted].to_i)
-      flash[:success] = t('flash.smokes_added', count: params[:smoke][:counted].to_i)
-    else
-      flash[:error] = t('flash.smokes_not_added')
-    end
+    @smoke.add_to_smoking_counter(params[:smoke][:counted].to_i)
+    # Redirect to back
+    redirect_to :back
   end
 
   # Find or create Smoke and render json
