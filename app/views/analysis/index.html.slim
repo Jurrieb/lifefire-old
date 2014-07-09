@@ -7,7 +7,6 @@
     - @friends.each do | friend |
       li.friend
         .avatar.big
-          = friend.avatar.url(:medium)
           = image_tag friend.avatar.url(:medium)
         .name = link_to friend.name, profile_path(friend.id)
         .karma
@@ -37,36 +36,6 @@
           = "8"
           small = "km/u"
         .label = "Gemiddelde snelheid"
-  .messages
-    h3 = "Recente gebeurtenissen"
-    ul
-      li
-        .avatar
-          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
 
-        span.name = "Loed Idzinga"
-        = " Heeft 10km gelopen."
-      li
-        .avatar
-          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
-
-        span.name = "Loed Idzinga"
-        = " Heeft 10km gelopen."
-      li
-        .avatar
-          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
-
-        span.name = "Loed Idzinga"
-        = " Heeft 10km gelopen."
-      li
-        .avatar
-          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
-
-        span.name = "Loed Idzinga"
-        = " Heeft 10km gelopen."
-      li
-        .avatar
-          = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGqVQYrrNAUh37jMdL5wZoHVvy4SzoyNe5esbKt3yGJQnVbuvtiw"
-
-        span.name = "Loed Idzinga"
-        = " Heeft 10km gelopen."
+  / Messages (Activitystream)
+  = render partial: 'shared/messages'

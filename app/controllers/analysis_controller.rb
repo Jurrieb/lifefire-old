@@ -12,6 +12,7 @@ class AnalysisController < ApplicationController
 
   # Shows index for analysis
   def index
+    @activities = PublicActivity::Activity.where(owner_id: current_user.friends.map(&:id) << current_user.id).limit(10).order('id desc')
   end
 
   # safe input to correct database and redirect

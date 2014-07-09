@@ -1,4 +1,7 @@
 class Sport < ActiveRecord::Base
+
+  include PublicActivity::Common
+
   # Before save
   before_save :calculate_burned_calories
 

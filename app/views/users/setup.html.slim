@@ -7,6 +7,9 @@ p LifeFire wil graag meer van je weten om je van een passend advies te voorzien,
     / Render switches
     = render partial: 'shared/switch', locals: { subject: 'smokes', form: up}
     = render partial: 'shared/switch', locals: { subject: 'sports', form: up}
+
+    = render partial: 'shared/switch', locals: { subject: 'public_profile', form: up }
+    = render partial: 'shared/switch', locals: { subject: 'private_profile', form: up }
   = f.fields_for :userSmokeAddiction do |usa|
       / Range for old smoke behaviour
       .range

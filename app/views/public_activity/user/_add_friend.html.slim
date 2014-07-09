@@ -1,0 +1,6 @@
+.avatar = image_tag activity.owner.avatar.url(:medium)
+span.name = link_to activity.owner.name, profile_path(activity.owner.id)
+= " en "
+= link_to activity.recipient.name, profile_path(activity.recipient.id)
+= " zijn LifeFire vrienden geworden."
+

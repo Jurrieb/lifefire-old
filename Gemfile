@@ -8,6 +8,9 @@ gem 'pg'
 # Profiler
 #gem 'rack-mini-profiler'
 
+# activity
+gem 'public_activity'
+
 # Style
 gem 'sass-rails', '4.0.2'
 gem 'uglifier', '>= 1.3.0'
