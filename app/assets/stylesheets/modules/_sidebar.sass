@@ -3,31 +3,35 @@
   background: #fff
   width: 200px
   height: 100%
+  font-size: 18px
   float: left 
   margin-bottom: -5000px
   padding-bottom: 5000px
   
   .bars
-    width: 44px
+    width: 100%
+    cursor: pointer
     height: 44px
     padding: 11px
-    float: right
-    background: none
-    border: none
-    box-shadow: none
+    text-align: right
+    color: $font_color_light
     &:hover
-      box-shadow: none
-      background: none
-      border: none
+      color: $font_color_dark * 0.9
 
   nav
-    padding: 40px 20px
     a
       display: block
+      padding: 0 0 0 12px
       width: 100%
       height: 44px
       line-height: 44px
       color: $font_color_light
 
+      span
+        padding-left: 10px
+        font-size: 14px
+        color: $font_color_dark
+      &:hover
+        color: $font_color_dark * 0.9
       &.active
         color: $lifefire_orange

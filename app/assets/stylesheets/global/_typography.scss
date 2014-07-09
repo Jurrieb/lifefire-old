@@ -48,20 +48,29 @@
 .icon-envelope:before {
   content: "\f003";
 }
-.icon-power-off:before {
-  content: "\f011";
-}
 .icon-gear:before {
   content: "\f013";
 }
-.icon-home:before {
-  content: "\f015";
-}
-.icon-group:before {
-  content: "\f0c0";
-}
 .icon-bars:before {
   content: "\f0c9";
+}
+.icon-home:before {
+  content: "\e600";
+}
+.icon-users:before {
+  content: "\e602";
+}
+.icon-meter:before {
+  content: "\e604";
+}
+.icon-fire:before {
+  content: "\e605";
+}
+.icon-lightning:before {
+  content: "\e606";
+}
+.icon-switch:before {
+  content: "\e607";
 }
 
 a{

@@ -16,7 +16,7 @@ require 'rubygems'           #Load gems
 require 'factory_girl_rails'
 
 # Create user
-6.times { seed_data }
+10.times { seed_data }
 
 # Create relationships between user
 users = User.all
