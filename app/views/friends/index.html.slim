@@ -1,18 +1,19 @@
-h1 Friends#index
-p Find me in app/views/friends/index.html.slim
-
-= @graph.inspect
-
-hr
-
-= @friends.inspect
-
-hr
-= "INVALID @ #{current_user.oauth_expires_at}"
-hr
-
-= link_to 'invite', write_on_wall_path
-
-hr
-
-= link_to 'terug', analysis_index_path
+.top_block
+  = form_tag(search_path, method: "get") do
+    = label_tag(:q, "Search for:")
+    = text_field_tag(:q)
+    = submit_tag("Search")
+.block
+  .friends
+    h2 = "Dit zijn je vrienden"
+    ul
+    - if @friends.blank?
+      = "Voeg vrienden toe om cool te zijn."
+    - @friends.each do | friend |
+      li.friend
+        .avatar.big
+          = image_tag friend.avatar.url(:medium)
+        .name = link_to friend.name, profile_path(friend.id)
+        .karma
+          span.coloured = friend.karma
+          = " karma"
