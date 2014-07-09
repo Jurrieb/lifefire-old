@@ -1,17 +1,17 @@
 .sidebar
-  = button_tag class: 'bars' do 
+  = button_tag class: 'bars' do
     .icon-bars
   nav
     ul
-      li 
+      li
       	= link_to "Overzicht", root_path, class: 'active'
-      li 
-      	= link_to "Roken invullen", root_path
-      li 
-      	= link_to "Sporten invullen", root_path
-      li 
+      li
+      	= link_to "Roken invullen", new_smoke_path
+      li
+      	= link_to "Sporten invullen", new_sport_path
+      li
       	= link_to "Mijn voortgang", root_path
-      li 
+      li
       	= link_to "Vrienden", friends_path
-      li 
+      li
       	= link_to "Berichten", root_path

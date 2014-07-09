@@ -1,10 +1,14 @@
-# app/controllers/concerns/running.rb
-module Sports
-  extend ActiveSupport::Concern
+class SportsController < ApplicationController
 
-  included do
-    before_action :all_populair_sports, only: :index
-    before_action :set_sport
+  before_action :all_populair_sports, only: :new
+  before_action :set_sport, only: :new
+
+  def new
+  end
+
+  def create
+
+
   end
 
   def add_to_sports_counter
@@ -18,12 +22,14 @@ module Sports
     end
   end
 
+  # Find or create Sport and render it as JSON
   def find_sport_for_date
     render json: Sport.find_or_create_by(user_id: current_user.id, date: Date.parse(params[:date]))
   end
 
   private
 
+  # Permit access to columns
   def sport_params
     params.require(:sport).permit(:distance, :date, :duration, :populair_sport_id)
   end

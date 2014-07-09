@@ -6,8 +6,6 @@ class AnalysisController < ApplicationController
   before_action :first_time_user, only: :index
 
   # Include all programs
-  include StopSmoking
-  include Sports
   include Friends
 
   # Shows index for analysis

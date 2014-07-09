@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get '/write_on_wall', to: 'friends#write_on_wall'
 
   # Search for smokes / sports
-  get '/find-smokes', to: 'analysis#find_smoke_for_date'
-  get '/find-sport' , to: 'analysis#find_sport_for_date'
+  get '/find-smokes', to: 'smokes#find_smoke_for_date'
+  get '/find-sport' , to: 'sports#find_sport_for_date'
 
   # Graphical routes
   get '/sports-overview', to: 'analysis#current_user_sports_graphic'
@@ -18,9 +18,6 @@ Rails.application.routes.draw do
 
   # Messages routes
   get '/messages/seen', to: 'messages#update_seen'
-
-  # Stream routes
-  get '/stream/messages', to: 'stream#messages'
 
   # Privacy policy
   get '/privacy_policy', to: 'pages#privacy_policy'
@@ -33,6 +30,10 @@ Rails.application.routes.draw do
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
   resources :friends, only: [:index, :create, :destroy]
+  resources :smokes, only: [:new, :create]
+  resources :sports
+  resources :analysis
+
   get '/friends/search', to: 'friends#search', as: 'search'
 
 
