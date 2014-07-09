@@ -1,61 +1,43 @@
-- breadcrumb :user
+.top_block
+  = form_for @user, remote: true, html: { class: 'remote'} do |f|
+    h2 Mijn gegevens
+    = f.label :name, I18n.t('form.label.name')
+    = f.text_field :name, disabled: true
+    = f.label :email, I18n.t('form.label.email')
+    = f.text_field :email, disabled: true
 
-= form_for @user, remote: true, html: { class: 'remote'} do |f|
-  .component
-    .title
-      .icon.icon-cog
-      h2 = "Mijn gegevens"
+    = f.fields_for :userSmokeAddiction do |usa|
+      / Range for old smoke behaviour
+      = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
+      .range
+        output = @user.userSmokeAddiction.avarage_smokes_day
+        = usa.range_field :avarage_smokes_day,
+                          in: 0..50,
+                          step: '1',
+                          value: @user.userSmokeAddiction.avarage_smokes_day.to_i
 
-    .content
-      = f.label :name, I18n.t('form.label.name')
-      = f.text_field :name, disabled: true
-      = f.label :email, I18n.t('form.label.email')
-      = f.text_field :email, disabled: true
-      hr
+    = f.fields_for :userDetail do |ud|
+      .number
+        = ud.label :height,  I18n.t('form.label.height')
+        = ud.number_field :height
+      .number
+        = ud.label :weight,  I18n.t('form.label.weight')
+        = ud.number_field :weight
+      .number
+        = ud.label :target_weight,  I18n.t('form.label.target_weight')
+        = ud.number_field :target_weight
+    h2 Mijn programma
+    = f.fields_for :userPreference do |up|
+      / Render switches
+      = render partial: 'shared/switch', locals: { subject: 'smokes', form: up}
+      = render partial: 'shared/switch', locals: { subject: 'sports', form: up }
+      = render partial: 'shared/switch', locals: { subject: 'public_profile', form: up }
+      = render partial: 'shared/switch', locals: { subject: 'private_profile', form: up }
 
-      = f.fields_for :userSmokeAddiction do |usa|
-        / Range for old smoke behaviour
-        = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
+    = f.fields_for :userNotice do |un|
+      / Render switches
+      = render partial: 'shared/switch', locals: { subject: 'mail', form: un }
+      = render partial: 'shared/switch', locals: { subject: 'daily_updates', form: un }
+      = render partial: 'shared/switch', locals: { subject: 'push_notice', form: un }
 
-        .range
-          output = @user.userSmokeAddiction.avarage_smokes_day
-          = usa.range_field :avarage_smokes_day,
-                            in: 0..50,
-                            step: '1',
-                            value: @user.userSmokeAddiction.avarage_smokes_day.to_i
-
-      hr
-      = f.fields_for :userDetail do |ud|
-        .number
-          = ud.label :height,  I18n.t('form.label.height')
-          = ud.number_field :height
-        .number
-          = ud.label :weight,  I18n.t('form.label.weight')
-          = ud.number_field :weight
-        .number
-          = ud.label :target_weight,  I18n.t('form.label.target_weight')
-          = ud.number_field :target_weight
-
-  .component
-    .title
-      .icon.icon-cog
-      h2 Mijn programma
-
-    .content
-      = f.fields_for :userPreference do |up|
-        / Render switches
-        = render partial: 'shared/switch', locals: { subject: 'smokes', form: up}
-        = render partial: 'shared/switch', locals: { subject: 'sports', form: up }
-        hr
-        = render partial: 'shared/switch', locals: { subject: 'public_profile', form: up }
-        = render partial: 'shared/switch', locals: { subject: 'private_profile', form: up }
-
-      hr
-      = f.fields_for :userNotice do |un|
-        / Render switches
-        = render partial: 'shared/switch', locals: { subject: 'mail', form: un }
-        = render partial: 'shared/switch', locals: { subject: 'daily_updates', form: un }
-        = render partial: 'shared/switch', locals: { subject: 'push_notice', form: un }
-
-  .bar_component
     = f.submit I18n.t('form.submit.edit_account')

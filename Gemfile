@@ -17,6 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'slim-rails'
 
+# add active class to links
+gem 'active_link_to'
+
 # Jquery + Jquery Turbolinks fix
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -29,9 +32,6 @@ gem 'neat'
 
 # Friendly IDs
 gem 'friendly_id', '~> 5.0.0'
-
-# Breadcrumbs
-gem 'gretel'
 
 # Group and sum by date
 gem 'groupdate'

@@ -15,10 +15,14 @@ class FriendsController < ApplicationController
   def create
     # add friend to user and redirec
     if params[:id] == current_user.id
-      flash['error'] = 'Je kan niet jezefl toevoegen als vriend.'
+      flash['error'] = 'Je kan jezelf niet als vriend toevoegen.'
     else
-      if current_user.friends << User.find(params[:id])
-        current_user.create_activity action: :add_friend, owner: current_user, recipient: User.find(params[:id])
+      user = User.find(params[:id])
+      unless user.blank?
+        if current_user.friends << user
+          StreamController.publish("/message/#{user.user_hash}", '#{user.name} heeft jouw toegevoegt')
+          current_user.create_activity action: :add_friend, owner: current_user, recipient: user
+        end
       end
     end
     redirect_to :back
@@ -28,9 +32,7 @@ class FriendsController < ApplicationController
     friend = User.find(params[:id])
     unless friend.blank?
       current_user.friends.delete(friend)
-      set_flash_and_redirect('success',
-                               t('flash.friend.removed'),
-                               :back)
+      set_flash_and_redirect('success', t('flash.friend.removed'), :back)
     end
   end
 

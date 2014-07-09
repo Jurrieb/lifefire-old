@@ -8,8 +8,12 @@
 # end
 
 
-class MessagesController < FayeRails::Controller
+class MessagesController < ApplicationController
   # observe User, :after_save do |message|
   #   MessagesController.publish("/message/#{current_user.user_hash}", message.attributes)
   # end
+
+  def index  
+  	@activities = PublicActivity::Activity.where(owner_id: current_user.id).limit(10).order('id desc')
+  end
 end

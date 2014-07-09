@@ -16,19 +16,12 @@ Rails.application.routes.draw do
   get '/sports-overview', to: 'analysis#current_user_sports_graphic'
   get '/smokes-overview', to: 'analysis#current_user_smokes_graphic'
 
-  # Messages routes
-  get '/messages/seen', to: 'messages#update_seen'
-
-  # Stream routes
-  get '/stream/messages', to: 'stream#messages'
-
   # Privacy policy
   get '/privacy_policy', to: 'pages#privacy_policy'
 
   # Devise for users
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
                                     sessions: "users/sessions" }
-
   # Application routes
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
