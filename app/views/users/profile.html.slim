@@ -5,10 +5,12 @@
     .karma
       span.coloured = @user.karma
       = " karma"
-    - if @friends
-      'v Vrienden'
-    - else
-      = link_to 'Toevoegen als vriend', friends_path(id: @user.id), method: :post, class: 'button green'
+    - unless @user.id == current_user.id
+      - if @friends
+        = 'v Vrienden'
+        = link_to "Vriend verwijderen", friend_path(id: @user.id), method: :delete
+      - else
+        = link_to 'Toevoegen als vriend', friends_path(id: @user.id), method: :post, class: 'button green'
 - if @friends 
   .block
     = render partial: 'shared/messages'

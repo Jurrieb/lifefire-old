@@ -32,7 +32,8 @@ Rails.application.routes.draw do
   # Application routes
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
-  resources :friends, only: [:index, :create]
+  resources :friends, only: [:index, :create, :destroy]
+  get '/friends/search', to: 'friends#search', as: 'search'
 
 
   resources :users, only: [:edit, :update, :destroy]

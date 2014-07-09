@@ -10,10 +10,6 @@ class UsersController < ApplicationController
     @activities = PublicActivity::Activity.where(owner_id: @user.id).limit(10).order('id desc')
     # Check if user is a friend of the current user
     @friends =  current_user.friends.exists?(id: @user.id)
-    unless @user.userPreference.public_profile || @user.userPreference.private_profile
-      # Redirect back
-      redirect_to analysis_index_path
-    end
   end
 
   # Edit a user
