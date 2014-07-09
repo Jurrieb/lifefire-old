@@ -75,6 +75,8 @@ describe User do
   end
 
   context 'Sporting Concern' do
+    let(:sport) { FactoryGirl.create(:sport, user_id: subject.id) }
+
     it 'Last workout calories' do
       expect(subject.last_workout_calories).to be(subject.sports.last.try(:burned_calories) || 0)
     end
