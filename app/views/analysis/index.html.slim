@@ -5,7 +5,7 @@
     - if @friends.blank?
       = "Voeg vrienden toe om cool te zijn."
     - @friends.each do | friend |
-      li.friend 
+      li.friend
         .avatar.big
           = image_tag friend.avatar.url(:medium)
         .name = link_to friend.name, profile_path(friend.id)
@@ -17,23 +17,25 @@
     h3 = "Mijn voortgang"
     ul
       li.item
-        .value 
+        .value
           = "300"
           small = "stuks"
         .label = "Cigaretten geminderd"
       li.item
-        .value 
+        .value
           = "3000"
           small = "kcal"
         .label = "Callorien verbrand"
       li.item
-        .value 
+        .value
           = "40"
           small = "km"
         .label = "Kilometers gemaakt"
       li.item
-        .value 
+        .value
           = "8"
           small = "km/u"
         .label = "Gemiddelde snelheid"
+
+  / Messages (Activitystream)
   = render partial: 'shared/messages'

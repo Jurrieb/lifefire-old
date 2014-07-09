@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
   has_many :sports
   has_many :messages
   has_and_belongs_to_many :friends,
-    :class_name => "User",
-    :association_foreign_key => "friend_id",
-    :join_table => "friends_users"
+                          class_name: 'User',
+                          association_foreign_key: 'friend_id',
+                          join_table: 'friends_users'
 
   # Concerns
   include Smoking
@@ -45,10 +45,9 @@ class User < ActiveRecord::Base
   # Attached profile picture
   has_attached_file :avatar, styles: { medium: '300x300#',
                                        thumb: '40x40#' },
-                             default_url: '/images/:style/missing.png',
                              convert_options: { medium: '-quality 80 -interlace Plane',
                                                 thumb: '-quality 80 -interlace Plane' },
-                             default_url: 'missing/lifefire_user.jpg'
+                             default_url: '/missing/lifefire_user.jpg'
 
   # Validations
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
@@ -69,6 +68,7 @@ class User < ActiveRecord::Base
       user.avatar_remote_url = auth.info.image
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.user_hash = Digest::SHA1.hexdigest("#{user.name}-#{user.email}")
     end
   end
 

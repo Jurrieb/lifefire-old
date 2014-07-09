@@ -54,6 +54,9 @@ gem 'open_uri_redirections'
 # Calculations
 gem 'unitwise'
 
+# Realtime messaging
+gem 'faye-rails', '~> 2.0.0'
+
 # Redis: Key/value based DB
 gem 'redis-rails'
 
@@ -71,7 +74,7 @@ gem 'spring',       group: :development
 gem 'quiet_assets', group: :development
 
 # Use Thin as the app server
-gem 'puma'
+gem 'thin'
 
 # Heroku
 gem 'rails_12factor', group: :production
@@ -97,4 +100,5 @@ group :development, :test do
   gem 'rails-perftest'
   gem 'yard' # RDOC comments written
   gem 'rails_best_practices', '~> 1.15.4'
+  gem 'bullet'
 end

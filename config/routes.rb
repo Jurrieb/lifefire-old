@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # First time user setup
   get '/setup', to: 'users#setup'
 
-
   # Facebook routes
   get '/write_on_wall', to: 'friends#write_on_wall'
 

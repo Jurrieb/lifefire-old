@@ -50,10 +50,9 @@ module KarmaCalculation
     if User.find(self.id).userPreference.sports
       score_for_sporting = []
       # Check for variables
-      score_for_sporting.push(1)
-      score_for_sporting.push(0)
-      score_for_sporting.push(0)
-      score_for_sporting.push(10)
+      score_for_sporting.push(latest_distance)
+      score_for_sporting.push(latest_duration)
+      score_for_sporting.push(burned_kcal)
       # Return count of all values in score_for_sporting
       return score_for_sporting.sum * karma_points if multiplier('sport') == 0
       return (score_for_sporting.sum * karma_points) * multiplier('sport')
@@ -195,8 +194,51 @@ module KarmaCalculation
 
   # - Sporting karma points # -------------------------------------------------#
 
-  # Multipliers for kcal
-  # Multipliers with score for sported
-  # Multipliers distance
-  # Multipliers duration
+  # Multiplier for distance for latest activity
+  def latest_distance
+    latest_sport_distance = Sport.by_user(self.id).where.not(distance: 0).last
+
+    case
+    when latest_sport_distance <= 5 then return 1
+    when latest_sport_distance > 10 then return 2
+    when latest_sport_distance > 20 then return 3
+    else
+      0
+    end
+  end
+
+  # Multiplier for duration for latest add sport activity
+  def latest_duration
+    latest_sport_duration = last_sport_added.duration
+
+    case
+    when latest_sport_duration <= 30 then return 1
+    when latest_sport_duration > 30 &&
+         latest_sport_duration <= 60 then return 2
+    when latest_sport_duration > 60 then return 3
+    else
+      0
+    end
+  end
+
+  # Multiplier for burned calories with latest activity
+  def burned_kcal
+    calories = last_sport_added.kcal
+
+    case
+    when calories <= 150 then return 1
+    when calories > 30 &&
+         calories <= 300 then return 2
+    when calories > 300 &&
+         calories <= 600 then return 3
+    when calories > 600  then return 4
+    else
+      0
+    end
+  end
+
+  # Latest sport added
+  def last_sport_added
+    Sport.by_user(self.id).last
+  end
 end

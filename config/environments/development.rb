@@ -42,11 +42,20 @@ Rails.application.configure do
   # # Paperclip config
   # config.paperclip_defaults = {
   #   :storage => :s3,
-  #   :bucket => ENV['S3_BUCKET_NAME'],
   #   :s3_credentials => {
+  #     :bucket => ENV['S3_BUCKET_NAME'],
   #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
   #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   #   }
   # }
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.rails_logger = true
+    Bullet.add_footer = true
+  end
 
 end

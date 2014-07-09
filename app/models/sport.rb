@@ -1,7 +1,7 @@
 class Sport < ActiveRecord::Base
 
   include PublicActivity::Common
-  
+
   # Before save
   before_save :calculate_burned_calories
 
@@ -31,7 +31,7 @@ class Sport < ActiveRecord::Base
       duration = self.duration / 60
       # User weigth
       weight = User.find(self.user_id).userDetail.weight
-      # define burned Kcalories
+      # Set burned Kcalories
       self.burned_calories = (practised_sport.kcal * duration) * weight
     else
       # Return with 0 calories burned
