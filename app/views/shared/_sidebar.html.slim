@@ -4,14 +4,14 @@
   nav
     ul
       li
-      	= link_to "Overzicht", root_path, class: 'active'
+      	= active_link_to "Overzicht", root_path
       li
-      	= link_to "Roken invullen", new_smoke_path
+      	= active_link_to "Roken invullen", new_smoke_path
       li
-      	= link_to "Sporten invullen", new_sport_path
+      	= active_link_to "Sporten invullen", new_sport_path
       li
-      	= link_to "Mijn voortgang", root_path
+      	= active_link_to "Mijn voortgang", root_path
       li
-      	= link_to "Vrienden", friends_path
+      	= active_link_to "Vrienden", friends_path
       li
-      	= link_to "Berichten", root_path
+      	= active_link_to "Berichten", messages_path
