@@ -27,7 +27,6 @@ module Sporting
   def avarage_workout_with_km_calories
     # Sum totals
     total_distance = set_sport_by_user.sum(:distance)
-    total_workouts = set_sport_by_user.count
     # Return if there are workouts
     return total_distance / total_workouts if total_workouts > 0
     0
@@ -41,6 +40,11 @@ module Sporting
   # User is following sports program
   def sports?
     userPreference.sports?
+  end
+
+  # Total workouts by User
+  def total_workouts
+    set_sport_by_user.count || 0
   end
 
   private
