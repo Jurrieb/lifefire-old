@@ -30,7 +30,9 @@ Rails.application.routes.draw do
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
   resources :friends, only: [:index, :create, :destroy] do
-    resources :activities, only: [:index, :show]
+    resources :activities, only: :show do
+      resources :comments, only: :create
+    end
   end
   resources :smokes, only: [:new, :create]
   resources :sports
