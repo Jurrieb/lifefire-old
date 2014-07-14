@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :smokes
   has_many :sports
   has_many :messages
+  has_many :comments
   has_and_belongs_to_many :friends,
                           class_name: 'User',
                           association_foreign_key: 'friend_id',
