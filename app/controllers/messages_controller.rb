@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @activities = PublicActivity::Activity.where(owner_id: user_ids)
-                                          .limit(10)
+                                          .where('created_at > ?', 1.week.ago)
                                           .order('id desc')
   end
 
