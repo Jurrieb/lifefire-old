@@ -1,3 +1,11 @@
+.column
+  table
+    tr
+      td = "Gemiddeld #{@current_user.avarage_smokes} sigaretten per dag"
+      td = "Totaal #{@current_user.calculate_tar} mg teer geïnhaleerd"
+      td = "Totaal #{@current_user.reduced_cigarettes} geminderd"
+      td = "Totaal #{number_to_currency(current_user.all_costs, locale: :nl)} bespaard"
+
 .component
   .title
     .image = image_tag 'icon_sig.png'

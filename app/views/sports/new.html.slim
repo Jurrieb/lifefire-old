@@ -1,3 +1,12 @@
+.column
+
+  table
+    tr
+      td = "Laatste workout #{current_user.last_workout_calories} calorieën"
+      td = "Gemiddeld #{current_user.avarage_calories_burned} calorieën per workout"
+      td = "#{current_user.total_workout_calories} calorieën verbrand"
+      td = "#{current_user.total_workouts} sessies"
+
 .component
   .title
     .image = image_tag 'icon_run.png'
