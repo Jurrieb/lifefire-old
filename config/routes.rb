@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'activities/index'
+
+  get 'activities/show'
+
   # Root for program
   root to: 'analysis#index'
 
@@ -25,7 +29,9 @@ Rails.application.routes.draw do
   # Application routes
   resources :analysis, only: [:index, :create]
   resources :messages, only: :index
-  resources :friends, only: [:index, :create, :destroy]
+  resources :friends, only: [:index, :create, :destroy] do
+    resources :activities, only: [:index, :show]
+  end
   resources :smokes, only: [:new, :create]
   resources :sports
   resources :progress, only: :index
