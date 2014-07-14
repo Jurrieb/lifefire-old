@@ -1,7 +1,6 @@
+# Application Controller holds all shared methods that can be accessed from the
+# entire Lifefire project.
 class ApplicationController < ActionController::Base
-
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   # For all actions, authenticate user
@@ -10,15 +9,15 @@ class ApplicationController < ActionController::Base
   # Set flash message and redirect
   def set_flash_and_redirect(status, message, redirect_url)
     flash[status] = message
-    redirect_to redirect_url  
+    redirect_to redirect_url
   end
 
-  # Redirect to analysis#index
+  # URL to redirect to after sign in (Devise)
   def after_sign_in_path_for(resource)
     analysis_index_path
   end
 
-  # Redirect to sign in page
+  # URL to redirect to after sign out (Devise)
   def after_sign_out_path_for(resource_or_scope)
     new_user_session_path
   end
