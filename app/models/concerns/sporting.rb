@@ -28,7 +28,7 @@ module Sporting
     # Sum totals
     total_distance = set_sport_by_user.sum(:distance)
     total_workouts = set_sport_by_user.count
-    # Return
+    # Return if there are workouts
     return total_distance / total_workouts if total_workouts > 0
     0
   end
