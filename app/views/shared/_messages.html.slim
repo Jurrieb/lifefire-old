@@ -1,6 +1,8 @@
 .messages
     h3 = "Recente gebeurtenissen"
     ul
-      - @activities.each do | activity | 
-        li
-          = render_activity activity
+      - @activities.each do | activity |
+        = link_to friend_activity_path(friend_id: activity.recipient_id,
+                                       id: activity.id) do
+          li
+            = render_activity activity
