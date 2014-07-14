@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+
+  # Get messages till a week ago
   def index
     @activities = PublicActivity::Activity.where(owner_id: user_ids)
                                           .where('created_at > ?', 1.week.ago)
@@ -6,7 +8,6 @@ class MessagesController < ApplicationController
   end
 
   private
-
   # Creates array of (user)IDs that is used for selecting messages
   def user_ids
     # Create new array
