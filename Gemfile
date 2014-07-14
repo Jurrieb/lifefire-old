@@ -43,9 +43,6 @@ gem 'raphael-rails'
 # Delayed backgroundjob
 gem 'sidekiq'
 
-# Facebook gem
-gem 'koala', '~> 1.10.0rc'
-
 # Authentication
 gem 'devise'
 gem 'omniauth-facebook'

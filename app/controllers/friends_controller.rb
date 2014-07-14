@@ -1,9 +1,5 @@
 class FriendsController < ApplicationController
   def index
-    # if token = current_user.oauth_token
-    #   @graph = Koala::Facebook::GraphAPI.new(token)
-    #   @friends = @graph.get_connections('me', 'friends')
-    # end
     @friends = current_user.friends
   end
 
@@ -33,13 +29,6 @@ class FriendsController < ApplicationController
     unless friend.blank?
       current_user.friends.delete(friend)
       set_flash_and_redirect('success', t('flash.friend.removed'), :back)
-    end
-  end
-
-  def write_on_wall
-    if token = current_user.oauth_token
-      @graph = Koala::Facebook::GraphAPI.new(token)
-      @graph.put_object('me', 'feed', :message => "I am writing on my wall!")
     end
   end
 end
