@@ -7,8 +7,6 @@ class SportsController < ApplicationController
   end
 
   def create
-
-
   end
 
   def add_to_sports_counter
@@ -20,18 +18,24 @@ class SportsController < ApplicationController
     else
       flash[:error] = t('flash.sports_not_added')
     end
+    # Karma background job
+    karma_for_sporting
   end
 
   # Find or create Sport and render it as JSON
   def find_sport_for_date
-    render json: Sport.find_or_create_by(user_id: current_user.id, date: Date.parse(params[:date]))
+    render json: Sport.find_or_create_by(user_id: current_user.id,
+                                         date: Date.parse(params[:date]))
   end
 
   private
 
   # Permit access to columns
   def sport_params
-    params.require(:sport).permit(:distance, :date, :duration, :populair_sport_id)
+    params.require(:sport).permit(:distance,
+                                  :date,
+                                  :duration,
+                                  :populair_sport_id)
   end
 
   # Add new sports entry

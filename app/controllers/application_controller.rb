@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
     redirect_to redirect_url
   end
 
+  # - Redirect paths ----------------------------------------------------------#
+
   # URL to redirect to after sign in (Devise)
   def after_sign_in_path_for(resource)
     analysis_index_path
@@ -27,8 +29,37 @@ class ApplicationController < ActionController::Base
     redirect_to setup_path unless controller_name == 'users'
   end
 
+  # - Array mapping -----------------------------------------------------------#
+
   # Return array with self + friends ID
   def self_and_friends
     current_user.friends.map(&:id) << current_user.id
+  end
+
+  #  - Karma background jobs --------------------------------------------------#
+
+  # Calculation for karma as background job adding a friend
+  def karma_for_adding_friend
+    KarmaWorker.perform_async('add_friend', current_user.id)
+  end
+
+  # Calculation for karma as background job for smoking
+  def karma_for_smoking
+    KarmaWorker.perform_async('smoke', current_user.id)
+  end
+
+  # Calculation for karma as background job for sporting
+  def karma_for_sporting
+    KarmaWorker.perform_async('sport', current_user.id)
+  end
+
+  # Calculation for karma as background job for updating profile
+  def karma_for_profile
+    KarmaWorker.perform_async('profile', current_user.id)
+  end
+
+  # Calculation for karma as background job for all of the above
+  def karma_for_all_progress
+    KarmaWorker.perform_async('all', current_user.id)
   end
 end
