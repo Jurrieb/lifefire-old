@@ -9,9 +9,14 @@ module Smoking
     0.30
   end
 
-  # Proven tar within one sigaret (10 mg, 0.00001 mg/kg)
+  # Proven tar within one sigaret (10 mg, 0.00001 mg)
   def cigaret_tar
     Unitwise(0.00001, 'kilogram')
+  end
+
+  # Proven Nicotin within one sigaret (1 mg, 0.000001 mg)
+  def cigaret_nicotin
+    Unitwise(0.000001, 'kilogram')
   end
 
   # User has paid for all cigarrets
@@ -24,6 +29,13 @@ module Smoking
     (Smoke.by_user(self.id).sum(:counted) * cigaret_tar).convert_to('milligram')
                                                         .to_i
                                                         .round(2)
+  end
+
+  # Calculate tar in smoked cigarrets
+  def calculate_nicotin
+    (Smoke.by_user(self.id).sum(:counted) * cigaret_nicotin).convert_to('milligram')
+                                                            .to_i
+                                                            .round(2)
   end
 
   # Calculate avarage smokes a day
