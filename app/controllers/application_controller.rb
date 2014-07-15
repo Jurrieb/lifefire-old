@@ -26,4 +26,9 @@ class ApplicationController < ActionController::Base
   def redirect_to_setup_path
     redirect_to setup_path unless controller_name == 'users'
   end
+
+  # Return array with self + friends ID
+  def self_and_friends
+    current_user.friends.map(&:id) << current_user.id
+  end
 end
