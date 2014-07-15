@@ -14,14 +14,14 @@ class CommentsController < ApplicationController
     redirect_to :back
   end
 
-  # Edit a comment by activity
-  def update
-
-  end
-
   # Destroy a comment by activity
   def destroy
-
+    if @comment.destroy
+      flash[:success] = t('flash.comment_destroyed')
+    else
+      flash[:error] = t('flash.comment_not_destroyed')
+    end
+    redirect_to :back
   end
 
   private
