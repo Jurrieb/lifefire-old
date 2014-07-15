@@ -20,10 +20,9 @@ html
 
     / Favicons
     = render partial: 'shared/favicon'
-    
+
   body
     .container
-      .userhash = current_user.user_hash
       = render partial: 'shared/navigation'
       = render partial: 'shared/notification'
       = render partial: 'shared/sidebar'
