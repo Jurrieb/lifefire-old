@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.cookie
 //= require turbolinks
 //= require raphael
 //= require morris
