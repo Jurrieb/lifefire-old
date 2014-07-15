@@ -31,6 +31,8 @@ class UsersController < ApplicationController
                              t('flash.account_not_edited'),
                              edit_user_path(@user.id))
     end
+    # Karma background job
+    karma_for_profile
   end
 
   # Signout user

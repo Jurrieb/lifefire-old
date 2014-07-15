@@ -21,6 +21,9 @@ class FriendsController < ApplicationController
         end
       end
     end
+    # Karma background job
+    karma_for_adding_friend
+    # Redirect
     redirect_to :back
   end
 

@@ -15,13 +15,14 @@ module KarmaCalculation
               sporting_karma
             when 'profile'
               profile_karma
+            when 'add_friend'
+              invited_friend
             else
               smoking_karma + sporting_karma
             end
     # Update karma user with total score
-    @user.increment!(karma: score) unless score == 0
+    @user.increment!(:karma, score) unless score == 0
   end
-
 
   # - Multipliers calculations ------------------------------------------------#
 
@@ -33,7 +34,7 @@ module KarmaCalculation
     score_for_profile.push(filled_in_user_details)
     score_for_profile.push(access_to_profile)
     # Return count of all values in score_for_profile
-    return score_for_profile.sum * karma_points
+    score_for_profile.sum * karma_points
   end
 
   # Calculate smoking karma score based upon predefined settings
@@ -74,6 +75,7 @@ module KarmaCalculation
   end
 
   private
+
   # - Shared partials for calculation of karma --------------------------------#
 
   # Standard Karmapoints
@@ -190,7 +192,7 @@ module KarmaCalculation
     counted_smokes_price = smokes_counted_today * cigaret_price
 
     return 1 if counted_smokes_price <= 1
-    return 0
+    0
   end
 
   # Total of smokes counted today
@@ -210,8 +212,10 @@ module KarmaCalculation
   def latest_distance
     latest_sport_distance = Sport.by_user(self.id).where.not(distance: 0).last
 
+    return 0 if latest_sport_distance.blank?
+
     case
-    when latest_sport_distance <= 5 then return 1
+    when latest_sport_distance < 5 then return 1
     when latest_sport_distance > 10 then return 2
     when latest_sport_distance > 20 then return 3
     else
@@ -221,13 +225,14 @@ module KarmaCalculation
 
   # Multiplier for duration for latest add sport activity
   def latest_duration
-    latest_sport_duration = last_sport_added.duration
+    latest_sport_duration = last_sport_added.duration if last_sport_added
+    return 0 if latest_sport_duration.blank?
 
     case
-    when latest_sport_duration <= 30 then return 1
-    when latest_sport_duration > 30 &&
-         latest_sport_duration <= 60 then return 2
-    when latest_sport_duration > 60 then return 3
+    when latest_sport_duration < 30 then return 1
+    when latest_sport_duration > 29 &&
+         latest_sport_duration < 60 then return 2
+    when latest_sport_duration > 59 then return 3
     else
       0
     end
@@ -235,15 +240,16 @@ module KarmaCalculation
 
   # Multiplier for burned calories with latest activity
   def burned_kcal
-    calories = last_sport_added.kcal
+    calories = last_sport_added.kcal if last_sport_added
+    return 0 if calories.blank?
 
     case
-    when calories <= 150 then return 1
-    when calories > 30 &&
-         calories <= 300 then return 2
-    when calories > 300 &&
-         calories <= 600 then return 3
-    when calories > 600  then return 4
+    when calories < 150 then return 1
+    when calories > 149 &&
+         calories < 300 then return 2
+    when calories > 299 &&
+         calories < 600 then return 3
+    when calories > 599  then return 4
     else
       0
     end
