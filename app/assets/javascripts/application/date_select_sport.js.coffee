@@ -1,9 +1,9 @@
-class DateSelectSmoke
+class DateSelectSport
   constructor: ->
     # # Date form
     @dateSelect = ($ '#dateselect')
     # Initialize date select JqueryUI
-    @dateSelect.datepicker({ dateFormat: 'dd-mm-yy', maxDate: "+0w" })
+    @dateSelect.datepicker({ dateFormat: 'dd-mm-yy', maxDate: "+0w"  })
     # Slider input and output
     @smoked_value = ($ '.range output')
     @counted_value = ($ '#smoke_counted')
@@ -35,4 +35,4 @@ class DateSelectSmoke
             @smoked_value.css('left', rangeWidth + 'px')
 
 $ ->
-  date_select = new DateSelectSmoke if ($ '#dateselect.smoke').length > 0
+  date_select = new DateSelectSport if ($ '#dateselect.sport').length > 0
