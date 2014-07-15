@@ -5,11 +5,17 @@ class ApplicationController < ActionController::Base
 
   # For all actions, authenticate user
   before_action :authenticate_user!
+  before_action :user_hash_to_cookie
 
   # Set flash message and redirect
   def set_flash_and_redirect(status, message, redirect_url)
     flash[status] = message
     redirect_to redirect_url
+  end
+
+  # - User ID hash ------------------------------------------------------------#
+  def user_hash_to_cookie
+    cookies[:user_hash] = current_user.user_hash unless cookies[:user_hash]
   end
 
   # - Redirect paths ----------------------------------------------------------#
