@@ -3,7 +3,7 @@ class DateSelect
     # # Date form
     @dateSelect = ($ '#dateselect')
     # Initialize date select JqueryUI
-    @dateSelect.datepicker()
+    @dateSelect.datepicker({ dateFormat: 'dd-mm-yy' })
 
 
 
