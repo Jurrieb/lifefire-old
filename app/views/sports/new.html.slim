@@ -1,20 +1,25 @@
+.column
+
+  table
+    tr
+      td = "Laatste workout #{current_user.last_workout_calories} calorieën"
+      td = "Gemiddeld #{current_user.avarage_calories_burned} calorieën per workout"
+      td = "#{current_user.total_workout_calories} calorieën verbrand"
+      td = "#{current_user.total_workouts} sessies"
+
 .component
   .title
     .image = image_tag 'icon_run.png'
     h2 Ik sport
-
-  .date-select.sport
-    - (Date.today - 5.days..Date.today).each do |date|
-      - if date == Date.today
-        = link_to I18n.localize(date, format: '%d %B'), '#', class: 'active'
-      - else
-        = link_to I18n.localize(date, format: '%d %B'), '#'
 
   .content.sport
     / First new sport
     = form_for @sport, url: analysis_index_path, method: :post,
                                                  remote: true,
                                                  html: { class: 'remote sports' } do |f|
+
+      = f.label :date, I18n.t('form.dateselect')
+      = f.text_field :date, value: Date.today, id: 'dateselect'
 
       = f.label :populair_sport_id, "Welke sport heb je beoefend?"
       = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
@@ -24,29 +29,5 @@
 
       = f.label :duration, 'Hoelang duurde deze sessie in minuten?'
       = f.number_field :duration, value: 0, min: 0, max: 300
-
-      .hidden_date = f.hidden_field :date, value: Date.today
-
-      = f.submit I18n.t('form.submit.sports')
-
-    = link_to 'Voeg extra sport toe', '#', class: 'add_extra_sport pill'
-    = link_to 'Sluiten', '#', class: 'close_extra_sport pill'
-
-    / Extra new sport
-    = form_for @extra_sport, url: analysis_index_path, method: :post,
-                                                       remote: true,
-                                                       html: { class: 'remote sports',
-                                                               id: 'new_extra_sport' } do |f|
-
-      = f.label :populair_sport_id, "Welke sport heb je beoefend?"
-      = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
-
-      = f.label :distance, 'Hoeveel kilometer was deze sessie?'
-      = f.number_field :distance, value: 0
-
-      = f.label :duration, 'Hoelang duurde deze sessie in minuten?'
-      = f.number_field :duration, value: 0
-
-      .hidden_date = f.hidden_field :date, value: Date.today
 
       = f.submit I18n.t('form.submit.sports')

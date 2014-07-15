@@ -1,19 +1,22 @@
-# class MessagesController < ApplicationController
-
-#   # Update all messages to been seen by user
-#   def update_seen
-#     Message.update_all(seen: true, user_id: current_user.id)
-#     render nothing: true
-#   end
-# end
-
-
 class MessagesController < ApplicationController
-  # observe User, :after_save do |message|
-  #   MessagesController.publish("/message/#{current_user.user_hash}", message.attributes)
-  # end
 
-  def index  
-  	@activities = PublicActivity::Activity.where(owner_id: current_user.id).limit(10).order('id desc')
+  # Get messages till a week ago
+  def index
+    @activities = PublicActivity::Activity.where(owner_id: user_ids)
+                                          .where('created_at > ?', 1.week.ago)
+                                          .order('id desc')
+  end
+
+  private
+  # Creates array of (user)IDs that is used for selecting messages
+  def user_ids
+    # Create new array
+    ids = []
+    # Set current user ID in array
+    ids << current_user.id
+    # For all friends, add to array
+    current_user.friends.each { |friend| ids << friend.id }
+    # Return array
+    ids
   end
 end

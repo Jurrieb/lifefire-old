@@ -25,6 +25,6 @@ class SmokesController < ApplicationController
 
   # Permit access for columns:
   def smoke_params
-    params.require(:smoke).permit(:date, :counted)
+    params.require(:smoke).permit(:date, :counted, :date)
   end
 end

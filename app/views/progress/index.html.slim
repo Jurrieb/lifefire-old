@@ -1,1 +1,9 @@
-h1 INDEX!
+- if current_user.sports?
+  .component_holder
+    / Graphical representation for sports
+    = render partial: 'shared/sport_overview', locals: { sport: @sport }
+
+- if current_user.smokes?
+  .component_holder
+    / Graphical representation for smoking
+    = render partial: 'shared/smoking_overview', locals: { sport: @sport }

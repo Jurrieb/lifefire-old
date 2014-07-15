@@ -3,7 +3,7 @@
     h2 = "Vrienden met de meeste karma"
     ul
     - if @friends.blank?
-      = "Voeg vrienden toe om cool te zijn."
+      li Voeg vrienden toe en motiveer elkaar
     - @friends.each do | friend |
       li.friend
         .avatar.big
