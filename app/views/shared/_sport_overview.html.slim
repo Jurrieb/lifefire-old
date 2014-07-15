@@ -1,13 +1,9 @@
-.component
-  .title
-    .image = image_tag 'icon_run.png'
-    h2 Verloop van meer sporten
-
-  .content
-    = render partial: 'shared/graph', locals: {name: 'sports', link: sports_overview_path}
-  .overview
+.block
+  h2 Verloop van meer sporten
+  = render partial: 'shared/graph', locals: {name: 'sports', link: sports_overview_path}
+.middle_block
+  .results
     .column
-
       table
         tr
           th colspan="2" = "Calorieën verbrand"

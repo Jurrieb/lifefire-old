@@ -1,11 +1,8 @@
-.component
-  .title
-    .image = image_tag 'icon_sig.png'
-    h2 Stoppen met roken verloop
-
-  .content
-    = render partial: 'shared/graph', locals: {name: 'smokes', link: smokes_overview_path}
-  .overview
+.block
+  h3 Stoppen met roken verloop
+  = render partial: 'shared/graph', locals: {name: 'smokes', link: smokes_overview_path}
+.middle_block
+  .results
     .column
       table
         tr
@@ -35,4 +32,3 @@
         tr
           td = "Totaal:"
           td = "#{@current_user.reduced_cigarettes}"
-   

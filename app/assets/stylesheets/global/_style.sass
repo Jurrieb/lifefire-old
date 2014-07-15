@@ -42,14 +42,41 @@ body
     float: right
     width: calc(100% - 200px)
 
+    .middle_block
+      +outer-container
+      background: #fff
+      padding: 40px
+      border-bottom: 5px solid #efefef
+      border-top: 5px solid #efefef
+
     .top_block
       background: #fff
       padding: 40px
       border-bottom: 5px solid #efefef
+      .progress
+        margin-bottom: 0
+        border-bottom: 0
+        h3
+          border-bottom: 0
+        .item
+          padding-bottom: 0
 
     .block
       padding: 40px
 
+
+    .results
+      .column
+        +span-columns(6)
+        
+        table
+          margin: 0
+          th
+            border-bottom: none
+            padding: 0
+          td
+            padding: 2px 0
+            border-bottom: none
     .friends
       +outer-container
       .friend

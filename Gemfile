@@ -8,6 +8,9 @@ gem 'pg'
 # Profiler
 #gem 'rack-mini-profiler'
 
+#cookies for sidebar
+gem 'jquery-cookie-rails'
+
 # activity
 gem 'public_activity'
 
