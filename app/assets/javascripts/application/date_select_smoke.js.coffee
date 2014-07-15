@@ -14,15 +14,14 @@ class DateSelectSmoke
   bindListeners: =>
     @dateSelect.on 'change', (e) =>
       e.preventDefault()
-
       # Get selected date (and parsed)
       date_selected = moment(($ e.target).val(), "MM-DD-YYYY")._i
-
       # Get values via AJAX request
       $.ajax '/find-smokes?date=' + date_selected,
           type: 'GET'
           dataType: 'json'
           success: (data, textStatus, jqXHR) =>
+            # Set new data
             @smoked_value.text(data['counted'])
             @counted_value.val(data['counted'])
             # Edit css for slider thumb
