@@ -11,22 +11,16 @@
     .image = image_tag 'icon_sig.png'
     h2 Ik stop met roken
 
-  .date-select.smoke
-    - (Date.today - 5.days..Date.today).each do |date|
-      - if date == Date.today
-        = link_to I18n.localize(date, format: '%d %B'), '#', class: 'active'
-      - else
-        = link_to I18n.localize(date, format: '%d %B'), '#'
-
   .content
     = form_for @smoke, url: smokes_path, method: :post,
                                          remote: true,
                                          html: { class: 'remote smokes' } do |f|
+
+      = f.label :date, I18n.t('form.dateselect')
+      = f.text_field :date, value: Date.today, id: 'dateselect'
       = f.label :counted, "Hoeveel sigaretten heb je vandaag, op #{ content_tag(:span, I18n.localize(Date.today, format: '%d %B'), class: 'date_in_text_smoke')} gerookt.".html_safe
 
       .range
         output = @smoke.counted
         = f.range_field :counted, in: 0..50, step: '1'
         = f.submit I18n.t('form.submit.smoke')
-
-      .hidden_date = f.hidden_field :date, value: Date.today
