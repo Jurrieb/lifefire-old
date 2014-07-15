@@ -10,7 +10,10 @@ class AnalysisController < ApplicationController
 
   # Shows index for analysis
   def index
-    @activities = PublicActivity::Activity.where(owner_id: current_user.friends.map(&:id) << current_user.id).limit(10).order('id desc')
+    @activities = PublicActivity::Activity.where(owner_id: self_and_friends)
+                                          .includes(:owner, :recipient)
+                                          .limit(10)
+                                          .order('id desc')
   end
 
   # Fetch one week and sum the burned calories, render JSON
@@ -43,7 +46,7 @@ class AnalysisController < ApplicationController
       days << { m: date, a: data[date] }
     end
     # return days as array
-    return days
+    days
   end
 
   # Render JSON with an object
