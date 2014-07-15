@@ -15,7 +15,7 @@ class Graph
     # Loop through data en create correct array
     for row in data
       # Append into array
-      new_data.push {'m': new Date(row['m']).strftime('%Y-%m-%d'), "a": row["a"] }
+      new_data.push {'m': moment(row['m'], "MM-DD-YYYY")._i, "a": row["a"] }
     # Return array
     return new_data
 
