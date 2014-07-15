@@ -6,10 +6,8 @@ class SportsController < ApplicationController
   def new
   end
 
+  # Create a new sport record for user
   def create
-  end
-
-  def add_to_sports_counter
     @sport = Sport.new(sport_params)
     @sport.user_id = current_user.id
 
@@ -20,6 +18,8 @@ class SportsController < ApplicationController
     end
     # Karma background job
     karma_for_sporting
+    # Redirect
+    redirect_to :back
   end
 
   # Find or create Sport and render it as JSON
