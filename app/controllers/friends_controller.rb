@@ -1,11 +1,26 @@
 class FriendsController < ApplicationController
   def index
     @friends = current_user.friends.where(accepted: true)
+    @unaccepted_friends = current_user.friends.where(accepted: false)
   end
 
+  # Search for an User
   def search
-    @query =  params[:q]
-    @results = User.where(User.arel_table[:name].matches("%#{@query}%"))
+    @results = User.where(User.arel_table[:name].matches("%#{params[:q]}%"))
+  end
+
+  # Accept an invitation
+  def accept
+    # Find friend request, select first
+    friend_request = Friend.where(user_id: current_user.id,
+                                  friend_id: params[:friend_id],
+                                  accepted: false).first
+    # Toggle accepted status
+    friend_request.update(accepted: true)
+    # Karma background job
+    karma_for_adding_friend
+    # Redirect
+    redirect_to :back
   end
 
   def create
