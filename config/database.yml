@@ -19,5 +19,5 @@ production:
   encoding: unicode
   database: lifefire
   host: localhost
-  username: deploy
+  username: postgres
   password:
