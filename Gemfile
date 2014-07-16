@@ -101,4 +101,11 @@ group :development, :test do
   gem 'yard' # RDOC comments written
   gem 'rails_best_practices', '~> 1.15.4'
   gem 'bullet'
+
+  # Deployment to server
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-safe-deploy-to', '~> 1.1.1'
+  gem 'capistrano-postgresql', '~> 3.0'
 end
