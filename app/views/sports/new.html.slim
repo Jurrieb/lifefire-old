@@ -46,8 +46,10 @@
 
 - if @sports.any?
   .block
-    .messages
-      h3 = "Vandaag al gesport"
+    .messages.sports
+      h3
+        span.date_sported Vandaag
+        '  gedaan:
       ul
         - @sports.each do | sport |
 
