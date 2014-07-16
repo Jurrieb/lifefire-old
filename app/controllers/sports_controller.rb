@@ -25,8 +25,9 @@ class SportsController < ApplicationController
 
   # Find or create Sport and render it as JSON
   def find_sport_for_date
-    render json: Sport.find_or_create_by(user_id: current_user.id,
-                                         date: Date.parse(params[:date]))
+    render json: Sport.where(user_id: current_user.id,
+                             date: Date.parse(params[:date]))
+                      .to_json(include: [:populair_sport])
   end
 
   private
@@ -42,7 +43,6 @@ class SportsController < ApplicationController
   # Add new sports entry
   def set_sport
     @sport = Sport.new
-    @extra_sport = Sport.new
   end
 
   # List of populair spots in the Netherlands
