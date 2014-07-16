@@ -15,7 +15,10 @@
               = image_tag unaccepted_friend.friend.avatar.url(:medium)
             .name = link_to unaccepted_friend.friend.name, profile_path(unaccepted_friend.friend.id)
             .accept
-              = button_to 'Accepteren', accept_invite_path(friend_id: unaccepted_friend.friend.id)
+              - if unaccepted_friend.friend_id == current_user.id
+                = button_to 'Accepteren', accept_invite_path(friend_id: unaccepted_friend.friend.id)
+              - else
+                p Verzoek is verstuurd
 
 .block
   .friends
