@@ -6,8 +6,7 @@
       li Voeg vrienden toe en motiveer elkaar
     - @friends.each do | friend |
       li.friend
-        .avatar.big
-          = image_tag friend.avatar.url(:medium)
+        .avatar.big = image_tag friend.avatar.url(:medium)
         .name = link_to friend.name, profile_path(friend.id)
         .karma
           span.coloured = friend.karma

@@ -1,31 +1,31 @@
-.messages
-    h3 Activiteit
-    ul
-      - if @activity
-        li = render_activity @activity
+.top_block
+  ul
+    - if @activity
+      li = render_activity @activity
+.block
+  h3 Berichten
 
-    h4 Comments
+  ul.comments
+    - if @activity.comments.any?
+      - @activity.comments.each do |comment|
+        li.comment
+          .avatar.small 
+          = comment.user.inspect
+          p.message = comment.message
+    - else
+      li Nog geen reacties geplaatst
 
-    ul
-      - if @activity.comments.any?
-        - @activity.comments.each do |comment|
-          li
-            p.message = comment.message
-      - else
-        li Geen reacties geplaatst
 
 
+  h3 bericht plaatsen
+  = form_for @comment, url: friend_activity_comments_path(friend_id: params[:friend_id],
+                                                          activity_id: params[:id]) do |c|
+    = c.text_area :message, value: ''
 
-    h4 Comment plaatsen
-    = form_for @comment, url: friend_activity_comments_path(friend_id: params[:friend_id],
-                                                            activity_id: params[:id]) do |c|
-      = c.label :message, 'LABEL'
-      = c.text_area :message, value: 'Je bericht'
+    = c.hidden_field :user_id, value: current_user.id
+    = c.hidden_field :activity_id, value: params[:id]
+    = c.hidden_field :commentable_id
+    = c.hidden_field :commentable_type
 
-      = c.hidden_field :user_id, value: current_user.id
-      = c.hidden_field :activity_id, value: params[:id]
-      = c.hidden_field :commentable_id
-      = c.hidden_field :commentable_type
-
-      = c.submit 'Plaatsen'
+    = c.submit 'Plaatsen'
 
