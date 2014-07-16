@@ -4,5 +4,4 @@
       - @activities.each do | activity |
         = link_to friend_activity_path(friend_id: activity.recipient_id,
                                        id: activity.id) do
-          li
-            = render_activity activity
+          li = render_activity activity
