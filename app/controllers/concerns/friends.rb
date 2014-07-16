@@ -7,9 +7,7 @@ module Friends
 
   # Find healthiest friends
   def find_friends
-    @friends = current_user.users
-                           .limit(5)
-                           .order('karma DESC')
-                           .select(:id, :name, :karma)
+    friend_ids = current_user.friends.where(accepted: true).map(&:friend_id)
+    @friends = User.where(id: friend_ids).order('karma DESC').limit(5)
   end
 end
