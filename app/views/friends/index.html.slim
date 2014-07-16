@@ -3,16 +3,31 @@
     = label_tag(:q, "Search for:")
     = text_field_tag(:q)
     = submit_tag("Search")
+
+- if @unaccepted_friends.any?
+  .block
+    .friends
+      h2 Vriendschapsverzoek
+      ul
+        - @unaccepted_friends.each do |unaccepted_friend|
+          li.friend
+            .avatar.big
+              = image_tag unaccepted_friend.friend.avatar.url(:medium)
+            .name = link_to unaccepted_friend.friend.name, profile_path(unaccepted_friend.friend.id)
+            .accept
+              = button_to 'Accepteren', accept_invite_path(friend_id: unaccepted_friend.friend.id)
+
 .block
   .friends
     h2 = "Dit zijn je vrienden"
     ul
     - if @friends.blank?
       = "Voeg vrienden toe om cool te zijn."
-    - @friends.each do | friend |
+    - @friends.each do | user |
       li.friend
-        .avatar.big = image_tag friend.avatar.url(:medium)
-        .name = link_to friend.name, profile_path(friend.id)
+        .avatar.big
+          = image_tag user.friend.avatar.url(:medium)
+        .name = link_to user.friend.name, profile_path(user.friend.id)
         .karma
-          span.coloured = friend.karma
+          span.coloured = user.friend.karma
           = " karma"
