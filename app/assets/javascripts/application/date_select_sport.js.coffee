@@ -1,41 +1,40 @@
-# class DateSelectSport
-#   constructor: ->
-#     # # Date form
-#     @dateSelect = ($ '#dateselect')
-#     # Initialize date select JqueryUI
-#     @dateSelect.datepicker({ dateFormat: 'dd-mm-yy', maxDate: "+0w"  })
+class DateSelectSport
+  constructor: ->
+    # Date form
+    @dateSelect = ($ '#dateselect')
+    # Initialize date select JqueryUI
+    @dateSelect.datepicker({ dateFormat: 'dd-mm-yy', maxDate: "+0w"  })
+    # Input and date elements
+    @sportsList = ($ '.messages.sports ul')
+    @datetitle = ($ 'span.date_sported')
+    # Event listeners
+    @bindListeners()
 
-#     # # Slider input and output
-#     # @smoked_value = ($ '.range output')
-#     # @counted_value = ($ '#smoke_counted')
-
-#     # Event listeners
-#     @bindListeners()
-
-
-#   bindListeners: =>
-#     @dateSelect.on 'change', (e) =>
-#       e.preventDefault()
-#       # Get selected date (and parsed)
-#       date_selected = moment(($ e.target).val(), "MM-DD-YYYY")._i
-#       # Get values via AJAX request
-#       $.ajax '/find-sport?date=' + date_selected,
-#           type: 'GET'
-#           dataType: 'json'
-#           success: (data, textStatus, jqXHR) =>
-#             console.log data
-#             # Set new data
-#             # @smoked_value.text(data['counted'])
-#             # @counted_value.val(data['counted'])
-#             # Edit css for slider thumb
-#             # @range = ($ '.range input[type=range]')
-#             # rangeValue = @range.val()
-#             # Percentage of slider
-#             # rangeValuePercentage = @range.val() * 2
-#             # Corrected width for slider
-#             # rangeWidth = ((@range.width() - 30) / 100) * rangeValuePercentage
-#             # Set text and add left css px's
-#             # @smoked_value.css('left', rangeWidth + 'px')
+  bindListeners: =>
+    @dateSelect.on 'change', (e) =>
+      e.preventDefault()
+      # Get selected date (and parsed)
+      date_selected = moment(($ e.target).val(), "MM-DD-YYYY")._i
+      # Get values via AJAX request
+      $.ajax '/find-sport?date=' + date_selected,
+          type: 'GET'
+          dataType: 'json'
+          success: (data, textStatus, jqXHR) =>
+            console.log data
+            # Create array of objects
+            sports = []
+            for sport in data
+              # Create LI and add to array
+              sport = "<li>" + sport['populair_sport']['name'] + " - " + sport['duration'] + " - " + " reacties(0)</li>"
+              sports.push sport
+            # Set message if there is now sport practised
+            sports.push "<li>Geen sport beoefend</li>" if sports.length == 0
+            # Empty UL
+            @sportsList.empty()
+            # Set new data in UL
+            @sportsList.html(sports)
+            # Set title
+            @datetitle.text(date_selected)
 
 $ ->
   date_select = new DateSelectSport if ($ '#dateselect.sport').length > 0
