@@ -13,7 +13,7 @@ class UsersController < ApplicationController
                                           .order('id desc')
 
     # Check if user is a friend of the current user
-    @friends = current_user.friends.exists?(id: @user.id)
+    @friends = current_user.users.exists?(id: @user.id)
   end
 
   # Edit a user

@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
   def index
-    @friends = current_user.friends
+    @friends = current_user.friends.where(accepted: true)
   end
 
   def search
@@ -15,7 +15,7 @@ class FriendsController < ApplicationController
     else
       user = User.find(params[:id])
       unless user.blank?
-        if current_user.friends << user
+        if current_user.users << user
           StreamController.publish("/message/#{user.user_hash}", '#{user.name} heeft jouw toegevoegt')
           current_user.create_activity action: :add_friend, owner: current_user, recipient: user
         end
@@ -30,7 +30,7 @@ class FriendsController < ApplicationController
   def destroy
     friend = User.find(params[:id])
     unless friend.blank?
-      current_user.friends.delete(friend)
+      current_user.users.delete(friend)
       set_flash_and_redirect('success', t('flash.friend.removed'), :back)
     end
   end
