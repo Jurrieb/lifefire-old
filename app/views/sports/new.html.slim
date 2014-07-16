@@ -4,41 +4,35 @@
     ul
       li.item
         .value
-          = "300"
-          small = "stuks"
-        .label = "Cigaretten geminderd"
+          = current_user.last_workout_calories
+          small kilocalorieën
+        .label = "laatste sessie verbrand"
       li.item
         .value
-          = "3000"
-          small = "kcal"
-        .label = "Callorien verbrand"
+          = current_user.avarage_calories_burned
+          small kilocalorieën
+        .label = "per sessie verbrand"
       li.item
         .value
-          = "40"
-          small = "km"
-        .label = "Kilometers gemaakt"
+          = current_user.total_workout_calories
+          small kilocalorieën
+        .label = "totaal verbrand"
       li.item
         .value
-          = "8"
-          small = "km/u"
-        .label = "Gemiddelde snelheid"
-  / table
-  /   tr
-  /     td = "Laatste workout #{current_user.last_workout_calories} calorieën"
-  /     td = "Gemiddeld #{current_user.avarage_calories_burned} calorieën per workout"
-  /     td = "#{current_user.total_workout_calories} calorieën verbrand"
-  /     td = "#{current_user.total_workouts} sessies"
+          = current_user.total_workouts
+          small sessies
+        .label = "Gesport"
 
 .block
   h2 Ik sport
 
   / First new sport
-  = form_for @sport, url: analysis_index_path, method: :post,
-                                               remote: true,
-                                               html: { class: 'remote sports' } do |f|
+  = form_for @sport, url: sports_path, method: :post,
+                                       remote: true,
+                                       html: { class: 'remote sports' } do |f|
 
     = f.label :date, I18n.t('form.dateselect')
-    = f.text_field :date, value: Date.today, id: 'dateselect'
+    = f.text_field :date, value: Date.today, id: 'dateselect', class: 'sport'
 
     = f.label :populair_sport_id, "Welke sport heb je beoefend?"
     = f.select :populair_sport_id, options_from_collection_for_select(@populair_sports, 'id', 'name')
@@ -50,3 +44,14 @@
     = f.number_field :duration, value: 0, min: 0, max: 300
 
     = f.submit I18n.t('form.submit.sports')
+
+- if @sports.any?
+  .block
+    .messages.sports
+      h3
+        span.date_sported Vandaag
+        '  gedaan:
+      ul
+        - @sports.each do | sport |
+
+          li = "#{sport.populair_sport.name} - #{sport.duration} minuten - reacties (0)"
