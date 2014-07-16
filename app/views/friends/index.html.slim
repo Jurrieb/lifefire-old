@@ -3,6 +3,20 @@
     = label_tag(:q, "Search for:")
     = text_field_tag(:q)
     = submit_tag("Search")
+
+- if @unaccepted_friends.any?
+  .block
+    .friends
+      h2 Vriendschapsverzoek
+      ul
+        - @unaccepted_friends.each do |unaccepted_friend|
+          li.friend
+            .avatar.big
+              = image_tag unaccepted_friend.friend.avatar.url(:medium)
+            .name = link_to unaccepted_friend.friend.name, profile_path(unaccepted_friend.friend.id)
+            .accept
+              = button_to 'Accepteren', accept_invite_path(friend_id: unaccepted_friend.friend.id)
+
 .block
   .friends
     h2 = "Dit zijn je vrienden"
