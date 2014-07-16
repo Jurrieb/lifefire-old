@@ -12,7 +12,7 @@ class SportsController < ApplicationController
     @sport = Sport.new(sport_params)
     @sport.user_id = current_user.id
 
-    if @sport.save!
+    if @sport.save
       flash[:success] = t('flash.sports_added')
     else
       flash[:error] = t('flash.sports_not_added')

@@ -20,7 +20,6 @@ class DateSelectSport
           type: 'GET'
           dataType: 'json'
           success: (data, textStatus, jqXHR) =>
-            console.log data
             # Create array of objects
             sports = []
             for sport in data
