@@ -6,7 +6,7 @@ class Sport < ActiveRecord::Base
   before_save :calculate_burned_calories
 
   # Relations
-  belongs_to :populairSport
+  belongs_to :populair_sport
   belongs_to :user
 
   # Custom scopes

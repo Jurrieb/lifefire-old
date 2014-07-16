@@ -8,9 +8,9 @@
     - unless @user.id == current_user.id
       - if @friends
         = 'v Vrienden'
-        = link_to "Vriend verwijderen", friend_path(id: @user.id), method: :delete
+        = link_to "Vriend verwijderen", friend_path(id: @user.id), method: :delete, class: 'remove_friend'
       - else
-        = link_to 'Toevoegen als vriend', friends_path(id: @user.id), method: :post, class: 'button green'
+        = link_to 'Toevoegen als vriend', friends_path(id: @user.id), method: :post, class: 'button green add_friend'
 - if @friends or @user.id == current_user.id
   .block
     = render partial: 'shared/messages'

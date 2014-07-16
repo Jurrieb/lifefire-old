@@ -1,5 +1,5 @@
 .top_block
-  = form_tag(search_path, method: "get") do
+  = form_tag(search_path, method: "get", class: 'search_form') do
     = label_tag(:q, "Search for:")
     = text_field_tag(:q)
     = submit_tag("Search")

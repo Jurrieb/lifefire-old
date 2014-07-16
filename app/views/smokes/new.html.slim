@@ -4,39 +4,32 @@
     ul
       li.item
         .value
-          = "300"
-          small = "stuks"
-        .label = "Cigaretten geminderd"
+          = current_user.calculate_nicotin
+          small = "mg nicotine"
+        .label = "Geïnhaleerd"
       li.item
         .value
-          = "3000"
-          small = "kcal"
-        .label = "Callorien verbrand"
+          = current_user.calculate_tar
+          small = "mg teer"
+        .label = "Geïnhaleerd"
       li.item
         .value
-          = "40"
-          small = "km"
-        .label = "Kilometers gemaakt"
+          = number_to_currency(current_user.all_costs, locale: :nl)
+          small = "euro"
+        .label = "Totaal uitgegeven"
       li.item
         .value
-          = "8"
-          small = "km/u"
-        .label = "Gemiddelde snelheid"
-  / table
-  /   tr
-  /     td = "Gemiddeld #{@current_user.avarage_smokes} sigaretten per dag"
-  /     td = "Totaal #{@current_user.calculate_tar} mg teer geïnhaleerd"
-  /     td = "Totaal #{@current_user.reduced_cigarettes} geminderd"
-  /     td = "Totaal #{number_to_currency(current_user.all_costs, locale: :nl)} bespaard"
+          = current_user.avarage_smokes
+          small = "p/dag"
+        .label = "Gemiddeld gerookt"
 
 .block
   h2 Ik stop met roken
   = form_for @smoke, url: smokes_path, method: :post,
-                                       remote: true,
-                                       html: { class: 'remote smokes' } do |f|
+                                       html: { class: 'smokes' } do |f|
 
     = f.label :date, I18n.t('form.dateselect')
-    = f.text_field :date, value: Date.today, id: 'dateselect'
+    = f.text_field :date, value: Date.today, id: 'dateselect', class: 'smoke'
     = f.label :counted, "Hoeveel sigaretten heb je vandaag, op #{ content_tag(:span, I18n.localize(Date.today, format: '%d %B'), class: 'date_in_text_smoke')} gerookt.".html_safe
 
     .range

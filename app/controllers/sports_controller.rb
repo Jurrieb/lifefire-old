@@ -4,28 +4,30 @@ class SportsController < ApplicationController
   before_action :set_sport, only: :new
 
   def new
+    @sports = Sport.by_user(current_user.id).by_date(Date.today).includes(:populair_sport)
   end
 
+  # Create a new sport record for user
   def create
-  end
-
-  def add_to_sports_counter
     @sport = Sport.new(sport_params)
     @sport.user_id = current_user.id
 
-    if @sport.save!
+    if @sport.save
       flash[:success] = t('flash.sports_added')
     else
       flash[:error] = t('flash.sports_not_added')
     end
     # Karma background job
     karma_for_sporting
+    # Redirect
+    redirect_to :back
   end
 
   # Find or create Sport and render it as JSON
   def find_sport_for_date
-    render json: Sport.find_or_create_by(user_id: current_user.id,
-                                         date: Date.parse(params[:date]))
+    render json: Sport.where(user_id: current_user.id,
+                             date: Date.parse(params[:date]))
+                      .to_json(include: [:populair_sport])
   end
 
   private
@@ -41,7 +43,6 @@ class SportsController < ApplicationController
   # Add new sports entry
   def set_sport
     @sport = Sport.new
-    @extra_sport = Sport.new
   end
 
   # List of populair spots in the Netherlands
