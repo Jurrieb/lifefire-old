@@ -12,14 +12,8 @@ class User < ActiveRecord::Base
   has_many :sports
   has_many :messages
   has_many :comments
-
   has_many :friends
   has_many :users, source: :friend, through: :friends
-
-  # # has_and_belongs_to_many :friends,
-  #                         class_name: 'User',
-  #                         association_foreign_key: 'friend_id',
-  #                         join_table: 'friends_users'
 
   # Concerns
   include Smoking

@@ -7,7 +7,7 @@ module Friends
 
   # Find healthiest friends
   def find_friends
-    @friends = current_user.friends
+    @friends = current_user.users
                            .limit(5)
                            .order('karma DESC')
                            .select(:id, :name, :karma)
