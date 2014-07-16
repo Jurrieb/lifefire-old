@@ -40,6 +40,8 @@ Rails.application.routes.draw do
 
   get '/friends/search', to: 'friends#search', as: 'search'
 
+  post '/friends/accept/:friend_id', to: 'friends#accept', as: 'accept_invite'
+
 
   resources :users, only: [:edit, :update, :destroy]
   get '/users/:id', to: 'users#profile', as: 'profile'
