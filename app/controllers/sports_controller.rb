@@ -4,6 +4,7 @@ class SportsController < ApplicationController
   before_action :set_sport, only: :new
 
   def new
+    @sports = Sport.by_user(current_user.id).by_date(Date.today).includes(:populair_sport)
   end
 
   # Create a new sport record for user
