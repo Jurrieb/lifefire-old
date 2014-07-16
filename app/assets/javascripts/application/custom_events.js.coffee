@@ -3,7 +3,7 @@ $ ->
     ga('send', 'event', 'message', 'click', 'Click a messages')
   $(".profile .add_friend").click (e)-> 
     ga('send', 'event', 'friend', 'add', 'Add a friend')
-  $(".profile .add_friend").click (e)-> 
+  $(".profile .remove_friend").click (e)-> 
     ga('send', 'event', 'friend', 'remove', 'Remove a friend')
   $(".profile .signout").click (e)-> 
     ga('send', 'event', 'user', 'signout', 'Logs out')
