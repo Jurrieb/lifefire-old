@@ -2,7 +2,7 @@ $ ->
   if $.cookie("sidebar") == 'open'
     if $(".sidebar").width() == 44
       $(".content").animate {
-        width: $('.content').width() - 156
+        paddingLeft: '44px'
       }, 100, ->
         $(".sidebar").animate {
           width: '200px'
@@ -15,7 +15,7 @@ $ ->
         width: '44px'
       }, 100, ->
         $(".content").animate {
-          width: $('.content').width() + 156
+        paddingLeft: '44px'
         }, 100, ->
 
   $(".sidebar .bars").click (e)-> 
@@ -25,16 +25,15 @@ $ ->
         width: '44px'
       }, 100, ->
         $(".content").animate {
-          width: $('.content').width() + 156
+          paddingLeft: '44px'
         }, 100, ->
         $.cookie("sidebar",  "closed")
     else
       $(".content").animate {
-        width: $('.content').width() - 156
+        paddingLeft: '200px'
       }, 100, ->
         $(".sidebar").animate {
           width: '200px'
         }, 100, ->
           $(".sidebar span").show()
           $.cookie("sidebar", "open")
-
