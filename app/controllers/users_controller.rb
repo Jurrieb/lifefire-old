@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   # First time user needs to update profile
   def setup
     # Set layout without partails
-    render layout: 'application_without_partials'
+    render layout: 'backdrop'
     # Set programs and save
     @user.userPreference.smokes = true
     @user.userPreference.sports = true
