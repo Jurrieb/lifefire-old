@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
 
   # - User ID hash ------------------------------------------------------------#
   def user_hash_to_cookie
-    cookies[:user_hash] = current_user.user_hash unless cookies[:user_hash]
+    if current_user
+      cookies[:user_hash] = current_user.user_hash unless cookies[:user_hash]
+    end
   end
 
   # - Redirect paths ----------------------------------------------------------#
