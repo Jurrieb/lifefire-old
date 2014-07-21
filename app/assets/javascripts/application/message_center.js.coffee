@@ -1,11 +1,14 @@
 $ ->
   messageCount = 0
+  console.log "FAYE CLIENT"
   client = new Faye.Client('/faye')
+  console.log client
   # Disable for enabling long-polling
   client.disable('websocket')
   client.disable('eventsource')
   # Get userhash from cookie
   user_hash = $.cookie('user_hash')
+  console.log user_hash
   # Subscribe to private user channel
   client.subscribe '/message/' + user_hash, (payload)->
     console.log payload
