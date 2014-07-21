@@ -17,5 +17,4 @@
 //= require turbolinks
 //= require raphael
 //= require morris
-//= require faye
 //= require_tree .
