@@ -63,7 +63,6 @@ gem 'redis-rails'
 
 # Paperclip
 gem 'paperclip', '~> 4.1'
-gem 'aws-sdk'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
