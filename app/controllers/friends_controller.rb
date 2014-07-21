@@ -19,19 +19,22 @@ class FriendsController < ApplicationController
     friend_request.update(accepted: true)
     # Karma background job
     karma_for_adding_friend
+    # Publish a message
+    current_user.publish(t('flash.friend_added'))
     # Redirect
     redirect_to :back
   end
 
   def create
-    # add friend to user and redirec
+    # add friend to user and redirect
     if params[:id] == current_user.id
       flash['error'] = 'Je kan jezelf niet als vriend toevoegen.'
     else
       user = User.find(params[:id])
       unless user.blank?
         if current_user.users << user
-          StreamController.publish("/message/#{user.user_hash}", '#{user.name} heeft jouw toegevoegt')
+          # Publish a message
+          user.publish("#{user.name} heeft jouw toegevoegt")
           current_user.create_activity action: :add_friend, owner: current_user, recipient: user
         end
       end

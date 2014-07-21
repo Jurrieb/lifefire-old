@@ -14,12 +14,12 @@ class UsersController < ApplicationController
 
     # Check if user is a friend of the current user
     @friends = current_user.users.exists?(id: @user.id)
+    # Publish a message
+    @user.publish("#{current_user} heeft je profiel bekeken")
   end
 
   # Edit a user
   def edit
-    # Publish a message
-    current_user.publish('Profiel aangepast')
   end
 
   # Update user
@@ -37,6 +37,8 @@ class UsersController < ApplicationController
     end
     # Karma background job
     karma_for_profile
+    # Publish a message
+    current_user.publish('Profiel aangepast')
   end
 
   # Signout user

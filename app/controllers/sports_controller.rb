@@ -13,12 +13,13 @@ class SportsController < ApplicationController
     @sport.user_id = current_user.id
 
     if @sport.save
-      flash[:success] = t('flash.sports_added')
+      # Karma background job
+      karma_for_sporting
+      # Publish a message
+      current_user.publish(t('flash.sports_added'))
     else
       flash[:error] = t('flash.sports_not_added')
     end
-    # Karma background job
-    karma_for_sporting
     # Redirect
     redirect_to :back
   end

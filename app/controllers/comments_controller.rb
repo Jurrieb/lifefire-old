@@ -11,6 +11,8 @@ class CommentsController < ApplicationController
     else
       flash[:error] = t('flash.comment_not_added')
     end
+    # Publish a message
+    current_user.publish("Er is een reactie geplaatst")
     redirect_to :back
   end
 
