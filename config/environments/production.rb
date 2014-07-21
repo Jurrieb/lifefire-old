@@ -82,4 +82,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Faye config
+  config.middleware.use FayeRails::Middleware, mount: '/faye',
+                                              :timeout => 25,
+                                              server: 'passenger',
+                                              engine: {type: Faye::Redis,
+                                                       host: 'localhost'}
 end
