@@ -1,4 +1,6 @@
 require 'faye'
+require 'faye/redis'
+
 
 Faye::WebSocket.load_adapter 'thin'
 
