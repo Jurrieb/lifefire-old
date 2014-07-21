@@ -18,24 +18,24 @@
     ul
       li.item
         .value
-          = "300"
+          = current_user.reduced_cigarettes
           small = "stuks"
         .label = "Cigaretten geminderd"
       li.item
         .value
-          = "3000"
+          = current_user.all_costs
+          small = "euro"
+        .label = "Geld bespaard"
+      li.item
+        .value
+          = current_user.total_workout_calories
           small = "kcal"
         .label = "Callorien verbrand"
       li.item
         .value
-          = "40"
+          = current_user.total_workout_with_km_calories
           small = "km"
         .label = "Kilometers gemaakt"
-      li.item
-        .value
-          = "8"
-          small = "km/u"
-        .label = "Gemiddelde snelheid"
 
   / Messages (Activitystream)
   = render partial: 'shared/messages'
