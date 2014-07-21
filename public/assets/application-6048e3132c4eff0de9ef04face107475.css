@@ -1,0 +1,3319 @@
+/*
+
+
+*/
+/* line 1, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/extends/_button.scss */
+button,
+input[type="submit"] {
+  border: 1px solid #2459a6;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #89a8d5;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #477dca;
+  background-image: -webkit-linear-gradient(#477dca, #2760b2);
+  background-image: linear-gradient(#477dca, #2760b2);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #1b4f9a;
+  background-clip: padding-box;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1em;
+}
+/* line 131, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_button.scss */
+button:hover:not(:disabled),
+input[type="submit"]:hover:not(:disabled) {
+  box-shadow: inset 0 1px 0 0 #628cc8;
+  cursor: pointer;
+  background-color: #3c71bb;
+  background-image: -webkit-linear-gradient(#3c71bb, #255aa5);
+  background-image: linear-gradient(#3c71bb, #255aa5);
+}
+/* line 148, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_button.scss */
+button:active:not(:disabled),
+input[type="submit"]:active:not(:disabled), button:focus:not(:disabled),
+input[type="submit"]:focus:not(:disabled) {
+  border: 1px solid #2459a6;
+  box-shadow: inset 0 0 8px 4px #235397, inset 0 0 8px 4px #235397;
+}
+/* line 51, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_button.scss */
+button:disabled,
+input[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* line 1, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+body {
+  color: #333333;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5em;
+}
+
+/* line 9, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  line-height: 1.25em;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 16, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+h1 {
+  font-size: 2.25em;
+}
+
+/* line 20, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+h2 {
+  font-size: 2em;
+}
+
+/* line 24, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+h3 {
+  font-size: 1.75em;
+}
+
+/* line 28, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+h4 {
+  font-size: 1.5em;
+}
+
+/* line 32, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+h5 {
+  font-size: 1.25em;
+}
+
+/* line 36, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+h6 {
+  font-size: 1em;
+}
+
+/* line 40, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+}
+
+/* line 44, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+a {
+  color: #477dca;
+  text-decoration: none;
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+/* line 49, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+a:hover {
+  color: #2c5999;
+}
+/* line 53, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+a:active, a:focus {
+  color: #2c5999;
+  outline: none;
+}
+
+/* line 59, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+hr {
+  border-bottom: 1px solid #dddddd;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0;
+}
+
+/* line 67, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 72, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+abbr, acronym {
+  border-bottom: 1px dotted #dddddd;
+  cursor: help;
+}
+
+/* line 77, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+address {
+  display: block;
+  margin: 0 0 0.75em;
+}
+
+/* line 82, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+hgroup {
+  margin-bottom: 0.75em;
+}
+
+/* line 86, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+del {
+  color: #595959;
+}
+
+/* line 90, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+blockquote {
+  border-left: 2px solid #dddddd;
+  color: #595959;
+  margin: 1.5em 0;
+  padding-left: 0.75em;
+}
+
+/* line 97, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+cite {
+  color: #737373;
+  font-style: italic;
+}
+/* line 101, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_typography.scss */
+cite:before {
+  content: '\2014 \00A0';
+}
+
+/* line 10, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+fieldset {
+  background: #f7f7f7;
+  border: 1px solid #dddddd;
+  margin: 0 0 0.75em 0;
+  padding: 1.5em;
+}
+
+/* line 19, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+input,
+label,
+select {
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1em;
+}
+
+/* line 25, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+label {
+  font-weight: bold;
+  margin-bottom: 0.375em;
+}
+/* line 29, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+label.required:after {
+  content: "*";
+}
+/* line 33, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+label abbr {
+  display: none;
+}
+
+/* line 40, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+textarea,
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+select[multiple=multiple] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: border-color;
+  -moz-transition: border-color;
+  transition: border-color;
+  background-color: white;
+  border-radius: 0.1875em;
+  border: 1px solid #dddddd;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em 0.5em;
+  width: 100%;
+}
+/* line 53, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+textarea:hover,
+input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover,
+select[multiple=multiple]:hover {
+  border-color: #c4c4c4;
+}
+/* line 57, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+textarea:focus,
+input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+select[multiple=multiple]:focus {
+  border-color: #477dca;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+  outline: none;
+}
+
+/* line 64, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 68, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+/* line 72, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
+  margin-right: 0.375em;
+}
+
+/* line 77, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+input[type="file"] {
+  width: 100%;
+}
+
+/* line 81, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+select {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 1.5em;
+}
+
+/* line 88, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_forms.scss */
+button,
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* line 1, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_tables.scss */
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: bold;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_tables.scss */
+td {
+  border-bottom: 1px solid #dddddd;
+  padding: 0.75em 0;
+}
+
+/* line 20, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_tables.scss */
+tr, td, th {
+  vertical-align: middle;
+}
+
+/* line 1, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_lists.scss */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 19, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_lists.scss */
+dl {
+  line-height: 1.5em;
+  margin-bottom: 0.75em;
+}
+/* line 23, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_lists.scss */
+dl dt {
+  font-weight: bold;
+  margin-top: 0.75em;
+}
+/* line 28, /home/netventief/School/lifefire/app/assets/stylesheets/bitters/_lists.scss */
+dl dd {
+  margin: 0;
+}
+
+/* line 2, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.5.1/app/assets/stylesheets/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Global */
+/* line 5, /home/netventief/School/lifefire/app/assets/stylesheets/global/_backdrop.sass */
+body.backdrop {
+  background: url(/assets/lifefire.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* line 12, /home/netventief/School/lifefire/app/assets/stylesheets/global/_backdrop.sass */
+body.backdrop .container {
+  width: 700px;
+  margin: auto;
+  padding: 20px 0;
+}
+/* line 17, /home/netventief/School/lifefire/app/assets/stylesheets/global/_backdrop.sass */
+body.backdrop .logo {
+  background: url(/assets/logo-white.png) no-repeat center center;
+  width: 700px;
+  height: 115px;
+  margin-bottom: 20px;
+}
+/* line 23, /home/netventief/School/lifefire/app/assets/stylesheets/global/_backdrop.sass */
+body.backdrop .login {
+  text-align: center;
+}
+/* line 26, /home/netventief/School/lifefire/app/assets/stylesheets/global/_backdrop.sass */
+body.backdrop .login .privacy_policy {
+  color: white;
+  font-size: 0.8em;
+}
+/* line 30, /home/netventief/School/lifefire/app/assets/stylesheets/global/_backdrop.sass */
+body.backdrop .login .facebook {
+  display: inline-block;
+  color: white;
+  width: auto;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 20px 0 44px;
+  background: url(/assets/facebook.png) #4862a3 no-repeat 0px center;
+}
+/* line 39, /home/netventief/School/lifefire/app/assets/stylesheets/global/_backdrop.sass */
+body.backdrop .setup {
+  background: white;
+  padding: 40px;
+}
+
+/*! jQuery UI - v1.11.0 - 2014-07-14
+* http://jqueryui.com
+* Includes: core.css, autocomplete.css, datepicker.css, menu.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Trebuchet%20MS%2CTahoma%2CVerdana%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=f6a828&bgTextureHeader=gloss_wave&bgImgOpacityHeader=35&borderColorHeader=e78f08&fcHeader=ffffff&iconColorHeader=ffffff&bgColorContent=eeeeee&bgTextureContent=highlight_soft&bgImgOpacityContent=100&borderColorContent=dddddd&fcContent=333333&iconColorContent=222222&bgColorDefault=f6f6f6&bgTextureDefault=glass&bgImgOpacityDefault=100&borderColorDefault=cccccc&fcDefault=1c94c4&iconColorDefault=ef8c08&bgColorHover=fdf5ce&bgTextureHover=glass&bgImgOpacityHover=100&borderColorHover=fbcb09&fcHover=c77405&iconColorHover=ef8c08&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=fbd850&fcActive=eb8f00&iconColorActive=ef8c08&bgColorHighlight=ffe45c&bgTextureHighlight=highlight_soft&bgImgOpacityHighlight=75&borderColorHighlight=fed22f&fcHighlight=363636&iconColorHighlight=228ef1&bgColorError=b81900&bgTextureError=diagonals_thick&bgImgOpacityError=18&borderColorError=cd0a0a&fcError=ffffff&iconColorError=ffd27a&bgColorOverlay=666666&bgTextureOverlay=diagonals_thick&bgImgOpacityOverlay=20&opacityOverlay=50&bgColorShadow=000000&bgTextureShadow=flat&bgImgOpacityShadow=10&opacityShadow=20&thicknessShadow=5px&offsetTopShadow=-5px&offsetLeftShadow=-5px&cornerRadiusShadow=5px
+* Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
+/* Layout helpers
+----------------------------------*/
+/* line 22, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-helper-hidden {
+  display: none;
+}
+
+/* line 25, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 35, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+/* line 46, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+}
+
+/* line 51, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-helper-clearfix:after {
+  clear: both;
+}
+
+/* line 54, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-helper-clearfix {
+  min-height: 0;
+  /* support: IE7 */
+}
+
+/* line 57, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: Alpha(Opacity=0);
+}
+
+/* line 67, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-front {
+  z-index: 100;
+}
+
+/* Interaction Cues
+----------------------------------*/
+/* line 74, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-disabled {
+  cursor: default !important;
+}
+
+/* Icons
+----------------------------------*/
+/* states and images */
+/* line 83, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+/* line 95, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 102, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-autocomplete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+
+/* line 108, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker {
+  width: 17em;
+  padding: .2em .2em 0;
+  display: none;
+}
+
+/* line 113, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: 1px;
+}
+
+/* line 118, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 2px;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+/* line 125, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  top: 1px;
+}
+
+/* line 128, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px;
+}
+
+/* line 131, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-next {
+  right: 2px;
+}
+
+/* line 134, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 1px;
+}
+
+/* line 137, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 1px;
+}
+
+/* line 141, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+/* line 149, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center;
+}
+
+/* line 154, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0;
+}
+
+/* line 159, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 49%;
+}
+
+/* line 162, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker table {
+  width: 100%;
+  font-size: .9em;
+  border-collapse: collapse;
+  margin: 0 0 .4em;
+}
+
+/* line 168, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker th {
+  padding: .7em .3em;
+  text-align: center;
+  font-weight: bold;
+  border: 0;
+}
+
+/* line 174, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker td {
+  border: 0;
+  padding: 1px;
+}
+
+/* line 179, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: block;
+  padding: .2em;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* line 185, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+/* line 193, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em .6em;
+  width: auto;
+  overflow: visible;
+}
+
+/* line 201, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+
+/* with multiple calendars */
+/* line 206, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker.ui-datepicker-multi {
+  width: auto;
+}
+
+/* line 209, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left;
+}
+
+/* line 212, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em;
+}
+
+/* line 216, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%;
+}
+
+/* line 219, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%;
+}
+
+/* line 222, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%;
+}
+
+/* line 226, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0;
+}
+
+/* line 229, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left;
+}
+
+/* line 232, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0;
+}
+
+/* RTL support */
+/* line 239, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl {
+  direction: rtl;
+}
+
+/* line 242, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-prev {
+  right: 2px;
+  left: auto;
+}
+
+/* line 246, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-next {
+  left: 2px;
+  right: auto;
+}
+
+/* line 250, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+  right: 1px;
+  left: auto;
+}
+
+/* line 254, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+  left: 1px;
+  right: auto;
+}
+
+/* line 258, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+  clear: right;
+}
+
+/* line 261, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+  float: left;
+}
+
+/* line 265, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+  float: right;
+}
+
+/* line 269, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px;
+}
+
+/* line 273, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  outline: none;
+}
+
+/* line 280, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu .ui-menu {
+  position: absolute;
+}
+
+/* line 283, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu .ui-menu-item {
+  position: relative;
+  margin: 0;
+  padding: 3px 1em 3px .4em;
+  cursor: pointer;
+  min-height: 0;
+  /* support: IE7 */
+  /* support: IE10, see #8844 */
+  list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+
+/* line 292, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu .ui-menu-divider {
+  margin: 5px 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-width: 1px 0 0 0;
+}
+
+/* line 300, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+  margin: -1px;
+}
+
+/* icon support */
+/* line 305, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu-icons {
+  position: relative;
+}
+
+/* line 308, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu-icons .ui-menu-item {
+  padding-left: 2em;
+}
+
+/* left-aligned */
+/* line 313, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu .ui-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: .2em;
+  margin: auto 0;
+}
+
+/* right-aligned */
+/* line 322, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-menu .ui-menu-icon {
+  left: auto;
+  right: 0;
+}
+
+/* Component containers
+----------------------------------*/
+/* line 329, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget {
+  font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+  font-size: 1em;
+}
+
+/* line 333, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget .ui-widget {
+  font-size: 1em;
+}
+
+/* line 339, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+  font-size: 1em;
+}
+
+/* line 343, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-content {
+  border: 1px solid #dddddd;
+  background-color: #fff;
+  color: #5f5f5f;
+}
+
+/* line 348, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-content a {
+  color: #333333;
+}
+
+/* line 351, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-header {
+  background-color: #a2d04c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* line 356, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-header a {
+  color: #ffffff;
+}
+
+/* Interaction states
+----------------------------------*/
+/* line 364, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  color: #5f5f5f;
+}
+
+/* line 369, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+  color: #5f5f5f;
+  text-decoration: none;
+}
+
+/* line 378, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  background-color: #ee4d21;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* line 390, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+  color: #5f5f5f;
+  text-decoration: none;
+}
+
+/* line 396, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  background-color: #ffffff;
+  font-weight: bold;
+  color: #eb8f00;
+}
+
+/* line 403, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+  color: #eb8f00;
+  text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+/* line 412, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+  background-color: #a2d04c;
+  color: #fff;
+}
+
+/* line 418, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+  color: #363636;
+}
+
+/* line 423, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+  border: 1px solid #cd0a0a;
+  background: #b81900 url("ui/images/ui-bg_diagonals-thick_18_b81900_40x40.png") 50% 50% repeat;
+  color: #ffffff;
+}
+
+/* line 430, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+  color: #ffffff;
+}
+
+/* line 435, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+  color: #ffffff;
+}
+
+/* line 440, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+  font-weight: bold;
+}
+
+/* line 445, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+  opacity: .7;
+  filter: Alpha(Opacity=70);
+  font-weight: normal;
+}
+
+/* line 452, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+  opacity: .35;
+  filter: Alpha(Opacity=35);
+  background-image: none;
+}
+
+/* line 457, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-disabled .ui-icon {
+  filter: Alpha(Opacity=35);
+  /* For IE8 - See #6059 */
+}
+
+/* Icons
+----------------------------------*/
+/* states and images */
+/* line 465, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* line 470, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon,
+.ui-widget-content .ui-icon {
+  background-image: url(/assets/ui/images/ui-icons_222222_256x240.png);
+}
+
+/* line 473, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-header .ui-icon {
+  background-image: url(/assets/ui/images/ui-icons_ffffff_256x240.png);
+}
+
+/* line 476, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-default .ui-icon {
+  background-image: url(/assets/ui/images/ui-icons_ef8c08_256x240.png);
+}
+
+/* line 480, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+  background-image: url(/assets/ui/images/ui-icons_ef8c08_256x240.png);
+}
+
+/* line 483, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-active .ui-icon {
+  background-image: url(/assets/ui/images/ui-icons_ef8c08_256x240.png);
+}
+
+/* line 486, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-highlight .ui-icon {
+  background-image: url(/assets/ui/images/ui-icons_228ef1_256x240.png);
+}
+
+/* line 490, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+  background-image: url(/assets/ui/images/ui-icons_ffd27a_256x240.png);
+}
+
+/* positioning */
+/* line 495, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-blank {
+  background-position: 16px 16px;
+}
+
+/* line 496, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-n {
+  background-position: 0 0;
+}
+
+/* line 497, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-ne {
+  background-position: -16px 0;
+}
+
+/* line 498, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-e {
+  background-position: -32px 0;
+}
+
+/* line 499, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-se {
+  background-position: -48px 0;
+}
+
+/* line 500, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-s {
+  background-position: -64px 0;
+}
+
+/* line 501, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-sw {
+  background-position: -80px 0;
+}
+
+/* line 502, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-w {
+  background-position: -96px 0;
+}
+
+/* line 503, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-1-nw {
+  background-position: -112px 0;
+}
+
+/* line 504, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-2-n-s {
+  background-position: -128px 0;
+}
+
+/* line 505, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-carat-2-e-w {
+  background-position: -144px 0;
+}
+
+/* line 506, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-n {
+  background-position: 0 -16px;
+}
+
+/* line 507, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-ne {
+  background-position: -16px -16px;
+}
+
+/* line 508, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-e {
+  background-position: -32px -16px;
+}
+
+/* line 509, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-se {
+  background-position: -48px -16px;
+}
+
+/* line 510, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+/* line 511, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-sw {
+  background-position: -80px -16px;
+}
+
+/* line 512, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-w {
+  background-position: -96px -16px;
+}
+
+/* line 513, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-1-nw {
+  background-position: -112px -16px;
+}
+
+/* line 514, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-2-n-s {
+  background-position: -128px -16px;
+}
+
+/* line 515, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-triangle-2-e-w {
+  background-position: -144px -16px;
+}
+
+/* line 516, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-n {
+  background-position: 0 -32px;
+}
+
+/* line 517, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-ne {
+  background-position: -16px -32px;
+}
+
+/* line 518, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-e {
+  background-position: -32px -32px;
+}
+
+/* line 519, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-se {
+  background-position: -48px -32px;
+}
+
+/* line 520, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-s {
+  background-position: -64px -32px;
+}
+
+/* line 521, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-sw {
+  background-position: -80px -32px;
+}
+
+/* line 522, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-w {
+  background-position: -96px -32px;
+}
+
+/* line 523, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-1-nw {
+  background-position: -112px -32px;
+}
+
+/* line 524, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-2-n-s {
+  background-position: -128px -32px;
+}
+
+/* line 525, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-2-ne-sw {
+  background-position: -144px -32px;
+}
+
+/* line 526, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-2-e-w {
+  background-position: -160px -32px;
+}
+
+/* line 527, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-2-se-nw {
+  background-position: -176px -32px;
+}
+
+/* line 528, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowstop-1-n {
+  background-position: -192px -32px;
+}
+
+/* line 529, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowstop-1-e {
+  background-position: -208px -32px;
+}
+
+/* line 530, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowstop-1-s {
+  background-position: -224px -32px;
+}
+
+/* line 531, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowstop-1-w {
+  background-position: -240px -32px;
+}
+
+/* line 532, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-n {
+  background-position: 0 -48px;
+}
+
+/* line 533, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-ne {
+  background-position: -16px -48px;
+}
+
+/* line 534, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-e {
+  background-position: -32px -48px;
+}
+
+/* line 535, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-se {
+  background-position: -48px -48px;
+}
+
+/* line 536, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-s {
+  background-position: -64px -48px;
+}
+
+/* line 537, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-sw {
+  background-position: -80px -48px;
+}
+
+/* line 538, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-w {
+  background-position: -96px -48px;
+}
+
+/* line 539, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-1-nw {
+  background-position: -112px -48px;
+}
+
+/* line 540, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-2-n-s {
+  background-position: -128px -48px;
+}
+
+/* line 541, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-2-ne-sw {
+  background-position: -144px -48px;
+}
+
+/* line 542, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-2-e-w {
+  background-position: -160px -48px;
+}
+
+/* line 543, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthick-2-se-nw {
+  background-position: -176px -48px;
+}
+
+/* line 544, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthickstop-1-n {
+  background-position: -192px -48px;
+}
+
+/* line 545, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthickstop-1-e {
+  background-position: -208px -48px;
+}
+
+/* line 546, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthickstop-1-s {
+  background-position: -224px -48px;
+}
+
+/* line 547, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowthickstop-1-w {
+  background-position: -240px -48px;
+}
+
+/* line 548, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturnthick-1-w {
+  background-position: 0 -64px;
+}
+
+/* line 549, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturnthick-1-n {
+  background-position: -16px -64px;
+}
+
+/* line 550, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturnthick-1-e {
+  background-position: -32px -64px;
+}
+
+/* line 551, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturnthick-1-s {
+  background-position: -48px -64px;
+}
+
+/* line 552, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturn-1-w {
+  background-position: -64px -64px;
+}
+
+/* line 553, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturn-1-n {
+  background-position: -80px -64px;
+}
+
+/* line 554, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturn-1-e {
+  background-position: -96px -64px;
+}
+
+/* line 555, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowreturn-1-s {
+  background-position: -112px -64px;
+}
+
+/* line 556, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowrefresh-1-w {
+  background-position: -128px -64px;
+}
+
+/* line 557, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowrefresh-1-n {
+  background-position: -144px -64px;
+}
+
+/* line 558, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowrefresh-1-e {
+  background-position: -160px -64px;
+}
+
+/* line 559, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrowrefresh-1-s {
+  background-position: -176px -64px;
+}
+
+/* line 560, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-4 {
+  background-position: 0 -80px;
+}
+
+/* line 561, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-arrow-4-diag {
+  background-position: -16px -80px;
+}
+
+/* line 562, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-extlink {
+  background-position: -32px -80px;
+}
+
+/* line 563, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-newwin {
+  background-position: -48px -80px;
+}
+
+/* line 564, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-refresh {
+  background-position: -64px -80px;
+}
+
+/* line 565, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-shuffle {
+  background-position: -80px -80px;
+}
+
+/* line 566, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-transfer-e-w {
+  background-position: -96px -80px;
+}
+
+/* line 567, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-transferthick-e-w {
+  background-position: -112px -80px;
+}
+
+/* line 568, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-folder-collapsed {
+  background-position: 0 -96px;
+}
+
+/* line 569, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-folder-open {
+  background-position: -16px -96px;
+}
+
+/* line 570, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-document {
+  background-position: -32px -96px;
+}
+
+/* line 571, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-document-b {
+  background-position: -48px -96px;
+}
+
+/* line 572, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-note {
+  background-position: -64px -96px;
+}
+
+/* line 573, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-mail-closed {
+  background-position: -80px -96px;
+}
+
+/* line 574, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-mail-open {
+  background-position: -96px -96px;
+}
+
+/* line 575, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-suitcase {
+  background-position: -112px -96px;
+}
+
+/* line 576, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-comment {
+  background-position: -128px -96px;
+}
+
+/* line 577, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-person {
+  background-position: -144px -96px;
+}
+
+/* line 578, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-print {
+  background-position: -160px -96px;
+}
+
+/* line 579, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-trash {
+  background-position: -176px -96px;
+}
+
+/* line 580, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-locked {
+  background-position: -192px -96px;
+}
+
+/* line 581, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-unlocked {
+  background-position: -208px -96px;
+}
+
+/* line 582, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-bookmark {
+  background-position: -224px -96px;
+}
+
+/* line 583, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-tag {
+  background-position: -240px -96px;
+}
+
+/* line 584, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-home {
+  background-position: 0 -112px;
+}
+
+/* line 585, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-flag {
+  background-position: -16px -112px;
+}
+
+/* line 586, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-calendar {
+  background-position: -32px -112px;
+}
+
+/* line 587, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-cart {
+  background-position: -48px -112px;
+}
+
+/* line 588, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-pencil {
+  background-position: -64px -112px;
+}
+
+/* line 589, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-clock {
+  background-position: -80px -112px;
+}
+
+/* line 590, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-disk {
+  background-position: -96px -112px;
+}
+
+/* line 591, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-calculator {
+  background-position: -112px -112px;
+}
+
+/* line 592, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-zoomin {
+  background-position: -128px -112px;
+}
+
+/* line 593, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-zoomout {
+  background-position: -144px -112px;
+}
+
+/* line 594, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-search {
+  background-position: -160px -112px;
+}
+
+/* line 595, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-wrench {
+  background-position: -176px -112px;
+}
+
+/* line 596, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-gear {
+  background-position: -192px -112px;
+}
+
+/* line 597, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-heart {
+  background-position: -208px -112px;
+}
+
+/* line 598, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-star {
+  background-position: -224px -112px;
+}
+
+/* line 599, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-link {
+  background-position: -240px -112px;
+}
+
+/* line 600, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-cancel {
+  background-position: 0 -128px;
+}
+
+/* line 601, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-plus {
+  background-position: -16px -128px;
+}
+
+/* line 602, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-plusthick {
+  background-position: -32px -128px;
+}
+
+/* line 603, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-minus {
+  background-position: -48px -128px;
+}
+
+/* line 604, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-minusthick {
+  background-position: -64px -128px;
+}
+
+/* line 605, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-close {
+  background-position: -80px -128px;
+}
+
+/* line 606, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-closethick {
+  background-position: -96px -128px;
+}
+
+/* line 607, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-key {
+  background-position: -112px -128px;
+}
+
+/* line 608, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-lightbulb {
+  background-position: -128px -128px;
+}
+
+/* line 609, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-scissors {
+  background-position: -144px -128px;
+}
+
+/* line 610, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-clipboard {
+  background-position: -160px -128px;
+}
+
+/* line 611, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-copy {
+  background-position: -176px -128px;
+}
+
+/* line 612, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-contact {
+  background-position: -192px -128px;
+}
+
+/* line 613, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-image {
+  background-position: -208px -128px;
+}
+
+/* line 614, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-video {
+  background-position: -224px -128px;
+}
+
+/* line 615, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-script {
+  background-position: -240px -128px;
+}
+
+/* line 616, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-alert {
+  background-position: 0 -144px;
+}
+
+/* line 617, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-info {
+  background-position: -16px -144px;
+}
+
+/* line 618, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-notice {
+  background-position: -32px -144px;
+}
+
+/* line 619, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-help {
+  background-position: -48px -144px;
+}
+
+/* line 620, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-check {
+  background-position: -64px -144px;
+}
+
+/* line 621, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-bullet {
+  background-position: -80px -144px;
+}
+
+/* line 622, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-radio-on {
+  background-position: -96px -144px;
+}
+
+/* line 623, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-radio-off {
+  background-position: -112px -144px;
+}
+
+/* line 624, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-pin-w {
+  background-position: -128px -144px;
+}
+
+/* line 625, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-pin-s {
+  background-position: -144px -144px;
+}
+
+/* line 626, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-play {
+  background-position: 0 -160px;
+}
+
+/* line 627, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-pause {
+  background-position: -16px -160px;
+}
+
+/* line 628, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-seek-next {
+  background-position: -32px -160px;
+}
+
+/* line 629, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-seek-prev {
+  background-position: -48px -160px;
+}
+
+/* line 630, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-seek-end {
+  background-position: -64px -160px;
+}
+
+/* line 631, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-seek-start {
+  background-position: -80px -160px;
+}
+
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+/* line 633, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-seek-first {
+  background-position: -80px -160px;
+}
+
+/* line 634, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-stop {
+  background-position: -96px -160px;
+}
+
+/* line 635, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-eject {
+  background-position: -112px -160px;
+}
+
+/* line 636, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-volume-off {
+  background-position: -128px -160px;
+}
+
+/* line 637, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-volume-on {
+  background-position: -144px -160px;
+}
+
+/* line 638, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-power {
+  background-position: 0 -176px;
+}
+
+/* line 639, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-signal-diag {
+  background-position: -16px -176px;
+}
+
+/* line 640, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-signal {
+  background-position: -32px -176px;
+}
+
+/* line 641, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-battery-0 {
+  background-position: -48px -176px;
+}
+
+/* line 642, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-battery-1 {
+  background-position: -64px -176px;
+}
+
+/* line 643, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-battery-2 {
+  background-position: -80px -176px;
+}
+
+/* line 644, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-battery-3 {
+  background-position: -96px -176px;
+}
+
+/* line 645, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-plus {
+  background-position: 0 -192px;
+}
+
+/* line 646, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-minus {
+  background-position: -16px -192px;
+}
+
+/* line 647, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-close {
+  background-position: -32px -192px;
+}
+
+/* line 648, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-triangle-e {
+  background-position: -48px -192px;
+}
+
+/* line 649, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-triangle-s {
+  background-position: -64px -192px;
+}
+
+/* line 650, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-triangle-w {
+  background-position: -80px -192px;
+}
+
+/* line 651, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-triangle-n {
+  background-position: -96px -192px;
+}
+
+/* line 652, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-arrow-e {
+  background-position: -112px -192px;
+}
+
+/* line 653, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-arrow-s {
+  background-position: -128px -192px;
+}
+
+/* line 654, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-arrow-w {
+  background-position: -144px -192px;
+}
+
+/* line 655, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-arrow-n {
+  background-position: -160px -192px;
+}
+
+/* line 656, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-zoomin {
+  background-position: -176px -192px;
+}
+
+/* line 657, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-zoomout {
+  background-position: -192px -192px;
+}
+
+/* line 658, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circle-check {
+  background-position: -208px -192px;
+}
+
+/* line 659, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circlesmall-plus {
+  background-position: 0 -208px;
+}
+
+/* line 660, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circlesmall-minus {
+  background-position: -16px -208px;
+}
+
+/* line 661, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-circlesmall-close {
+  background-position: -32px -208px;
+}
+
+/* line 662, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-squaresmall-plus {
+  background-position: -48px -208px;
+}
+
+/* line 663, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-squaresmall-minus {
+  background-position: -64px -208px;
+}
+
+/* line 664, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-squaresmall-close {
+  background-position: -80px -208px;
+}
+
+/* line 665, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-grip-dotted-vertical {
+  background-position: 0 -224px;
+}
+
+/* line 666, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-grip-dotted-horizontal {
+  background-position: -16px -224px;
+}
+
+/* line 667, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-grip-solid-vertical {
+  background-position: -32px -224px;
+}
+
+/* line 668, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-grip-solid-horizontal {
+  background-position: -48px -224px;
+}
+
+/* line 669, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-gripsmall-diagonal-se {
+  background-position: -64px -224px;
+}
+
+/* line 670, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-icon-grip-diagonal-se {
+  background-position: -80px -224px;
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Corner radius */
+/* line 680, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+  border-top-left-radius: 4px;
+}
+
+/* line 686, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+  border-top-right-radius: 4px;
+}
+
+/* line 692, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+  border-bottom-left-radius: 4px;
+}
+
+/* line 698, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+  border-bottom-right-radius: 4px;
+}
+
+/* Overlays */
+/* line 703, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-overlay {
+  background: #666666 url(/assets/ui/images/ui-bg_diagonals-thick_20_666666_40x40.png) 50% 50% repeat;
+  opacity: .5;
+  filter: Alpha(Opacity=50);
+}
+
+/* line 708, /home/netventief/School/lifefire/app/assets/stylesheets/global/_jquery-ui.scss */
+.ui-widget-shadow {
+  margin: -5px 0 0 -5px;
+  padding: 5px;
+  background: black url(/assets/ui/images/ui-bg_flat_10_000000_40x100.png) 50% 50% repeat-x;
+  opacity: .2;
+  filter: Alpha(Opacity=20);
+  border-radius: 5px;
+}
+
+/* line 6, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+html {
+  height: 100%;
+}
+
+/* line 9, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+body {
+  background: #fbfbfb;
+  font-family: "open_sansregular";
+  color: #5f5f5f;
+  height: 100%;
+}
+
+/* line 15, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+/* line 19, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.avatar.big {
+  width: 100px;
+  height: 100px;
+}
+/* line 23, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.avatar img {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+/* line 28, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.coloured {
+  background: #ee4d21;
+  color: white;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+/* line 34, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container {
+  overflow: hidden;
+  min-height: 100%;
+}
+/* line 38, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .userhash {
+  display: none;
+}
+/* line 41, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content {
+  float: left;
+  width: 100%;
+  padding-left: 201px;
+}
+/* line 46, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .middle_block {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  padding: 40px;
+  border-bottom: 5px solid #efefef;
+  border-top: 5px solid #efefef;
+}
+/* line 15, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_clearfix.scss */
+.container .content .middle_block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 53, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .top_block {
+  background: white;
+  padding: 40px;
+  border-bottom: 5px solid #efefef;
+}
+/* line 57, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .top_block .progress {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+/* line 60, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .top_block .progress h3 {
+  border-bottom: 0;
+}
+/* line 62, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .top_block .progress .item {
+  padding-bottom: 0;
+}
+/* line 65, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .block {
+  padding: 40px;
+}
+/* line 70, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .results .column {
+  float: left;
+  display: block;
+  margin-right: 1.53846%;
+  width: 49.23077%;
+}
+/* line 38, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.5.1/app/assets/stylesheets/grid/_span-columns.scss */
+.container .content .results .column:last-child {
+  margin-right: 0;
+}
+/* line 73, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .results .column table {
+  margin: 0;
+}
+/* line 75, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .results .column table th {
+  border-bottom: none;
+  padding: 0;
+}
+/* line 78, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .results .column table td {
+  padding: 2px 0;
+  border-bottom: none;
+}
+/* line 81, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .friends {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 15, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_clearfix.scss */
+.container .content .friends:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 83, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .friends .friend {
+  float: left;
+  display: block;
+  margin-right: 1.53846%;
+  width: 23.84615%;
+  cursor: pointer;
+  text-align: center;
+}
+/* line 38, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.5.1/app/assets/stylesheets/grid/_span-columns.scss */
+.container .content .friends .friend:last-child {
+  margin-right: 0;
+}
+/* line 88, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .friends .friend .avatar {
+  margin: 20px auto;
+  text-align: center;
+}
+/* line 92, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .friends .friend .name {
+  margin-bottom: 5px;
+}
+/* line 94, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .friends .friend .name a {
+  color: #5f5f5f;
+  font-size: 1.1em;
+}
+/* line 98, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .progress {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 20px;
+}
+/* line 15, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_clearfix.scss */
+.container .content .progress:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 102, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .progress h3 {
+  border-bottom: 1px solid #e3e3e3;
+}
+/* line 104, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .progress .item {
+  float: left;
+  display: block;
+  margin-right: 1.53846%;
+  width: 23.84615%;
+  padding: 30px 0;
+  text-align: center;
+}
+/* line 38, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.5.1/app/assets/stylesheets/grid/_span-columns.scss */
+.container .content .progress .item:last-child {
+  margin-right: 0;
+}
+/* line 108, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .progress .item .value {
+  font-size: 2.4em;
+  padding-bottom: 20px;
+}
+/* line 111, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .progress .item .value small {
+  font-size: 0.3em;
+}
+/* line 113, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .progress .item .label {
+  color: #ee4d21;
+}
+/* line 116, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .messages ul {
+  border: 1px solid #e3e3e3;
+  border-bottom: 0px;
+}
+/* line 119, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .messages ul li {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 10px;
+  height: 60px;
+  line-height: 40px;
+  background: white;
+  color: #bebebe;
+}
+/* line 127, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .messages ul li .avatar {
+  float: left;
+  margin-right: 10px;
+}
+/* line 131, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .messages ul li .name {
+  color: #565656;
+}
+/* line 134, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .profile {
+  position: relative;
+}
+/* line 137, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .profile .avatar {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+}
+/* line 140, /home/netventief/School/lifefire/app/assets/stylesheets/global/_style.sass */
+.container .content .profile .button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@font-face {
+  font-family: 'open_sansregular';
+  src: url(/assets/opensans/OpenSans-Regular-webfont.eot);
+  src: url(/assets/opensans/OpenSans-Regular-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/opensans/OpenSans-Regular-webfont.woff) format("woff"), url(/assets/opensans/OpenSans-Regular-webfont.ttf) format("truetype"), url(/assets/opensans/OpenSans-Regular-webfont.svg#open_sansregular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url(/assets/icomoon/icomoon.eot);
+  src: url(/assets/icomoon/icomoon.eot?#iefix) format("embedded-opentype"), url(/assets/icomoon/icomoon.woff) format("woff"), url(/assets/icomoon/icomoon.ttf) format("truetype"), url(/assets/icomoon/icomoon.svg?#icomoon) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 34, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 48, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-envelope:before {
+  content: "\f003";
+}
+
+/* line 51, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-gear:before {
+  content: "\f013";
+}
+
+/* line 54, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-bars:before {
+  content: "\f0c9";
+}
+
+/* line 57, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-home:before {
+  content: "\e600";
+}
+
+/* line 60, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-users:before {
+  content: "\e602";
+}
+
+/* line 63, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-meter:before {
+  content: "\e604";
+}
+
+/* line 66, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-fire:before {
+  content: "\e605";
+}
+
+/* line 69, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-lightning:before {
+  content: "\e606";
+}
+
+/* line 72, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+.icon-switch:before {
+  content: "\e607";
+}
+
+/* line 76, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+a {
+  color: #ee4d21;
+}
+
+/* line 80, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+a:hover {
+  color: #a2d04c;
+}
+
+/* line 84, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+p {
+  margin-bottom: 1.4em;
+  line-height: 1.4;
+}
+
+/* line 89, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+h1 {
+  margin-bottom: 10px;
+  font-weight: normal;
+  color: #565656;
+}
+
+/* line 95, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: #565656;
+}
+
+/* line 102, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+h3 {
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-weight: normal;
+  color: #bebebe;
+}
+
+/* line 108, /home/netventief/School/lifefire/app/assets/stylesheets/global/_typography.scss */
+h4 {
+  margin-bottom: 10px;
+  color: #bebebe;
+  font-weight: normal;
+  font-size: 0.6em;
+}
+
+/* Modules */
+/* line 2, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
+  border: 1px solid green;
+  color: #767680;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #d4d4d4;
+  padding: 8px 5px;
+}
+/* line 10, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="email"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="time"]:disabled, input[type="week"]:disabled {
+  background-color: #f2f2f2;
+  color: #aaaaaa;
+}
+
+/* line 14, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover {
+  background-color: white;
+  outline: none;
+}
+/* line 18, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="email"]:hover:disabled, input[type="number"]:hover:disabled, input[type="password"]:hover:disabled, input[type="search"]:hover:disabled, input[type="tel"]:hover:disabled, input[type="text"]:hover:disabled, input[type="url"]:hover:disabled, input[type="color"]:hover:disabled, input[type="date"]:hover:disabled, input[type="datetime"]:hover:disabled, input[type="datetime-local"]:hover:disabled, input[type="month"]:hover:disabled, input[type="time"]:hover:disabled, input[type="week"]:hover:disabled {
+  background-color: #f2f2f2;
+  color: #aaaaaa;
+}
+
+/* line 22, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus {
+  background-color: white;
+  outline: none;
+  border: 1px solid #bebebe;
+}
+/* line 27, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="email"]:focus:disabled, input[type="number"]:focus:disabled, input[type="password"]:focus:disabled, input[type="search"]:focus:disabled, input[type="tel"]:focus:disabled, input[type="text"]:focus:disabled, input[type="url"]:focus:disabled, input[type="color"]:focus:disabled, input[type="date"]:focus:disabled, input[type="datetime"]:focus:disabled, input[type="datetime-local"]:focus:disabled, input[type="month"]:focus:disabled, input[type="time"]:focus:disabled, input[type="week"]:focus:disabled {
+  background-color: #f2f2f2;
+}
+
+/* line 44, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="button"], input[type="reset"], input[type="submit"] {
+  border: 1px solid #95c241;
+  border-bottom: 2px solid #95c241;
+  border-radius: 0px;
+  box-shadow: none !important;
+  background-image: none !important;
+  background-color: #a2d04c !important;
+  outline: none !important;
+  padding: 10px 30px;
+}
+
+/* line 48, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+  border: 1px solid #95c241;
+  border-bottom: 2px solid #95c241;
+  border-radius: 0px;
+  box-shadow: none !important;
+  background-image: none !important;
+  background-color: #b2e453 !important;
+  outline: none !important;
+}
+
+/* line 51, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
+  border: 1px solid #95c241;
+  border-bottom: 2px solid #95c241;
+  border-radius: 0px;
+  box-shadow: none !important;
+  background-image: none !important;
+  background-color: #c2f95b !important;
+  outline: none !important;
+}
+
+/* line 54, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+  border: 1px solid #95c241;
+  border-bottom: 2px solid #95c241;
+  border-radius: 0px;
+  box-shadow: none !important;
+  background-image: none !important;
+  background-color: #91bb44 !important;
+  outline: none !important;
+}
+
+/* line 58, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+label {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* line 63, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+select {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #d4d4d4;
+  padding: 8px 5px;
+}
+/* line 69, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+select:focus {
+  outline: none;
+  border: 1px solid #bebebe;
+}
+/* line 73, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+select:hover {
+  background-color: white;
+  outline: none;
+}
+/* line 77, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+select:active {
+  outline: none;
+}
+
+/* line 82, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field {
+  display: block;
+  margin: 0 auto 1em;
+}
+/* line 86, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field label {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  width: calc(100% - 70px);
+}
+/* line 90, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch {
+  align-self: center;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  vertical-align: middle;
+  width: 68px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 109, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch input[type="checkbox"] {
+  display: none;
+}
+/* line 112, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch input[type="checkbox"] + .checkbox {
+  background: #d4d4d4;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 68px;
+  z-index: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 125, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch input[type="checkbox"] + .checkbox:before {
+  background: #cfcfcf;
+  border-radius: 3px;
+  content: " ";
+  height: 3px;
+  width: 64px;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 136, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch input[type="checkbox"] + .checkbox:after {
+  background-color: #d4d4d4;
+  background-image: -webkit-linear-gradient(top, white, #d4d4d4);
+  background-image: linear-gradient(to bottom,white, #d4d4d4);
+  border-radius: 3px;
+  content: " ";
+  height: 30px;
+  width: 30px;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 147, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch input[type="checkbox"]:checked + .checkbox {
+  background: #a2d04c;
+}
+/* line 149, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch input[type="checkbox"]:checked + .checkbox:before {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+/* line 151, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.checkbox_field .switch input[type="checkbox"]:checked + .checkbox:after {
+  left: 36px;
+}
+
+/* line 156, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.number label {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  width: calc(100% - 80px);
+}
+/* line 160, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.number input[type=number] {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  width: 80px;
+}
+
+/* line 165, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.range {
+  position: relative;
+  height: 70px;
+  margin-bottom: 1em;
+  height: 70px;
+  padding: 40px 0 0;
+}
+/* line 172, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.range output {
+  position: absolute;
+  background-color: #a2d04c;
+  height: 30px;
+  padding: 0px 5px;
+  width: 40px;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  left: 0;
+  top: 0px;
+  margin-left: -6px;
+}
+/* line 189, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.range output:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  top: 100%;
+  text-align: center;
+  left: 50%;
+  margin-left: -5px;
+  height: 0;
+  width: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #a2d04c;
+}
+/* line 200, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.range input[type="range"] {
+  -webkit-appearance: none;
+  background-color: #f2f0f1;
+  width: 100%;
+  height: 20px;
+  outline: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+/* line 212, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_form_elements.sass */
+.range input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #a2d04c;
+  width: 26px;
+  height: 26px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 6, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user_icons .icon a {
+  display: block;
+  height: 60px;
+  width: 60px;
+  font-size: 24px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #e3e3e3;
+}
+/* line 16, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user_icons .icon a:hover {
+  color: #cccccc;
+}
+
+/* line 19, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+.message_center {
+  display: none;
+  position: absolute;
+  width: 400px;
+  padding: 20px 0 4px;
+  background: #e5e5e5;
+  top: 50px;
+  right: 40px;
+  z-index: 99;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+}
+/* line 31, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+.message_center li {
+  padding: 10px;
+  background: white;
+  border-bottom: 1px solid #cccccc;
+}
+
+/* line 37, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid #e3e3e3;
+}
+/* line 44, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .logo {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 0 0 25px;
+}
+/* line 50, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .logo img {
+  height: 20px;
+  width: 89px;
+}
+/* line 54, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  height: 60px;
+  float: right;
+  color: #5f5f5f;
+}
+/* line 60, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  margin-right: 20px;
+}
+/* line 64, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user .avatar {
+  float: left;
+  height: 60px;
+  padding: 10px 0;
+  margin-right: 10px;
+}
+/* line 70, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user .user_information {
+  float: left;
+  height: 60px;
+  padding: 6px 0;
+}
+/* line 74, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user .user_information .name {
+  height: 24px;
+}
+/* line 76, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user .user_information .name a {
+  color: #5f5f5f;
+}
+/* line 78, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user .user_information .name a:hover {
+  text-decoration: underline;
+}
+/* line 81, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user .user_information .karma {
+  height: 20px;
+}
+/* line 84, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user_icons {
+  float: right;
+  height: 60px;
+  margin-right: 20px;
+  font-size: 16px;
+}
+/* line 90, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user_icons .icon {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  position: relative;
+}
+/* line 95, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+nav.top_bar .menu .user_icons .icon .count {
+  background: #ee4d21;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 11px;
+  line-height: 16px;
+  border-radius: 16px;
+  text-align: center;
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 40em) {
+  /* line 37, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+  nav.top_bar {
+    height: 60px;
+  }
+  /* line 114, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+  nav.top_bar .logo {
+    display: none;
+  }
+  /* line 117, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+  nav.top_bar .menu {
+    width: 100%;
+    padding: 0 20px;
+  }
+  /* line 121, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+  nav.top_bar .menu .user {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    margin-right: 1%;
+  }
+  /* line 125, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+  nav.top_bar .menu .user_icons {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    margin-right: 1%;
+  }
+  /* line 129, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_navigation.sass */
+  nav.top_bar .menu .user_icons .icon {
+    width: 50px;
+    font-size: 26px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+  }
+}
+
+/* line 1, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_notifications.sass */
+.notification {
+  position: relative;
+  width: 100%;
+  top: -2px;
+}
+/* line 6, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_notifications.sass */
+.notification .notice {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 1.4em;
+  color: white;
+}
+/* line 14, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_notifications.sass */
+.notification .notice.success {
+  background-color: #a2d04c;
+}
+/* line 17, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_notifications.sass */
+.notification .notice.warning {
+  background-color: #ee4d21;
+}
+/* line 20, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_notifications.sass */
+.notification .notice.error {
+  background-color: #ee4d21;
+}
+
+/* line 1, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_sidebar.sass */
+.sidebar {
+  position: absolute;
+  top: 60px;
+  border-right: 1px solid #e3e3e3;
+  background: white;
+  width: 200px;
+  height: 100%;
+  font-size: 18px;
+}
+/* line 10, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_sidebar.sass */
+.sidebar .bars {
+  width: 100%;
+  cursor: pointer;
+  height: 44px;
+  padding: 11px;
+  text-align: right;
+  color: #bebebe;
+}
+/* line 17, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_sidebar.sass */
+.sidebar .bars:hover {
+  color: #555555;
+}
+/* line 21, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_sidebar.sass */
+.sidebar nav a {
+  display: block;
+  padding: 0 0 0 12px;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  color: #bebebe;
+}
+/* line 29, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_sidebar.sass */
+.sidebar nav a span {
+  padding-left: 10px;
+  font-size: 14px;
+  color: #5f5f5f;
+}
+/* line 33, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_sidebar.sass */
+.sidebar nav a:hover {
+  color: #555555;
+}
+/* line 35, /home/netventief/School/lifefire/app/assets/stylesheets/modules/_sidebar.sass */
+.sidebar nav a.active {
+  color: #ee4d21;
+}
+.morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
+.morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 10, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 20, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 44, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 56, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 66, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+/* line 77, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 88, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 97, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 108, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 117, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 125, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 134, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 143, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 152, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 161, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 168, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+sup {
+  top: -0.5em;
+}
+
+/* line 172, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 183, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 191, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 202, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 210, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 220, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 231, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 255, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 265, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 292, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 321, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 356, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 370, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 378, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 389, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 398, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 407, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 418, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 424, /home/netventief/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/normalize-rails-3.0.1/vendor/assets/stylesheets/normalize-rails/normalize.css */
+td,
+th {
+  padding: 0;
+}
