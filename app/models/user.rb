@@ -3,17 +3,19 @@ class User < ActiveRecord::Base
   include PublicActivity::Common
 
   # Relations
-  has_one :userPreference
-  has_one :userDetail
-  has_one :userNotice
-  has_one :userSmokeAddiction
-  has_one :userProfile
-  has_many :smokes
-  has_many :sports
-  has_many :messages
-  has_many :comments
-  has_many :friends
-  has_many :users, source: :friend, through: :friends
+  has_one :userPreference,      dependent: :destroy
+  has_one :userDetail,          dependent: :destroy
+  has_one :userNotice,          dependent: :destroy
+  has_one :userSmokeAddiction,  dependent: :destroy
+  has_one :userProfile,         dependent: :destroy
+  has_many :smokes,             dependent: :destroy
+  has_many :sports,             dependent: :destroy
+  has_many :messages,           dependent: :destroy
+  has_many :comments,           dependent: :destroy
+  has_many :friends,            dependent: :destroy
+  has_many :users, source: :friend,
+                   through: :friends,
+                   dependent: :destroy
 
   # Concerns
   include Smoking
