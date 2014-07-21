@@ -116,7 +116,7 @@ class User < ActiveRecord::Base
     # Require Pusher
     require 'pusher'
     # Publish to url
-    Pusher.url = "http://6f2ca9f149c05426c0d4:e99703ddacb9ce5666b6@api.pusherapp.com/apps/82373"
+    Pusher.url = "http://#{Rails.application.secrets.pusher_app_key}:#{Rails.application.secrets.pusher_app_secret}@api.pusherapp.com/apps/#{Rails.application.secrets.pusher_app_id}"
     # Publish channel, event and message
     Pusher[self.user_hash].trigger('event', {
       message: message
