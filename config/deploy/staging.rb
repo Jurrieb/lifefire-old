@@ -18,6 +18,7 @@ role :db,  %w{root@146.185.140.251}
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 server '146.185.140.251', user: 'root', roles: %w{web app db}
 
+set :rails_env, 'staging'
 
 # Custom SSH Options
 # ==================

@@ -31,6 +31,18 @@ namespace :deploy do
     end
   end
 
+  desc "reload the database with seed data"
+  task :seed do
+    on roles(:app) do
+      within "#{current_path}" do
+        with rails_env: :production do
+          execute :rake, "db:seed"
+        end
+      end
+    end
+  end
+
+
   after "deploy", "deploy:migrate"
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
