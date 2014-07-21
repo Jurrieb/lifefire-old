@@ -28,7 +28,7 @@
   = form_for @smoke, url: smokes_path, method: :post,
                                        html: { class: 'smokes' } do |f|
 
-    = f.label :date, I18n.t('form.dateselect')
+    = f.label :date, I18n.t('form.label.date_select', activity: 'gerookt?' )
     = f.text_field :date, value: Date.today, id: 'dateselect', class: 'smoke'
     = f.label :counted, "Hoeveel sigaretten heb je vandaag, op #{ content_tag(:span, I18n.localize(Date.today, format: '%d %B'), class: 'date_in_text_smoke')} gerookt.".html_safe
 
