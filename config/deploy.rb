@@ -1,3 +1,7 @@
+# Locally precompile assets
+require 'capistrano/local_precompile'
+set :turbosprockets_enabled, true
+
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
@@ -44,20 +48,26 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
+      puts "**********************************************"
+      puts "*         APPLICATION IS RESTARTING          *"
+      puts "**********************************************"
       execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
-  namespace :assets do
-    desc 'Run the precompile task locally and rsync with shared'
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      %x{bundle exec rake assets:precompile}
-      %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{domain}:#{assets_path}}
-      %x{bundle exec rake assets:clean}
-    end
-  end
+  # namespace :assets do
+  #   desc 'Run the precompile task locally and rsync with shared'
+  #   task :precompile, :roles => :web, :except => { :no_release => true } do
+  #     puts "**********************************************"
+  #     puts "*       APPLICATION IS PRECOMPILING          *"
+  #     puts "**********************************************"
+  #     %x{bundle exec rake assets:precompile}
+  #     %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{domain}:#{assets_path}}
+  #     %x{bundle exec rake assets:clean}
+  #   end
+  # end
 
-  after "deploy", "assets:precompile"
+  # after "deploy", "assets:precompile"
   after "deploy", "deploy:migrate"
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
