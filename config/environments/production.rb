@@ -27,7 +27,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -84,9 +84,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Faye config
-  config.middleware.use FayeRails::Middleware, mount: '/faye',
-                                              :timeout => 25,
-                                              server: 'passenger',
-                                              engine: {type: Faye::Redis,
-                                                       host: 'localhost'}
+  # config.middleware.use FayeRails::Middleware, mount: '/faye',
+  #                                             :timeout => 25,
+  #                                             server: 'passenger',
+  #                                             engine: {type: Faye::Redis,
+  #                                                      host: 'localhost'}
 end
