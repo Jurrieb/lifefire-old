@@ -33,9 +33,6 @@ GEM
     arel (5.0.1.20140414130214)
     ast (2.0.0)
     awesome_print (1.2.0)
-    aws-sdk (1.48.1)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
     bigdecimal (1.2.5)
     blankslate (2.1.2.4)
@@ -211,7 +208,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile (0.6.0)
     minitest (5.4.0)
     morrisjs-rails (0.5.0)
       railties (> 3.1, < 5)
@@ -224,8 +220,6 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.3)
-      mini_portile (= 0.6.0)
     normalize-rails (3.0.1)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -451,7 +445,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
-  aws-sdk
   bourbon
   bullet
   capistrano (~> 3.1)
