@@ -1,6 +1,6 @@
 $ ->
   $(".messages").click (e)-> 
-    ga('send', 'event', 'message', 'click', 'Click a messages')
+    ga('send', 'event', 'message', 'click', 'Click a message')
 
   $(".profile .add_friend").click (e)-> 
     ga('send', 'event', 'friend', 'add', 'Add a friend')
