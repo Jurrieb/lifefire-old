@@ -20,6 +20,7 @@ require 'capistrano/rails'
 
 require 'capistrano/safe_deploy_to'
 # require 'capistrano/postgresql'
+require 'capistrano/sidekiq'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
