@@ -35,8 +35,8 @@ set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-# set :normalize_asset_timestamps, false
-# set :normalize_asset_timestamps, %{public/images public/javascripts public/stylesheets}
+set :normalize_asset_timestamps, true
+set :normalize_asset_timestamps, %{public/images public/javascripts public/stylesheets}
 
 
 namespace :deploy do
