@@ -44,6 +44,9 @@ gem 'groupdate'
 # Delayed backgroundjob
 gem 'sidekiq'
 
+# Realtime messages
+gem 'pusher'
+
 # Authentication
 gem 'devise'
 gem 'omniauth-facebook'
