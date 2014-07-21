@@ -1,10 +1,13 @@
-# This file is used by Rack-based servers to start the application.
-
-require ::File.expand_path('../config/environment',  __FILE__)
 require 'faye'
 
-# Load a WebSocket adapter for whichever server you're using
-Faye::WebSocket.load_adapter 'thin'
+Faye::WebSocket.load_adapter 'passenger'
 
-use Faye::RackAdapter, :mount => '/faye', :timeout => 25
+use Faye::RackAdapter, :mount => '/faye',
+                       :timeout => 25,
+                       :server => 'passenger',
+                       :engine => {type: Faye::Redis,
+                                   host: 'localhost'}
+
+require ::File.expand_path('../config/environment',  __FILE__)
+
 run Rails.application
