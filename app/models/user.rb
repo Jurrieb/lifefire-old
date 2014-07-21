@@ -110,4 +110,16 @@ class User < ActiveRecord::Base
     UserNotice.create(user_id: id)         unless userNotice.present?
     UserSmokeAddiction.create(user_id: id) unless userSmokeAddiction.present?
   end
+
+  # Publish a private message
+  def publish message
+    # Require Pusher
+    require 'pusher'
+    # Publish to url
+    Pusher.url = "http://6f2ca9f149c05426c0d4:e99703ddacb9ce5666b6@api.pusherapp.com/apps/82373"
+    # Publish channel, event and message
+    Pusher[self.user_hash].trigger('event', {
+      message: message
+    })
+  end
 end
