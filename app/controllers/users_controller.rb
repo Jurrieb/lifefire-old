@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   # Edit a user
   def edit
     # Publish a message
-    StreamController.publish("/message/#{current_user.user_hash}", 'Dit is een test')
+    current_user.publish('Profiel aangepast')
   end
 
   # Update user
