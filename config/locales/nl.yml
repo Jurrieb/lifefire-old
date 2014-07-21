@@ -300,6 +300,7 @@ nl:
       mail: Ik wil e-mailnotificaties ontvangen
       daily_updates: Ik wil dagelijkse updates ontvangen
       push_notice: Ik wil push-notificaties ontvangen
+      date_select: "Op welke dag heeft u %{activity}"
 
     submit:
       edit_account: Wijzigen van account

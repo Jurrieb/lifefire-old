@@ -1,9 +1,9 @@
 .top_block
   .friends
-    h2 = "Vrienden met de meeste karma"
     - if @friends.blank?
-      = "Voeg vrienden toe en motiveer elkaar"
+      = "Voeg vrienden toe en motiveer elkaar!"
     - else
+      h2 = "Vrienden met de meeste karma"
       ul
       - @friends.each do | friend |
         li.friend
@@ -18,24 +18,24 @@
     ul
       li.item
         .value
-          = "300"
-          small = "stuks"
-        .label = "Cigaretten geminderd"
+          = number_to_currency(current_user.all_costs, locale: :nl)
+          small = "euro"
+        .label = "Uitgegeven aan roken"
       li.item
         .value
-          = "3000"
-          small = "kcal"
-        .label = "Callorien verbrand"
+          = current_user.avarage_smokes
+          small = "p/dag"
+        .label = "Gemiddeld gerookt"
       li.item
         .value
-          = "40"
-          small = "km"
-        .label = "Kilometers gemaakt"
+          = current_user.total_workout_calories
+          small kilocalorieën
+        .label = "Totaal verbrand"
       li.item
         .value
-          = "8"
-          small = "km/u"
-        .label = "Gemiddelde snelheid"
+          = current_user.total_workouts
+          small sessies
+        .label = "Totaal gesport"
 
   / Messages (Activitystream)
   = render partial: 'shared/messages'

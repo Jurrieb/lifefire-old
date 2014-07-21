@@ -3,17 +3,17 @@
     - if @activity
       li = render_activity @activity
 .block
-  h3 Berichten
+  h3 Reacties van vrienden
 
   ul.comments
     - if @activity.comments.any?
       - @activity.comments.each do |comment|
         li.comment
-          .avatar.small 
+          .avatar.small
           = comment.user.inspect
           p.message = comment.message
     - else
-      li Nog geen reacties geplaatst
+      li Nog geen reactie geplaatst
 
 
 
@@ -27,5 +27,5 @@
     = c.hidden_field :commentable_id
     = c.hidden_field :commentable_type
 
-    = c.submit 'Plaatsen'
+    = c.submit 'Reactie plaatsen'
 

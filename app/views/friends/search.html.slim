@@ -1,11 +1,11 @@
 .top_block
-  h2 
-    = "U heeft gezocht op " 
+  h2
+    = "U heeft gezocht op "
     strong = @query
   = form_tag(search_path, method: "get", class: 'search_form') do
-    = label_tag(:q, "Search for:")
+    = label_tag(:q, "Zoeken naar naam:")
     = text_field_tag(:q)
-    = submit_tag("Search")
+    = submit_tag("Zoeken")
 .block
   .friends
     ul
