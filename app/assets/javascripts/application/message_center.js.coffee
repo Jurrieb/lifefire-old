@@ -1,7 +1,7 @@
 $ ->
   messageCount = 0
   console.log "FAYE CLIENT"
-  client = new Faye.Client('faye.lifefire.nl')
+  client = new Faye.Client('/faye')
   console.log client
 
   # Get userhash from cookie
