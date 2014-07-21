@@ -1,7 +1,3 @@
-# Locally precompile assets
-require 'capistrano/local_precompile'
-set :turbosprockets_enabled, true
-
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
