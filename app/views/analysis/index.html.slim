@@ -1,16 +1,17 @@
 .top_block
   .friends
     h2 = "Vrienden met de meeste karma"
-    ul
     - if @friends.blank?
-      li Voeg vrienden toe en motiveer elkaar
-    - @friends.each do | friend |
-      li.friend
-        .avatar.big = image_tag friend.avatar.url(:medium)
-        .name = link_to friend.name, profile_path(friend.id)
-        .karma
-          span.coloured = friend.karma
-          = " karma"
+      = "Voeg vrienden toe en motiveer elkaar"
+    - else
+      ul
+      - @friends.each do | friend |
+        li.friend
+          .avatar.big = image_tag friend.avatar.url(:medium)
+          .name = link_to friend.name, profile_path(friend.id)
+          .karma
+            span.coloured = friend.karma
+            = " karma"
 .block
   .progress
     h3 = "Mijn voortgang"

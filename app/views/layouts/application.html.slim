@@ -25,7 +25,7 @@ html
   body
     .container
       = render partial: 'shared/navigation'
-      = render partial: 'shared/notification'
       = render partial: 'shared/sidebar'
       .content
+        = render partial: 'shared/notification'
         = yield
