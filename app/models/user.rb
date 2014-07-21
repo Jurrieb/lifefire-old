@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
     end
 
     # Set image to the user
-    self.avatar = url_picture
+    self.avatar = url_picture if self.avatar.blank?
     avatar_remote_url = url_picture
   end
 
