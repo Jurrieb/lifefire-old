@@ -20,7 +20,7 @@ html
 
     / Favicons
     = render partial: 'shared/favicon'
-
+    = render partial: 'shared/google_analytics' if Rails.env.production?
   body
     .container
       = render partial: 'shared/navigation'
