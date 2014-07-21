@@ -109,4 +109,5 @@ group :development, :test do
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-safe-deploy-to', '~> 1.1.1'
   gem 'capistrano-postgresql', '~> 3.0'
+  gem 'capistrano-local-precompile', require: false
 end
