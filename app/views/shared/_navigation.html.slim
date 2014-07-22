@@ -9,18 +9,19 @@ nav.top_bar
         = image_tag 'logo.png', title: 'Lifefire'
   / Show user information
   - if current_user
-    .menu
-      .user
-        .avatar = image_tag current_user.avatar.url(:thumb)
-        .user_information
-          .name = link_to current_user.name, profile_path(current_user.id)
-          .karma
-            span.coloured = current_user.karma
-            = " karma"
-      .user_icons
-        .icon = link_to '', edit_user_path(current_user.id), class: 'icon-gear'
-        #message.icon
-          = link_to '', messages_path, class: 'icon-envelope'
-          span.count = "0"
-        .icon = link_to '', destroy_user_session_path, method: :delete, class: 'icon-switch signout'
-      ul.message_center
+    - cache current_user do
+      .menu
+        .user
+          .avatar = image_tag current_user.avatar.url(:thumb)
+          .user_information
+            .name = link_to current_user.name, profile_path(current_user.id)
+            .karma
+              span.coloured = current_user.karma
+              = " karma"
+        .user_icons
+          .icon = link_to '', edit_user_path(current_user.id), class: 'icon-gear'
+          #message.icon
+            = link_to '', messages_path, class: 'icon-envelope'
+            span.count = "0"
+          .icon = link_to '', destroy_user_session_path, method: :delete, class: 'icon-switch signout'
+        ul.message_center

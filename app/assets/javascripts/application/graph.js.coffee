@@ -14,8 +14,8 @@ class Graph
     new_data = []
     # Loop through data en create correct array
     for row in data
-      # Append into array
-      new_data.push {'m': moment(row['m'], "MM-DD-YYYY")._i, "a": row["a"] }
+      # Append into array with new format
+      new_data.push {'m': moment(row['m']).format('DD-MM-YYYY') , "a": row["a"] }
     # Return array
     return new_data
 
@@ -45,10 +45,10 @@ class Graph
   buildGraph: (graph, data) =>
     # Set correct label
     if ($ graph).hasClass('smokes')
-      lable_title = "Sigaretten"
+      lable_title = ["Sigaretten"]
       color       = ["#ee4d21"]
     else
-      lable_title = "Calorieën"
+      lable_title = ["Calorieën"]
       color       = ["#a2d04c"]
     # Remove graph
     ($ graph).empty()
@@ -62,7 +62,8 @@ class Graph
       "data": data,
       "xkey": "m",
       "ykeys": "a",
-      "labels": lable_title
+      "labels": lable_title,
+      "parseTime": false
     })
 
 $ ->
