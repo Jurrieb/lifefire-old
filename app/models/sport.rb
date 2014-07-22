@@ -7,7 +7,7 @@ class Sport < ActiveRecord::Base
 
   # Relations
   belongs_to :populair_sport
-  belongs_to :user
+  belongs_to :user, touch: true
 
   # Custom scopes
   scope :by_user, -> (user_id) { where(user_id: user_id) }

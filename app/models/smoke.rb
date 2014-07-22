@@ -1,6 +1,6 @@
 class Smoke < ActiveRecord::Base
   # Relations
-  belongs_to :user
+  belongs_to :user, touch: true
 
   # Validations
   validates :user_id, :counted, :date, presence: true
