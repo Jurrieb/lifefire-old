@@ -67,6 +67,8 @@ gem 'thin'
 # Heroku
 gem 'rails_12factor', group: :production
 
+gem 'newrelic_rpm'
+
 # Testing purpose
 group :development, :test do
   gem 'database_cleaner'
