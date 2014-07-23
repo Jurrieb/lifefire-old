@@ -29,6 +29,10 @@ module Smoking
     smoked_all_time * cigaret_price
   end
 
+  def reduced_costs
+    reduced_cigarettes * cigaret_price
+  end
+
   # Calculate tar in smoked cigarrets
   def calculate_tar
     (Smoke.by_user(self.id).sum(:counted) * cigaret_tar).convert_to('milligram')

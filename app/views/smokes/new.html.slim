@@ -14,9 +14,9 @@
         .label = "Geïnhaleerd"
       li.item
         .value
-          = number_to_currency(current_user.all_costs, locale: :nl)
+          = number_to_currency(current_user.reduced_costs, locale: :nl)
           small = "euro"
-        .label = "Totaal uitgegeven"
+        .label = "Bespaard"
       li.item
         .value
           = current_user.avarage_smokes
