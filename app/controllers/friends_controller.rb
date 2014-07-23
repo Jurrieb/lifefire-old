@@ -35,6 +35,7 @@ class FriendsController < ApplicationController
       unless user.blank?
         if current_user.users << user
           # Publish a message
+          flash['success'] = "Vriendverzoek is naar #{user.name} verstuurd"
           user.publish("#{user.name} heeft jouw toegevoegt")
           current_user.create_activity action: :add_friend, owner: current_user, recipient: user
         end
