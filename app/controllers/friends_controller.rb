@@ -1,7 +1,8 @@
 class FriendsController < ApplicationController
   def index
-    @friends = current_user.friends.where(accepted: true)
-    @unaccepted_friends = current_user.friends.where(accepted: false)
+    all_friends = current_user.friends.includes(:friend)
+    @friends = all_friends.where(accepted: true)
+    @unaccepted_friends = all_friends.where(accepted: false)
   end
 
   # Search for an User
