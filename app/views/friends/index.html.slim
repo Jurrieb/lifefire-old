@@ -26,10 +26,11 @@
     - if @friends.blank?
       = "Voeg vrienden toe om cool te zijn."
     - @friends.each do | user |
-      li.friend
-        .avatar.big
-          = image_tag user.friend.avatar.url(:medium)
-        .name = link_to user.friend.name, profile_path(user.friend.id)
-        .karma
-          span.coloured = user.friend.karma
-          = " karma"
+      - cache user do
+        li.friend
+          .avatar.big
+            = image_tag user.friend.avatar.url(:medium)
+          .name = link_to user.friend.name, profile_path(user.friend.id)
+          .karma
+            span.coloured = user.friend.karma
+            = " karma"

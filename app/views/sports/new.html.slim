@@ -28,8 +28,7 @@
 
   / First new sport
   = form_for @sport, url: sports_path, method: :post,
-                                       remote: true,
-                                       html: { class: 'remote sports' } do |f|
+                                       html: { class: 'sports' } do |f|
 
     = f.label :date, I18n.t('form.label.date_select', activity: 'gesport?' )
     = f.text_field :date, value: Date.today, id: 'dateselect', class: 'sport'

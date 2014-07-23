@@ -9,15 +9,11 @@ set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads public/assets}
-
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads public/system public/assets}
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
-
 set :keep_releases, 5
 
-set :normalize_asset_timestamps, true
-set :normalize_asset_timestamps, %{public/images public/assets public/uploads public/javascripts public/stylesheets}
-
+set :normalize_asset_timestamps, false
 
 namespace :deploy do
 

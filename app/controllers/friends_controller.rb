@@ -1,7 +1,8 @@
 class FriendsController < ApplicationController
   def index
-    @friends = current_user.friends.where(accepted: true)
-    @unaccepted_friends = current_user.friends.where(accepted: false)
+    all_friends = current_user.friends.includes(:friend)
+    @friends = all_friends.where(accepted: true)
+    @unaccepted_friends = all_friends.where(accepted: false)
   end
 
   # Search for an User
@@ -44,6 +45,7 @@ class FriendsController < ApplicationController
       unless user.blank?
         if current_user.users << user
           # Publish a message
+          flash['success'] = "Vriendverzoek is naar #{user.name} verstuurd"
           user.publish("#{user.name} heeft jouw toegevoegt")
         end
       end
