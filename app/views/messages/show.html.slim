@@ -1,14 +1,12 @@
 .top_block
-  ul
-    - if @activity
-      - cache @activity do
-        li = render_activity @activity
+  = @message.inspect
 .block
   h3 Reacties van vrienden
 
-  ul.comments
-    - if @activity.comments.any?
-      - @activity.comments.each do |comment|
+  ul.message
+  	= @message.comments.inspect
+    - if @message.comments.any?
+      - @message.comments.each do |comment|
         - cache comment do
           li.comment
             .avatar.small
@@ -20,12 +18,11 @@
 
 
   h3 bericht plaatsen
-  = form_for @comment, url: friend_activity_comments_path(friend_id: params[:friend_id],
-                                                          activity_id: params[:id]) do |c|
+  = form_for @comment, url: message_comments_path(message_id: params[:id]) do |c|
     = c.text_area :message, value: ''
 
     = c.hidden_field :user_id, value: current_user.id
-    = c.hidden_field :activity_id, value: params[:id]
+    = c.hidden_field :message_id, value: params[:id]
     = c.hidden_field :commentable_id
     = c.hidden_field :commentable_type
 

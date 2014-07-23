@@ -17,6 +17,16 @@ class FriendsController < ApplicationController
                                   accepted: false).first
     # Toggle accepted status
     friend_request.update(accepted: true)
+
+    #create activity friend added
+    friend = User.find(params[:friend_id])
+   
+    message = Message.new(
+      user_id: u.id, 
+      message: "#{current_user.name} en #{}{friend.name} zijn LifeFire vrienden geworden."
+      )
+    message.save
+
     # Karma background job
     karma_for_adding_friend
     # Publish a message
@@ -35,7 +45,6 @@ class FriendsController < ApplicationController
         if current_user.users << user
           # Publish a message
           user.publish("#{user.name} heeft jouw toegevoegt")
-          current_user.create_activity action: :add_friend, owner: current_user, recipient: user
         end
       end
     end

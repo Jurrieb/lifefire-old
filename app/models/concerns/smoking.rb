@@ -4,6 +4,11 @@ module Smoking
   # Calculation
   require 'unitwise'
 
+
+  def smoking_progress
+    Smoke.by_user(self.id).where(:counted => 0, created_at: 3.days.ago..Time.now).count
+  end
+
   # Price of one sigaret
   def cigaret_price
     0.30

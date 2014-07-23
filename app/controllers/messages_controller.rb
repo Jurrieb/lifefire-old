@@ -2,9 +2,12 @@
 class MessagesController < ApplicationController
   # Get messages till a week ago
   def index
-    @activities = PublicActivity::Activity.where(owner_id: self_and_friends)
-                                          .includes(:owner, :recipient)
-                                          .limit(10)
-                                          .order('id desc')
+    @messages = current_user.messages.limit(100).order('id desc')
   end
+
+  def show
+    @message = Message.find(params[:id])
+    @comment  = @message.comments.new
+  end
+
 end
