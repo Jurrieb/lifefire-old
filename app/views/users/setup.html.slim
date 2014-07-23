@@ -6,29 +6,35 @@
   = form_for @user, url: user_path(current_user.id), method: :patch do |f|
     = f.fields_for :userPreference do |up|
       / Render switches
-      = render partial: 'shared/switch', locals: { subject: 'smokes', form: up}
-      = render partial: 'shared/switch', locals: { subject: 'sports', form: up}
+      .smoke_switch
+        = render partial: 'shared/switch', locals: { subject: 'smokes', form: up}
+      .sport_switch
+        = render partial: 'shared/switch', locals: { subject: 'sports', form: up}
 
       = render partial: 'shared/switch', locals: { subject: 'public_profile', form: up }
       = render partial: 'shared/switch', locals: { subject: 'private_profile', form: up }
-    = f.fields_for :userSmokeAddiction do |usa|
-        / Range for old smoke behaviour
-        = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
-        .range
-          output = @user.userSmokeAddiction.avarage_smokes_day
-          = usa.range_field :avarage_smokes_day,
-                            in: 0..50, step: '1',
-                            value: @user.userSmokeAddiction.avarage_smokes_day.to_i
 
-    = f.fields_for :userDetail do |ud|
-      .number
-        = ud.label :height,  I18n.t('form.label.height')
-        = ud.number_field :height
-      .number
-        = ud.label :weight,  I18n.t('form.label.weight')
-        = ud.number_field :weight
-      .number
-        = ud.label :target_weight,  I18n.t('form.label.target_weight')
-        = ud.number_field :target_weight
+      .hidden_input_fields
+        .smoke
+          = f.fields_for :userSmokeAddiction do |usa|
+            / Range for old smoke behaviour
+            = usa.label :avarage_smokes_day, I18n.t('form.label.smoke_addiction')
+            .range
+              output = @user.userSmokeAddiction.avarage_smokes_day
+              = usa.range_field :avarage_smokes_day,
+                                in: 0..50, step: '1',
+                                value: @user.userSmokeAddiction.avarage_smokes_day.to_i
 
-    = f.submit 'Gegevens opslaan'
+        .sport
+          = f.fields_for :userDetail do |ud|
+            .number
+              = ud.label :height,  I18n.t('form.label.height')
+              = ud.number_field :height
+            .number
+              = ud.label :weight,  I18n.t('form.label.weight')
+              = ud.number_field :weight
+            .number
+              = ud.label :target_weight,  I18n.t('form.label.target_weight')
+              = ud.number_field :target_weight
+
+      = f.submit 'Gegevens opslaan'

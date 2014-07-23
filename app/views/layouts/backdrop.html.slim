@@ -16,9 +16,10 @@ html
     meta name="google-site-verification" content=""
 
     == stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    == javascript_include_tag "http://js.pusher.com/2.0/pusher.min.js"
     == javascript_include_tag "application/application", "data-turbolinks-track" => true
     == csrf_meta_tags
-    
+
     = render partial: 'shared/favicon'
     = render partial: 'shared/google_analytics' if Rails.env.production?
 
