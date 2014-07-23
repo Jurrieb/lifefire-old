@@ -9,11 +9,12 @@
   ul.comments
     - if @activity.comments.any?
       - @activity.comments.each do |comment|
-        - cache comment do
-          li.comment
-            .avatar.small
-            = comment.user.inspect
-            p.message = comment.message
+        - next if comment.nil?
+          - cache comment do
+            li.comment
+              .avatar.small
+              = comment.user.inspect
+              p.message = comment.message
     - else
       li Nog geen reactie geplaatst
 
