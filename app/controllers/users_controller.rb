@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # Set current user
-  before_action :set_user, only: [:edit, :update, :destroy, :setup]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   include Friends
 
@@ -58,6 +58,7 @@ class UsersController < ApplicationController
 
   # First time user needs to update profile
   def setup
+    @user = User.find(current_user.id)
     # Set layout without partails
     render layout: 'backdrop'
     # Set programs and save
