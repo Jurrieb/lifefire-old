@@ -13,7 +13,7 @@ class SliderValue
   getAndSetValue: ->
     # Counted
     rangeValue = @range.val()
-    rangeValuePercentage = rangeValue / ((@range.attr('max') * 1.03) * 0.01)
+    rangeValuePercentage = rangeValue / ((@range.attr('max') * 1.045) * 0.01)
     # Set text and add left css px's
     @output.text(rangeValue).css('left', rangeValuePercentage + '%')
 
