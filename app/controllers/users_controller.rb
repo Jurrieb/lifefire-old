@@ -7,10 +7,7 @@ class UsersController < ApplicationController
   # Find other user with friendly ID
   def profile
     @user = User.friendly.find(params[:id])
-    @activities = PublicActivity::Activity.where(owner_id: @user.id)
-                                          .includes(:owner, :recipient)
-                                          .limit(10)
-                                          .order('id desc')
+    @messages = Message.where(user_id: @user.id).limit(10).order('id desc')
 
     # Check if user is a friend of the current user
     @friends = current_user.users.exists?(id: @user.id)

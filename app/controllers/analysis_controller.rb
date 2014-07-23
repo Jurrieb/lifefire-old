@@ -10,10 +10,7 @@ class AnalysisController < ApplicationController
 
   # Shows index for analysis
   def index
-    @activities = PublicActivity::Activity.where(owner_id: self_and_friends)
-                                          .includes(:owner, :recipient)
-                                          .limit(10)
-                                          .order('id desc')
+    @messages = current_user.messages.limit(10).order('id desc')
   end
 
   # Fetch one week and sum the burned calories, render JSON

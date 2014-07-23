@@ -69,6 +69,9 @@ gem 'rails_12factor', group: :production
 
 gem 'newrelic_rpm'
 
+# Cronjobs
+gem 'whenever', :require => false
+
 # Testing purpose
 group :development, :test do
   gem 'database_cleaner'

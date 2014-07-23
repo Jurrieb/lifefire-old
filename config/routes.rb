@@ -28,12 +28,10 @@ Rails.application.routes.draw do
                                     sessions: "users/sessions" }
   # Application routes
   resources :analysis, only: [:index, :create]
-  resources :messages, only: :index
-  resources :friends, only: [:index, :create, :destroy] do
-    resources :activities, only: :show do
-      resources :comments, only: :create
-    end
+  resources :messages, only: [:index, :show] do
+    resources :comments, only: :create
   end
+  resources :friends, only: [:index, :create, :destroy]
   resources :smokes, only: [:new, :create]
   resources :sports
   resources :progress, only: :index

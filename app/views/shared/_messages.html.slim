@@ -1,7 +1,8 @@
 .messages
     h3 Recente gebeurtenissen
     ul
-      - @activities.each do | activity |
-        = link_to friend_activity_path(friend_id: activity.recipient_id,
-                                       id: activity.id) do
-          li = render_activity activity
+      - @messages.each do | message |
+        = link_to message_path(id: message.id) do
+        	li 
+	          .avatar = image_tag message.user.avatar.url(:medium)
+	          = message.message

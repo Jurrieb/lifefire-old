@@ -20,7 +20,7 @@
         .value
           = number_to_currency(current_user.all_costs, locale: :nl)
           small = "euro"
-        .label = "Uitgegeven aan roken"
+        .label = "Bespaard met stoppen"
       li.item
         .value
           = current_user.avarage_smokes
@@ -29,7 +29,7 @@
       li.item
         .value
           = current_user.total_workout_calories
-          small kilocalorieën
+          small kcal
         .label = "Totaal verbrand"
       li.item
         .value

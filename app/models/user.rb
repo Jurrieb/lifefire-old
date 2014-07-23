@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :messages,           dependent: :destroy
   has_many :comments,           dependent: :destroy
   has_many :friends,            dependent: :destroy
+  has_many :messages,           dependent: :destroy
+
   has_many :users, source: :friend,
                    through: :friends,
                    dependent: :destroy
@@ -57,6 +59,7 @@ class User < ActiveRecord::Base
             :uid,
             :provider,
             presence: true
+
 
   # Find or Create user with Facebook credentials
   def self.find_for_facebook_oauth(auth)
