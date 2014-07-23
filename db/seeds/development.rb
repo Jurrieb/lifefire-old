@@ -10,10 +10,7 @@ require 'factory_girl_rails'
 users = User.all
 users.each do |user|
   puts "Create friend relation for user: #{user.name}"
-  user.friend_ids = [User.all.shuffle[0].id,
-                     User.all.shuffle[0].id,
-                     User.all.shuffle[0].id,
-                     User.all.shuffle[0].id]
+  user.users = User.order("RANDOM()").limit(5)
 
   # Create Activities
   puts "Create activities for user: #{user.name}"
