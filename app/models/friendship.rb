@@ -4,12 +4,6 @@ class Friendship < ActiveRecord::Base
   belongs_to :friend, class_name: 'User', foreign_key: 'friend_id'
 
   # scopes
-  scope :accepted,    -> { where(accepted: true) }
-  scope :unaccepted,  -> { where(accepted: false) }
-
-  # # Create bi-directional relation
-  # def befriend friend
-  #   self.friends << friend
-  #   friend.users << self
-  # end
+  scope :accepted,    -> { where(accepted: true, rejected: false) }
+  scope :unaccepted,  -> { where(accepted: false, rejected: false) }
 end
