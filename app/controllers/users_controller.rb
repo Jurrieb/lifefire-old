@@ -22,7 +22,11 @@ class UsersController < ApplicationController
   def update
     # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
-    if @user.update!(user_params)
+    if @user.update(user_params)
+      # Karma background job
+      karma_for_profile
+      # Publish a message
+      current_user.publish('Profiel aangepast')
       set_flash_and_redirect('success',
                              t('flash.account_edited'),
                              analysis_index_path)
@@ -31,10 +35,7 @@ class UsersController < ApplicationController
                              t('flash.account_not_edited'),
                              edit_user_path(@user.id))
     end
-    # Karma background job
-    karma_for_profile
-    # Publish a message
-    current_user.publish('Profiel aangepast')
+
   end
 
   # Signout user
