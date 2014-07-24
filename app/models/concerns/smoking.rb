@@ -9,7 +9,7 @@ module Smoking
   def smoking_progress
     Smoke.by_user(self.id).where(:counted => 0, created_at: 3.days.ago..Time.now).count
 
-    # TODO 
+    # TODO
     #return ['smoked', 3]
     #return ['smoked', 7]
     #return ['smoked', 30]
@@ -61,13 +61,13 @@ module Smoking
   # Calculate avarage smokes a day
   def avarage_smokes
     smokes = Smoke.by_user(self.id)
-    if smokes.any?
+    # Return 0 if blank
+    return 0 if smokes.blank?
+    unless smokes.blank?
       # Count between date ranges
       date_range_count = (smokes.first.date..smokes.last.date).count
       # Return smoked avarage
       return Smoke.by_user(self.id).sum(:counted) / date_range_count unless date_range_count == 0
-    else
-      0
     end
   end
 
