@@ -19,9 +19,9 @@
       - if current_user.smokes?
         li.item
           .value
-            = number_to_currency(current_user.all_costs, locale: :nl)
+            = number_to_currency(current_user.reduced_costs, locale: :nl)
             small = "euro"
-          .label = "Bespaard met stoppen"
+          .label = "Bespaard"
         li.item
           .value
             = current_user.avarage_smokes
