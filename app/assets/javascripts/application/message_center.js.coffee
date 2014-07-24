@@ -1,6 +1,5 @@
 class MessageCenter
   constructor: ->
-    alert('hi!')
     # Pusher settings & user hash
     user_hash       = $.cookie('user_hash')
     pusher          = new Pusher('6f2ca9f149c05426c0d4')
