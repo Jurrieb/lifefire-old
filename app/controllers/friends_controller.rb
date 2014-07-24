@@ -19,13 +19,12 @@ class FriendsController < ApplicationController
     # Toggle accepted status
     friend_request.update(accepted: true)
 
-    #create activity friend added
+    # Create activity friend added
     friend = User.find(params[:friend_id])
-   
-    message = Message.new(
-      user_id: u.id, 
-      message: "#{current_user.name} en #{}{friend.name} zijn LifeFire vrienden geworden."
-      )
+
+    # Setup message and save
+    message = Message.new(user_id: u.id,
+                          message: "#{current_user.name} en #{friend.name} zijn vrienden geworden.")
     message.save
 
     # Karma background job
@@ -62,5 +61,7 @@ class FriendsController < ApplicationController
       current_user.users.delete(friend)
       set_flash_and_redirect('success', t('flash.friend.removed'), :back)
     end
+    # Redirect
+    redirect_to :back
   end
 end
