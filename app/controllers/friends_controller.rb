@@ -1,8 +1,7 @@
 class FriendsController < ApplicationController
   def index
-    all_friends = current_user.friends.includes(:friend)
-    @friends = all_friends.where(accepted: true)
-    @unaccepted_friends = all_friends.where(accepted: false)
+    @friends = User.where(id: accepted_request_ids)
+    @unaccepted_friends = User.where(id: unaccepted_request_ids)
   end
 
   # Search for an User
@@ -13,19 +12,24 @@ class FriendsController < ApplicationController
   # Accept an invitation
   def accept
     # Find friend request, select first
-    friend_request = Friend.where(user_id: current_user.id,
-                                  friend_id: params[:friend_id],
-                                  accepted: false).first
+    friend_request = Friendship.where(user_id: params[:friend_id],
+                                      friend_id: current_user.id,
+                                      accepted: false,
+                                      rejected: false).first
+
+    # Create revert relation
+    Friendship.create(user_id: current_user.id,
+                      friend_id: params[:friend_id],
+                      accepted: true,
+                      rejected: false)
+
     # Toggle accepted status
     friend_request.update(accepted: true)
 
-    # Create activity friend added
+    # Retrieve friend, for setup message and save it
     friend = User.find(params[:friend_id])
-
-    # Setup message and save
-    message = Message.new(user_id: u.id,
-                          message: "#{current_user.name} en #{friend.name} zijn vrienden geworden.")
-    message.save
+    Message.new(user_id: friend.id,
+                message: "#{current_user.name} en #{friend.name} zijn vrienden geworden.").save
 
     # Karma background job
     karma_for_adding_friend
@@ -42,7 +46,7 @@ class FriendsController < ApplicationController
     else
       user = User.find(params[:id])
       unless user.blank?
-        if current_user.users << user
+        if current_user.friends << user
           # Publish a message
           flash['success'] = "Vriendverzoek is naar #{user.name} verstuurd"
           user.publish("#{user.name} heeft jouw toegevoegt")
@@ -63,5 +67,18 @@ class FriendsController < ApplicationController
     end
     # Redirect
     redirect_to :back
+  end
+
+  private
+
+  # Create array from users who have not accepted the invitation
+  def unaccepted_request_ids
+    Friendship.unaccepted.where(friend_id: current_user.id,
+                                rejected: false).map(&:user_id)
+  end
+
+  def accepted_request_ids
+    Friendship.accepted.where(user_id: current_user.id,
+                              rejected: false).map(&:friend_id)
   end
 end

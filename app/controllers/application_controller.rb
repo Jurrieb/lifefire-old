@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
 
   # Return array with self + friends ID
   def self_and_friends
-    current_user.friends.where(accepted: true).map(&:id) << current_user.id
+    current_user.friendships.accepted.map(&:id) << current_user.id
   end
 
   #  - Karma background jobs --------------------------------------------------#

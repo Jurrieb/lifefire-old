@@ -12,11 +12,17 @@
         - @unaccepted_friends.each do |unaccepted_friend|
           li.friend
             .avatar.big
-              = image_tag unaccepted_friend.friend.avatar.url(:medium)
-            .name = link_to unaccepted_friend.friend.name, profile_path(unaccepted_friend.friend.id)
+              = image_tag unaccepted_friend.avatar.url(:medium)
+            .name = link_to unaccepted_friend.name, profile_path(unaccepted_friend.id)
             .accept
-              - if unaccepted_friend.friend_id == current_user.id
-                = button_to 'Accepteren', accept_invite_path(friend_id: unaccepted_friend.friend.id)
+              - if unaccepted_friend.friendships.where(friend_id: current_user,
+                                                       rejected: false,
+                                                       accepted: false)
+                = button_to 'Accepteren', accept_invite_path(friend_id: unaccepted_friend.id)
+              - elsif unaccepted_friend.friendships.where(friend_id: current_user,
+                                                       rejected: true,
+                                                       accepted: false)
+                p Vriendverzoek is gewijgerd
               - else
                 p Verzoek is verstuurd
 .block
@@ -29,8 +35,8 @@
       - cache user do
         li.friend
           .avatar.big
-            = image_tag user.friend.avatar.url(:medium)
-          .name = link_to user.friend.name, profile_path(user.friend.id)
+            = image_tag user.avatar.url(:medium)
+          .name = link_to user.name, profile_path(user.id)
           .karma
-            span.coloured = user.friend.karma
+            span.coloured = user.karma
             = " karma"
