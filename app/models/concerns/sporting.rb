@@ -9,7 +9,7 @@ module Sporting
 
   # Calories burned in latest workout, or 0
   def last_workout_calories
-    set_sport_by_user.last.burned_calories || 0
+    set_sport_by_user.last.try(:burned_calories) || 0
   end
 
   # Calories burned in total, or 0
