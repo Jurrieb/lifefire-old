@@ -30,7 +30,7 @@
     h2 = "Dit zijn je vrienden"
     ul
     - if @friends.blank?
-      = "Voeg vrienden toe om cool te zijn."
+      = "Je hebt nog geen vrienden toegevoegt op lifefire."
     - @friends.each do | user |
       - cache user do
         li.friend

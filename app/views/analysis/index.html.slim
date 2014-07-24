@@ -1,7 +1,7 @@
 .top_block
   .friends
     - if @friends.blank?
-      = "Voeg vrienden toe en motiveer elkaar!"
+      = "#{link_to "Voeg vrienden toe",  friends_path}  en motiveer elkaar!".html_safe
     - else
       h2 = "Vrienden met de meeste karma"
       ul
