@@ -31,6 +31,8 @@ class AnalysisController < ApplicationController
     render_json(add_and_return_array(smokes))
   end
 
+  private
+
   # Return array with parsed date and results
   def add_and_return_array(data)
     # Create new array
