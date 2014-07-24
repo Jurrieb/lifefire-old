@@ -3,6 +3,9 @@ class SetupToggle
     # Set switch elements
     @smoke_switch  = ($ '.smoke_switch input')
     @sport_switch  = ($ '.sport_switch input')
+    # Check for initial value
+    ($ '.smoke').show() if @smoke_switch.is(":checked")
+    ($ '.sport').show() if @sport_switch.is(":checked")
     # Check for changes
     @bindListeners()
 
