@@ -7,7 +7,7 @@ $ ->
   channel = pusher.subscribe(user_hash)
   channel.bind 'event', (data) ->
     message = data['message']
-    messageCenter = $(".message_center").empty()
+    messageCenter = $(".message_center")
     messageCount++
     messageCenter.append('<li>' + message + '</li>')
     $("#message .count").text(messageCount)
