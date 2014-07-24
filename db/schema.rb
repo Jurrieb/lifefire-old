@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.boolean  "sports",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "public_profile",  default: false
-    t.boolean  "private_profile", default: false
+    t.boolean  "public_profile",  default: true
+    t.boolean  "private_profile", default: true
   end
 
   create_table "user_profiles", force: true do |t|
