@@ -10,5 +10,5 @@ require 'factory_girl_rails'
 users = User.all
 users.each do |user|
   puts "Create friend relation for user: #{user.name}"
-  user.users = User.order("RANDOM()").limit(5)
+  user.friends = User.order("RANDOM()").limit(5)
 end
