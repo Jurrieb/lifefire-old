@@ -11,4 +11,12 @@ class Message < ActiveRecord::Base
   # Validate if karma is nummeric
   validates_numericality_of :user_id
 
+  def save_with_achievement code
+    achievement = Achievement.new(
+       user_id: self.user_id, 
+       code: code
+    )
+    self.save if achievement.save  
+  end
+
 end

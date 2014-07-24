@@ -1,36 +1,40 @@
-namespace :activities do
+namespace :achievements do
   desc "TODO"
   
   task smoking: :environment do
     users = User.all
+
     users.each do |u|
       progress = u.smoking_progress
+      achievements = u.achievements.map { |x| x.code }
 
-      if progress > 3
-        message = Message.new(
-          user_id: u.id, 
-          message: "#{u.name} heeft drie dagen lang niet gerookt."
-          )
-        message.save
+      unless achievements.include? 1 
+        if progress > 3   
+          message = Message.new(
+            user_id: u.id, 
+            message: "#{u.name} heeft drie dagen lang niet gerookt.")
+          message.save_with_achievement(1)
+        end
       end
 
-      if progress > 7
-        message = Message.new(
-          user_id: u.id, 
-          message: "#{u.name} is een week lang gestopt met roken."
-          )
-        message.save
+      unless achievements.include? 2
+        if progress > 7   
+          message = Message.new(
+            user_id: u.id, 
+            message: "#{u.name} heeft een week lang niet gerookt.")
+          message.save_with_achievement(2)
+        end
       end
 
-
-      if progress > 31
-        message = Message.new(
-          user_id: u.id, 
-          message: "#{u.name} is een maand gestopt met roken."
-          )
-        message.save
+      unless achievements.include? 3
+        if progress > 31   
+          message = Message.new(
+            user_id: u.id, 
+            message: "#{u.name} heeft een maand lang niet gerookt.")
+          message.save_with_achievement(3)
+        end
       end
-
+      
     end
   end
 
