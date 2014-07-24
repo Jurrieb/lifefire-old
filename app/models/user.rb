@@ -17,17 +17,10 @@ class User < ActiveRecord::Base
 
   # Self referential relation
   has_many :friendships,        dependent: :destroy
-
   has_many :friends, foreign_key: 'friend_id',
                      source: :friend,
                      through: :friendships,
                      dependent: :destroy
-
-  # has_many :inverse_friends, foreign_key: 'user_id',
-  #                            source: :user,
-  #                            through: :friendships,
-  #                            dependent: :destroy
-
 
   # Concerns
   include Smoking
