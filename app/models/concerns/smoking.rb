@@ -5,9 +5,20 @@ module Smoking
   require 'unitwise'
 
 
+  # Method returns progress of quiting cigarets
   def smoking_progress
     Smoke.by_user(self.id).where(:counted => 0, created_at: 3.days.ago..Time.now).count
+
+    # TODO 
+    #return ['smoked', 3]
+    #return ['smoked', 7]
+    #return ['smoked', 30]
+    #return ['stopped', 3]
+    #return ['stopped', 7]
+    #return ['stopped', 30]
+
   end
+
 
   # Price of one sigaret
   def cigaret_price

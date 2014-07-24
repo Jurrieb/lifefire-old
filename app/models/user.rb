@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :comments,           dependent: :destroy
   has_many :friends,            dependent: :destroy
   has_many :messages,           dependent: :destroy
+  has_many :achievements,       dependent: :destroy
 
   has_many :users, source: :friend,
                    through: :friends,
