@@ -46,7 +46,7 @@ class FriendsController < ApplicationController
     else
       user = User.find(params[:id])
       unless user.blank?
-        if current_user.friendship.create(friend_id: user.id)
+        if current_user.friendships.create(friend_id: user.id)
           # Publish a message
           flash['success'] = "Vriendverzoek is naar #{user.name} verstuurd"
           user.publish("#{user.name} heeft jouw toegevoegt")
