@@ -41,7 +41,26 @@ body
   .content
     float: left
     width: 100%
-    padding-left: 201px 
+    padding-left: 201px
+
+    .search_form
+      +outer-container
+      input
+        +span-columns(10)
+        margin-bottom: 0
+        @include media($small-screen)
+          +span-columns(2)
+        @include media($medium-screen)
+          +span-columns(5)
+      input[type="submit"]
+        +span-columns(2)
+        @include media($small-screen)
+          +span-columns(2)
+        @include media($medium-screen)
+          +span-columns(3)
+
+    @include media($small-screen)
+      padding-left: 44px
 
     .middle_block
       +outer-container
@@ -50,10 +69,22 @@ body
       border-bottom: 5px solid #efefef
       border-top: 5px solid #efefef
 
+      @include media($small-screen)
+        padding: 20px
+      @include media($medium-screen)
+        padding: 20px
+
+
     .top_block
       background: #fff
       padding: 40px
       border-bottom: 5px solid #efefef
+
+      @include media($small-screen)
+        padding: 20px
+      @include media($medium-screen)
+        padding: 20px
+
       .progress
         margin-bottom: 0
         border-bottom: 0
@@ -64,12 +95,19 @@ body
 
     .block
       padding: 40px
-
+      @include media($small-screen)
+        padding: 20px
+      @include media($medium-screen)
+        padding: 20px
 
     .results
       .column
         +span-columns(6)
-        
+
+        @include media($small-screen)
+          +span-columns(4)
+          padding-bottom : 20px
+
         table
           margin: 0
           th
@@ -80,20 +118,35 @@ body
             border-bottom: none
     .friends
       +outer-container
+
       .friend
         +span-columns(3)
         cursor: pointer
         text-align: center
 
+        @include media($small-screen)
+          +span-columns(4)
+          margin-bottom: 20px
+
+        @include media($medium-screen)
+          +span-columns(2)
+
         .avatar
           margin: 20px auto
           text-align: center
 
+          &.big
+            @include media($medium-screen)
+              width: 80px
+
         .name
           margin-bottom: 5px
+          font-size: 1.1em
+          @include media($medium-screen)
+            font-size: 0.8em
+
           a
             color: $font_color_dark
-            font-size: 1.1em
 
     .progress
       +outer-container
@@ -105,6 +158,15 @@ body
         +span-columns(3)
         padding: 30px 0
         text-align: center
+
+
+        @include media($small-screen)
+          +span-columns(4)
+
+        @include media($medium-screen)
+          +span-columns(2)
+
+
         .value
           font-size: 2.4em
           padding-bottom: 20px

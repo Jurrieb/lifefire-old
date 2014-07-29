@@ -13,6 +13,9 @@ $navigation_bar_height: 60px
     line-height: 60px
     color: $navigation_icon_color
 
+    @include media($small-screen)
+      width: 50px
+
     &:hover
       color: $navigation_icon_color * 0.9
 
@@ -47,6 +50,9 @@ nav.top_bar
     line-height: $navigation_bar_height
     padding: 0 0 0 25px
 
+    @include media($small-screen)
+      display: none
+
     img
       height: 20px
       width: 89px
@@ -56,10 +62,15 @@ nav.top_bar
     height: $navigation_bar_height
     float: right
     color: $user_navigation_text
+    @include media($small-screen)
+      display: block
+      width: 100%
 
     .user
       @include inline-block
       margin-right: 20px
+      @include media($small-screen)
+        margin-right: 0
 
       .avatar
         float: left
@@ -86,12 +97,14 @@ nav.top_bar
       height: $navigation_bar_height
       margin-right: 20px
       font-size: 16px
+      @include media($small-screen)
+        margin-right: 0
 
       .icon
         @include inline-block
         @extend %navigation_icon
         position: relative
-        
+
         .count
           background: $lifefire_orange
           width: 16px
