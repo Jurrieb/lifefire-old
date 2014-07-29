@@ -92,11 +92,15 @@
     
   
     
+      <dt class="r2">Includes:</dt>
+      <dd class="r2">PublicActivity::Common</dd>
+      
+    
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/models/sport.rb</dd>
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/models/sport.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -145,6 +149,7 @@
 
 
   
+  
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -176,9 +181,6 @@
       <pre class="lines">
 
 
-24
-25
-26
 27
 28
 29
@@ -190,19 +192,22 @@
 35
 36
 37
-38</pre>
+38
+39
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/sport.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'app/models/sport.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calculate_burned_calories'>calculate_burned_calories</span>
   <span class='comment'># Find practised sport
-</span>  <span class='kw'>if</span> <span class='id identifier rubyid_practised_sport'>practised_sport</span> <span class='op'>==</span> <span class='const'>PopulairSport</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_populair_sport_id'>populair_sport_id</span><span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_practised_sport'>practised_sport</span> <span class='op'>=</span> <span class='const'>PopulairSport</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_populair_sport_id'>populair_sport_id</span><span class='rparen'>)</span>
     <span class='comment'># Integer to hour (kcal are based upon hours)
 </span>    <span class='id identifier rubyid_duration'>duration</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_duration'>duration</span> <span class='op'>/</span> <span class='int'>60</span>
     <span class='comment'># User weigth
-</span>    <span class='id identifier rubyid_weight'>weight</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_userDetail'>userDetail</span><span class='period'>.</span><span class='id identifier rubyid_weight'>weight</span>
-    <span class='comment'># define burned Kcalories
+</span>    <span class='id identifier rubyid_weight'>weight</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_userDetail'>userDetail</span><span class='period'>.</span><span class='id identifier rubyid_weight'>weight</span>
+    <span class='comment'># Set burned Kcalories
 </span>    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_burned_calories'>burned_calories</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_practised_sport'>practised_sport</span><span class='period'>.</span><span class='id identifier rubyid_kcal'>kcal</span> <span class='op'>*</span> <span class='id identifier rubyid_duration'>duration</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='id identifier rubyid_weight'>weight</span>
   <span class='kw'>else</span>
     <span class='comment'># Return with 0 calories burned
@@ -220,7 +225,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Jul  7 18:00:39 2014 by
+  Generated on Tue Jul 29 13:07:48 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>

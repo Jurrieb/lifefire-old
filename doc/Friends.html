@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  Module: Messaging
+  Module: Friends
   
     &mdash; Documentation by YARD 0.8.7.4
   
@@ -17,7 +17,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!Messaging.html";
+  framesUrl = "frames.html#!Friends.html";
 </script>
 
 
@@ -31,10 +31,10 @@
     <div id="header">
       <div id="menu">
   
-    <a href="_index.html">Index (M)</a> &raquo;
+    <a href="_index.html">Index (F)</a> &raquo;
     
     
-    <span class="title">Messaging</span>
+    <span class="title">Friends</span>
   
 
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
@@ -63,7 +63,7 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><h1>Module: Messaging
+    <div id="content"><h1>Module: Friends
   
   
   
@@ -82,12 +82,12 @@
   
   
     <dt class="r2">Included in:</dt>
-    <dd class="r2"><span class='object_link'><a href="User.html" title="User (class)">User</a></span></dd>
+    <dd class="r2"><span class='object_link'><a href="AnalysisController.html" title="AnalysisController (class)">AnalysisController</a></span>, <span class='object_link'><a href="UsersController.html" title="UsersController (class)">UsersController</a></span></dd>
     
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">app/models/concerns/messaging.rb</dd>
+    <dd class="r1 last">app/controllers/concerns/friends.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -110,7 +110,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#write_new_message-instance_method" title="#write_new_message (instance method)">- (Object) <strong>write_new_message</strong> </a>
+      <a href="#find_friends-instance_method" title="#find_friends (instance method)">- (Object) <strong>find_friends</strong> </a>
     
 
     
@@ -125,8 +125,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>included do   # after_create :create_default_gallery, :send_welcome_email
-end.</p>
+<p>Find healthiest friends.</p>
 </div></span>
   
 </li>
@@ -143,9 +142,9 @@ end.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="write_new_message-instance_method">
+  <h3 class="signature first" id="find_friends-instance_method">
   
-    - (<tt>Object</tt>) <strong>write_new_message</strong> 
+    - (<tt>Object</tt>) <strong>find_friends</strong> 
   
 
   
@@ -154,11 +153,7 @@ end.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>included do</p>
-
-<pre class="code ruby"><code class="ruby"><span class='comment'># after_create :create_default_gallery, :send_welcome_email</span></code></pre>
-
-<p>end</p>
+<p>Find healthiest friends</p>
 
 
   </div>
@@ -172,19 +167,17 @@ end.</p>
       <pre class="lines">
 
 
-8
 9
 10
 11
 12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/concerns/messaging.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/concerns/friends.rb', line 9</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_write_new_message'>write_new_message</span>
-  <span class='comment'># Create new message in background
-</span>  <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Dit is een test</span><span class='tstring_end'>&#39;</span></span>
-  <span class='const'>Messages</span><span class='period'>.</span><span class='id identifier rubyid_perform_async'>perform_async</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_find_friends'>find_friends</span>
+  <span class='id identifier rubyid_friend_ids'>friend_ids</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_friends'>friends</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>accepted:</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:friend_id</span><span class='rparen'>)</span>
+  <span class='ivar'>@friends</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_friend_ids'>friend_ids</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>karma DESC</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_limit'>limit</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
