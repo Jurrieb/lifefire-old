@@ -50,6 +50,10 @@ class FriendsController < ApplicationController
           # Publish a message
           flash['success'] = "Vriendverzoek is naar #{user.name} verstuurd"
           user.publish("#{user.name} heeft jouw toegevoegt")
+          Message.new(user_id: current_user.id,
+                      friend_id: user.id,
+                      message: "Vriendverzoek is naar #{user.name} verstuurd",
+                      karma: 50).save
         end
       end
     end
