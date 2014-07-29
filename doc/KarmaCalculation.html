@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: KarmaCalculation
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!KarmaCalculation.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (K)</a> &raquo;
+    
+    
+    <span class="title">KarmaCalculation</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: KarmaCalculation
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+      <dt class="r1">Extended by:</dt>
+      <dd class="r1">ActiveSupport::Concern</dd>
+      
+    
+  
+    
+  
+  
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="User.html" title="User (class)">User</a></span></dd>
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/models/concerns/karma_calculation.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#calculated_karma-instance_method" title="#calculated_karma (instance method)">- (Object) <strong>calculated_karma</strong>(program) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#invited_friend-instance_method" title="#invited_friend (instance method)">- (Object) <strong>invited_friend</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Standard karmapoints for inviting a friend.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#profile_karma-instance_method" title="#profile_karma (instance method)">- (Object) <strong>profile_karma</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate profile score based upon filled in fields.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#smoking_karma-instance_method" title="#smoking_karma (instance method)">- (Object) <strong>smoking_karma</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate smoking karma score based upon predefined settings.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sporting_karma-instance_method" title="#sporting_karma (instance method)">- (Object) <strong>sporting_karma</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate sporting karma score based upon predefined settings.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="calculated_karma-instance_method">
+  
+    - (<tt>Object</tt>) <strong>calculated_karma</strong>(program) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/concerns/karma_calculation.rb', line 4</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_calculated_karma'>calculated_karma</span> <span class='id identifier rubyid_program'>program</span>
+  <span class='comment'># Set user
+</span>  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+
+  <span class='comment'># Define program to give karma to
+</span>  <span class='id identifier rubyid_score'>score</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_program'>program</span>
+          <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>all</span><span class='tstring_end'>&#39;</span></span>
+            <span class='id identifier rubyid_profile_karma'>profile_karma</span> <span class='op'>+</span> <span class='id identifier rubyid_smoking_karma'>smoking_karma</span> <span class='op'>+</span> <span class='id identifier rubyid_sporting_karma'>sporting_karma</span>
+          <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>smoke</span><span class='tstring_end'>&#39;</span></span>
+            <span class='id identifier rubyid_smoking_karma'>smoking_karma</span>
+          <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sport</span><span class='tstring_end'>&#39;</span></span>
+            <span class='id identifier rubyid_sporting_karma'>sporting_karma</span>
+          <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>profile</span><span class='tstring_end'>&#39;</span></span>
+            <span class='id identifier rubyid_profile_karma'>profile_karma</span>
+          <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>add_friend</span><span class='tstring_end'>&#39;</span></span>
+            <span class='id identifier rubyid_invited_friend'>invited_friend</span>
+          <span class='kw'>else</span>
+            <span class='id identifier rubyid_smoking_karma'>smoking_karma</span> <span class='op'>+</span> <span class='id identifier rubyid_sporting_karma'>sporting_karma</span>
+          <span class='kw'>end</span>
+  <span class='comment'># Update karma user with total score
+</span>  <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_increment!'>increment!</span><span class='lparen'>(</span><span class='symbol'>:karma</span><span class='comma'>,</span> <span class='id identifier rubyid_score'>score</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_score'>score</span> <span class='op'>==</span> <span class='int'>0</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invited_friend-instance_method">
+  
+    - (<tt>Object</tt>) <strong>invited_friend</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Standard karmapoints for inviting a friend</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/concerns/karma_calculation.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_invited_friend'>invited_friend</span>
+  <span class='int'>50</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="profile_karma-instance_method">
+  
+    - (<tt>Object</tt>) <strong>profile_karma</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate profile score based upon filled in fields</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/concerns/karma_calculation.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_profile_karma'>profile_karma</span>
+  <span class='id identifier rubyid_score_for_profile'>score_for_profile</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='comment'># Check for variables
+</span>  <span class='id identifier rubyid_score_for_profile'>score_for_profile</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_filled_in_profile'>filled_in_profile</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_score_for_profile'>score_for_profile</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_filled_in_user_details'>filled_in_user_details</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_score_for_profile'>score_for_profile</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_access_to_profile'>access_to_profile</span><span class='rparen'>)</span>
+  <span class='comment'># Return count of all values in score_for_profile
+</span>  <span class='id identifier rubyid_score_for_profile'>score_for_profile</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span> <span class='op'>*</span> <span class='id identifier rubyid_karma_points'>karma_points</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="smoking_karma-instance_method">
+  
+    - (<tt>Object</tt>) <strong>smoking_karma</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate smoking karma score based upon predefined settings</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/concerns/karma_calculation.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_smoking_karma'>smoking_karma</span>
+  <span class='kw'>if</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_userPreference'>userPreference</span><span class='period'>.</span><span class='id identifier rubyid_smokes'>smokes</span>
+    <span class='id identifier rubyid_score_for_smoking'>score_for_smoking</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='comment'># Check for variables
+</span>    <span class='id identifier rubyid_score_for_smoking'>score_for_smoking</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_less_smoked?'>less_smoked?</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_score_for_smoking'>score_for_smoking</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_quit_smoking?'>quit_smoking?</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_score_for_smoking'>score_for_smoking</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_money_spend_by_smoking'>money_spend_by_smoking</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_score_for_smoking'>score_for_smoking</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_tar_smoked'>tar_smoked</span><span class='rparen'>)</span>
+    <span class='comment'># Return count of all values in score_for_smoking
+</span>    <span class='kw'>return</span> <span class='id identifier rubyid_score_for_smoking'>score_for_smoking</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span> <span class='op'>*</span> <span class='id identifier rubyid_karma_points'>karma_points</span> <span class='kw'>if</span> <span class='id identifier rubyid_multiplier'>multiplier</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>smoke</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='kw'>return</span> <span class='lparen'>(</span><span class='id identifier rubyid_score_for_smoking'>score_for_smoking</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span> <span class='op'>*</span> <span class='id identifier rubyid_karma_points'>karma_points</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='id identifier rubyid_multiplier'>multiplier</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>smoke</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='int'>0</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sporting_karma-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sporting_karma</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate sporting karma score based upon predefined settings</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/concerns/karma_calculation.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sporting_karma'>sporting_karma</span>
+  <span class='kw'>if</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_userPreference'>userPreference</span><span class='period'>.</span><span class='id identifier rubyid_sports'>sports</span>
+    <span class='id identifier rubyid_score_for_sporting'>score_for_sporting</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='comment'># Check for variables
+</span>    <span class='id identifier rubyid_score_for_sporting'>score_for_sporting</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_latest_distance'>latest_distance</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_score_for_sporting'>score_for_sporting</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_latest_duration'>latest_duration</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_score_for_sporting'>score_for_sporting</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_burned_kcal'>burned_kcal</span><span class='rparen'>)</span>
+    <span class='comment'># Return count of all values in score_for_sporting
+</span>    <span class='kw'>return</span> <span class='id identifier rubyid_score_for_sporting'>score_for_sporting</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span> <span class='op'>*</span> <span class='id identifier rubyid_karma_points'>karma_points</span> <span class='kw'>if</span> <span class='id identifier rubyid_multiplier'>multiplier</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sport</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='kw'>return</span> <span class='lparen'>(</span><span class='id identifier rubyid_score_for_sporting'>score_for_sporting</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span> <span class='op'>*</span> <span class='id identifier rubyid_karma_points'>karma_points</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='id identifier rubyid_multiplier'>multiplier</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sport</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='int'>0</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Jul 29 13:07:47 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.1.2).
+</div>
+
+  </body>
+</html>
