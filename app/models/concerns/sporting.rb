@@ -2,10 +2,9 @@ module Sporting
   extend ActiveSupport::Concern
 
   def sporting_progress
-    return [
-            self.total_workouts,  
-            self.total_workout_with_km_calories, 
-            self.total_workout_calories]
+    [self.total_workouts,
+     self.total_workout_with_km_calories,
+     self.total_workout_calories]
   end
 
   # Calories burned in latest workout, or 0
@@ -15,7 +14,7 @@ module Sporting
 
   # Calories burned in total, or 0
   def total_workout_calories
-    set_sport_by_user.sum(:burned_calories)  || 0
+    set_sport_by_user.sum(:burned_calories) || 0
   end
 
   # Avarage calories burned, or 0

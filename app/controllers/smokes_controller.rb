@@ -2,6 +2,13 @@ class SmokesController < ApplicationController
 
   # Create new smoke for date and user
   def new
+    smoked_yesterday = Smoke.where(user_id: current_user.id,
+                                   date: Date.yesterday)
+    # If there are no records
+    if smoked_yesterday.empty?
+      current_user.publish('Gerookte sigaretten van gisteren aangevuld?')
+    end
+
     @smoke = Smoke.find_or_create_by(user_id: current_user.id,
                                      date: Date.today)
   end

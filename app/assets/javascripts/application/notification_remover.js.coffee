@@ -6,7 +6,6 @@ class NotificationRemover
     # Loop through notices and remove
     for notice in @notifications
       @removeNotice(notice)
-      @delay(@delay_time)
 
   removeNotice: (notice) =>
     ($ notice).delay(@delay_time).animate({ height: 0, opacity: 0 }, '200')

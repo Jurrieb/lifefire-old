@@ -1,6 +1,6 @@
 class DateSelectSmoke
   constructor: ->
-    # # Date form
+    # Date form
     @dateSelect = ($ '#dateselect')
     # Initialize date select JqueryUI
     @dateSelect.datepicker({ dateFormat: 'dd-mm-yy', maxDate: "+0w" })
@@ -9,7 +9,6 @@ class DateSelectSmoke
     @counted_value = ($ '#smoke_counted')
     # Event listeners
     @bindListeners()
-
 
   bindListeners: =>
     @dateSelect.on 'change', (e) =>

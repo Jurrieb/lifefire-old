@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723131441) do
+ActiveRecord::Schema.define(version: 20140724143446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "archievemnts", force: true do |t|
+  create_table "achievements", force: true do |t|
     t.integer  "user_id"
     t.integer  "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "achievements", ["user_id"], name: "index_achievements_on_user_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -32,6 +34,9 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.text     "message"
     t.integer  "message_id"
   end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -46,13 +51,18 @@ ActiveRecord::Schema.define(version: 20140723131441) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
-  create_table "friends", force: true do |t|
+  create_table "friendships", force: true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
     t.boolean  "accepted",   default: false
+    t.boolean  "rejected",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id", using: :btree
+  add_index "friendships", ["user_id", "user_id"], name: "index_friendships_on_user_id_and_user_id", using: :btree
+  add_index "friendships", ["user_id"], name: "index_friendships_on_user_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.string   "message"
@@ -63,6 +73,8 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.integer  "user_id"
     t.integer  "friend_id"
   end
+
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "populair_sports", force: true do |t|
     t.string   "name"
@@ -79,6 +91,8 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.datetime "updated_at"
   end
 
+  add_index "smokes", ["user_id"], name: "index_smokes_on_user_id", using: :btree
+
   create_table "sports", force: true do |t|
     t.integer  "user_id"
     t.integer  "populair_sport_id"
@@ -90,6 +104,9 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.integer  "burned_calories",   default: 0
   end
 
+  add_index "sports", ["populair_sport_id"], name: "index_sports_on_populair_sport_id", using: :btree
+  add_index "sports", ["user_id"], name: "index_sports_on_user_id", using: :btree
+
   create_table "user_details", force: true do |t|
     t.integer  "user_id"
     t.integer  "height",        default: 0
@@ -98,6 +115,8 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "user_details", ["user_id"], name: "index_user_details_on_user_id", using: :btree
 
   create_table "user_notices", force: true do |t|
     t.integer  "user_id"
@@ -108,15 +127,19 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.datetime "updated_at"
   end
 
+  add_index "user_notices", ["user_id"], name: "index_user_notices_on_user_id", using: :btree
+
   create_table "user_preferences", force: true do |t|
     t.integer  "user_id"
     t.boolean  "smokes",          default: false
     t.boolean  "sports",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "public_profile",  default: false
-    t.boolean  "private_profile", default: false
+    t.boolean  "public_profile",  default: true
+    t.boolean  "private_profile", default: true
   end
+
+  add_index "user_preferences", ["user_id"], name: "index_user_preferences_on_user_id", using: :btree
 
   create_table "user_profiles", force: true do |t|
     t.datetime "created_at"
@@ -124,12 +147,16 @@ ActiveRecord::Schema.define(version: 20140723131441) do
     t.integer  "user_id"
   end
 
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
+
   create_table "user_smoke_addictions", force: true do |t|
     t.integer  "user_id"
     t.integer  "avarage_smokes_day", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "user_smoke_addictions", ["user_id"], name: "index_user_smoke_addictions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.integer  "user_id"

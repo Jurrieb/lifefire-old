@@ -104,15 +104,15 @@ describe User do
 
   context 'Karma Calculation Concern' do
     it 'calculates users profile karma?' do
-      expect(subject.profile_karma).to be > 0
+      expect(subject.profile_karma).to be >= 0
     end
 
     it 'calculates users quit smoking karma' do
-      expect(subject.smoking_karma).to be > 0
+      expect(subject.smoking_karma).to be >= 0
     end
 
     it 'calculates users sporting karma' do
-      expect(subject.sporting_karma).to be > 0
+      expect(subject.sporting_karma).to be >= 0
     end
 
     it 'returns karma for invited user' do

@@ -10,14 +10,5 @@ require 'factory_girl_rails'
 users = User.all
 users.each do |user|
   puts "Create friend relation for user: #{user.name}"
-  user.users = User.order("RANDOM()").limit(5)
-
-  # Create Activities
-  puts "Create activities for user: #{user.name}"
-  10.times do |i|
-    puts "Activity #{i + 1}"
-    user.create_activity action: :add_friend,
-                         owner: user,
-                         recipient: user
-  end
+  user.friends = User.order("RANDOM()").limit(5)
 end
