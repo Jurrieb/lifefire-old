@@ -26,16 +26,18 @@ class Sport < ActiveRecord::Base
   # Calculate burned calories from the to save sport activity
   def calculate_burned_calories
     # Find practised sport
-    if practised_sport = PopulairSport.find(populair_sport_id)
+    practised_sport = PopulairSport.find(populair_sport_id)
+
+    if practised_sport
+      require 'unitwise'
       # Integer to hour (kcal are based upon hours)
-      duration = self.duration / 60
+      duration = BigDecimal.new(self.duration) / 60
       # User weigth
-      weight = User.find(self.user_id).userDetail.weight
+      weight = Unitwise(User.find(self.user_id).userDetail.weight, 'kilogram')
       # Set burned Kcalories
       self.burned_calories = (practised_sport.kcal * duration) * weight
     else
       # Return with 0 calories burned
-      # or own users input
       self.burned_calories = 0
     end
   end

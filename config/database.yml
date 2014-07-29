@@ -3,21 +3,21 @@ development:
   encoding: unicode
   database: lifefire_prototype1_development
   host: localhost
-  username: postgres
-  password:
+  # username: postgres
+  # password:
 
 test:
   adapter: postgresql
   encoding: unicode
   database: lifefire_prototype1_test
   host: localhost
-  username: postgres
-  password:
+  # username: postgres
+  # password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: lifefire
   host: localhost
-  username: postgres
-  password:
+  # username: postgres
+  # password:

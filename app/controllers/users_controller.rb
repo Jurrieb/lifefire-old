@@ -8,9 +8,8 @@ class UsersController < ApplicationController
   def profile
     @user = User.friendly.find(params[:id])
     @messages = Message.where(user_id: @user.id).limit(10).order('id desc')
-
     # Check if user is a friend of the current user
-    @friends = current_user.users.exists?(id: @user.id)
+    @friends = current_user.friendships.exists?(friend_id: @user.id)
     # Publish a message
     @user.publish("#{current_user} heeft je profiel bekeken")
   end
@@ -23,7 +22,11 @@ class UsersController < ApplicationController
   def update
     # If no password is submitted
     params[:user].delete(:password) if params[:user][:password].blank?
-    if @user.update!(user_params)
+    if @user.update(user_params)
+      # Karma background job
+      karma_for_profile
+      # Publish a message
+      current_user.publish('Profiel aangepast')
       set_flash_and_redirect('success',
                              t('flash.account_edited'),
                              analysis_index_path)
@@ -32,10 +35,7 @@ class UsersController < ApplicationController
                              t('flash.account_not_edited'),
                              edit_user_path(@user.id))
     end
-    # Karma background job
-    karma_for_profile
-    # Publish a message
-    current_user.publish('Profiel aangepast')
+
   end
 
   # Signout user

@@ -16,26 +16,28 @@
   .progress
     h3 = "Mijn voortgang"
     ul
-      li.item
-        .value
-          = number_to_currency(current_user.all_costs, locale: :nl)
-          small = "euro"
-        .label = "Bespaard met stoppen"
-      li.item
-        .value
-          = current_user.avarage_smokes
-          small = "p/dag"
-        .label = "Gemiddeld gerookt"
-      li.item
-        .value
-          = current_user.total_workout_calories
-          small kcal
-        .label = "Totaal verbrand"
-      li.item
-        .value
-          = current_user.total_workouts
-          small sessies
-        .label = "Totaal gesport"
+      - if current_user.smokes?
+        li.item
+          .value
+            = number_to_currency(current_user.reduced_costs, locale: :nl)
+            small = "euro"
+          .label = "Bespaard"
+        li.item
+          .value
+            = current_user.avarage_smokes
+            small = "p/dag"
+          .label = "Gemiddeld gerookt"
+      - if current_user.sports?
+        li.item
+          .value
+            = current_user.total_workout_calories
+            small kcal
+          .label = "Totaal verbrand"
+        li.item
+          .value
+            = current_user.total_workouts
+            small sessies
+          .label = "Totaal gesport"
 
   / Messages (Activitystream)
   = render partial: 'shared/messages'
