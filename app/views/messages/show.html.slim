@@ -1,19 +1,30 @@
 .top_block
-  = @message.inspect
-.block
-  h3 Reacties van vrienden
+  .messages
+    ul.comments
+      - if @message
+        - cache @message do
+          li.comment
+            .avatar.small = image_tag @message.user.avatar.url(:thumb)
+            p.message = @message.message
 
-  ul.comments
-    - if @activity.comments.any?
-      - @activity.comments.each do |comment|
-        - next if comment.nil?
-          - cache comment do
+
+.block
+  - if @message.comments.any?
+
+    h3 Reacties van vrienden
+    .messages
+      ul.comments
+        - @message.comments.each do |comment|
+          - unless comment.new_record?
             li.comment
-              .avatar.small
-              = comment.user.inspect
-              p.message = comment.message
-    - else
-      li Nog geen reactie geplaatst
+              .avatar.small = image_tag comment.user.avatar.url(:medium)
+              span.message = comment.message
+              ' -
+              span = comment.created_at.strftime("%b %d, %Y")
+
+
+  - else
+    p Nog geen reactie geplaatst
 
   h3 bericht plaatsen
   = form_for @comment, url: message_comments_path(message_id: params[:id]) do |c|
