@@ -25,3 +25,10 @@ nav.top_bar
             span.count = "0"
           .icon = link_to '', destroy_user_session_path, method: :delete, class: 'icon-switch signout'
         ul.message_center
+          - if @last_messages
+            - @last_messages.each do |lm|
+              li
+                span = image_tag lm.friend.avatar.url(:thumb)
+                span = lm.message
+          - else
+            li Geen meldingen
