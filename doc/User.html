@@ -97,7 +97,7 @@
   
     
       <dt class="r1">Includes:</dt>
-      <dd class="r1"><span class='object_link'><a href="KarmaCalculation.html" title="KarmaCalculation (module)">KarmaCalculation</a></span>, <span class='object_link'><a href="Messaging.html" title="Messaging (module)">Messaging</a></span>, <span class='object_link'><a href="Smoking.html" title="Smoking (module)">Smoking</a></span>, <span class='object_link'><a href="Sporting.html" title="Sporting (module)">Sporting</a></span></dd>
+      <dd class="r1"><span class='object_link'><a href="KarmaCalculation.html" title="KarmaCalculation (module)">KarmaCalculation</a></span>, <span class='object_link'><a href="Messaging.html" title="Messaging (module)">Messaging</a></span>, PublicActivity::Common, <span class='object_link'><a href="Smoking.html" title="Smoking (module)">Smoking</a></span>, <span class='object_link'><a href="Sporting.html" title="Sporting (module)">Sporting</a></span></dd>
       
     
   
@@ -237,6 +237,30 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#publish-instance_method" title="#publish (instance method)">- (Object) <strong>publish</strong>(message) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Publish a private message.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -251,7 +275,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="KarmaCalculation.html" title="KarmaCalculation (module)">KarmaCalculation</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="KarmaCalculation.html#profile_karma-instance_method" title="KarmaCalculation#profile_karma (method)">#profile_karma</a></span>, <span class='object_link'><a href="KarmaCalculation.html#smoking_karma-instance_method" title="KarmaCalculation#smoking_karma (method)">#smoking_karma</a></span>, <span class='object_link'><a href="KarmaCalculation.html#sporting_karma-instance_method" title="KarmaCalculation#sporting_karma (method)">#sporting_karma</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="KarmaCalculation.html#calculated_karma-instance_method" title="KarmaCalculation#calculated_karma (method)">#calculated_karma</a></span>, <span class='object_link'><a href="KarmaCalculation.html#invited_friend-instance_method" title="KarmaCalculation#invited_friend (method)">#invited_friend</a></span>, <span class='object_link'><a href="KarmaCalculation.html#profile_karma-instance_method" title="KarmaCalculation#profile_karma (method)">#profile_karma</a></span>, <span class='object_link'><a href="KarmaCalculation.html#smoking_karma-instance_method" title="KarmaCalculation#smoking_karma (method)">#smoking_karma</a></span>, <span class='object_link'><a href="KarmaCalculation.html#sporting_karma-instance_method" title="KarmaCalculation#sporting_karma (method)">#sporting_karma</a></span></p>
 
   
   
@@ -275,7 +299,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Sporting.html" title="Sporting (module)">Sporting</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Sporting.html#avarage_calories_burned-instance_method" title="Sporting#avarage_calories_burned (method)">#avarage_calories_burned</a></span>, <span class='object_link'><a href="Sporting.html#avarage_workout_with_km_calories-instance_method" title="Sporting#avarage_workout_with_km_calories (method)">#avarage_workout_with_km_calories</a></span>, <span class='object_link'><a href="Sporting.html#last_workout_calories-instance_method" title="Sporting#last_workout_calories (method)">#last_workout_calories</a></span>, <span class='object_link'><a href="Sporting.html#last_workout_with_km_calories-instance_method" title="Sporting#last_workout_with_km_calories (method)">#last_workout_with_km_calories</a></span>, <span class='object_link'><a href="Sporting.html#sports%3F-instance_method" title="Sporting#sports? (method)">#sports?</a></span>, <span class='object_link'><a href="Sporting.html#total_workout_calories-instance_method" title="Sporting#total_workout_calories (method)">#total_workout_calories</a></span>, <span class='object_link'><a href="Sporting.html#total_workout_with_km_calories-instance_method" title="Sporting#total_workout_with_km_calories (method)">#total_workout_with_km_calories</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Sporting.html#avarage_calories_burned-instance_method" title="Sporting#avarage_calories_burned (method)">#avarage_calories_burned</a></span>, <span class='object_link'><a href="Sporting.html#avarage_workout_with_km_calories-instance_method" title="Sporting#avarage_workout_with_km_calories (method)">#avarage_workout_with_km_calories</a></span>, <span class='object_link'><a href="Sporting.html#last_workout_calories-instance_method" title="Sporting#last_workout_calories (method)">#last_workout_calories</a></span>, <span class='object_link'><a href="Sporting.html#last_workout_with_km_calories-instance_method" title="Sporting#last_workout_with_km_calories (method)">#last_workout_with_km_calories</a></span>, <span class='object_link'><a href="Sporting.html#sporting_progress-instance_method" title="Sporting#sporting_progress (method)">#sporting_progress</a></span>, <span class='object_link'><a href="Sporting.html#sports%3F-instance_method" title="Sporting#sports? (method)">#sports?</a></span>, <span class='object_link'><a href="Sporting.html#total_workout_calories-instance_method" title="Sporting#total_workout_calories (method)">#total_workout_calories</a></span>, <span class='object_link'><a href="Sporting.html#total_workout_with_km_calories-instance_method" title="Sporting#total_workout_with_km_calories (method)">#total_workout_with_km_calories</a></span>, <span class='object_link'><a href="Sporting.html#total_workouts-instance_method" title="Sporting#total_workouts (method)">#total_workouts</a></span></p>
 
   
   
@@ -287,8 +311,9 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Smoking.html" title="Smoking (module)">Smoking</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Smoking.html#all_costs-instance_method" title="Smoking#all_costs (method)">#all_costs</a></span>, <span class='object_link'><a href="Smoking.html#avarage_smokes-instance_method" title="Smoking#avarage_smokes (method)">#avarage_smokes</a></span>, <span class='object_link'><a href="Smoking.html#calculate_tar-instance_method" title="Smoking#calculate_tar (method)">#calculate_tar</a></span>, <span class='object_link'><a href="Smoking.html#cigaret_price-instance_method" title="Smoking#cigaret_price (method)">#cigaret_price</a></span>, <span class='object_link'><a href="Smoking.html#cigaret_tar-instance_method" title="Smoking#cigaret_tar (method)">#cigaret_tar</a></span>, <span class='object_link'><a href="Smoking.html#reduced_cigarettes-instance_method" title="Smoking#reduced_cigarettes (method)">#reduced_cigarettes</a></span>, <span class='object_link'><a href="Smoking.html#smoked_all_time-instance_method" title="Smoking#smoked_all_time (method)">#smoked_all_time</a></span>, <span class='object_link'><a href="Smoking.html#smoked_this_month-instance_method" title="Smoking#smoked_this_month (method)">#smoked_this_month</a></span>, <span class='object_link'><a href="Smoking.html#smoked_this_week-instance_method" title="Smoking#smoked_this_week (method)">#smoked_this_week</a></span>, <span class='object_link'><a href="Smoking.html#smoked_today-instance_method" title="Smoking#smoked_today (method)">#smoked_today</a></span>, <span class='object_link'><a href="Smoking.html#smokes%3F-instance_method" title="Smoking#smokes? (method)">#smokes?</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Smoking.html#all_costs-instance_method" title="Smoking#all_costs (method)">#all_costs</a></span>, <span class='object_link'><a href="Smoking.html#avarage_smokes-instance_method" title="Smoking#avarage_smokes (method)">#avarage_smokes</a></span>, <span class='object_link'><a href="Smoking.html#calculate_nicotin-instance_method" title="Smoking#calculate_nicotin (method)">#calculate_nicotin</a></span>, <span class='object_link'><a href="Smoking.html#calculate_tar-instance_method" title="Smoking#calculate_tar (method)">#calculate_tar</a></span>, <span class='object_link'><a href="Smoking.html#cigaret_nicotin-instance_method" title="Smoking#cigaret_nicotin (method)">#cigaret_nicotin</a></span>, <span class='object_link'><a href="Smoking.html#cigaret_price-instance_method" title="Smoking#cigaret_price (method)">#cigaret_price</a></span>, <span class='object_link'><a href="Smoking.html#cigaret_tar-instance_method" title="Smoking#cigaret_tar (method)">#cigaret_tar</a></span>, <span class='object_link'><a href="Smoking.html#reduced_cigarettes-instance_method" title="Smoking#reduced_cigarettes (method)">#reduced_cigarettes</a></span>, <span class='object_link'><a href="Smoking.html#reduced_costs-instance_method" title="Smoking#reduced_costs (method)">#reduced_costs</a></span>, <span class='object_link'><a href="Smoking.html#smoked_all_time-instance_method" title="Smoking#smoked_all_time (method)">#smoked_all_time</a></span>, <span class='object_link'><a href="Smoking.html#smoked_this_month-instance_method" title="Smoking#smoked_this_month (method)">#smoked_this_month</a></span>, <span class='object_link'><a href="Smoking.html#smoked_this_week-instance_method" title="Smoking#smoked_this_week (method)">#smoked_this_week</a></span>, <span class='object_link'><a href="Smoking.html#smoked_today-instance_method" title="Smoking#smoked_today (method)">#smoked_today</a></span>, <span class='object_link'><a href="Smoking.html#smokes%3F-instance_method" title="Smoking#smokes? (method)">#smokes?</a></span>, <span class='object_link'><a href="Smoking.html#smoking_progress-instance_method" title="Smoking#smoking_progress (method)">#smoking_progress</a></span></p>
 
+  
   
   
   <div id="instance_attr_details" class="attr_details">
@@ -322,12 +347,12 @@
       <pre class="lines">
 
 
-30
-31
-32</pre>
+40
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_avatar_remote_url'>avatar_remote_url</span>
   <span class='ivar'>@avatar_remote_url</span>
@@ -370,21 +395,22 @@
       <pre class="lines">
 
 
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
 65
-66</pre>
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find_for_facebook_oauth'>find_for_facebook_oauth</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>uid:</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_uid'>uid</span><span class='comma'>,</span> <span class='label'>provider:</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_provider'>provider</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first_or_create'>first_or_create</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
@@ -396,6 +422,7 @@
     <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_avatar_remote_url'>avatar_remote_url</span> <span class='op'>=</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='period'>.</span><span class='id identifier rubyid_image'>image</span>
     <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_oauth_token'>oauth_token</span> <span class='op'>=</span> <span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_token'>token</span>
     <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_oauth_expires_at'>oauth_expires_at</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='id identifier rubyid_auth'>auth</span><span class='period'>.</span><span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_expires_at'>expires_at</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_user_hash'>user_hash</span> <span class='op'>=</span> <span class='const'>Digest</span><span class='op'>::</span><span class='const'>SHA1</span><span class='period'>.</span><span class='id identifier rubyid_hexdigest'>hexdigest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -435,16 +462,16 @@
       <pre class="lines">
 
 
-98
-99
-100
-101
-102
-103
-104</pre>
+109
+110
+111
+112
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_relations'>create_relations</span>
   <span class='const'>UserPreference</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>user_id:</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>     <span class='kw'>unless</span> <span class='id identifier rubyid_userPreference'>userPreference</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
@@ -497,21 +524,21 @@
       <pre class="lines">
 
 
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre>
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_first_time_user?'>first_time_user?</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_userDetail'>userDetail</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span>                      <span class='op'>==</span> <span class='int'>0</span> <span class='op'>&amp;&amp;</span>
@@ -530,12 +557,67 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="publish-instance_method">
+  
+    - (<tt>Object</tt>) <strong>publish</strong>(message) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Publish a private message</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_publish'>publish</span> <span class='id identifier rubyid_message'>message</span>
+  <span class='comment'># Require Pusher
+</span>  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pusher</span><span class='tstring_end'>&#39;</span></span>
+  <span class='comment'># Publish to url
+</span>  <span class='const'>Pusher</span><span class='period'>.</span><span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://</span><span class='embexpr_beg'>#{</span><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_application'>application</span><span class='period'>.</span><span class='id identifier rubyid_secrets'>secrets</span><span class='period'>.</span><span class='id identifier rubyid_pusher_app_key'>pusher_app_key</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_application'>application</span><span class='period'>.</span><span class='id identifier rubyid_secrets'>secrets</span><span class='period'>.</span><span class='id identifier rubyid_pusher_app_secret'>pusher_app_secret</span><span class='embexpr_end'>}</span><span class='tstring_content'>@api.pusherapp.com/apps/</span><span class='embexpr_beg'>#{</span><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_application'>application</span><span class='period'>.</span><span class='id identifier rubyid_secrets'>secrets</span><span class='period'>.</span><span class='id identifier rubyid_pusher_app_id'>pusher_app_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># Publish channel, event and message
+</span>  <span class='const'>Pusher</span><span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_user_hash'>user_hash</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_trigger'>trigger</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>event</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span>
+    <span class='label'>message:</span> <span class='id identifier rubyid_message'>message</span>
+  <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Mon Jul  7 18:00:39 2014 by
+  Generated on Tue Jul 29 13:07:48 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>

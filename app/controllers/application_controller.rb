@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   # For all actions, authenticate user
   before_action :authenticate_user!
   before_action :user_hash_to_cookie
+  before_action :current_user_last_messages
 
   # Set flash message and redirect
   def set_flash_and_redirect(status, message, redirect_url)
@@ -69,5 +70,12 @@ class ApplicationController < ActionController::Base
   # Calculation for karma as background job for all of the above
   def karma_for_all_progress
     KarmaWorker.perform_async('all', current_user.id)
+  end
+
+  # - Messages ----------------------------------------------------------------#
+
+  # Retrieve the last 5 messages if current user is set
+  def current_user_last_messages
+    @last_messages = current_user.messages.unseen.limit(5) if current_user
   end
 end

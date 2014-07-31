@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  Class: PagesController
+  Class: ProgressController
   
     &mdash; Documentation by YARD 0.8.7.4
   
@@ -17,7 +17,7 @@
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
   relpath = '';
-  framesUrl = "frames.html#!PagesController.html";
+  framesUrl = "frames.html#!ProgressController.html";
 </script>
 
 
@@ -34,7 +34,7 @@
     <a href="_index.html">Index (P)</a> &raquo;
     
     
-    <span class="title">PagesController</span>
+    <span class="title">ProgressController</span>
   
 
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
@@ -63,7 +63,7 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><h1>Class: PagesController
+    <div id="content"><h1>Class: ProgressController
   
   
   
@@ -82,7 +82,7 @@
           
             <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
           
-            <li class="next">PagesController</li>
+            <li class="next">ProgressController</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -98,12 +98,24 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/controllers/pages_controller.rb</dd>
+    <dd class="r2 last">app/controllers/progress_controller.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The ProgressController shows in an interactive way the progress of the
+programs from the current user.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -136,30 +148,6 @@
 
   
     <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#privacy_policy-instance_method" title="#privacy_policy (instance method)">- (Object) <strong>privacy_policy</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Show privacy policy page.</p>
-</div></span>
   
 </li>
 
@@ -200,52 +188,19 @@
       <pre class="lines">
 
 
+6
+7
+8
 9
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/pages_controller.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/progress_controller.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="privacy_policy-instance_method">
-  
-    - (<tt>Object</tt>) <strong>privacy_policy</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Show privacy policy page</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-13
-14</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/pages_controller.rb', line 13</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_privacy_policy'>privacy_policy</span>
+  <span class='comment'># Set data for graphs
+</span>  <span class='ivar'>@smokes</span> <span class='op'>=</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_smokes'>smokes</span> <span class='kw'>if</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_smokes?'>smokes?</span>
+  <span class='ivar'>@sports</span> <span class='op'>=</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_sports'>sports</span> <span class='kw'>if</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_sports?'>sports?</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>

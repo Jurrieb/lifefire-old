@@ -101,9 +101,21 @@
 </dl>
 <div class="clear"></div>
 
-<div id="subclasses">
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Application Controller holds all shared methods that can be accessed from
+the entire Lifefire project.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="AnalysisController.html" title="AnalysisController (class)">AnalysisController</a></span>, <span class='object_link'><a href="FriendsController.html" title="FriendsController (class)">FriendsController</a></span>, <span class='object_link'><a href="MessagesController.html" title="MessagesController (class)">MessagesController</a></span>, <span class='object_link'><a href="PagesController.html" title="PagesController (class)">PagesController</a></span>, <span class='object_link'><a href="StreamController.html" title="StreamController (class)">StreamController</a></span>, <span class='object_link'><a href="UsersController.html" title="UsersController (class)">UsersController</a></span></p>
+  <p class="children"><span class='object_link'><a href="AnalysisController.html" title="AnalysisController (class)">AnalysisController</a></span>, <span class='object_link'><a href="CommentsController.html" title="CommentsController (class)">CommentsController</a></span>, <span class='object_link'><a href="FriendsController.html" title="FriendsController (class)">FriendsController</a></span>, <span class='object_link'><a href="MessagesController.html" title="MessagesController (class)">MessagesController</a></span>, <span class='object_link'><a href="PagesController.html" title="PagesController (class)">PagesController</a></span>, <span class='object_link'><a href="ProgressController.html" title="ProgressController (class)">ProgressController</a></span>, <span class='object_link'><a href="SmokesController.html" title="SmokesController (class)">SmokesController</a></span>, <span class='object_link'><a href="SportsController.html" title="SportsController (class)">SportsController</a></span>, <span class='object_link'><a href="UsersController.html" title="UsersController (class)">UsersController</a></span></p>
 </div>
 
 
@@ -138,7 +150,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Redirect to analysis#index.</p>
+<p>URL to redirect to after sign in (Devise).</p>
 </div></span>
   
 </li>
@@ -162,7 +174,127 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Redirect to sign in page.</p>
+<p>URL to redirect to after sign out (Devise).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#karma_for_adding_friend-instance_method" title="#karma_for_adding_friend (instance method)">- (Object) <strong>karma_for_adding_friend</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculation for karma as background job adding a friend.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#karma_for_all_progress-instance_method" title="#karma_for_all_progress (instance method)">- (Object) <strong>karma_for_all_progress</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculation for karma as background job for all of the above.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#karma_for_profile-instance_method" title="#karma_for_profile (instance method)">- (Object) <strong>karma_for_profile</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculation for karma as background job for updating profile.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#karma_for_smoking-instance_method" title="#karma_for_smoking (instance method)">- (Object) <strong>karma_for_smoking</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculation for karma as background job for smoking.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#karma_for_sporting-instance_method" title="#karma_for_sporting (instance method)">- (Object) <strong>karma_for_sporting</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculation for karma as background job for sporting.</p>
 </div></span>
   
 </li>
@@ -195,6 +327,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#self_and_friends-instance_method" title="#self_and_friends (instance method)">- (Object) <strong>self_and_friends</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return array with self + friends ID.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#set_flash_and_redirect-instance_method" title="#set_flash_and_redirect (instance method)">- (Object) <strong>set_flash_and_redirect</strong>(status, message, redirect_url) </a>
     
 
@@ -211,6 +367,31 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Set flash message and redirect.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#user_hash_to_cookie-instance_method" title="#user_hash_to_cookie (instance method)">- (Object) <strong>user_hash_to_cookie</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><ul><li>
+<p>User ID hash ————————————————————#.</p>
+</li></ul>
 </div></span>
   
 </li>
@@ -238,7 +419,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Redirect to analysis#index</p>
+<p>URL to redirect to after sign in (Devise)</p>
 
 
   </div>
@@ -252,12 +433,12 @@
       <pre class="lines">
 
 
-17
-18
-19</pre>
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_after_sign_in_path_for'>after_sign_in_path_for</span><span class='lparen'>(</span><span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_analysis_index_path'>analysis_index_path</span>
@@ -279,7 +460,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Redirect to sign in page</p>
+<p>URL to redirect to after sign out (Devise)</p>
 
 
   </div>
@@ -293,15 +474,220 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_after_sign_out_path_for'>after_sign_out_path_for</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_or_scope'>resource_or_scope</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_user_session_path'>new_user_session_path</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="karma_for_adding_friend-instance_method">
+  
+    - (<tt>Object</tt>) <strong>karma_for_adding_friend</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculation for karma as background job adding a friend</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_karma_for_adding_friend'>karma_for_adding_friend</span>
+  <span class='const'>KarmaWorker</span><span class='period'>.</span><span class='id identifier rubyid_perform_async'>perform_async</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>add_friend</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="karma_for_all_progress-instance_method">
+  
+    - (<tt>Object</tt>) <strong>karma_for_all_progress</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculation for karma as background job for all of the above</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_karma_for_all_progress'>karma_for_all_progress</span>
+  <span class='const'>KarmaWorker</span><span class='period'>.</span><span class='id identifier rubyid_perform_async'>perform_async</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>all</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="karma_for_profile-instance_method">
+  
+    - (<tt>Object</tt>) <strong>karma_for_profile</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculation for karma as background job for updating profile</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_karma_for_profile'>karma_for_profile</span>
+  <span class='const'>KarmaWorker</span><span class='period'>.</span><span class='id identifier rubyid_perform_async'>perform_async</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>profile</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="karma_for_smoking-instance_method">
+  
+    - (<tt>Object</tt>) <strong>karma_for_smoking</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculation for karma as background job for smoking</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_karma_for_smoking'>karma_for_smoking</span>
+  <span class='const'>KarmaWorker</span><span class='period'>.</span><span class='id identifier rubyid_perform_async'>perform_async</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>smoke</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="karma_for_sporting-instance_method">
+  
+    - (<tt>Object</tt>) <strong>karma_for_sporting</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculation for karma as background job for sporting</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_karma_for_sporting'>karma_for_sporting</span>
+  <span class='const'>KarmaWorker</span><span class='period'>.</span><span class='id identifier rubyid_perform_async'>perform_async</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sport</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -334,15 +720,56 @@
       <pre class="lines">
 
 
-27
-28
-29</pre>
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_redirect_to_setup_path'>redirect_to_setup_path</span>
   <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_setup_path'>setup_path</span> <span class='kw'>unless</span> <span class='id identifier rubyid_controller_name'>controller_name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>users</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="self_and_friends-instance_method">
+  
+    - (<tt>Object</tt>) <strong>self_and_friends</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return array with self + friends ID</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_self_and_friends'>self_and_friends</span>
+  <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_friends'>friends</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>accepted:</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:id</span><span class='rparen'>)</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -392,12 +819,58 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="user_hash_to_cookie-instance_method">
+  
+    - (<tt>Object</tt>) <strong>user_hash_to_cookie</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <ul><li>
+<p>User ID hash ————————————————————#</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_user_hash_to_cookie'>user_hash_to_cookie</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span>
+    <span class='id identifier rubyid_cookies'>cookies</span><span class='lbracket'>[</span><span class='symbol'>:user_hash</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_user_hash'>user_hash</span> <span class='kw'>unless</span> <span class='id identifier rubyid_cookies'>cookies</span><span class='lbracket'>[</span><span class='symbol'>:user_hash</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Mon Jul  7 18:00:39 2014 by
+  Generated on Tue Jul 29 13:07:48 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>

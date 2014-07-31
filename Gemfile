@@ -94,6 +94,7 @@ group :development, :test do
   gem 'spring'
   gem 'quiet_assets'
   gem 'sprockets_better_errors'
+  gem "rails-erd"
 
   # Deployment to server
   gem 'capistrano', '~> 3.1'
