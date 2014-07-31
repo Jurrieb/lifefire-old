@@ -173,7 +173,9 @@
 9
 10
 11
-12</pre>
+12
+13
+14</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/users/omniauth_callbacks_controller.rb', line 2</span>
@@ -187,6 +189,8 @@
 </span>  <span class='kw'>if</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_persisted?'>persisted?</span>
     <span class='id identifier rubyid_sign_in_and_redirect'>sign_in_and_redirect</span> <span class='ivar'>@user</span><span class='comma'>,</span> <span class='symbol'>:event</span> <span class='op'>=&gt;</span> <span class='symbol'>:authentication</span>
     <span class='id identifier rubyid_set_flash_message'>set_flash_message</span><span class='lparen'>(</span><span class='symbol'>:notice</span><span class='comma'>,</span> <span class='symbol'>:success</span><span class='comma'>,</span> <span class='symbol'>:kind</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Facebook</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_is_navigational_format?'>is_navigational_format?</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_new_user_session_path'>new_user_session_path</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -199,7 +203,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Jul  7 18:00:39 2014 by
+  Generated on Tue Jul 29 13:07:48 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>
