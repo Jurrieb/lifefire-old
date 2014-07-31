@@ -7,10 +7,8 @@
             .avatar.small = image_tag @message.user.avatar.url(:thumb)
             p.message = @message.message
 
-
 .block
   - if @message.comments.any?
-
     h3 Reacties van vrienden
     .messages
       ul.comments
@@ -21,7 +19,6 @@
               span.message = comment.message
               ' -
               span = comment.created_at.strftime("%b %d, %Y")
-
 
   - else
     p Nog geen reactie geplaatst
